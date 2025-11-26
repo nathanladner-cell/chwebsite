@@ -99,6 +99,12 @@ p {
     gap: 1rem;
 }
 
+.nav-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
 .logo-img {
     height: 50px;
     width: auto;
@@ -170,7 +176,7 @@ p {
     padding: 200px 0 160px;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url('hero.png');
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     background-attachment: fixed;
     position: relative;
 }
@@ -726,7 +732,7 @@ footer {
 
 .compliance-logo-group {
     width: 100%;
-    max-width: 150px;
+    max-width: 180px;
     height: auto;
     filter: brightness(0.9) opacity(0.8);
     transition: all 0.3s ease;
@@ -5862,7 +5868,7 @@ body.grounds-page {
 
     .compliance-logo-group,
     .compliance-logos img {
-        max-width: 100%;
+        max-width: 80px;
         height: auto;
     }
 
