@@ -1503,7 +1503,7 @@ footer {
 
     .nav-container {
         padding: 0 1.5rem;
-        height: 70px;
+        height: 65px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1511,10 +1511,10 @@ footer {
 
     /* Logo on mobile */
     .logo-img {
-        height: 55px !important;
+        height: 48px !important;
         width: auto !important;
         max-width: none !important;
-        max-height: 55px !important;
+        max-height: 48px !important;
     }
 
     /* Cool hamburger menu button */
@@ -1568,18 +1568,17 @@ footer {
         left: 15px;
         right: 15px;
         text-align: center;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        transition: all 0.3s ease;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
         padding: 1rem 0;
         gap: 0;
-        z-index: 999;
+        z-index: 999 !important;
         max-height: calc(100vh - 120px);
         overflow-y: auto;
         border-radius: 8px;
         border: 1px solid rgba(0, 0, 0, 0.08);
         opacity: 0;
-        transform: translateY(-10px);
-        -webkit-transform: translate3d(0, -10px, 0);
+        visibility: hidden;
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
     }
@@ -1590,9 +1589,10 @@ footer {
     }
 
     .nav-menu.active {
-        left: 15px;
-        opacity: 1;
-        transform: translateY(0);
+        left: 15px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
     }
 
     /* Reduce container padding significantly on mobile */
@@ -5731,8 +5731,8 @@ body.grounds-page {
 
     /* Make logos responsive but not logo-img */
     .logo-img {
-        height: 55px !important;
-        max-height: 55px !important;
+        height: 48px !important;
+        max-height: 48px !important;
         width: auto !important;
     }
 
