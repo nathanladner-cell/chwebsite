@@ -776,6 +776,7 @@ footer {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), url('cal.jpg');
     background-size: cover;
     background-position: center bottom;
+    background-attachment: fixed;
 }
 
 .contact-page-content {
