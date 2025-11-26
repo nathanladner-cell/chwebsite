@@ -1548,10 +1548,10 @@ footer {
     /* Floating white header on mobile */
     .navbar {
         position: fixed !important;
-        top: 15px;
-        left: 15px;
-        right: 15px;
-        width: calc(100% - 30px);
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        width: calc(100% - 24px);
         background: #ffffff;
         border-radius: 8px;
         border: 1px solid rgba(0, 0, 0, 0.08);
@@ -1572,8 +1572,8 @@ footer {
     }
 
     .nav-container {
-        padding: 0 1.5rem;
-        height: 65px;
+        padding: 0 1.2rem;
+        height: 62px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1581,10 +1581,10 @@ footer {
 
     /* Logo on mobile */
     .logo-img {
-        height: 48px !important;
+        height: 42px !important;
         width: auto !important;
         max-width: none !important;
-        max-height: 48px !important;
+        max-height: 42px !important;
     }
 
     /* Cool hamburger menu button */
@@ -1594,7 +1594,7 @@ footer {
         align-items: center;
         justify-content: center;
         height: auto;
-        padding: 12px;
+        padding: 10px;
         position: relative;
         z-index: 1002 !important;
         cursor: pointer !important;
@@ -1989,16 +1989,25 @@ footer {
     html {
         font-size: 15px;
     }
+    
+    /* Adjust floating header for smaller screens */
+    .navbar {
+        top: 10px !important;
+        left: 10px !important;
+        right: 10px !important;
+        width: calc(100% - 20px) !important;
+        border-radius: 6px !important;
+    }
 
     .nav-container {
-        padding: 0 0.75rem !important;
-        height: 60px;
+        padding: 0 0.9rem !important;
+        height: 56px;
     }
     
     /* Smaller logo on narrow devices */
     .logo-img {
-        height: 40px !important;
-        max-height: 40px !important;
+        height: 38px !important;
+        max-height: 38px !important;
     }
     
     /* Adjust hamburger size */
@@ -5971,20 +5980,28 @@ body.grounds-page {
 /* Extra small devices optimization */
 @media (max-width: 375px) {
     /* Further reduce padding for very small devices */
+    .navbar {
+        top: 8px !important;
+        left: 8px !important;
+        right: 8px !important;
+        width: calc(100% - 16px) !important;
+        border-radius: 6px !important;
+    }
+    
     .nav-container {
-        padding: 0 0.5rem !important;
-        height: 58px;
+        padding: 0 0.7rem !important;
+        height: 54px;
     }
     
     /* Even smaller logo for very narrow devices */
     .logo-img {
-        height: 36px !important;
-        max-height: 36px !important;
+        height: 34px !important;
+        max-height: 34px !important;
     }
     
     /* Smaller hamburger for very narrow devices */
     .hamburger {
-        padding: 6px !important;
+        padding: 7px !important;
     }
     
     .hamburger span {
