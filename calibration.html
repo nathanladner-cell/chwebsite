@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calibration Services - Copperhead Labs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="copperhead.svg" alt="Copperhead Labs Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="testing.html">Testing</a></li>
+                    <li><a href="calibration.html">Calibration</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-page-hero calibration-hero">
+            <div class="container">
+                <h1>Calibration Services</h1>
+                <p>Precision calibration with NIST-traceable standards for maximum accuracy</p>
+            </div>
+        </section>
+
+        <section class="services-detail">
+            <div class="container">
+                <div class="service-detail-grid">
+                    <div class="service-detail-card collapsible-card">
+                        <div class="service-detail-icon">
+                            <img src="instrument.png" alt="Process Instrumentation" class="detail-icon-img">
+                        </div>
+                        <h2>Process Instrumentation</h2>
+                        <p class="card-preview">Expert calibration of process instrumentation including transmitters, controllers, and indicators.</p>
+                        <div class="card-content">
+                            <p>Our NIST-traceable calibration ensures your process equipment maintains peak accuracy.</p>
+                            <ul class="service-features">
+                                <li>Pressure transmitters</li>
+                                <li>Temperature sensors</li>
+                                <li>Flow meters</li>
+                                <li>Level transmitters</li>
+                                <li>NIST-traceable certificates</li>
+                            </ul>
+                        </div>
+                        <button class="expand-btn" onclick="toggleCard(this)">
+                            <span class="expand-text">Learn More</span>
+                            <span class="expand-icon">▼</span>
+                        </button>
+                    </div>
+
+                    <div class="service-detail-card collapsible-card">
+                        <div class="service-detail-icon">
+                            <img src="multimeter.png" alt="Metering Devices" class="detail-icon-img">
+                        </div>
+                        <h2>Metering Devices</h2>
+                        <p class="card-preview">Professional calibration services for digital and analog multimeters, clamp meters, and other metering equipment.</p>
+                        <div class="card-content">
+                            <p>Ensure accurate measurements for your electrical testing needs.</p>
+                            <ul class="service-features">
+                                <li>Digital multimeters</li>
+                                <li>Clamp meters</li>
+                                <li>Panel meters</li>
+                                <li>Voltage indicators</li>
+                                <li>Precision calibration</li>
+                            </ul>
+                        </div>
+                        <button class="expand-btn" onclick="toggleCard(this)">
+                            <span class="expand-text">Learn More</span>
+                            <span class="expand-icon">▼</span>
+                        </button>
+                    </div>
+
+                    <div class="service-detail-card collapsible-card">
+                        <div class="service-detail-icon">
+                            <img src="megger.png" alt="Electrical Test Equipment" class="detail-icon-img">
+                        </div>
+                        <h2>Electrical Test Equipment</h2>
+                        <p class="card-preview">Comprehensive calibration of electrical test equipment including meggers, insulation testers, and ground resistance testers.</p>
+                        <div class="card-content">
+                            <p>Maintain compliance and accuracy in your electrical testing.</p>
+                            <ul class="service-features">
+                                <li>Megohmeters (Meggers)</li>
+                                <li>Insulation testers</li>
+                                <li>Ground resistance testers</li>
+                                <li>Continuity testers</li>
+                                <li>Full documentation</li>
+                            </ul>
+                        </div>
+                        <button class="expand-btn" onclick="toggleCard(this)">
+                            <span class="expand-text">Learn More</span>
+                            <span class="expand-icon">▼</span>
+                        </button>
+                    </div>
+
+                    <div class="service-detail-card collapsible-card">
+                        <div class="service-detail-icon">
+                            <img src="gasdetector.png" alt="Gas Detection Devices" class="detail-icon-img">
+                        </div>
+                        <h2>Gas Detection Devices</h2>
+                        <p class="card-preview">Professional calibration of gas detection equipment for workplace safety.</p>
+                        <div class="card-content">
+                            <p>Our calibration services ensure your gas detectors provide accurate readings to protect your workers.</p>
+                            <ul class="service-features">
+                                <li>Single gas detectors</li>
+                                <li>Multi-gas monitors</li>
+                                <li>Fixed gas detection systems</li>
+                                <li>Bump testing</li>
+                                <li>Safety compliance</li>
+                            </ul>
+                        </div>
+                        <button class="expand-btn" onclick="toggleCard(this)">
+                            <span class="expand-text">Learn More</span>
+                            <span class="expand-icon">▼</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Need Calibration Services?</h2>
+                    <p>Contact us to schedule your equipment calibration</p>
+                    <a href="contact.html" class="cta-button">Get Started</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="snake.gif" alt="Copperhead Labs" class="footer-logo">
+                    <p>Precision testing and calibration for electrical safety equipment.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Testing Services</li>
+                        <li>Calibration Services</li>
+                        <li>PPE Testing</li>
+                        <li>Equipment Certification</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Compliance</h3>
+                    <ul>
+                        <li>ASTM Standards</li>
+                        <li>OSHA Regulations</li>
+                        <li>IEEE Standards</li>
+                        <li>NIST Traceability</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: gray;">&copy; 2025 Copperhead Labs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

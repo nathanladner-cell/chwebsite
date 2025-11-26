@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Services - Copperhead Labs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="copperhead.svg" alt="Copperhead Labs Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="testing.html">Testing</a></li>
+                    <li><a href="calibration.html">Calibration</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-page-hero">
+            <div class="container">
+                <h1>Testing Services</h1>
+                <p>Comprehensive electrical safety testing solutions for your critical equipment</p>
+            </div>
+        </section>
+
+        <section class="services-detail">
+            <div class="container">
+                <div class="service-detail-grid">
+                    <div class="service-detail-card collapsible-card">
+                        <div class="service-detail-icon">
+                            <img src="bucket.png" alt="Dielectric Testing" class="detail-icon-img">
+                        </div>
+                        <h2>Dielectric Testing & Inspections</h2>
+                        <p class="card-preview">Complete dielectric testing services for aerial lifts, bucket trucks, and insulated equipment.</p>
+                        <div class="card-content">
+                            <p>Our comprehensive inspections ensure your equipment meets ANSI/SIA A92 standards and OSHA requirements.</p>
+                            <ul class="service-features">
+                                <li>Annual dielectric testing</li>
+                                <li>Visual inspections</li>
+                                <li>Boom and bucket testing</li>
+                                <li>Detailed test reports</li>
+                                <li>ANSI compliance verification</li>
+                            </ul>
+                        </div>
+                        <button class="expand-btn" onclick="toggleCard(this)">
+                            <span class="expand-text">Learn More</span>
+                            <span class="expand-icon">▼</span>
+                        </button>
+                    </div>
+
+                    <div class="service-detail-card collapsible-card">
+                        <div class="service-detail-icon">
+                            <img src="glove.png" alt="Rubber PPE Testing" class="detail-icon-img">
+                        </div>
+                        <h2>Rubber PPE Testing</h2>
+                        <p class="card-preview">Professional testing services for insulated rubber gloves, sleeves, blankets, and line hose.</p>
+                        <div class="card-content">
+                            <p>We follow ASTM F496 standards to ensure maximum protection for electrical workers.</p>
+                            <ul class="service-features">
+                                <li>Rubber glove testing</li>
+                                <li>Sleeve testing</li>
+                                <li>Blanket testing</li>
+                                <li>Line hose testing</li>
+                                <li>Complete documentation</li>
+                            </ul>
+                        </div>
+                        <button class="expand-btn" onclick="toggleCard(this)">
+                            <span class="expand-text">Learn More</span>
+                            <span class="expand-icon">▼</span>
+                        </button>
+                    </div>
+
+                    <div class="service-detail-card collapsible-card">
+                        <div class="service-detail-icon">
+                            <img src="extendo.png" alt="Live-Line Tool Testing" class="detail-icon-img">
+                        </div>
+                        <h2>Live-Line Tool Testing</h2>
+                        <p class="card-preview">Expert testing of hot sticks, shotgun sticks, and other live-line tools.</p>
+                        <div class="card-content">
+                            <p>Our testing meets ASTM F711 standards to ensure worker safety when working with energized equipment.</p>
+                            <ul class="service-features">
+                                <li>Hot stick testing</li>
+                                <li>Shotgun stick testing</li>
+                                <li>Telescoping tools</li>
+                                <li>Switch sticks</li>
+                                <li>ASTM F711 compliance</li>
+                            </ul>
+                        </div>
+                        <button class="expand-btn" onclick="toggleCard(this)">
+                            <span class="expand-text">Learn More</span>
+                            <span class="expand-icon">▼</span>
+                        </button>
+                    </div>
+
+                    <div class="service-detail-card collapsible-card">
+                        <div class="service-detail-icon">
+                            <img src="ground.png" alt="Protective Grounds Testing" class="detail-icon-img">
+                        </div>
+                        <h2>Protective Grounds Testing</h2>
+                        <p class="card-preview">Comprehensive testing of temporary protective grounding equipment.</p>
+                        <div class="card-content">
+                            <p>Our services verify the integrity and electrical continuity of your grounding systems per ASTM F2249.</p>
+                            <ul class="service-features">
+                                <li>Ground cable testing</li>
+                                <li>Clamp testing</li>
+                                <li>Resistance measurements</li>
+                                <li>Visual inspections</li>
+                                <li>Compliance certification</li>
+                            </ul>
+                        </div>
+                        <button class="expand-btn" onclick="toggleCard(this)">
+                            <span class="expand-text">Learn More</span>
+                            <span class="expand-icon">▼</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Ready to Schedule Testing?</h2>
+                    <p>Contact us today to discuss your testing requirements</p>
+                    <a href="contact.html" class="cta-button">Get Started</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="snake.gif" alt="Copperhead Labs" class="footer-logo">
+                    <p>Precision testing and calibration for electrical safety equipment.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Testing Services</li>
+                        <li>Calibration Services</li>
+                        <li>PPE Testing</li>
+                        <li>Equipment Certification</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Compliance</h3>
+                    <ul>
+                        <li>ASTM Standards</li>
+                        <li>OSHA Regulations</li>
+                        <li>IEEE Standards</li>
+                        <li>NIST Traceability</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: gray;">&copy; 2025 Copperhead Labs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
