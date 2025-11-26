@@ -3,11 +3,19 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const body = document.body;
 
+console.log('Hamburger:', hamburger);
+console.log('Nav Menu:', navMenu);
+
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
+        console.log('Hamburger clicked!');
+        
         const isActive = navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
+        
+        console.log('Menu is now:', isActive ? 'open' : 'closed');
         
         // Prevent body scroll when menu is open
         if (isActive) {
@@ -37,6 +45,8 @@ if (hamburger && navMenu) {
             body.style.overflow = '';
         });
     });
+} else {
+    console.error('Hamburger or navMenu not found!');
 }
 
 // Smooth Scrolling for Navigation Links
