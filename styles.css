@@ -1564,15 +1564,14 @@ footer {
     }
 
     .nav-menu {
-        display: flex !important;
+        display: none !important;
         position: fixed !important;
-        left: -200% !important;
+        left: 15px !important;
         top: 95px !important;
         flex-direction: column !important;
         background: #ffffff !important;
         width: calc(100% - 30px) !important;
         text-align: center;
-        transition: left 0.3s ease, opacity 0.3s ease !important;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
         padding: 1rem 0 !important;
         gap: 0 !important;
@@ -1581,7 +1580,6 @@ footer {
         overflow-y: auto;
         border-radius: 8px !important;
         border: 1px solid rgba(0, 0, 0, 0.08) !important;
-        opacity: 0 !important;
         list-style: none !important;
     }
 
@@ -1591,8 +1589,7 @@ footer {
     }
 
     .nav-menu.active {
-        left: 15px !important;
-        opacity: 1 !important;
+        display: flex !important;
     }
 
     /* Reduce container padding significantly on mobile */
@@ -1601,12 +1598,21 @@ footer {
     }
 
     .hero {
-        padding: 120px 0 20px !important;
+        padding: 140px 0 20px !important;
         background-position: center bottom;
         background-attachment: scroll !important;
         min-height: auto;
         transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
+    }
+
+    .hero-content h2,
+    .hero-content-centered h2,
+    .hero-content-wide h2,
+    .hero-content h1,
+    .hero-content-centered h1,
+    .hero-content-wide h1 {
+        margin-top: 0 !important;
     }
 
     .hero-container {
