@@ -2326,7 +2326,7 @@ footer {
         url('truck_testing/In-House Fleet Testing_ You May Want to Reconsider. - 1.png');
     background-size: auto 150%;
     background-position: center 140%;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-repeat: no-repeat;
     overflow: hidden;
 }
