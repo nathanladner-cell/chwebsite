@@ -1484,7 +1484,7 @@ footer {
 
     /* Floating white header on mobile */
     .navbar {
-        position: fixed;
+        position: fixed !important;
         top: 15px;
         left: 15px;
         right: 15px;
@@ -1493,7 +1493,7 @@ footer {
         border-radius: 8px;
         border: 1px solid rgba(0, 0, 0, 0.08);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-        z-index: 1000;
+        z-index: 1000 !important;
         transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
         backface-visibility: hidden;
@@ -1503,24 +1503,30 @@ footer {
 
     .nav-container {
         padding: 0 1.5rem;
-        height: 90px;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    /* Much bigger logo on mobile */
+    /* Slightly smaller logo on mobile */
     .logo-img {
-        height: 220px !important;
+        height: 200px !important;
         width: auto !important;
         max-width: none !important;
     }
 
     /* Cool hamburger menu button */
     .hamburger {
-        display: flex;
+        display: flex !important;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100%;
+        height: auto;
         padding: 8px;
         position: relative;
+        z-index: 1002;
+        cursor: pointer;
     }
 
     .hamburger span {
