@@ -119,6 +119,28 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Hero Background Zoom Effect on Scroll (Homepage only)
+const heroSection = document.querySelector('.hero');
+if (heroSection) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const heroHeight = heroSection.offsetHeight;
+        
+        // Only apply effect while hero is visible
+        if (scrolled < heroHeight) {
+            // Calculate zoom: starts at 1, increases to 1.15 as you scroll
+            const zoomFactor = 1 + (scrolled / heroHeight) * 0.15;
+            
+            // Calculate vertical movement (subtle upward shift)
+            const moveY = scrolled * 0.3;
+            
+            // Apply transform
+            heroSection.style.backgroundSize = `${zoomFactor * 100}%`;
+            heroSection.style.backgroundPosition = `center calc(100% - ${moveY}px)`;
+        }
+    });
+}
+
 // Intersection Observer for Fade-in Animations
 const observerOptions = {
     threshold: 0.1,
