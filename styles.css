@@ -1554,7 +1554,7 @@ footer {
     .hero {
         padding: 130px 0 60px !important;
         background-position: center bottom;
-        min-height: 100vh;
+        min-height: auto;
     }
 
     .hero-container {
