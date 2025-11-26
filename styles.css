@@ -1357,7 +1357,7 @@ footer {
     min-height: 600px;
     background: url('glovetest.jpg');
     background-size: cover;
-    background-position: center top;
+    background-position: center 80%;
     background-attachment: fixed;
     overflow: hidden;
 }
@@ -2325,8 +2325,8 @@ footer {
         linear-gradient(125deg, rgba(0, 0, 0, 0.92) 0%, rgba(3, 4, 8, 0.85) 55%, rgba(0, 0, 0, 0.8) 100%),
         url('truck_testing/In-House Fleet Testing_ You May Want to Reconsider. - 1.png');
     background-size: cover;
-    background-position: center bottom;
-    background-attachment: scroll;
+    background-position: center 100%;
+    background-attachment: fixed;
     overflow: hidden;
 }
 
@@ -3538,7 +3538,7 @@ body.dielectric-page .cta-section-dielectric {
         linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(22, 22, 22, 0.83) 100%), 
         url('truck_testing/20250504_121424.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     background-attachment: fixed;
     position: relative;
 }
@@ -3666,7 +3666,7 @@ body.rubber-ppe-page {
 .ppe-hero {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.85) 0%, rgba(45, 45, 45, 0.75) 50%, rgba(26, 26, 26, 0.85) 100%), url('testing/PXL_20240209_202505443.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     background-attachment: fixed;
     padding: 140px 0 80px;
     position: relative;
@@ -3944,7 +3944,7 @@ body.rubber-ppe-page {
 .ppe-testing-process {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), url('testing/image.png');
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     background-attachment: fixed;
     padding: 80px 0;
     color: white;
@@ -4116,7 +4116,7 @@ body.rubber-ppe-page {
 .ppe-cta-section {
     background: linear-gradient(135deg, rgba(45, 45, 45, 0.88) 0%, rgba(26, 26, 26, 0.92) 100%), url('testing/IMG_1414.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     background-attachment: fixed;
     padding: 80px 0;
     position: relative;
@@ -4300,7 +4300,7 @@ body.liveline-page {
         linear-gradient(125deg, rgba(0, 0, 0, 0.90) 0%, rgba(10, 12, 15, 0.82) 55%, rgba(0, 0, 0, 0.85) 100%),
         url('hero.png');
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     background-attachment: fixed;
     overflow: hidden;
 }
@@ -4597,7 +4597,7 @@ body.liveline-page {
     padding: 100px 0;
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), url('hero.png');
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     background-attachment: fixed;
     color: white;
     position: relative;
@@ -4888,7 +4888,7 @@ body.liveline-page {
         linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(22, 22, 22, 0.83) 100%), 
         url('hero.png');
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
@@ -5025,7 +5025,7 @@ body.grounds-page {
         linear-gradient(125deg, rgba(0, 0, 0, 0.90) 0%, rgba(10, 12, 15, 0.82) 55%, rgba(0, 0, 0, 0.85) 100%),
         url('hero.png');
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     background-attachment: fixed;
     overflow: hidden;
 }
@@ -5261,7 +5261,7 @@ body.grounds-page {
     padding: 100px 0;
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), url('hero.png');
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     background-attachment: fixed;
     color: white;
     position: relative;
@@ -5450,7 +5450,7 @@ body.grounds-page {
         linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(22, 22, 22, 0.83) 100%), 
         url('hero.png');
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
