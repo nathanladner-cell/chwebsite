@@ -1564,26 +1564,25 @@ footer {
     }
 
     .nav-menu {
-        position: fixed;
-        left: -200%;
-        top: 95px;
-        flex-direction: column;
-        background: #ffffff;
-        width: calc(100% - 30px);
-        right: 15px;
+        display: flex !important;
+        position: fixed !important;
+        left: -200% !important;
+        top: 95px !important;
+        flex-direction: column !important;
+        background: #ffffff !important;
+        width: calc(100% - 30px) !important;
         text-align: center;
-        transition: left 0.3s ease, opacity 0.3s ease;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-        padding: 1rem 0;
-        gap: 0;
+        transition: left 0.3s ease, opacity 0.3s ease !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+        padding: 1rem 0 !important;
+        gap: 0 !important;
         z-index: 999 !important;
-        max-height: calc(100vh - 115px);
+        max-height: calc(100vh - 115px) !important;
         overflow-y: auto;
-        border-radius: 8px;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        opacity: 0;
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
+        border-radius: 8px !important;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        opacity: 0 !important;
+        list-style: none !important;
     }
 
     .nav-menu li {
@@ -5702,14 +5701,8 @@ body.grounds-page {
         user-select: none;
     }
 
-    /* Optimize navbar for mobile - already handled above with glassmorphism */
+    /* Optimize navbar for mobile - menu settings above */
     
-    .nav-menu {
-        max-height: calc(100vh - 120px);
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
     /* Prevent body scroll when menu is open */
     body.menu-open {
         overflow: hidden;
