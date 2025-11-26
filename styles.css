@@ -1498,7 +1498,7 @@ footer {
 
     /* Bigger logo on mobile */
     .logo-img {
-        height: 90px !important;
+        height: 110px !important;
         width: auto;
     }
 
@@ -1552,7 +1552,9 @@ footer {
     }
 
     .hero {
-        padding: 120px 0 60px !important;
+        padding: 140px 0 80px !important;
+        background-position: center bottom;
+        min-height: 100vh;
     }
 
     .hero-container {
@@ -1580,6 +1582,7 @@ footer {
 
     .hero-content-wide h2 {
         font-size: 2.2rem;
+        margin-top: 2rem;
     }
 
     .hero-content-centered p {
