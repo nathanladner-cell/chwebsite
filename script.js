@@ -2,11 +2,17 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const body = document.body;
+let menuOriginalParent = null;
+let menuNextSibling = null;
 
 console.log('Hamburger:', hamburger);
 console.log('Nav Menu:', navMenu);
 
 if (hamburger && navMenu) {
+    // Store original position
+    menuOriginalParent = navMenu.parentElement;
+    menuNextSibling = navMenu.nextElementSibling;
+    
     hamburger.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -17,10 +23,18 @@ if (hamburger && navMenu) {
         
         console.log('Menu is now:', isActive ? 'open' : 'closed');
         
-        // Prevent body scroll when menu is open
+        // Move menu to body when opening, back to original position when closing
         if (isActive) {
+            // Move menu to body to escape stacking context
+            body.appendChild(navMenu);
             body.style.overflow = 'hidden';
         } else {
+            // Move menu back to original position
+            if (menuNextSibling) {
+                menuOriginalParent.insertBefore(navMenu, menuNextSibling);
+            } else {
+                menuOriginalParent.appendChild(navMenu);
+            }
             body.style.overflow = '';
         }
     });
@@ -32,6 +46,12 @@ if (hamburger && navMenu) {
             !hamburger.contains(e.target)) {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
+            // Move menu back to original position
+            if (menuNextSibling) {
+                menuOriginalParent.insertBefore(navMenu, menuNextSibling);
+            } else {
+                menuOriginalParent.appendChild(navMenu);
+            }
             body.style.overflow = '';
         }
     });
@@ -42,6 +62,12 @@ if (hamburger && navMenu) {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
+            // Move menu back to original position
+            if (menuNextSibling) {
+                menuOriginalParent.insertBefore(navMenu, menuNextSibling);
+            } else {
+                menuOriginalParent.appendChild(navMenu);
+            }
             body.style.overflow = '';
         });
     });
