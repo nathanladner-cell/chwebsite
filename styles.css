@@ -1552,7 +1552,7 @@ footer {
     }
 
     .hero {
-        padding: 130px 0 60px !important;
+        padding: 120px 0 40px !important;
         background-position: center bottom;
         min-height: auto;
     }
@@ -1574,17 +1574,17 @@ footer {
 
     .hero-content h2 {
         font-size: 2.2rem;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 
     .hero-content-centered h2 {
         font-size: 2.2rem;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 
     .hero-content-wide h2 {
         font-size: 2.2rem;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 
     .hero-content-centered p {
