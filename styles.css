@@ -1503,13 +1503,14 @@ footer {
 
     .nav-container {
         padding: 0 1.5rem;
-        height: 70px;
+        height: 90px;
     }
 
-    /* Bigger logo on mobile */
+    /* Much bigger logo on mobile */
     .logo-img {
-        height: 180px !important;
-        width: auto;
+        height: 220px !important;
+        width: auto !important;
+        max-width: none !important;
     }
 
     /* Cool hamburger menu button */
@@ -5723,7 +5724,8 @@ body.grounds-page {
 
     /* Make logos responsive */
     .logo-img {
-        max-width: 150px;
+        max-width: none !important;
+        height: auto;
     }
 
     .compliance-logo-group,
