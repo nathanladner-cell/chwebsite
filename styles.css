@@ -726,7 +726,7 @@ footer {
 
 .compliance-logo-group {
     width: 100%;
-    max-width: 250px;
+    max-width: 150px;
     height: auto;
     filter: brightness(0.9) opacity(0.8);
     transition: all 0.3s ease;
