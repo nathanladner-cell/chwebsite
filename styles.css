@@ -1991,7 +1991,24 @@ footer {
     }
 
     .nav-container {
-        padding: 0 1rem !important;
+        padding: 0 0.75rem !important;
+        height: 60px;
+    }
+    
+    /* Smaller logo on narrow devices */
+    .logo-img {
+        height: 40px !important;
+        max-height: 40px !important;
+    }
+    
+    /* Adjust hamburger size */
+    .hamburger {
+        padding: 8px !important;
+    }
+    
+    .hamburger span {
+        width: 22px !important;
+        height: 2.5px !important;
     }
 
     .container {
@@ -5956,6 +5973,24 @@ body.grounds-page {
     /* Further reduce padding for very small devices */
     .nav-container {
         padding: 0 0.5rem !important;
+        height: 58px;
+    }
+    
+    /* Even smaller logo for very narrow devices */
+    .logo-img {
+        height: 36px !important;
+        max-height: 36px !important;
+    }
+    
+    /* Smaller hamburger for very narrow devices */
+    .hamburger {
+        padding: 6px !important;
+    }
+    
+    .hamburger span {
+        width: 20px !important;
+        height: 2px !important;
+        margin: 2.5px 0 !important;
     }
 
     .container {
