@@ -7,8 +7,11 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Insulated Rubber PPE Testing & Calibration Services</title>
-    <link rel="stylesheet" href="styles.css?v=2.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css?v=3.0" as="style">
+    <link rel="preload" href="header2.svg" as="image">
+    <link rel="stylesheet" href="styles.css?v=3.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 <body>
     <header>
@@ -134,7 +137,7 @@
                         </div>
                     </div>
                     <div class="map-container">
-                        <img src="map.svg" alt="US Service Area Map" class="us-map">
+                        <img src="map.svg" alt="US Service Area Map" class="us-map" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -209,7 +212,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="snake.gif" alt="Copperhead Labs" class="footer-logo">
+                    <img src="snake.gif" alt="Copperhead Labs" class="footer-logo" loading="lazy">
                     <p>Precision testing and calibration for electrical safety equipment.</p>
                 </div>
                 <div class="footer-section">
@@ -224,7 +227,7 @@
                 <div class="footer-section">
                     <h3>Compliance</h3>
                     <div class="compliance-logos">
-                        <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group">
+                        <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group" loading="lazy">
                     </div>
                 </div>
             </div>

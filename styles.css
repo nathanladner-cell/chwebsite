@@ -1787,16 +1787,22 @@ footer {
 }
 
 @media (max-width: 480px) {
+    /* Base typography optimization */
+    html {
+        font-size: 15px;
+    }
+
     .nav-container {
-        padding: 0 0.8rem !important;
+        padding: 0 1rem !important;
     }
 
     .container {
         padding: 0 1rem !important;
     }
 
+    /* Hero sections - all pages */
     .hero {
-        padding: 100px 0 50px !important;
+        padding: 110px 0 30px !important;
     }
 
     .hero-container, .hero-container-centered, .hero-container-wide {
@@ -1806,56 +1812,93 @@ footer {
     .hero-content h2,
     .hero-content-centered h2,
     .hero-content-wide h2 {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
+        line-height: 1.2;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content h1,
+    .hero-content-centered h1,
+    .hero-content-wide h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
     }
 
     .hero-content p,
     .hero-content-centered p,
     .hero-content-wide p {
-        font-size: 0.95rem;
+        font-size: 1rem;
+        line-height: 1.6;
         margin-bottom: 1.5rem;
     }
 
+    .hero-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.5;
+    }
+
     .cta-button {
-        padding: 0.9rem 2rem;
-        font-size: 0.9rem;
+        padding: 0.9rem 1.8rem;
+        font-size: 0.95rem;
     }
 
     /* Sections */
     .services {
-        padding: 40px 0 50px !important;
+        padding: 50px 0 60px !important;
     }
 
     .services h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.2;
     }
 
     .service-column {
-        padding: 1.5rem 1rem;
+        padding: 1.8rem 1.2rem;
     }
 
     .service-header h3 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+        line-height: 1.2;
     }
 
     .service-buttons {
-        gap: 0.8rem;
+        gap: 1rem;
     }
 
     .service-btn {
-        padding: 0.8rem 0.8rem;
-        font-size: 0.85rem;
-        min-height: 56px;
+        padding: 1rem 1rem;
+        font-size: 0.9rem;
+        min-height: 58px;
     }
 
     .btn-icon {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
     }
 
     .btn-text {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+
+    /* All page section titles */
+    section h2 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
+
+    section h3 {
+        font-size: 1.4rem !important;
+        line-height: 1.3;
+    }
+
+    section p {
+        font-size: 1rem !important;
+        line-height: 1.6;
     }
 
     .about-stats {
