@@ -1560,25 +1560,23 @@ footer {
 
     .nav-menu {
         position: fixed;
-        left: -100%;
-        top: 100px;
+        left: -200%;
+        top: 95px;
         flex-direction: column;
         background: #ffffff;
         width: calc(100% - 30px);
-        left: 15px;
         right: 15px;
         text-align: center;
-        transition: all 0.3s ease;
+        transition: left 0.3s ease, opacity 0.3s ease;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
         padding: 1rem 0;
         gap: 0;
         z-index: 999 !important;
-        max-height: calc(100vh - 120px);
+        max-height: calc(100vh - 115px);
         overflow-y: auto;
         border-radius: 8px;
         border: 1px solid rgba(0, 0, 0, 0.08);
         opacity: 0;
-        visibility: hidden;
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
     }
@@ -1591,8 +1589,6 @@ footer {
     .nav-menu.active {
         left: 15px !important;
         opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateY(0) !important;
     }
 
     /* Reduce container padding significantly on mobile */
