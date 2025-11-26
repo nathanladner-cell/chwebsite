@@ -1482,11 +1482,6 @@ footer {
         overflow-x: hidden;
     }
 
-    * {
-        -webkit-transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-    }
-
     /* Floating white header on mobile */
     .navbar {
         position: fixed;
@@ -1498,6 +1493,7 @@ footer {
         border-radius: 8px;
         border: 1px solid rgba(0, 0, 0, 0.08);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        z-index: 1000;
         transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
         backface-visibility: hidden;
