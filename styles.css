@@ -1476,6 +1476,12 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Smooth scrolling optimization */
+    body {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+    }
+
     /* Floating glass header on mobile */
     .navbar {
         position: fixed;
@@ -1489,6 +1495,8 @@ footer {
         border-radius: 8px;
         border: 1px solid rgba(255, 255, 255, 0.3);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05);
+        transform: translateZ(0);
+        will-change: transform;
     }
 
     .nav-container {
@@ -1554,6 +1562,7 @@ footer {
     .hero {
         padding: 120px 0 20px !important;
         background-position: center bottom;
+        background-attachment: scroll !important;
         min-height: auto;
     }
 
