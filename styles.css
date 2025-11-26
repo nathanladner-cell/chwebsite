@@ -1574,15 +1574,17 @@ footer {
 
     .hero-content h2 {
         font-size: 2.2rem;
+        margin-top: 6rem;
     }
 
     .hero-content-centered h2 {
         font-size: 2.2rem;
+        margin-top: 6rem;
     }
 
     .hero-content-wide h2 {
         font-size: 2.2rem;
-        margin-top: 4rem;
+        margin-top: 6rem;
     }
 
     .hero-content-centered p {
