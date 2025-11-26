@@ -1503,7 +1503,7 @@ footer {
 
     .nav-container {
         padding: 0 1.5rem;
-        height: 80px;
+        height: 75px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1511,9 +1511,10 @@ footer {
 
     /* Slightly smaller logo on mobile */
     .logo-img {
-        height: 200px !important;
+        height: 65px !important;
         width: auto !important;
         max-width: none !important;
+        max-height: 65px !important;
     }
 
     /* Cool hamburger menu button */
@@ -5728,10 +5729,11 @@ body.grounds-page {
         text-align: center;
     }
 
-    /* Make logos responsive */
+    /* Make logos responsive but not logo-img */
     .logo-img {
-        max-width: none !important;
-        height: auto;
+        height: 65px !important;
+        max-height: 65px !important;
+        width: auto !important;
     }
 
     .compliance-logo-group,
