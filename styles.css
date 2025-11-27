@@ -1827,6 +1827,7 @@ footer {
     .turnaround {
         min-height: 400px;
         height: 60vh;
+        background-attachment: scroll !important;
     }
 
     .turnaround-content {
