@@ -1515,18 +1515,36 @@ footer {
     width: 80px;
     height: 80px;
     margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, var(--copper) 0%, var(--copper-dark) 100%);
-    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(184, 115, 51, 0.15) 0%, rgba(139, 69, 19, 0.1) 100%);
+    border: 2px solid var(--copper);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: var(--copper);
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.value-icon::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.9) 100%);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    z-index: 0;
+}
+
+.value-icon svg {
+    position: relative;
+    z-index: 1;
 }
 
 .value-card:hover .value-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 5px 20px rgba(184, 115, 51, 0.4);
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 0 30px rgba(184, 115, 51, 0.6),
+                0 0 60px rgba(184, 115, 51, 0.3);
+    border-color: #D4974B;
 }
 
 .value-card h3 {
