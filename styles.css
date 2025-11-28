@@ -1492,13 +1492,14 @@ footer {
 }
 
 .bio-modal-body {
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.95);
     line-height: 1.8;
 }
 
 .bio-modal-body p {
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
+    color: rgba(255,255,255,0.95);
 }
 
 .bio-modal-body p:last-child {
