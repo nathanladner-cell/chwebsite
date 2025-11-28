@@ -5849,7 +5849,7 @@ body.rubber-ppe-page {
 }
 
 .compliance-logo {
-    width: 140px;
+    width: 100px;
     height: auto;
     filter: grayscale(50%);
     transition: all 0.3s ease;

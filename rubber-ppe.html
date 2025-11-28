@@ -290,7 +290,7 @@
         }
 
         .rubber-ppe-page .ppe-standard-badge {
-            display: inline-block;
+            display: block;
             background: #B87333;
             color: white;
             padding: 6px 14px;
@@ -301,6 +301,7 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 0.75rem;
+            text-align: center;
         }
 
         .rubber-ppe-page .ppe-testing-frequency {
@@ -484,6 +485,21 @@
             padding: 0.75rem 1rem;
             margin: 0.75rem 0;
             font-size: 0.95rem;
+        }
+
+        .rubber-ppe-page .ppe-voltage-chart-wrapper {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 4px;
+            border: 2px solid #B87333;
+            overflow-x: auto;
+        }
+
+        .rubber-ppe-page .ppe-voltage-chart-wrapper table {
+            width: 100%;
+            min-width: 500px;
         }
 
         /* Compliance Section - lighter background for visibility */
@@ -733,13 +749,18 @@
                 text-align: center;
             }
 
-            /* Table responsive */
-            .rubber-ppe-page table {
+            /* Voltage chart mobile responsiveness */
+            .rubber-ppe-page .ppe-voltage-chart-wrapper {
+                padding: 1rem;
+                margin: 0 auto 3rem;
+            }
+
+            .rubber-ppe-page .ppe-voltage-chart-wrapper table {
                 font-size: 0.85rem;
             }
 
-            .rubber-ppe-page table th,
-            .rubber-ppe-page table td {
+            .rubber-ppe-page .ppe-voltage-chart-wrapper th,
+            .rubber-ppe-page .ppe-voltage-chart-wrapper td {
                 padding: 0.5rem !important;
             }
         }
@@ -800,15 +821,23 @@
                 font-size: 1rem;
             }
 
-            /* Make table scroll horizontally on very small screens */
-            .rubber-ppe-page div[style*="max-width: 900px"] {
-                overflow-x: auto;
-                max-width: 100% !important;
+            /* Voltage chart for very small screens */
+            .rubber-ppe-page .ppe-voltage-chart-wrapper {
+                padding: 0.75rem;
+                margin: 0 -1rem 3rem;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
             }
 
-            .rubber-ppe-page table {
-                min-width: 500px;
+            .rubber-ppe-page .ppe-voltage-chart-wrapper table {
                 font-size: 0.75rem;
+                min-width: 450px;
+            }
+
+            .rubber-ppe-page .ppe-voltage-chart-wrapper th,
+            .rubber-ppe-page .ppe-voltage-chart-wrapper td {
+                padding: 0.4rem !important;
             }
         }
     </style>
@@ -1000,7 +1029,7 @@
                 <p class="section-subtitle-center" style="margin-top: 0.5rem; font-size: 0.95rem;">Fully compliant with current ASTM D1048, D1050, D120, F496, and OSHA 1910.137</p>
                 <p class="section-subtitle-center" style="margin-top: 0.5rem; margin-bottom: 3rem; font-weight: 700; color: #B87333;">All electrical proof testing performed using DC method only – 1-minute duration (in-service)</p>
                 
-                <div style="max-width: 900px; margin: 0 auto 4rem; background: rgba(0,0,0,0.6); padding: 2rem; border-radius: 4px; border: 2px solid #B87333;">
+                <div class="ppe-voltage-chart-wrapper">
                     <table style="width: 100%; border-collapse: collapse; color: #ffffff; text-align: left;">
                         <thead>
                             <tr style="border-bottom: 2px solid #B87333;">
