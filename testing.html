@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing Services - Copperhead Labs</title>
-    <link rel="preload" href="styles.css?v=5.1" as="style">
-    <link rel="stylesheet" href="styles.css?v=5.1">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles.css?v=6.4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -14,13 +15,14 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <a href="index.html">
-                        <img src="header2.svg" alt="Copperhead Labs Logo" class="logo-img">
+                    <img src="header2.svg" alt="Copperhead Labs Logo" class="logo-img">
                     </a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="testing.html">Testing</a></li>
                     <li><a href="calibration.html">Calibration</a></li>
+                    <li><a href="software.html">Software</a></li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -45,48 +47,56 @@
             <div class="container">
                 <h2>Electrical Safety Testing Solutions</h2>
                 <div class="service-detail-grid">
-                    <div id="dielectric" class="service-detail-card">
-                        <div class="service-detail-icon">
-                            <img src="bucket.png" alt="Dielectric Testing" class="detail-icon-img">
+                    <div id="dielectric" class="service-detail-card service-detail-card--cta">
+                        <div class="service-detail-card-body">
+                            <div class="service-detail-icon">
+                                <img src="bucket.png" alt="Dielectric Testing" class="detail-icon-img">
+                            </div>
+                            <h2>Dielectric Testing & Inspections</h2>
+                            <p class="card-preview">Comprehensive dielectric testing for insulating aerial lifts including bucket trucks and digger derricks, plus ANSI boom inspections and DOT Annual inspections.</p>
                         </div>
-                        <h2>Dielectric Testing & Inspections</h2>
-                        <p class="card-preview">Comprehensive dielectric testing for insulating aerial lifts including bucket trucks and digger derricks, plus ANSI boom inspections and DOT Annual inspections.</p>
                         <a href="dielectric.html" class="expand-btn">
                             <span class="expand-text">Learn More</span>
                             <span class="expand-icon">→</span>
                         </a>
                     </div>
 
-                    <div id="rubber-ppe" class="service-detail-card">
-                        <div class="service-detail-icon">
-                            <img src="glove.png" alt="Rubber PPE Testing" class="detail-icon-img">
+                    <div id="rubber-ppe" class="service-detail-card service-detail-card--cta">
+                        <div class="service-detail-card-body">
+                            <div class="service-detail-icon">
+                                <img src="glove.png" alt="Rubber PPE Testing" class="detail-icon-img">
+                            </div>
+                            <h2>Rubber PPE Testing</h2>
+                            <p class="card-preview">Professional testing services for insulated rubber gloves, sleeves, blankets, and line hose.</p>
                         </div>
-                        <h2>Rubber PPE Testing</h2>
-                        <p class="card-preview">Professional testing services for insulated rubber gloves, sleeves, blankets, and line hose.</p>
                         <a href="rubber-ppe.html" class="expand-btn">
                             <span class="expand-text">Learn More</span>
                             <span class="expand-icon">→</span>
                         </a>
                     </div>
 
-                    <div id="live-line" class="service-detail-card">
-                        <div class="service-detail-icon">
-                            <img src="extendo.png" alt="Live-Line Tool Testing" class="detail-icon-img">
+                    <div id="live-line" class="service-detail-card service-detail-card--cta">
+                        <div class="service-detail-card-body">
+                            <div class="service-detail-icon">
+                                <img src="extendo.png" alt="Live-Line Tool Testing" class="detail-icon-img">
+                            </div>
+                            <h2>Live-Line Tool Testing</h2>
+                            <p class="card-preview">Expert testing of hot sticks, shotgun sticks, and other live-line tools.</p>
                         </div>
-                        <h2>Live-Line Tool Testing</h2>
-                        <p class="card-preview">Expert testing of hot sticks, shotgun sticks, and other live-line tools.</p>
                         <a href="liveline.html" class="expand-btn">
                             <span class="expand-text">Learn More</span>
                             <span class="expand-icon">→</span>
                         </a>
                     </div>
 
-                    <div id="protective-grounds" class="service-detail-card">
-                        <div class="service-detail-icon">
-                            <img src="ground.png" alt="Protective Grounds Testing" class="detail-icon-img">
+                    <div id="protective-grounds" class="service-detail-card service-detail-card--cta">
+                        <div class="service-detail-card-body">
+                            <div class="service-detail-icon">
+                                <img src="ground.png" alt="Protective Grounds Testing" class="detail-icon-img">
+                            </div>
+                            <h2>Protective Grounds Testing</h2>
+                            <p class="card-preview">Comprehensive testing of temporary protective grounding equipment including ground cables, clamps, and assemblies per ASTM F2249 standards.</p>
                         </div>
-                        <h2>Protective Grounds Testing</h2>
-                        <p class="card-preview">Comprehensive testing of temporary protective grounding equipment including ground cables, clamps, and assemblies per ASTM F2249 standards.</p>
                         <a href="protective-grounds.html" class="expand-btn">
                             <span class="expand-text">Learn More</span>
                             <span class="expand-icon">→</span>
@@ -99,129 +109,157 @@
         <section class="mobile-services-section mobile-services-section--testing">
             <div class="container">
                 <div class="mobile-services-content">
-                    <div class="mobile-services-header">
-                        <h2>On-Site & In-Lab Testing</h2>
-                        <div class="header-content-wrapper">
-                            <p class="lead-text-large">Maximum flexibility for your operation.</p>
-                            <p class="lead-text">Whether we come to you or you send equipment to our facility, we deliver the same exceptional service and precision testing. Our mobile units are equipped with laboratory-grade equipment to perform comprehensive testing at your location, minimizing downtime and keeping your fleet operational.</p>
-                        </div>
-                    </div>
-
-                    <div class="testing-comparison-table">
-                        <div class="table-header">
-                            <div class="table-cell header-service">Service</div>
-                            <div class="table-cell header-description">Description</div>
-                            <div class="table-cell header-location">On-Site</div>
-                            <div class="table-cell header-location">In-Lab</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Rubber Gloves & Sleeves</div>
-                            <div class="table-cell cell-description">Testing, Cleaning, & Inspection</div>
-                            <div class="table-cell cell-no">
-                                <span class="availability-badge badge-no">✗</span>
+                    <div class="testing-table-stack testing-table-stack--onsite">
+                        <div class="mobile-services-header">
+                            <div class="header-content-wrapper">
+                                <div class="header-topline">
+                                    <h2>On-Site & In-Lab Testing</h2>
+                                    <p class="lead-text-large">Maximum flexibility for your operation.</p>
+                                </div>
+                                <div class="header-body" id="mobile-testing-description" aria-hidden="false">
+                                    <p class="lead-text">Whether we come to you or you send equipment to our facility, we deliver the same exceptional service and precision testing. Our mobile units are equipped with laboratory-grade equipment to perform comprehensive testing at your location, minimizing downtime and keeping your fleet operational.</p>
+                                </div>
                             </div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
-                            </div>
+                            <button class="header-collapse-toggle" type="button" aria-expanded="false" aria-controls="mobile-testing-description" data-collapsible-toggle>
+                                <span class="collapsible-toggle-label">Show details</span>
+                                <span class="collapsible-toggle-icon">+</span>
+                            </button>
                         </div>
 
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Blankets & Line Hose</div>
-                            <div class="table-cell cell-description">Testing, Cleaning, & Inspection</div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
+                        <div class="testing-comparison-table">
+                            <div class="table-header">
+                                <div class="table-cell header-service">Service</div>
+                                <div class="table-cell header-description">Description</div>
+                                <div class="table-cell header-location">On-Site</div>
+                                <div class="table-cell header-location">In-Lab</div>
                             </div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
-                            </div>
-                        </div>
 
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Hot Sticks (Telescoping)</div>
-                            <div class="table-cell cell-description">Testing, Cleaning, Waxing, & Inspection</div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="glove.png" alt="Rubber PPE icon">
+                                    </span>
+                                    <span class="table-service-text">Rubber Gloves & Sleeves</span>
+                                </div>
+                                <div class="table-cell cell-description">Testing, Cleaning, & Inspection</div>
+                                <div class="table-cell cell-no cell-location cell-location--onsite" data-label="On-Site">
+                                    <span class="availability-badge badge-no">✗</span>
+                                </div>
+                                <div class="table-cell cell-yes cell-location cell-location--inlab" data-label="In-Lab">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
                             </div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
-                            </div>
-                        </div>
 
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Hot Sticks (Shotgun)</div>
-                            <div class="table-cell cell-description">Testing, Cleaning, Waxing, & Inspection</div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="blanket.png" alt="Insulating blanket icon">
+                                    </span>
+                                    <span class="table-service-text">Blankets</span>
+                                </div>
+                                <div class="table-cell cell-description">Testing, Cleaning, & Inspection</div>
+                                <div class="table-cell cell-yes cell-location cell-location--onsite" data-label="On-Site">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
+                                <div class="table-cell cell-yes cell-location cell-location--inlab" data-label="In-Lab">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
                             </div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
-                            </div>
-                        </div>
 
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Insulated Tools</div>
-                            <div class="table-cell cell-description">Testing, Cleaning, Waxing, & Inspection</div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="hose.png" alt="Line hose icon">
+                                    </span>
+                                    <span class="table-service-text">Line Hose</span>
+                                </div>
+                                <div class="table-cell cell-description">Testing, Cleaning, & Inspection</div>
+                                <div class="table-cell cell-yes cell-location cell-location--onsite" data-label="On-Site">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
+                                <div class="table-cell cell-yes cell-location cell-location--inlab" data-label="In-Lab">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
                             </div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
-                            </div>
-                        </div>
 
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Single Ground Cables / MACs</div>
-                            <div class="table-cell cell-description">Testing, Cleaning, & Inspection</div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="extendo.png" alt="Live-line tool icon">
+                                    </span>
+                                    <span class="table-service-text">Live-Line Tools</span>
+                                </div>
+                                <div class="table-cell cell-description">Telescoping, Shotgun & Specialty Tools</div>
+                                <div class="table-cell cell-yes cell-location cell-location--onsite" data-label="On-Site">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
+                                <div class="table-cell cell-yes cell-location cell-location--inlab" data-label="In-Lab">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
                             </div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
-                            </div>
-                        </div>
 
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Ground Clusters</div>
-                            <div class="table-cell cell-description">Testing, Cleaning, & Inspection</div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="ground.png" alt="Grounding icon">
+                                    </span>
+                                    <span class="table-service-text">Ground Cables / MACs / Clusters</span>
+                                </div>
+                                <div class="table-cell cell-description">Testing, Cleaning, & Inspection</div>
+                                <div class="table-cell cell-yes cell-location cell-location--onsite" data-label="On-Site">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
+                                <div class="table-cell cell-yes cell-location cell-location--inlab" data-label="In-Lab">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
                             </div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
-                            </div>
-                        </div>
 
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Bucket Trucks & Digger Derricks</div>
-                            <div class="table-cell cell-description">Dielectric Testing & ANSI Boom Inspection</div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="digger.png" alt="Bucket truck icon">
+                                    </span>
+                                    <span class="table-service-text">Bucket Trucks & Digger Derricks</span>
+                                </div>
+                                <div class="table-cell cell-description">Dielectric Testing & ANSI Boom Inspection</div>
+                                <div class="table-cell cell-yes cell-location cell-location--onsite" data-label="On-Site">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
+                                <div class="table-cell cell-yes cell-location cell-location--inlab" data-label="In-Lab">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
                             </div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
-                            </div>
-                        </div>
 
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Bucket Liners (Single & Double)</div>
-                            <div class="table-cell cell-description">Testing & Inspection</div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="bucket.png" alt="Bucket liner icon">
+                                    </span>
+                                    <span class="table-service-text">Bucket Liners (Single & Double)</span>
+                                </div>
+                                <div class="table-cell cell-description">Testing & Inspection</div>
+                                <div class="table-cell cell-yes cell-location cell-location--onsite" data-label="On-Site">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
+                                <div class="table-cell cell-yes cell-location cell-location--inlab" data-label="In-Lab">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
                             </div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
-                            </div>
-                        </div>
 
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Truck DOT</div>
-                            <div class="table-cell cell-description">Annual Inspection</div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
-                            </div>
-                            <div class="table-cell cell-yes">
-                                <span class="availability-badge badge-yes">✓</span>
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="trailer.png" alt="DOT inspection icon">
+                                    </span>
+                                    <span class="table-service-text">DOT Annual Inspection</span>
+                                </div>
+                                <div class="table-cell cell-description">Comprehensive DOT Compliance</div>
+                                <div class="table-cell cell-yes cell-location cell-location--onsite" data-label="On-Site">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
+                                <div class="table-cell cell-yes cell-location cell-location--inlab" data-label="In-Lab">
+                                    <span class="availability-badge badge-yes">✓</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -236,72 +274,128 @@
         <section class="mobile-services-section mobile-services-section--compliance">
             <div class="container">
                 <div class="mobile-services-content">
-                    <div class="mobile-services-header">
-                        <h2>Compliance & Frequency</h2>
-                        <div class="header-content-wrapper">
-                            <p class="lead-text-large">Stay compliant with industry standards.</p>
-                            <p class="lead-text">All testing services are performed in accordance with relevant industry standards and regulatory requirements. Regular testing and maintenance ensures your equipment remains safe and compliant.</p>
+                    <div class="testing-table-stack testing-table-stack--compliance">
+                        <div class="mobile-services-header">
+                            <div class="header-content-wrapper">
+                                <div class="header-topline">
+                                    <h2>Compliance & Frequency</h2>
+                                    <p class="lead-text-large">Stay compliant with industry standards.</p>
+                                </div>
+                                <div class="header-body" id="compliance-description" aria-hidden="false">
+                                    <p class="lead-text">All testing services are performed in accordance with relevant industry standards and regulatory requirements. Regular testing and maintenance ensures your equipment remains safe and compliant.</p>
+                                </div>
+                            </div>
+                            <button class="header-collapse-toggle" type="button" aria-expanded="false" aria-controls="compliance-description" data-collapsible-toggle>
+                                <span class="collapsible-toggle-label">Show details</span>
+                                <span class="collapsible-toggle-icon">+</span>
+                            </button>
+                        </div>
+
+                        <div class="testing-comparison-table testing-comparison-table--compliance">
+                            <div class="table-header">
+                                <div class="table-cell header-service">Service</div>
+                                <div class="table-cell header-description">Standard</div>
+                                <div class="table-cell header-frequency">Frequency</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="glove.png" alt="Rubber PPE icon">
+                                    </span>
+                                    <span class="table-service-text">Rubber Gloves & Sleeves</span>
+                                </div>
+                                <div class="table-cell cell-description">ASTM F496</div>
+                                <div class="table-cell cell-frequency">Every 6 months</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="blanket.png" alt="Insulating blanket icon">
+                                    </span>
+                                    <span class="table-service-text">Blankets</span>
+                                </div>
+                                <div class="table-cell cell-description">ASTM F479</div>
+                                <div class="table-cell cell-frequency">Every 12 months</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="hose.png" alt="Line hose icon">
+                                    </span>
+                                    <span class="table-service-text">Line Hose</span>
+                                </div>
+                                <div class="table-cell cell-description">ASTM F478</div>
+                                <div class="table-cell cell-frequency">Visual inspection (Testing every 24 months recommended)</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="extendo.png" alt="Live-line tool icon">
+                                    </span>
+                                    <span class="table-service-text">Live-Line Tools</span>
+                                </div>
+                                <div class="table-cell cell-description">ASTM F711 / ASTM F1505</div>
+                                <div class="table-cell cell-frequency">Every 24 months (Annual recommended)</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="ground.png" alt="Grounding icon">
+                                    </span>
+                                    <span class="table-service-text">Ground Cables / MACs / Clusters</span>
+                                </div>
+                                <div class="table-cell cell-description">ASTM F2249</div>
+                                <div class="table-cell cell-frequency">Every 12 months</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="digger.png" alt="Bucket truck icon">
+                                    </span>
+                                    <span class="table-service-text">Bucket Trucks & Digger Derricks</span>
+                                </div>
+                                <div class="table-cell cell-description">ANSI/SIA A92.2</div>
+                                <div class="table-cell cell-frequency">Every 12 months (Dielectric)<br>Every 12 months (ANSI Inspection)</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="bucket.png" alt="Bucket liner icon">
+                                    </span>
+                                    <span class="table-service-text">Bucket Liners (Single & Double)</span>
+                                </div>
+                                <div class="table-cell cell-description">ASTM F968</div>
+                                <div class="table-cell cell-frequency">Every 12 months</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="table-cell cell-service">
+                                    <span class="table-service-icon">
+                                        <img src="trailer.png" alt="DOT inspection icon">
+                                    </span>
+                                    <span class="table-service-text">DOT Annual Inspection</span>
+                                </div>
+                                <div class="table-cell cell-description">DOT FMCSA</div>
+                                <div class="table-cell cell-frequency">Every 12 months</div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="testing-comparison-table">
-                        <div class="table-header">
-                            <div class="table-cell header-service">Service</div>
-                            <div class="table-cell header-description">Standard</div>
-                            <div class="table-cell header-frequency">Frequency</div>
+                    <div class="mobile-services-note collapsible-note">
+                        <button class="note-toggle" type="button" aria-expanded="false" aria-controls="frequency-note-content" data-collapsible-toggle data-label-collapsed="Note" data-label-expanded="Hide note">
+                            <span class="collapsible-toggle-label">Note</span>
+                            <span class="collapsible-toggle-icon">+</span>
+                        </button>
+                        <div class="note-content" id="frequency-note-content" aria-hidden="true">
+                            <p>Frequencies listed are minimum requirements. More frequent testing may be required based on manufacturer recommendations, equipment condition, or specific regulatory requirements in your jurisdiction.</p>
                         </div>
-
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Rubber Gloves & Sleeves</div>
-                            <div class="table-cell cell-description">ASTM F496</div>
-                            <div class="table-cell cell-frequency">Every 6 months</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Blankets</div>
-                            <div class="table-cell cell-description">ASTM F479</div>
-                            <div class="table-cell cell-frequency">Every 12 months</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Line Hose</div>
-                            <div class="table-cell cell-description">ASTM F478</div>
-                            <div class="table-cell cell-frequency">Visual inspection (Testing every 24 months recommended)</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Live-Line Tools</div>
-                            <div class="table-cell cell-description">ASTM F711 / ASTM F1505</div>
-                            <div class="table-cell cell-frequency">Every 24 months (Annual recommended)</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Ground Cables / MACs / Clusters</div>
-                            <div class="table-cell cell-description">ASTM F2249</div>
-                            <div class="table-cell cell-frequency">Every 12 months</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Bucket Trucks & Digger Derricks</div>
-                            <div class="table-cell cell-description">ANSI/SIA A92.2</div>
-                            <div class="table-cell cell-frequency">Every 12 months (Dielectric)<br>Every 12 months (ANSI Inspection)</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div class="table-cell cell-service">Bucket Liners (Single & Double)</div>
-                            <div class="table-cell cell-description">ASTM F968</div>
-                            <div class="table-cell cell-frequency">Every 12 months</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div class="table-cell cell-service">DOT Annual Inspection</div>
-                            <div class="table-cell cell-description">DOT FMCSA</div>
-                            <div class="table-cell cell-frequency">Every 12 months</div>
-                        </div>
-                    </div>
-
-                    <div class="mobile-services-note">
-                        <p><strong>Note:</strong> Frequencies listed are minimum requirements. More frequent testing may be required based on manufacturer recommendations, equipment condition, or specific regulatory requirements in your jurisdiction.</p>
                     </div>
                 </div>
             </div>
@@ -319,30 +413,92 @@
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <img src="snake.gif" alt="Copperhead Labs" class="footer-logo">
-                    <p>Precision testing and calibration for electrical safety equipment.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li>Testing Services</li>
-                        <li>Calibration Services</li>
-                        <li>PPE Testing</li>
-                        <li>Equipment Certification</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Compliance</h3>
-                    <div class="compliance-logos">
-                        <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section footer-brand">
+                        <img src="snake.gif" alt="Copperhead Labs" class="footer-logo">
+                        <p class="footer-tagline">Precision testing and calibration for electrical safety equipment.</p>
+                        <div class="footer-24-7">
+                            <div class="emergency-badge">
+                                <svg class="emergency-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>24/7 EMERGENCY SERVICE</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <ul class="footer-contact-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <a href="tel:8885618771">(888) 561-8771</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <a href="mailto:sales@copperheadlabs.com">sales@copperheadlabs.com</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Decatur, AL | Albany, NY</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Testing Services</h3>
+                        <ul>
+                            <li><a href="dielectric.html">Dielectric Testing</a></li>
+                            <li><a href="rubber-ppe.html">Rubber PPE Testing</a></li>
+                            <li><a href="liveline.html">Live-Line Tool Testing</a></li>
+                            <li><a href="protective-grounds.html">Protective Grounds</a></li>
+                            <li><a href="testing.html">More Services →</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Calibration Services</h3>
+                        <ul>
+                            <li><a href="calibration.html">Process Instrumentation</a></li>
+                            <li><a href="calibration.html">Metering Devices</a></li>
+                            <li><a href="calibration.html">Electrical Test Equipment</a></li>
+                            <li><a href="calibration.html">Gas Detection Devices</a></li>
+                            <li><a href="calibration.html">More Services →</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="software.html">Software</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <h3 style="margin-top: 1.5rem;">Compliance</h3>
+                        <div class="compliance-logos">
+                            <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p style="color: gray;">&copy; 2025 Copperhead Labs. All rights reserved.</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Copperhead Labs. All rights reserved.</p>
+                    <p class="footer-tagline-bottom">NIST-Traceable Calibration | ISO/IEC 17025 Accredited</p>
+                </div>
             </div>
         </div>
     </footer>

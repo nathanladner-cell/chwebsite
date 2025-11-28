@@ -324,3 +324,71 @@ document.addEventListener('keydown', function(e) {
         closeBioModal();
     }
 });
+
+// Toggle Card Expand/Collapse Function
+function toggleCard(button) {
+    const card = button.closest('.collapsible-card');
+    const content = card.querySelector('.card-content');
+    const icon = button.querySelector('.expand-icon');
+    const expandText = button.querySelector('.expand-text');
+    
+    if (card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+        content.style.maxHeight = null;
+        icon.style.transform = 'rotate(0deg)';
+        expandText.textContent = 'Learn More';
+    } else {
+        card.classList.add('expanded');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.style.transform = 'rotate(180deg)';
+        expandText.textContent = 'Show Less';
+    }
+}
+
+// Collapsible intro text controls
+const collapsibleToggles = document.querySelectorAll('[data-collapsible-toggle]');
+
+collapsibleToggles.forEach(toggle => {
+    const targetId = toggle.getAttribute('aria-controls');
+    const target = document.getElementById(targetId);
+    const label = toggle.querySelector('.collapsible-toggle-label');
+
+    if (!target) {
+        toggle.style.display = 'none';
+        return;
+    }
+
+    const collapsedLabel = toggle.getAttribute('data-label-collapsed') || 'Show details';
+    const expandedLabel = toggle.getAttribute('data-label-expanded') || 'Hide details';
+
+    const updateLabel = (expanded) => {
+        if (label) {
+            label.textContent = expanded ? expandedLabel : collapsedLabel;
+        }
+    };
+
+    const needsToggle = target.scrollHeight > target.clientHeight + 4;
+    if (!needsToggle) {
+        toggle.style.display = 'none';
+        target.classList.add('expanded');
+        target.setAttribute('aria-hidden', 'false');
+        return;
+    }
+
+    toggle.style.display = '';
+    target.classList.remove('expanded');
+    target.setAttribute('aria-hidden', 'true');
+
+    toggle.addEventListener('click', () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        const nextState = !isExpanded;
+
+        toggle.setAttribute('aria-expanded', nextState.toString());
+        target.classList.toggle('expanded', nextState);
+        target.setAttribute('aria-hidden', (!nextState).toString());
+        updateLabel(nextState);
+    });
+
+    // Ensure initial state label matches attribute
+    updateLabel(false);
+});

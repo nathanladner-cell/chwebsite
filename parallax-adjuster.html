@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Position Adjuster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4rem;
+        }
+        
+        .logo {
+            height: 50px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a:hover {
+            color: #B87333;
+        }
+        
+        .hero-preview {
+            position: relative;
+            height: 100vh;
+            background-image:
+                linear-gradient(125deg, rgba(0, 0, 0, 0.92) 0%, rgba(3, 4, 8, 0.85) 55%, rgba(0, 0, 0, 0.8) 100%),
+                url('truck_testing/In-House Fleet Testing_ You May Want to Reconsider. - 1.png');
+            background-size: auto 150%;
+            background-position: center 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            z-index: 10;
+            max-width: 1000px;
+            padding: 2rem;
+        }
+        
+        .hero-content h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+        
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 25px;
+            color: white;
+            z-index: 99999;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            border-radius: 10px;
+            min-width: 350px;
+            border: 2px solid #B87333;
+        }
+        
+        .controls h3 {
+            color: #B87333;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .slider-container {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #B87333;
+            font-size: 14px;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            background: #333;
+            border-radius: 5px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #B87333;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #D4974B;
+            transform: scale(1.1);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #B87333;
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+        }
+        
+        .value-display {
+            display: inline-block;
+            background: #B87333;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .info {
+            color: #aaa;
+            font-size: 12px;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+        
+        button {
+            background: #B87333;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+        
+        button:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+        }
+        
+        .code-output {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #4CAF50;
+            border: 1px solid #333;
+            word-break: break-all;
+        }
+        
+        .guide {
+            background: rgba(184, 115, 51, 0.1);
+            border: 1px solid #B87333;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #ccc;
+        }
+        
+        .guide strong {
+            color: #B87333;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="header2.svg" alt="Copperhead Labs" class="logo">
+        <ul class="nav-links">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">TESTING</a></li>
+            <li><a href="#">CALIBRATION</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+    
+    <div class="hero-preview" id="hero">
+        <div class="hero-content">
+            <h1>DIELECTRIC TESTING & INSPECTIONS</h1>
+            <p>Comprehensive testing and inspection services for insulating aerial lifts and utility vehicles</p>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <h3>🎯 Parallax Position Adjuster</h3>
+        
+        <div class="slider-container">
+            <label>Vertical Position</label>
+            <input type="range" id="ySlider" min="-100" max="200" value="100" step="1">
+            <div class="value-display" id="yValue">100%</div>
+        </div>
+        
+        <div class="info">
+            <strong>How it works:</strong><br>
+            • Lower values (0-40%) = More SKY visible (top of image)<br>
+            • Higher values (60-100%) = More TRUCKS visible (bottom of image)<br>
+            • Drag slider to see image move up/down
+        </div>
+        
+        <button onclick="copyCSS()">📋 Copy CSS Value</button>
+        
+        <div class="code-output" id="cssOutput">
+            background-position: center 100%;
+        </div>
+        
+        <div class="guide">
+            <strong>Next Step:</strong> Once you find the perfect position, copy the value and tell me:<br>"Set dielectric hero to X%"<br><br>
+            <strong>Note:</strong> The actual site uses parallax (fixed), but values work the same way!
+        </div>
+    </div>
+
+    <script>
+        const hero = document.getElementById('hero');
+        const ySlider = document.getElementById('ySlider');
+        const yValue = document.getElementById('yValue');
+        const cssOutput = document.getElementById('cssOutput');
+        
+        function updatePosition() {
+            const y = ySlider.value;
+            yValue.textContent = y + '%';
+            cssOutput.textContent = `background-position: center ${y}%;`;
+            hero.style.backgroundPosition = `center ${y}%`;
+            console.log(`Position updated to: center ${y}%`);
+        }
+        
+        ySlider.addEventListener('input', updatePosition);
+        
+        function copyCSS() {
+            const text = cssOutput.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copied!';
+                btn.style.background = '#4CAF50';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#B87333';
+                }, 2000);
+            }).catch(() => {
+                alert('CSS value: ' + text);
+            });
+        }
+        
+        // Initial update
+        updatePosition();
+    </script>
+</body>
+</html>

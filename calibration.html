@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calibration Services - Copperhead Labs</title>
-    <link rel="preload" href="styles.css?v=5.0" as="style">
-    <link rel="stylesheet" href="styles.css?v=5.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles.css?v=6.4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -14,13 +15,14 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <a href="index.html">
-                        <img src="header2.svg" alt="Copperhead Labs Logo" class="logo-img">
+                    <img src="header2.svg" alt="Copperhead Labs Logo" class="logo-img">
                     </a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="testing.html">Testing</a></li>
                     <li><a href="calibration.html">Calibration</a></li>
+                    <li><a href="software.html">Software</a></li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -143,30 +145,92 @@
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <img src="snake.gif" alt="Copperhead Labs" class="footer-logo">
-                    <p>Precision testing and calibration for electrical safety equipment.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li>Testing Services</li>
-                        <li>Calibration Services</li>
-                        <li>PPE Testing</li>
-                        <li>Equipment Certification</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Compliance</h3>
-                    <div class="compliance-logos">
-                        <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section footer-brand">
+                        <img src="snake.gif" alt="Copperhead Labs" class="footer-logo">
+                        <p class="footer-tagline">Precision testing and calibration for electrical safety equipment.</p>
+                        <div class="footer-24-7">
+                            <div class="emergency-badge">
+                                <svg class="emergency-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>24/7 EMERGENCY SERVICE</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <ul class="footer-contact-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <a href="tel:8885618771">(888) 561-8771</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <a href="mailto:sales@copperheadlabs.com">sales@copperheadlabs.com</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Decatur, AL | Albany, NY</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Testing Services</h3>
+                        <ul>
+                            <li><a href="dielectric.html">Dielectric Testing</a></li>
+                            <li><a href="rubber-ppe.html">Rubber PPE Testing</a></li>
+                            <li><a href="liveline.html">Live-Line Tool Testing</a></li>
+                            <li><a href="protective-grounds.html">Protective Grounds</a></li>
+                            <li><a href="testing.html">More Services →</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Calibration Services</h3>
+                        <ul>
+                            <li><a href="calibration.html">Process Instrumentation</a></li>
+                            <li><a href="calibration.html">Metering Devices</a></li>
+                            <li><a href="calibration.html">Electrical Test Equipment</a></li>
+                            <li><a href="calibration.html">Gas Detection Devices</a></li>
+                            <li><a href="calibration.html">More Services →</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="software.html">Software</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <h3 style="margin-top: 1.5rem;">Compliance</h3>
+                        <div class="compliance-logos">
+                            <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p style="color: gray;">&copy; 2025 Copperhead Labs. All rights reserved.</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Copperhead Labs. All rights reserved.</p>
+                    <p class="footer-tagline-bottom">NIST-Traceable Calibration | ISO/IEC 17025 Accredited</p>
+                </div>
             </div>
         </div>
     </footer>

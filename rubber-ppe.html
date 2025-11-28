@@ -5,9 +5,813 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rubber PPE Testing - Copperhead Labs</title>
     <link rel="preload" href="styles.css?v=5.0" as="style">
-    <link rel="stylesheet" href="styles.css?v=5.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles.css?v=5.4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
     <link rel="icon" href="header2.svg" type="image/svg+xml">
+    <style>
+        /* Rubber PPE Page - Dark Masculine Style with Copper Accents */
+        body.rubber-ppe-page {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+
+        .rubber-ppe-page main {
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+        }
+
+        /* Dark hero with image overlay */
+        .rubber-ppe-page .ppe-hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('gloves.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 160px 0 120px;
+            border-bottom: 3px solid #B87333;
+        }
+
+        .rubber-ppe-page .ppe-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(184, 115, 51, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .rubber-ppe-page .ppe-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .rubber-ppe-page .ppe-hero-badge {
+            display: inline-block;
+            background: rgba(184, 115, 51, 0.2);
+            color: #B87333;
+            padding: 8px 24px;
+            border: 2px solid #B87333;
+            border-radius: 2px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .rubber-ppe-page .ppe-hero h1 {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .rubber-ppe-page .ppe-hero-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .rubber-ppe-page .ppe-hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .rubber-ppe-page .ppe-cta-primary,
+        .rubber-ppe-page .btn-ppe-primary {
+            background: #B87333;
+            color: white;
+            padding: 18px 45px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(184, 115, 51, 0.5);
+        }
+
+        .rubber-ppe-page .ppe-cta-primary:hover,
+        .rubber-ppe-page .btn-ppe-primary:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(184, 115, 51, 0.4);
+        }
+
+        .rubber-ppe-page .ppe-cta-secondary,
+        .rubber-ppe-page .btn-ppe-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 45px;
+            border: 2px solid white;
+            border-radius: 2px;
+            text-decoration: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .rubber-ppe-page .ppe-cta-secondary:hover,
+        .rubber-ppe-page .btn-ppe-secondary:hover {
+            background: white;
+            color: #1a1a1a;
+        }
+
+        /* Intro section - dark background */
+        .rubber-ppe-page .ppe-intro-section {
+            background: #0a0a0a;
+            padding: 80px 0;
+        }
+
+        .rubber-ppe-page .ppe-intro-content h2 {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .rubber-ppe-page .ppe-lead {
+            font-size: 1.2rem;
+            color: #cccccc;
+            line-height: 1.8;
+        }
+
+        .rubber-ppe-page .ppe-quick-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .rubber-ppe-page .ppe-fact {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: #1a1a1a;
+            border: 2px solid #2a2a2a;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .rubber-ppe-page .ppe-fact:hover {
+            border-color: #B87333;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(184, 115, 51, 0.2);
+        }
+
+        .rubber-ppe-page .ppe-fact-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .rubber-ppe-page .ppe-fact-content h4 {
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .rubber-ppe-page .ppe-fact-content p {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Equipment Section - alternating dark */
+        .rubber-ppe-page .ppe-equipment-section {
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+            padding: 80px 0;
+        }
+
+        .rubber-ppe-page .section-title-center {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .rubber-ppe-page .ppe-equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .rubber-ppe-page .ppe-equipment-card {
+            background: #0a0a0a;
+            border-radius: 4px;
+            padding: 2rem;
+            border: 2px solid #2a2a2a;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rubber-ppe-page .ppe-equipment-card:hover {
+            border-color: #B87333;
+            box-shadow: 0 12px 35px rgba(184, 115, 51, 0.2);
+            transform: translateY(-6px);
+        }
+
+        .rubber-ppe-page .ppe-equipment-image {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .rubber-ppe-page .ppe-equipment-image img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 12px rgba(184, 115, 51, 0.3));
+            transition: all 0.3s ease;
+        }
+
+        .rubber-ppe-page .ppe-equipment-card.expanded .ppe-equipment-image img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .rubber-ppe-page .ppe-equipment-card h3 {
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .rubber-ppe-page .ppe-equipment-card > p {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .rubber-ppe-page .ppe-equipment-card.expanded > p {
+            max-height: 200px;
+            opacity: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .rubber-ppe-page .ppe-standard-badge {
+            display: inline-block;
+            background: #B87333;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 2px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .rubber-ppe-page .ppe-testing-frequency {
+            background: #1a1a1a;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 0.75rem;
+            border: 1px solid #2a2a2a;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .rubber-ppe-page .ppe-equipment-card.expanded .ppe-testing-frequency {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+
+        .rubber-ppe-page .ppe-testing-frequency strong {
+            color: #B87333;
+            font-family: 'Rajdhani', sans-serif;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .rubber-ppe-page .ppe-testing-frequency ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .rubber-ppe-page .ppe-testing-frequency li {
+            color: #cccccc;
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.85rem;
+        }
+
+        .rubber-ppe-page .ppe-testing-frequency li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #B87333;
+            font-weight: bold;
+        }
+
+        .rubber-ppe-page .ppe-expand-indicator {
+            position: absolute;
+            bottom: 0.75rem;
+            right: 0.75rem;
+            color: #B87333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .rubber-ppe-page .ppe-equipment-card.expanded .ppe-expand-indicator {
+            transform: rotate(180deg);
+        }
+
+        /* Testing Process - dark with image */
+        .rubber-ppe-page .ppe-testing-process {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 26, 26, 0.92) 100%), url('testing/image.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 0;
+            color: white;
+        }
+
+        .rubber-ppe-page .section-subtitle-center {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            margin-top: -1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .rubber-ppe-page .ppe-testing-process .section-title-center {
+            color: white;
+        }
+
+        .rubber-ppe-page .ppe-process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .rubber-ppe-page .ppe-process-item {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 4px;
+            border: 2px solid rgba(184, 115, 51, 0.3);
+            position: relative;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rubber-ppe-page .ppe-process-item:hover {
+            border-color: rgba(184, 115, 51, 0.6);
+            background: rgba(0, 0, 0, 0.75);
+        }
+
+        .rubber-ppe-page .ppe-process-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: #B87333;
+            color: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(184, 115, 51, 0.4);
+        }
+
+        .rubber-ppe-page .ppe-process-content {
+            margin-top: 25px;
+        }
+
+        .rubber-ppe-page .ppe-process-content h3 {
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .rubber-ppe-page .ppe-process-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        .rubber-ppe-page .ppe-process-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0 0 0;
+        }
+
+        .rubber-ppe-page .ppe-process-content li {
+            color: rgba(255, 255, 255, 0.85);
+            padding: 0.4rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .rubber-ppe-page .ppe-process-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #B87333;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .rubber-ppe-page .ppe-process-content strong {
+            color: #B87333;
+            font-weight: 700;
+        }
+
+        .rubber-ppe-page .ppe-process-highlight {
+            background: rgba(184, 115, 51, 0.15);
+            border-left: 3px solid #B87333;
+            padding: 0.75rem 1rem;
+            margin: 0.75rem 0;
+            font-size: 0.95rem;
+        }
+
+        /* Compliance Section - lighter background for visibility */
+        .rubber-ppe-page .ppe-compliance-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .rubber-ppe-page .ppe-compliance-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(184, 115, 51, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .rubber-ppe-page .ppe-compliance-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .rubber-ppe-page .ppe-compliance-text h3 {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .rubber-ppe-page .ppe-compliance-text p {
+            color: #e0e0e0;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .rubber-ppe-page .ppe-compliance-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .rubber-ppe-page .ppe-compliance-list li {
+            color: #e0e0e0;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .rubber-ppe-page .ppe-compliance-list li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            color: #B87333;
+        }
+
+        .rubber-ppe-page .ppe-standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .rubber-ppe-page .ppe-standard-box {
+            background: #2a2a2a;
+            padding: 2rem;
+            border-radius: 4px;
+            border: 2px solid #3a3a3a;
+            transition: all 0.3s ease;
+        }
+
+        .rubber-ppe-page .ppe-standard-box:hover {
+            border-color: #B87333;
+            transform: translateY(-4px);
+            background: #333333;
+        }
+
+        .rubber-ppe-page .ppe-standard-box h4 {
+            color: #B87333;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .rubber-ppe-page .ppe-standard-box p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section - final dark section */
+        .rubber-ppe-page .ppe-cta-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 80px 0;
+        }
+
+        .rubber-ppe-page .ppe-cta-box {
+            background: rgba(26, 26, 26, 0.8);
+            padding: 4rem;
+            border-radius: 4px;
+            text-align: center;
+            border: 2px solid #B87333;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .rubber-ppe-page .ppe-cta-box h2 {
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .rubber-ppe-page .ppe-cta-box p {
+            color: #cccccc;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .rubber-ppe-page .ppe-cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .rubber-ppe-page .ppe-cta-note {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 1024px) {
+            .rubber-ppe-page .ppe-equipment-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .rubber-ppe-page .ppe-process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .rubber-ppe-page .ppe-compliance-wrapper {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .rubber-ppe-page section {
+                padding: 3rem 0;
+            }
+
+            .rubber-ppe-page .ppe-hero {
+                padding: 120px 0 80px;
+                background-attachment: scroll;
+            }
+
+            .rubber-ppe-page .ppe-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .rubber-ppe-page .ppe-hero-description {
+                font-size: 1.1rem;
+            }
+
+            .rubber-ppe-page .ppe-hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .rubber-ppe-page .ppe-hero-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .rubber-ppe-page .section-title-center {
+                font-size: 2rem;
+            }
+
+            .rubber-ppe-page .ppe-intro-content h2 {
+                font-size: 2rem;
+            }
+
+            .rubber-ppe-page .ppe-equipment-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .rubber-ppe-page .ppe-equipment-card {
+                padding: 1.5rem;
+            }
+
+            .rubber-ppe-page .ppe-process-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .rubber-ppe-page .ppe-process-item {
+                padding: 1.5rem;
+                min-height: auto;
+            }
+
+            .rubber-ppe-page .ppe-compliance-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .rubber-ppe-page .ppe-compliance-logos {
+                justify-content: center;
+            }
+
+            .rubber-ppe-page .ppe-standards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rubber-ppe-page .ppe-cta-box {
+                padding: 2rem;
+            }
+
+            .rubber-ppe-page .ppe-cta-box h2 {
+                font-size: 2rem;
+            }
+
+            .rubber-ppe-page .ppe-cta-box p {
+                font-size: 1rem;
+            }
+
+            .rubber-ppe-page .ppe-cta-buttons {
+                flex-direction: column;
+            }
+
+            .rubber-ppe-page .ppe-cta-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Table responsive */
+            .rubber-ppe-page table {
+                font-size: 0.85rem;
+            }
+
+            .rubber-ppe-page table th,
+            .rubber-ppe-page table td {
+                padding: 0.5rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rubber-ppe-page .ppe-hero {
+                padding: 100px 0 60px;
+            }
+
+            .rubber-ppe-page .ppe-hero h1 {
+                font-size: 2rem;
+            }
+
+            .rubber-ppe-page .ppe-hero-badge {
+                font-size: 0.75rem;
+                padding: 6px 16px;
+            }
+
+            .rubber-ppe-page .ppe-hero-description {
+                font-size: 1rem;
+            }
+
+            .rubber-ppe-page .section-title-center {
+                font-size: 1.75rem;
+            }
+
+            .rubber-ppe-page .ppe-intro-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .rubber-ppe-page .ppe-quick-facts {
+                grid-template-columns: 1fr;
+            }
+
+            .rubber-ppe-page .ppe-fact {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .rubber-ppe-page .ppe-equipment-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .rubber-ppe-page .ppe-process-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .rubber-ppe-page .ppe-cta-box h2 {
+                font-size: 1.75rem;
+            }
+
+            .rubber-ppe-page .ppe-cta-primary,
+            .rubber-ppe-page .ppe-cta-secondary,
+            .rubber-ppe-page .btn-ppe-primary,
+            .rubber-ppe-page .btn-ppe-secondary {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+
+            /* Make table scroll horizontally on very small screens */
+            .rubber-ppe-page div[style*="max-width: 900px"] {
+                overflow-x: auto;
+                max-width: 100% !important;
+            }
+
+            .rubber-ppe-page table {
+                min-width: 500px;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
 </head>
 <body class="rubber-ppe-page">
     <header>
@@ -15,13 +819,14 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <a href="index.html">
-                        <img src="header2.svg" alt="Copperhead Labs Logo" class="logo-img">
+                    <img src="header2.svg" alt="Copperhead Labs Logo" class="logo-img">
                     </a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="testing.html">Testing</a></li>
                     <li><a href="calibration.html">Calibration</a></li>
+                    <li><a href="software.html">Software</a></li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -38,7 +843,7 @@
         <section class="ppe-hero">
             <div class="container">
                     <div class="ppe-hero-content">
-                    <div class="ppe-hero-badge">Testing in Compliance with ASTM F496 | F479 | F478</div>
+                    <div class="ppe-hero-badge">Testing in Compliance with ASTM Standards</div>
                     <h1>Rubber PPE Testing Services</h1>
                     <p class="ppe-hero-description">Professional testing and certification for insulated rubber gloves, sleeves, blankets, and line hose. We ensure your protective equipment keeps electrical workers safe.</p>
                     <div class="ppe-hero-buttons">
@@ -57,28 +862,49 @@
                 </div>
                 <div class="ppe-quick-facts">
                     <div class="ppe-fact">
-                        <div class="ppe-fact-icon">🛡️</div>
+                        <div class="ppe-fact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
                         <div class="ppe-fact-content">
-                            <h4>ASTM Certified</h4>
+                            <h4>ASTM Compliance</h4>
                             <p>Full compliance with F496, F479, F478, and F1236 standards</p>
                         </div>
                     </div>
                     <div class="ppe-fact">
-                        <div class="ppe-fact-icon">⚡</div>
+                        <div class="ppe-fact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
                         <div class="ppe-fact-content">
                             <h4>All Voltage Classes</h4>
                             <p>Testing for Class 00 through Class 4 equipment</p>
                         </div>
                     </div>
                     <div class="ppe-fact">
-                        <div class="ppe-fact-icon">📋</div>
+                        <div class="ppe-fact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M9 9h6"/>
+                                <path d="M9 12h6"/>
+                                <path d="M9 15h6"/>
+                            </svg>
+                        </div>
                         <div class="ppe-fact-content">
                             <h4>Complete Documentation</h4>
                             <p>Detailed records and certification labels included</p>
                         </div>
                     </div>
                     <div class="ppe-fact">
-                        <div class="ppe-fact-icon">⏱️</div>
+                        <div class="ppe-fact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
                         <div class="ppe-fact-content">
                             <h4>Fast Turnaround</h4>
                             <p>24-hour service available to minimize downtime</p>
@@ -92,13 +918,13 @@
             <div class="container">
                 <h2 class="section-title-center">Equipment We Test</h2>
                 <div class="ppe-equipment-grid">
-                    <div class="ppe-equipment-card">
+                    <div class="ppe-equipment-card" onclick="this.classList.toggle('expanded')">
                         <div class="ppe-equipment-image">
                             <img src="glove.png" alt="Rubber Gloves">
                         </div>
                         <h3>Insulating Rubber Gloves</h3>
-                        <p>The most critical PPE for electrical work. We test all classes (00-4) using air inflation and high-voltage dielectric testing to detect any defects.</p>
                         <div class="ppe-standard-badge">ASTM F496</div>
+                        <p>The most critical PPE for electrical work. We test all classes (00-4) using air inflation and high-voltage dielectric testing to detect any defects.</p>
                         <div class="ppe-testing-frequency">
                             <strong>Testing Frequency:</strong>
                             <ul>
@@ -107,15 +933,16 @@
                                 <li>After any repairs or modifications</li>
                             </ul>
                         </div>
+                        <div class="ppe-expand-indicator">↓</div>
                     </div>
 
-                    <div class="ppe-equipment-card">
+                    <div class="ppe-equipment-card" onclick="this.classList.toggle('expanded')">
                         <div class="ppe-equipment-image">
                             <img src="sleeve.png" alt="Rubber Sleeves">
                         </div>
                         <h3>Insulating Rubber Sleeves</h3>
-                        <p>Essential for arm and shoulder protection when working near exposed conductors. Visual inspection and dielectric testing verify integrity.</p>
                         <div class="ppe-standard-badge">ASTM F496</div>
+                        <p>Essential for arm and shoulder protection when working near exposed conductors. Visual inspection and dielectric testing verify integrity.</p>
                         <div class="ppe-testing-frequency">
                             <strong>Testing Frequency:</strong>
                             <ul>
@@ -124,15 +951,16 @@
                                 <li>When damage is suspected</li>
                             </ul>
                         </div>
+                        <div class="ppe-expand-indicator">↓</div>
                     </div>
 
-                    <div class="ppe-equipment-card">
+                    <div class="ppe-equipment-card" onclick="this.classList.toggle('expanded')">
                         <div class="ppe-equipment-image">
                             <img src="blanket.png" alt="Rubber Blankets">
                         </div>
                         <h3>Rubber Blankets</h3>
-                        <p>Provide insulating barriers over energized equipment. Our testing ensures blankets maintain their dielectric strength and flexibility.</p>
                         <div class="ppe-standard-badge">ASTM F479</div>
+                        <p>Provide insulating barriers over energized equipment. Our testing ensures blankets maintain their dielectric strength and flexibility.</p>
                         <div class="ppe-testing-frequency">
                             <strong>Testing Frequency:</strong>
                             <ul>
@@ -141,23 +969,25 @@
                                 <li>After suspected damage</li>
                             </ul>
                         </div>
+                        <div class="ppe-expand-indicator">↓</div>
                     </div>
 
-                    <div class="ppe-equipment-card">
+                    <div class="ppe-equipment-card" onclick="this.classList.toggle('expanded')">
                         <div class="ppe-equipment-image">
                             <img src="hose.png" alt="Line Hose">
                         </div>
                         <h3>Line Hose & Covers</h3>
-                        <p>Protect exposed conductors and equipment. Testing verifies insulating properties meet class ratings and maintain protective integrity.</p>
                         <div class="ppe-standard-badge">ASTM F478</div>
+                        <p>Protect exposed conductors and equipment. ASTM F478 requires thorough visual inspections to confirm insulating properties continue to meet class ratings, with dielectric testing offered when additional assurance is desired.</p>
                         <div class="ppe-testing-frequency">
-                            <strong>Testing Frequency:</strong>
+                            <strong>Inspection & Recommendations:</strong>
                             <ul>
-                                <li>Every 12 months</li>
-                                <li>Before first use</li>
-                                <li>After modifications</li>
+                                <li>Visual inspection before each use (ASTM required)</li>
+                                <li>Annual documented inspection recommended for fleet programs</li>
+                                <li>Dielectric testing available after modifications or suspected damage</li>
                             </ul>
                         </div>
+                        <div class="ppe-expand-indicator">↓</div>
                     </div>
                 </div>
             </div>
@@ -165,55 +995,182 @@
 
         <section class="ppe-testing-process">
             <div class="container">
-                <h2 class="section-title-center">How We Test Your PPE</h2>
-                <p class="section-subtitle-center">Every piece of equipment undergoes rigorous multi-stage testing</p>
+                <h2 class="section-title-center">Comprehensive Rubber Goods Testing & Recertification Process</h2>
+                <p class="section-subtitle-center">Gloves • Sleeves • Blankets • Line Hose</p>
+                <p class="section-subtitle-center" style="margin-top: 0.5rem; font-size: 0.95rem;">Fully compliant with current ASTM D1048, D1050, D120, F496, and OSHA 1910.137</p>
+                <p class="section-subtitle-center" style="margin-top: 0.5rem; margin-bottom: 3rem; font-weight: 700; color: #B87333;">All electrical proof testing performed using DC method only – 1-minute duration (in-service)</p>
                 
+                <div style="max-width: 900px; margin: 0 auto 4rem; background: rgba(0,0,0,0.6); padding: 2rem; border-radius: 4px; border: 2px solid #B87333;">
+                    <table style="width: 100%; border-collapse: collapse; color: #ffffff; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #B87333;">
+                                <th style="padding: 1rem; font-family: 'Rajdhani', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Class</th>
+                                <th style="padding: 1rem; font-family: 'Rajdhani', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Proof-Test Voltage (DC)</th>
+                                <th style="padding: 1rem; font-family: 'Rajdhani', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Applies to</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <td style="padding: 0.75rem; font-weight: 700;">00</td>
+                                <td style="padding: 0.75rem; color: #B87333; font-weight: 700;">10,000 V</td>
+                                <td style="padding: 0.75rem;">Gloves only</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <td style="padding: 0.75rem; font-weight: 700;">0</td>
+                                <td style="padding: 0.75rem; color: #B87333; font-weight: 700;">20,000 V</td>
+                                <td style="padding: 0.75rem;">Gloves, Blankets</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <td style="padding: 0.75rem; font-weight: 700;">1</td>
+                                <td style="padding: 0.75rem; color: #B87333; font-weight: 700;">40,000 V</td>
+                                <td style="padding: 0.75rem;">Gloves, Blankets</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <td style="padding: 0.75rem; font-weight: 700;">2</td>
+                                <td style="padding: 0.75rem; color: #B87333; font-weight: 700;">50,000 V</td>
+                                <td style="padding: 0.75rem;">Gloves, Sleeves, Blankets, Line Hose</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <td style="padding: 0.75rem; font-weight: 700;">3</td>
+                                <td style="padding: 0.75rem; color: #B87333; font-weight: 700;">60,000 V</td>
+                                <td style="padding: 0.75rem;">Gloves, Sleeves, Blankets, Line Hose</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem; font-weight: 700;">4</td>
+                                <td style="padding: 0.75rem; color: #B87333; font-weight: 700;">70,000 V</td>
+                                <td style="padding: 0.75rem;">Gloves, Sleeves, Blankets, Line Hose</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <div class="ppe-process-grid">
                     <div class="ppe-process-item">
                         <div class="ppe-process-number">1</div>
                         <div class="ppe-process-content">
-                            <h3>Receiving & Documentation</h3>
-                            <p>Equipment is logged, inspected for obvious damage, and prepared for testing. Customer information and equipment details are recorded.</p>
+                            <h3>Customer Selects Turnaround Time</h3>
+                            <p>Same-Day • 24-Hour • 3–5 Business Days</p>
                         </div>
                     </div>
 
                     <div class="ppe-process-item">
                         <div class="ppe-process-number">2</div>
                         <div class="ppe-process-content">
-                            <h3>Visual Inspection</h3>
-                            <p>Detailed examination per ASTM F1236 for cuts, punctures, embedded objects, ozone cracking, UV damage, and any signs of deterioration.</p>
+                            <h3>Receipt of Rubber Goods</h3>
+                            <p>Shipping, drop-off, or pickup (free within 100-mile radius; modest fee beyond)</p>
                         </div>
                     </div>
 
                     <div class="ppe-process-item">
                         <div class="ppe-process-number">3</div>
                         <div class="ppe-process-content">
-                            <h3>Inflation Testing (Gloves)</h3>
-                            <p>Gloves are inflated to detect microscopic defects invisible to the naked eye. Any leaks or weak spots result in automatic failure.</p>
+                            <h3>Intake & Tagging</h3>
+                            <ul>
+                                <li>Project tag + unique asset ID permanently marked on every item</li>
+                                <li>All details logged into Vault OS</li>
+                            </ul>
                         </div>
                     </div>
 
                     <div class="ppe-process-item">
                         <div class="ppe-process-number">4</div>
                         <div class="ppe-process-content">
-                            <h3>Dielectric Testing</h3>
-                            <p>High-voltage testing verifies insulating properties. Equipment is submerged and subjected to proof test voltage for the specified duration.</p>
+                            <h3>Initial Visual Inspection</h3>
+                            <p>Per applicable ASTM standard</p>
+                            <div class="ppe-process-highlight">Thorough examination for damage specific to each item type</div>
                         </div>
                     </div>
 
                     <div class="ppe-process-item">
                         <div class="ppe-process-number">5</div>
                         <div class="ppe-process-content">
-                            <h3>Pass/Fail Determination</h3>
-                            <p>Results are evaluated against ASTM standards. Passing equipment receives certification; failed items are marked and documented.</p>
+                            <h3>In-Service Washing & Drying</h3>
+                            <p>Performed per ASTM requirements</p>
+                            <ul>
+                                <li>Washed with mild, neutral-pH detergent (no solvents, bleach, or abrasives)</li>
+                                <li>Water ≤ 95 °F (35 °C)</li>
+                                <li>Thoroughly rinsed</li>
+                                <li>Dried in temperature-controlled cabinets (max 120 °F / 49 °C)</li>
+                            </ul>
                         </div>
                     </div>
 
                     <div class="ppe-process-item">
                         <div class="ppe-process-number">6</div>
                         <div class="ppe-process-content">
-                            <h3>Certification & Return</h3>
-                            <p>Passing items are date-stamped and labeled. Complete test records are provided with all returned equipment.</p>
+                            <h3>Post-Cleaning Visual Re-Inspection</h3>
+                            <p>Secondary examination after cleaning to detect any previously hidden defects</p>
+                        </div>
+                    </div>
+
+                    <div class="ppe-process-item">
+                        <div class="ppe-process-number">7</div>
+                        <div class="ppe-process-content">
+                            <h3>Electrical Proof Testing – DC Only</h3>
+                            <p>Each item tested at the DC voltage listed above for its class.</p>
+                            <div class="ppe-process-highlight">Duration: <strong>1 minute</strong>. No breakdown or excessive leakage allowed.</div>
+                        </div>
+                    </div>
+
+                    <div class="ppe-process-item">
+                        <div class="ppe-process-number">8</div>
+                        <div class="ppe-process-content">
+                            <h3>Disposition of Failed Items</h3>
+                            <ul>
+                                <li>Documented "FAILED" in report and Vault OS portal</li>
+                                <li>Marked red "REJECTED – DO NOT USE"</li>
+                                <li>Rendered permanently unusable:
+                                    <ul style="margin-top: 0.5rem;">
+                                        <li>Gloves → thumbs removed</li>
+                                        <li>Sleeves → cut in half</li>
+                                        <li>Blankets → large X cut corner-to-corner or cut into pieces</li>
+                                        <li>Line Hose → cut into ≤ 2 ft sections</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Failed items securely stored for 30 calendar days</strong> for customer inspection/retrieval</li>
+                                <li>After 30 days, destroyed unless customer provides written instructions otherwise</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ppe-process-item">
+                        <div class="ppe-process-number">9</div>
+                        <div class="ppe-process-content">
+                            <h3>Certification & Labeling</h3>
+                            <p>Passing items only</p>
+                            <div class="ppe-process-highlight">Test date stamped + correct color-coded class label + size where applicable</div>
+                        </div>
+                    </div>
+
+                    <div class="ppe-process-item">
+                        <div class="ppe-process-number">10</div>
+                        <div class="ppe-process-content">
+                            <h3>Packaging</h3>
+                            <ul>
+                                <li>Gloves & sleeves: individually sealed bags</li>
+                                <li>Blankets: rolled (never folded) in protective tube or bag</li>
+                                <li>Line hose: packed in box</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ppe-process-item">
+                        <div class="ppe-process-number">11</div>
+                        <div class="ppe-process-content">
+                            <h3>Reporting & Customer Portal</h3>
+                            <div class="ppe-process-highlight">Individual pass/fail report for every asset ID – instantly available in Vault OS</div>
+                        </div>
+                    </div>
+
+                    <div class="ppe-process-item">
+                        <div class="ppe-process-number">12</div>
+                        <div class="ppe-process-content">
+                            <h3>Notification & Return</h3>
+                            <ul>
+                                <li>Customer notified immediately upon completion</li>
+                                <li>Passing items shipped/delivered/picked up</li>
+                                <li>Failed items held 30 days per policy above</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -282,30 +1239,92 @@
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <img src="snake.gif" alt="Copperhead Labs" class="footer-logo">
-                    <p>Precision testing and calibration for electrical safety equipment.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li>Testing Services</li>
-                        <li>Calibration Services</li>
-                        <li>PPE Testing</li>
-                        <li>Equipment Certification</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Compliance</h3>
-                    <div class="compliance-logos">
-                        <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section footer-brand">
+                        <img src="snake.gif" alt="Copperhead Labs" class="footer-logo">
+                        <p class="footer-tagline">Precision testing and calibration for electrical safety equipment.</p>
+                        <div class="footer-24-7">
+                            <div class="emergency-badge">
+                                <svg class="emergency-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>24/7 EMERGENCY SERVICE</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <ul class="footer-contact-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <a href="tel:8885618771">(888) 561-8771</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <a href="mailto:sales@copperheadlabs.com">sales@copperheadlabs.com</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Decatur, AL | Albany, NY</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Testing Services</h3>
+                        <ul>
+                            <li><a href="dielectric.html">Dielectric Testing</a></li>
+                            <li><a href="rubber-ppe.html">Rubber PPE Testing</a></li>
+                            <li><a href="liveline.html">Live-Line Tool Testing</a></li>
+                            <li><a href="protective-grounds.html">Protective Grounds</a></li>
+                            <li><a href="testing.html">More Services →</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Calibration Services</h3>
+                        <ul>
+                            <li><a href="calibration.html">Process Instrumentation</a></li>
+                            <li><a href="calibration.html">Metering Devices</a></li>
+                            <li><a href="calibration.html">Electrical Test Equipment</a></li>
+                            <li><a href="calibration.html">Gas Detection Devices</a></li>
+                            <li><a href="calibration.html">More Services →</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="software.html">Software</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <h3 style="margin-top: 1.5rem;">Compliance</h3>
+                        <div class="compliance-logos">
+                            <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p style="color: gray;">&copy; 2025 Copperhead Labs. All rights reserved.</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Copperhead Labs. All rights reserved.</p>
+                    <p class="footer-tagline-bottom">NIST-Traceable Calibration | ISO/IEC 17025 Accredited</p>
+                </div>
             </div>
         </div>
     </footer>
