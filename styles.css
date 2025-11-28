@@ -1345,6 +1345,12 @@ footer {
     color: rgba(255,255,255,0.7);
     line-height: 1.6;
     font-size: 0.95rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.team-bio:last-child {
+    margin-bottom: 0;
 }
 
 .about-story {
