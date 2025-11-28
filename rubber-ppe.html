@@ -562,6 +562,14 @@
             color: #B87333;
         }
 
+        .rubber-ppe-page .ppe-compliance-logos {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .rubber-ppe-page .ppe-standards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -722,6 +730,12 @@
 
             .rubber-ppe-page .ppe-compliance-logos {
                 justify-content: center;
+                gap: 1.5rem;
+            }
+
+            .rubber-ppe-page .ppe-compliance-logos .compliance-logo {
+                width: 70px;
+                max-width: 70px;
             }
 
             .rubber-ppe-page .ppe-standards-grid {
@@ -823,21 +837,29 @@
 
             /* Voltage chart for very small screens */
             .rubber-ppe-page .ppe-voltage-chart-wrapper {
-                padding: 0.75rem;
-                margin: 0 -1rem 3rem;
-                border-radius: 0;
-                border-left: none;
-                border-right: none;
+                padding: 0.5rem;
+                margin: 0 0 3rem;
+                border-radius: 4px;
             }
 
             .rubber-ppe-page .ppe-voltage-chart-wrapper table {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
                 min-width: 450px;
             }
 
             .rubber-ppe-page .ppe-voltage-chart-wrapper th,
             .rubber-ppe-page .ppe-voltage-chart-wrapper td {
-                padding: 0.4rem !important;
+                padding: 0.35rem !important;
+            }
+
+            /* Compliance logos extra small */
+            .rubber-ppe-page .ppe-compliance-logos {
+                gap: 1rem;
+            }
+
+            .rubber-ppe-page .ppe-compliance-logos .compliance-logo {
+                width: 60px;
+                max-width: 60px;
             }
         }
     </style>
