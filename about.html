@@ -59,10 +59,14 @@
                         <div class="team-member-info">
                             <h3>Nathan Ladner</h3>
                             <p class="team-role">Founder & Co-Owner</p>
-                            <p class="team-bio">Nathan Ladner began his career as a NETA electrical testing technician, testing, commissioning, and maintaining medium- and high-voltage systems nationwide. He then advanced into precision calibration and dielectric testing, serving as a calibration technician and acquiring extensive hands-on technical experience in torque tools, pressure and vacuum gauges, dimensional instruments, multimeters, and dielectric testing of rubber insulating gloves, sleeves, blankets, and live-line tools.</p>
-                            <p class="team-bio">For four consecutive years he served as Director of Calibration Services for one of the Southeast's fastest-growing laboratories, doubling revenue or more each year while leading every aspect of the business—technical, sales, financial, and operational.</p>
-                            <p class="team-bio">For the last two years he served as Director for a leading PPE manufacturer, where he designed and developed next-generation products and pioneered industry-first plasma surface modification and coating technologies that dramatically extend the service life of rubber insulating goods without compromising electrical performance or worker safety.</p>
-                            <p class="team-bio">Today, as Co-Owner & Founder of Copperhead Labs, Nathan combines field-proven technical expertise, rare design-level understanding of rubber PPE performance and longevity, proven leadership, and a demonstrated ability to rapidly scale technical businesses.</p>
+                            <p class="team-bio-preview">Nathan Ladner began his career as a NETA electrical testing technician, testing, commissioning, and maintaining medium- and high-voltage systems nationwide. He then advanced into precision calibration and dielectric testing...</p>
+                            <button class="read-more-btn" data-member="nathan">Read Full Bio</button>
+                            <div class="team-bio-full" id="bio-nathan">
+                                <p>Nathan Ladner began his career as a NETA electrical testing technician, testing, commissioning, and maintaining medium- and high-voltage systems nationwide. He then advanced into precision calibration and dielectric testing, serving as a calibration technician and acquiring extensive hands-on technical experience in torque tools, pressure and vacuum gauges, dimensional instruments, multimeters, and dielectric testing of rubber insulating gloves, sleeves, blankets, and live-line tools.</p>
+                                <p>For four consecutive years he served as Director of Calibration Services for one of the Southeast's fastest-growing laboratories, doubling revenue or more each year while leading every aspect of the business—technical, sales, financial, and operational.</p>
+                                <p>For the last two years he served as Director for a leading PPE manufacturer, where he designed and developed next-generation products and pioneered industry-first plasma surface modification and coating technologies that dramatically extend the service life of rubber insulating goods without compromising electrical performance or worker safety.</p>
+                                <p>Today, as Co-Owner & Founder of Copperhead Labs, Nathan combines field-proven technical expertise, rare design-level understanding of rubber PPE performance and longevity, proven leadership, and a demonstrated ability to rapidly scale technical businesses.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -78,7 +82,11 @@
                         <div class="team-member-info">
                             <h3>Kirk Crupi</h3>
                             <p class="team-role">Founder & Co-Owner</p>
-                            <p class="team-bio">Brief description about their background, expertise, and role at Copperhead Labs.</p>
+                            <p class="team-bio-preview">Brief description about Kirk's background, expertise, and role at Copperhead Labs...</p>
+                            <button class="read-more-btn" data-member="kirk">Read Full Bio</button>
+                            <div class="team-bio-full" id="bio-kirk">
+                                <p>Brief description about Kirk's background, expertise, and role at Copperhead Labs.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -94,12 +102,29 @@
                         <div class="team-member-info">
                             <h3>Name</h3>
                             <p class="team-role">Administrator</p>
-                            <p class="team-bio">Brief description about their background, expertise, and role at Copperhead Labs.</p>
+                            <p class="team-bio-preview">Brief description about their background, expertise, and role at Copperhead Labs...</p>
+                            <button class="read-more-btn" data-member="admin">Read Full Bio</button>
+                            <div class="team-bio-full" id="bio-admin">
+                                <p>Brief description about their background, expertise, and role at Copperhead Labs.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Bio Modal -->
+        <div class="bio-modal" id="bioModal">
+            <div class="bio-modal-overlay"></div>
+            <div class="bio-modal-content">
+                <button class="bio-modal-close">&times;</button>
+                <div class="bio-modal-header">
+                    <h2 id="modalName"></h2>
+                    <p class="modal-role" id="modalRole"></p>
+                </div>
+                <div class="bio-modal-body" id="modalBio"></div>
+            </div>
+        </div>
 
         <section class="about-story">
             <div class="container">

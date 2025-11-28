@@ -274,3 +274,53 @@ const statsObserver = new IntersectionObserver((entries) => {
 if (aboutSection) {
     statsObserver.observe(aboutSection);
 }
+
+// Team Bio Modal Functionality
+const bioModal = document.getElementById('bioModal');
+const readMoreBtns = document.querySelectorAll('.read-more-btn');
+const modalClose = document.querySelector('.bio-modal-close');
+const modalOverlay = document.querySelector('.bio-modal-overlay');
+
+if (readMoreBtns.length > 0) {
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const memberId = this.getAttribute('data-member');
+            const memberCard = this.closest('.team-member');
+            const memberName = memberCard.querySelector('h3').textContent;
+            const memberRole = memberCard.querySelector('.team-role').textContent;
+            const memberBio = document.getElementById(`bio-${memberId}`).innerHTML;
+            
+            // Set modal content
+            document.getElementById('modalName').textContent = memberName;
+            document.getElementById('modalRole').textContent = memberRole;
+            document.getElementById('modalBio').innerHTML = memberBio;
+            
+            // Show modal
+            bioModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+}
+
+// Close modal functions
+function closeBioModal() {
+    if (bioModal) {
+        bioModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+if (modalClose) {
+    modalClose.addEventListener('click', closeBioModal);
+}
+
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', closeBioModal);
+}
+
+// Close modal with ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && bioModal && bioModal.classList.contains('active')) {
+        closeBioModal();
+    }
+});
