@@ -108,26 +108,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Navbar Background Change on Scroll
-window.addEventListener('scroll', () => {
+function handleNavbarScroll() {
     const navbar = document.querySelector('.navbar');
     const isMobile = window.innerWidth <= 768;
     
     if (isMobile) {
         // On mobile, maintain the glass effect from CSS
-        // Remove inline styles to let CSS handle it
-        navbar.style.background = '';
-        navbar.style.backdropFilter = '';
+        // Remove any inline styles that might have been applied
+        navbar.style.removeProperty('background');
+        navbar.style.removeProperty('backdrop-filter');
+        navbar.style.removeProperty('-webkit-backdrop-filter');
     } else {
         // On desktop, apply scroll-based background change
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(255, 255, 255, 0.95)';
             navbar.style.backdropFilter = 'blur(10px)';
+            navbar.style.webkitBackdropFilter = 'blur(10px)';
         } else {
             navbar.style.background = 'white';
             navbar.style.backdropFilter = 'none';
+            navbar.style.webkitBackdropFilter = 'none';
         }
     }
-});
+}
+
+// Run on scroll
+window.addEventListener('scroll', handleNavbarScroll);
+
+// Run on resize to handle orientation changes
+window.addEventListener('resize', handleNavbarScroll);
+
+// Run on load to ensure correct initial state
+window.addEventListener('load', handleNavbarScroll);
+
+// Also run immediately
+handleNavbarScroll();
 
 // Hero Background Zoom Effect on Scroll (Homepage only)
 const heroSection = document.querySelector('.hero');
