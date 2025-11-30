@@ -108,16 +108,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Navbar Background Change on Scroll
+let lastWindowWidth = window.innerWidth;
+
+function isMobileDevice() {
+    // More robust mobile detection for Android and iOS
+    return window.innerWidth <= 768 || 
+           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 function handleNavbarScroll() {
     const navbar = document.querySelector('.navbar');
-    const isMobile = window.innerWidth <= 768;
+    if (!navbar) return;
+    
+    const isMobile = isMobileDevice();
     
     if (isMobile) {
-        // On mobile, maintain the glass effect from CSS
-        // Remove any inline styles that might have been applied
-        navbar.style.removeProperty('background');
-        navbar.style.removeProperty('backdrop-filter');
-        navbar.style.removeProperty('-webkit-backdrop-filter');
+        // On mobile, completely remove any inline styles that might override CSS
+        navbar.removeAttribute('style');
     } else {
         // On desktop, apply scroll-based background change
         if (window.scrollY > 50) {
@@ -132,17 +139,64 @@ function handleNavbarScroll() {
     }
 }
 
-// Run on scroll
-window.addEventListener('scroll', handleNavbarScroll);
+// Watch for inline style changes on mobile and remove them
+function setupMobileStyleProtection() {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar || !isMobileDevice()) return;
+    
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                if (isMobileDevice() && navbar.hasAttribute('style')) {
+                    // Remove inline styles on mobile
+                    navbar.removeAttribute('style');
+                }
+            }
+        });
+    });
+    
+    observer.observe(navbar, { 
+        attributes: true, 
+        attributeFilter: ['style'] 
+    });
+}
 
-// Run on resize to handle orientation changes
-window.addEventListener('resize', handleNavbarScroll);
+// Throttle scroll events for better performance
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (!scrollTimeout) {
+        scrollTimeout = setTimeout(() => {
+            handleNavbarScroll();
+            scrollTimeout = null;
+        }, 10);
+    }
+}, { passive: true });
 
-// Run on load to ensure correct initial state
-window.addEventListener('load', handleNavbarScroll);
+// Handle window resize
+window.addEventListener('resize', () => {
+    const currentWidth = window.innerWidth;
+    if (Math.abs(currentWidth - lastWindowWidth) > 50) {
+        lastWindowWidth = currentWidth;
+        handleNavbarScroll();
+    }
+});
 
-// Also run immediately
-handleNavbarScroll();
+// Run on load
+window.addEventListener('load', () => {
+    handleNavbarScroll();
+    setupMobileStyleProtection();
+});
+
+// Run when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        handleNavbarScroll();
+        setupMobileStyleProtection();
+    });
+} else {
+    handleNavbarScroll();
+    setupMobileStyleProtection();
+}
 
 // Hero Background Zoom Effect on Scroll (Homepage only)
 const heroSection = document.querySelector('.hero');
@@ -417,3 +471,125 @@ collapsibleToggles.forEach(toggle => {
     // Ensure initial state label matches attribute
     updateLabel(false);
 });
+
+// ===================================
+// IMAGE OPTIMIZATION & LAZY LOADING
+// ===================================
+
+/**
+ * Optimized image loading to improve site performance
+ * - Implements native lazy loading for non-critical images
+ * - Uses Intersection Observer for progressive loading
+ * - Handles decode errors gracefully
+ */
+
+// Initialize lazy loading for all images
+function initImageOptimization() {
+    // Select all images that should be lazy loaded
+    const lazyImages = document.querySelectorAll('img:not([loading="eager"]):not([data-no-lazy])');
+    
+    // Add loading="lazy" attribute to non-critical images
+    lazyImages.forEach(img => {
+        // Skip if already has loading attribute
+        if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+        
+        // Add decoding hint for better performance
+        if (!img.hasAttribute('decoding')) {
+            img.setAttribute('decoding', 'async');
+        }
+    });
+
+    // Use Intersection Observer for additional optimization
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    
+                    // Add fade-in animation
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.3s ease-in';
+                    
+                    // Preload the image
+                    if (img.dataset.src && !img.src) {
+                        img.src = img.dataset.src;
+                    }
+                    
+                    // Show image when loaded
+                    if (img.complete) {
+                        img.style.opacity = '1';
+                    } else {
+                        img.addEventListener('load', () => {
+                            img.style.opacity = '1';
+                        }, { once: true });
+                    }
+                    
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px', // Start loading 50px before entering viewport
+            threshold: 0.01
+        });
+
+        // Observe images with data-src attribute (for more aggressive lazy loading)
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+}
+
+// Preload critical images for better perceived performance
+function preloadCriticalImages() {
+    const criticalImages = [
+        'logos/header2.svg',
+        'hero.png',
+        'fleet-hero.png'
+    ];
+    
+    // Only preload if not already in document head
+    criticalImages.forEach(src => {
+        const existingPreload = document.querySelector(`link[rel="preload"][href*="${src}"]`);
+        if (!existingPreload) {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = src;
+            document.head.appendChild(link);
+        }
+    });
+}
+
+// Image error handling - fallback to placeholder or retry
+function handleImageError(img) {
+    if (!img.dataset.errorHandled) {
+        img.dataset.errorHandled = 'true';
+        
+        // Try reloading once
+        const originalSrc = img.src;
+        img.src = '';
+        setTimeout(() => {
+            img.src = originalSrc;
+        }, 100);
+    }
+}
+
+// Add error handlers to all images
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', () => handleImageError(img), { once: true });
+    });
+});
+
+// Initialize image optimization when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        initImageOptimization();
+        preloadCriticalImages();
+    });
+} else {
+    initImageOptimization();
+    preloadCriticalImages();
+}

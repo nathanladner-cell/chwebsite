@@ -19,7 +19,8 @@
     <meta name="twitter:image" content="logos/chlink.png">
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css?v=5.6" as="style">
-    <link rel="preload" href="header2.svg" as="image">
+    <link rel="preload" href="logos/header2.svg" as="image">
+    <link rel="preload" href="hero.png" as="image">
     <link rel="stylesheet" href="styles.css?v=5.6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -207,7 +208,7 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <a href="index.html">
-                    <img src="logos/header2.svg" alt="Copperhead Labs Logo" class="logo-img">
+                    <img src="logos/header2.svg" alt="Copperhead Labs Logo" class="logo-img" loading="eager" decoding="async" width="200" height="40" fetchpriority="high">
                     </a>
                 </div>
                 <ul class="nav-menu">
@@ -248,22 +249,22 @@
                         </div>
                         <div class="service-buttons">
                             <a href="dielectric.html" class="service-btn" data-service="dielectric">
-                                <img src="icons/bucket.png" alt="Dielectric Testing" class="btn-icon">
+                                <img src="icons/bucket.png" alt="Dielectric Testing" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
                                 <span class="btn-text">Dielectric Testing & Inspections</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="rubber-ppe.html" class="service-btn" data-service="rubber-ppe">
-                                <img src="icons/glove.png" alt="Rubber PPE Testing" class="btn-icon">
+                                <img src="icons/glove.png" alt="Rubber PPE Testing" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
                                 <span class="btn-text">Rubber PPE Testing</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="liveline.html" class="service-btn" data-service="live-line">
-                                <img src="icons/extendo.png" alt="Live-Line Tool Testing" class="btn-icon">
+                                <img src="icons/extendo.png" alt="Live-Line Tool Testing" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
                                 <span class="btn-text">Live-Line Tool Testing</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="protective-grounds.html" class="service-btn" data-service="protective-grounds">
-                                <img src="icons/ground.png" alt="Protective Grounds Testing" class="btn-icon">
+                                <img src="icons/ground.png" alt="Protective Grounds Testing" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
                                 <span class="btn-text">Protective Grounds Testing</span>
                                 <span class="btn-arrow">→</span>
                             </a>
@@ -276,22 +277,22 @@
                         </div>
                         <div class="service-buttons">
                             <a href="pressure-calibration.html" class="service-btn">
-                                <img src="icons/pressure.png" alt="Pressure Calibration" class="btn-icon">
+                                <img src="icons/pressure.png" alt="Pressure Calibration" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
                                 <span class="btn-text">Pressure Calibration</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="temperature-calibration.html" class="service-btn">
-                                <img src="icons/thermo.png" alt="Temperature Calibration" class="btn-icon">
+                                <img src="icons/thermo.png" alt="Temperature Calibration" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
                                 <span class="btn-text">Temperature Calibration</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="electrical-calibration.html" class="service-btn">
-                                <img src="icons/multimeter.png" alt="Electrical Calibration" class="btn-icon">
+                                <img src="icons/multimeter.png" alt="Electrical Calibration" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
                                 <span class="btn-text">Electrical Calibration</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="flow-calibration.html" class="service-btn">
-                                <img src="icons/instrument.png" alt="Flow Calibration" class="btn-icon">
+                                <img src="icons/instrument.png" alt="Flow Calibration" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
                                 <span class="btn-text">Flow Calibration</span>
                                 <span class="btn-arrow">→</span>
                             </a>
@@ -410,7 +411,7 @@
 
                     <div class="why-card">
                         <div class="why-icon">
-                            <img src="icons/cybertruck.svg" alt="Mobile Testing Fleet" style="width: 50px; height: 50px; filter: brightness(0) saturate(100%) invert(46%) sepia(41%) saturate(721%) hue-rotate(347deg) brightness(96%) contrast(85%);">
+                            <img src="icons/cybertruck.svg" alt="Mobile Testing Fleet" style="width: 50px; height: 50px; filter: brightness(0) saturate(100%) invert(46%) sepia(41%) saturate(721%) hue-rotate(347deg) brightness(96%) contrast(85%);" loading="lazy" decoding="async" width="50" height="50">
                         </div>
                         <h3>MOBILE TESTING FLEET</h3>
                         <p>Fully-equipped mobile labs bring testing to your location. Large fleet operations and remote sites—no problem.</p>
@@ -486,7 +487,7 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-section footer-brand">
-                        <img src="logos/snake.gif" alt="Copperhead Labs" class="footer-logo" loading="lazy">
+                        <img src="logos/snake.gif" alt="Copperhead Labs" class="footer-logo" loading="lazy" decoding="async" width="120" height="120">
                         <p class="footer-tagline">Precision testing and calibration for electrical safety equipment.</p>
                         <div class="footer-24-7">
                             <div class="emergency-badge">
@@ -556,7 +557,7 @@
                         </ul>
                         <h3 style="margin-top: 1.5rem;">Compliance</h3>
                         <div class="compliance-logos">
-                            <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group" loading="lazy">
+                            <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group" loading="lazy" decoding="async" width="400" height="60">
                         </div>
                     </div>
                 </div>
@@ -574,6 +575,6 @@
 
     <script src="mapdata.js?v=2.1"></script>
     <script src="usmap.js?v=2.1"></script>
-    <script src="script.js?v=2.0"></script>
+    <script src="script.js?v=2.1"></script>
 </body>
 </html>

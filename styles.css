@@ -17,6 +17,46 @@ body {
     font-weight: 400;
 }
 
+/* Image Optimization Styles */
+img {
+    /* Prevent layout shift during load */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    
+    /* Smooth loading transition */
+    transition: opacity 0.3s ease-in;
+}
+
+/* Image loading states */
+img[loading="lazy"] {
+    /* Reserve space to prevent layout shift */
+    min-height: 1px;
+}
+
+/* Fade-in effect for lazy loaded images */
+img[loading="lazy"]:not([src]) {
+    opacity: 0;
+}
+
+/* Ensure eager-loading images don't flash */
+img[loading="eager"] {
+    opacity: 1;
+}
+
+/* Better rendering for scaled images */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Override for photos to maintain quality */
+img[src*=".jpg"],
+img[src*=".jpeg"],
+img[src*=".png"] {
+    image-rendering: auto;
+}
+
 /* Color Variables */
 :root {
     --copper: #B87333;
