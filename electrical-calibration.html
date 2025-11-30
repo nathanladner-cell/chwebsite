@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanical Device Calibration Services - Copperhead Labs</title>
+    <title>Electrical Calibration Services - Copperhead Labs</title>
     <link rel="preload" href="styles.css?v=5.0" as="style">
     <link rel="stylesheet" href="styles.css?v=5.4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,28 +11,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
     <link rel="icon" href="logos/copperhead.svg" type="image/svg+xml">
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Mechanical Device Calibration Services - Copperhead Labs">
-    <meta property="og:description" content="NIST-traceable calibration for torque devices, load cells, force gauges, micrometers, calipers, feeler gauges, and gauge blocks. ISO compliant testing.">
+    <meta property="og:title" content="Electrical Calibration Services - Copperhead Labs">
+    <meta property="og:description" content="NIST-traceable calibration for electrical test equipment, meters, oscilloscopes, multimeters, meggers, hipots, and more.">
     <meta property="og:image" content="logos/chlink.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="logos/chlink.png">
     <style>
-        /* Torque Calibration Page - Dark Masculine Style with Copper Accents */
-        body.torque-page {
+        /* Electrical Calibration Page - Dark Masculine Style with Copper Accents */
+        body.electrical-page {
             background-color: #0a0a0a;
             color: #e0e0e0;
         }
 
-        .torque-page main {
+        .electrical-page main {
             background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
         }
 
         /* Dark hero with overlay */
-        .torque-page .torque-hero {
+        .electrical-page .electrical-hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('testing/PXL_20250811_171429085.jpg');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('calibration/AirBrush_20230220123528.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -40,7 +40,7 @@
             border-bottom: 3px solid #B87333;
         }
 
-        .torque-page .torque-hero::before {
+        .electrical-page .electrical-hero::before {
             content: '';
             position: absolute;
             inset: 0;
@@ -48,7 +48,7 @@
             pointer-events: none;
         }
 
-        .torque-page .hero-content-torque {
+        .electrical-page .hero-content-electrical {
             position: relative;
             z-index: 2;
             text-align: center;
@@ -56,7 +56,7 @@
             margin: 0 auto;
         }
 
-        .torque-page .torque-hero-badge {
+        .electrical-page .electrical-hero-badge {
             display: inline-block;
             background: rgba(184, 115, 51, 0.2);
             color: #B87333;
@@ -71,7 +71,7 @@
             margin-bottom: 2rem;
         }
 
-        .torque-page .torque-hero h1 {
+        .electrical-page .electrical-hero h1 {
             color: #ffffff;
             font-family: 'Orbitron', sans-serif;
             font-size: 3.5rem;
@@ -82,21 +82,21 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
-        .torque-page .hero-subtitle {
+        .electrical-page .hero-subtitle {
             color: rgba(255, 255, 255, 0.9);
             font-size: 1.25rem;
             line-height: 1.8;
             margin-bottom: 2.5rem;
         }
 
-        .torque-page .hero-buttons {
+        .electrical-page .hero-buttons {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .torque-page .cta-button-primary {
+        .electrical-page .cta-button-primary {
             background: #B87333;
             color: white;
             padding: 18px 45px;
@@ -112,13 +112,13 @@
             box-shadow: 0 4px 15px rgba(184, 115, 51, 0.5);
         }
 
-        .torque-page .cta-button-primary:hover {
+        .electrical-page .cta-button-primary:hover {
             background: #8B4513;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(184, 115, 51, 0.4);
         }
 
-        .torque-page .cta-button-secondary {
+        .electrical-page .cta-button-secondary {
             background: transparent;
             color: white;
             padding: 18px 45px;
@@ -133,18 +133,18 @@
             letter-spacing: 2px;
         }
 
-        .torque-page .cta-button-secondary:hover {
+        .electrical-page .cta-button-secondary:hover {
             background: white;
             color: #1a1a1a;
         }
 
         /* Intro section */
-        .torque-page .torque-intro {
+        .electrical-page .electrical-intro {
             background: #0a0a0a;
             padding: 80px 0;
         }
 
-        .torque-page .intro-content h2 {
+        .electrical-page .intro-content h2 {
             color: #ffffff;
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
@@ -155,7 +155,7 @@
             text-align: center;
         }
 
-        .torque-page .intro-text {
+        .electrical-page .intro-text {
             font-size: 1.2rem;
             color: #cccccc;
             line-height: 1.8;
@@ -166,14 +166,14 @@
             text-align: center;
         }
 
-        .torque-page .stats-grid {
+        .electrical-page .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .torque-page .stat-box {
+        .electrical-page .stat-box {
             background: #1a1a1a;
             border: 2px solid #2a2a2a;
             border-radius: 4px;
@@ -182,13 +182,13 @@
             transition: all 0.3s ease;
         }
 
-        .torque-page .stat-box:hover {
+        .electrical-page .stat-box:hover {
             border-color: #B87333;
             transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(184, 115, 51, 0.2);
         }
 
-        .torque-page .stat-value {
+        .electrical-page .stat-value {
             color: #B87333;
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
@@ -196,7 +196,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .torque-page .stat-label {
+        .electrical-page .stat-label {
             color: #ffffff;
             font-family: 'Rajdhani', sans-serif;
             font-size: 0.95rem;
@@ -206,12 +206,12 @@
         }
 
         /* Equipment Section */
-        .torque-page .equipment-section {
+        .electrical-page .equipment-section {
             background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
             padding: 80px 0;
         }
 
-        .torque-page .section-title-center {
+        .electrical-page .section-title-center {
             text-align: center;
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
@@ -222,21 +222,21 @@
             letter-spacing: 2px;
         }
 
-        .torque-page .section-subtitle {
+        .electrical-page .section-subtitle {
             color: rgba(255, 255, 255, 0.7);
             font-size: 1.1rem;
             text-align: center;
             margin-bottom: 3rem;
         }
 
-        .torque-page .equipment-grid {
+        .electrical-page .equipment-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .torque-page .equipment-card {
+        .electrical-page .equipment-card {
             background: #0a0a0a;
             border-radius: 4px;
             padding: 2.5rem;
@@ -244,13 +244,13 @@
             transition: all 0.3s ease;
         }
 
-        .torque-page .equipment-card:hover {
+        .electrical-page .equipment-card:hover {
             border-color: #B87333;
             box-shadow: 0 12px 35px rgba(184, 115, 51, 0.2);
             transform: translateY(-6px);
         }
 
-        .torque-page .equipment-card h3 {
+        .electrical-page .equipment-card h3 {
             color: #ffffff;
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.5rem;
@@ -260,20 +260,20 @@
             letter-spacing: 1.5px;
         }
 
-        .torque-page .equipment-card p {
+        .electrical-page .equipment-card p {
             color: #cccccc;
             line-height: 1.6;
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
         }
 
-        .torque-page .equipment-card ul {
+        .electrical-page .equipment-card ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .torque-page .equipment-card li {
+        .electrical-page .equipment-card li {
             color: #cccccc;
             padding: 0.5rem 0;
             padding-left: 1.75rem;
@@ -281,7 +281,7 @@
             font-size: 0.9rem;
         }
 
-        .torque-page .equipment-card li::before {
+        .electrical-page .equipment-card li::before {
             content: '▸';
             position: absolute;
             left: 0;
@@ -291,8 +291,8 @@
         }
 
         /* Process Section */
-        .torque-page .process-section {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.93) 0%, rgba(10, 10, 10, 0.95) 100%), url('testing/cdi.jpg');
+        .electrical-page .process-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.93) 0%, rgba(10, 10, 10, 0.95) 100%), url('calibration/PXL_20230413_134046074.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -301,7 +301,7 @@
             position: relative;
         }
 
-        .torque-page .process-section::before {
+        .electrical-page .process-section::before {
             content: '';
             position: absolute;
             inset: 0;
@@ -309,7 +309,7 @@
             pointer-events: none;
         }
 
-        .torque-page .process-grid {
+        .electrical-page .process-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
@@ -318,7 +318,7 @@
             z-index: 1;
         }
 
-        .torque-page .process-card {
+        .electrical-page .process-card {
             background: rgba(0, 0, 0, 0.75);
             padding: 2rem;
             border-radius: 4px;
@@ -328,12 +328,12 @@
             backdrop-filter: blur(5px);
         }
 
-        .torque-page .process-card:hover {
+        .electrical-page .process-card:hover {
             border-color: rgba(184, 115, 51, 0.6);
             background: rgba(0, 0, 0, 0.85);
         }
 
-        .torque-page .process-number {
+        .electrical-page .process-number {
             position: absolute;
             top: -15px;
             left: 20px;
@@ -350,7 +350,7 @@
             box-shadow: 0 4px 15px rgba(184, 115, 51, 0.4);
         }
 
-        .torque-page .process-card h3 {
+        .electrical-page .process-card h3 {
             color: white;
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.4rem;
@@ -361,19 +361,19 @@
             letter-spacing: 1.5px;
         }
 
-        .torque-page .process-card p {
+        .electrical-page .process-card p {
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.7;
         }
 
         /* Standards Section */
-        .torque-page .standards-section {
+        .electrical-page .standards-section {
             background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
             padding: 80px 0;
             position: relative;
         }
 
-        .torque-page .standards-section::before {
+        .electrical-page .standards-section::before {
             content: '';
             position: absolute;
             inset: 0;
@@ -381,7 +381,7 @@
             pointer-events: none;
         }
 
-        .torque-page .standards-grid {
+        .electrical-page .standards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
@@ -390,7 +390,7 @@
             z-index: 1;
         }
 
-        .torque-page .standard-card {
+        .electrical-page .standard-card {
             background: #2a2a2a;
             padding: 2.5rem;
             border-radius: 4px;
@@ -398,13 +398,13 @@
             transition: all 0.3s ease;
         }
 
-        .torque-page .standard-card:hover {
+        .electrical-page .standard-card:hover {
             border-color: #B87333;
             transform: translateY(-4px);
             background: #333333;
         }
 
-        .torque-page .standard-card h3 {
+        .electrical-page .standard-card h3 {
             color: #B87333;
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.5rem;
@@ -414,19 +414,19 @@
             letter-spacing: 1.5px;
         }
 
-        .torque-page .standard-card p {
+        .electrical-page .standard-card p {
             color: #e0e0e0;
             line-height: 1.8;
             margin-bottom: 1rem;
         }
 
-        .torque-page .standard-card ul {
+        .electrical-page .standard-card ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .torque-page .standard-card li {
+        .electrical-page .standard-card li {
             color: #e0e0e0;
             padding: 0.5rem 0;
             padding-left: 1.75rem;
@@ -434,7 +434,7 @@
             font-size: 0.95rem;
         }
 
-        .torque-page .standard-card li::before {
+        .electrical-page .standard-card li::before {
             content: '▸';
             position: absolute;
             left: 0;
@@ -444,12 +444,12 @@
         }
 
         /* CTA Section */
-        .torque-page .cta-section-torque {
+        .electrical-page .cta-section-electrical {
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             padding: 80px 0;
         }
 
-        .torque-page .cta-content-box {
+        .electrical-page .cta-content-box {
             background: rgba(26, 26, 26, 0.8);
             padding: 4rem;
             border-radius: 4px;
@@ -458,7 +458,7 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
-        .torque-page .cta-content-box h2 {
+        .electrical-page .cta-content-box h2 {
             color: white;
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
@@ -468,21 +468,21 @@
             letter-spacing: 2px;
         }
 
-        .torque-page .cta-content-box > p {
+        .electrical-page .cta-content-box > p {
             color: #cccccc;
             font-size: 1.2rem;
             line-height: 1.8;
             margin-bottom: 2rem;
         }
 
-        .torque-page .cta-buttons {
+        .electrical-page .cta-buttons {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .torque-page .cta-note {
+        .electrical-page .cta-note {
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
             margin-top: 1.5rem;
@@ -491,86 +491,86 @@
         }
 
         @media (max-width: 1024px) {
-            .torque-page .stats-grid {
+            .electrical-page .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .torque-page .equipment-grid {
+            .electrical-page .equipment-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
         }
 
         @media (max-width: 768px) {
-            .torque-page .torque-hero {
+            .electrical-page .electrical-hero {
                 padding: 120px 0 80px;
                 background-attachment: scroll;
             }
 
-            .torque-page .process-section {
+            .electrical-page .process-section {
                 background-attachment: scroll;
             }
 
-            .torque-page .torque-hero h1 {
+            .electrical-page .electrical-hero h1 {
                 font-size: 2.5rem;
             }
 
-            .torque-page .hero-subtitle {
+            .electrical-page .hero-subtitle {
                 font-size: 1.1rem;
             }
 
-            .torque-page .hero-buttons {
+            .electrical-page .hero-buttons {
                 flex-direction: column;
                 align-items: stretch;
             }
 
-            .torque-page .section-title-center {
+            .electrical-page .section-title-center {
                 font-size: 2rem;
             }
 
-            .torque-page .stats-grid {
+            .electrical-page .stats-grid {
                 grid-template-columns: 1fr;
             }
 
-            .torque-page .equipment-grid {
+            .electrical-page .equipment-grid {
                 grid-template-columns: 1fr;
             }
 
-            .torque-page .process-grid {
+            .electrical-page .process-grid {
                 grid-template-columns: 1fr;
             }
 
-            .torque-page .cta-content-box {
+            .electrical-page .cta-content-box {
                 padding: 2rem;
             }
 
-            .torque-page .cta-content-box h2 {
+            .electrical-page .cta-content-box h2 {
                 font-size: 2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .torque-page .torque-hero {
+            .electrical-page .electrical-hero {
                 padding: 100px 0 60px;
             }
 
-            .torque-page .torque-hero h1 {
+            .electrical-page .electrical-hero h1 {
                 font-size: 2rem;
             }
 
-            .torque-page .section-title-center {
+            .electrical-page .section-title-center {
                 font-size: 1.75rem;
             }
 
-            .torque-page .cta-button-primary,
-            .torque-page .cta-button-secondary {
+            .electrical-page .cta-button-primary,
+            .electrical-page .cta-button-secondary {
                 padding: 14px 30px;
                 font-size: 1rem;
             }
         }
     </style>
 </head>
-<body class="torque-page">
+<body class="electrical-page">
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -598,12 +598,12 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="torque-hero">
+        <section class="electrical-hero">
             <div class="container">
-                <div class="hero-content-torque">
-                    <div class="torque-hero-badge">NIST-Traceable Precision Calibration</div>
-                    <h1>Mechanical Device Calibration</h1>
-                    <p class="hero-subtitle">NIST-traceable calibration for torque devices, load cells, force gauges, micrometers, calipers, feeler gauges, gauge blocks, and precision measurement equipment. Accuracy you can trust for critical applications.</p>
+                <div class="hero-content-electrical">
+                    <div class="electrical-hero-badge">NIST-Traceable Electrical Calibration</div>
+                    <h1>Electrical Calibration Services</h1>
+                    <p class="hero-subtitle">NIST-traceable calibration for electrical test equipment, meters, oscilloscopes, and measurement devices. Precision calibration for voltage, current, resistance, inductance, capacitance, time, and frequency.</p>
                     <div class="hero-buttons">
                         <a href="contact.html" class="cta-button-primary">Request Calibration</a>
                         <a href="tel:888-561-8771" class="cta-button-secondary">Call (888) 561-8771</a>
@@ -613,24 +613,24 @@
         </section>
 
         <!-- Intro Section -->
-        <section class="torque-intro">
+        <section class="electrical-intro">
             <div class="container">
                 <div class="intro-content">
-                    <h2>Why Mechanical Calibration Matters</h2>
-                    <p class="intro-text">Precision mechanical measurements are critical in manufacturing, quality control, maintenance, and assembly operations. From torque application to dimensional measurements and force testing, accurate calibration ensures your tools deliver consistent, reliable results. Regular calibration prevents measurement drift, ensures compliance, and maintains the integrity of your quality systems.</p>
+                    <h2>Why Electrical Calibration Matters</h2>
+                    <p class="intro-text">Electrical calibration refers to calibrating instruments that measure electrical parameters. Examples of these include: voltage, current, resistance, inductance, capacitance, time and frequency. Precise devices, such as a precise digital multimeter, can perform calibrations and verify the units under test (UUT). Accurate electrical measurements are critical for quality control, safety testing, regulatory compliance, and product development. Regular NIST-traceable calibration ensures your electrical test equipment delivers consistent, reliable measurements across all parameters.</p>
                     
                     <div class="stats-grid">
                         <div class="stat-box">
-                            <div class="stat-value">±3%</div>
-                            <div class="stat-label">Accuracy Standard</div>
+                            <div class="stat-value">±0.01%</div>
+                            <div class="stat-label">Accuracy Available</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-value">NIST</div>
                             <div class="stat-label">Traceable Standards</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-value">ISO 6789</div>
-                            <div class="stat-label">Compliant Testing</div>
+                            <div class="stat-value">7 Parameters</div>
+                            <div class="stat-label">V, I, R, L, C, T, F</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-value">48HR</div>
@@ -644,89 +644,127 @@
         <!-- Equipment Section -->
         <section class="equipment-section">
             <div class="container">
-                <h2 class="section-title-center">Mechanical Equipment We Calibrate</h2>
-                <p class="section-subtitle">Comprehensive calibration services for torque devices, force measurement, and precision dimensional tools</p>
+                <h2 class="section-title-center">Electrical Equipment We Calibrate</h2>
+                <p class="section-subtitle">Comprehensive calibration services for all types of electrical test equipment and measurement devices</p>
                 
                 <div class="equipment-grid">
                     <div class="equipment-card">
-                        <h3>Torque Devices</h3>
-                        <p>We calibrate all types of torque measurement and application devices to ensure accurate fastener tightening and torque testing.</p>
+                        <h3>Insulation Resistance Testers</h3>
+                        <p>Precision calibration of meggers and insulation resistance test sets for electrical safety testing.</p>
                         <ul>
-                            <li>Torque wrenches (click, beam, digital, dial)</li>
-                            <li>Torque screwdrivers (all types)</li>
-                            <li>Torque multipliers</li>
-                            <li>Torque analyzers and testers</li>
-                            <li>Torque transducers and sensors</li>
-                            <li>Breakaway torque testers</li>
-                            <li>ISO 6789 compliant testing</li>
+                            <li>Megohmeters (meggers)</li>
+                            <li>Insulation resistance testers</li>
+                            <li>High voltage insulation testers</li>
+                            <li>Digital insulation testers</li>
+                            <li>Analog meggers</li>
+                            <li>Portable insulation testers</li>
+                            <li>Motor insulation testers</li>
                         </ul>
                     </div>
 
                     <div class="equipment-card">
-                        <h3>Load Cells & Force Gauges</h3>
-                        <p>Precision calibration for force measurement equipment used in testing, quality control, and manufacturing applications.</p>
+                        <h3>Low Resistance Ohmmeters</h3>
+                        <p>Expert calibration of DLROs and micro-ohmmeters for precision resistance measurements.</p>
                         <ul>
-                            <li>Compression load cells</li>
-                            <li>Tension load cells</li>
-                            <li>Digital force gauges</li>
-                            <li>Mechanical force gauges</li>
-                            <li>Push-pull gauges</li>
-                            <li>Spring testers</li>
-                            <li>Multi-axis load cells</li>
+                            <li>Digital Low Resistance Ohmmeters (DLRO)</li>
+                            <li>Micro-ohmmeters</li>
+                            <li>Milli-ohmmeters</li>
+                            <li>Contact resistance testers</li>
+                            <li>Bonding resistance testers</li>
+                            <li>Ground resistance testers</li>
                         </ul>
                     </div>
 
                     <div class="equipment-card">
-                        <h3>Micrometers & Calipers</h3>
-                        <p>Expert calibration of precision dimensional measurement tools for quality control and machining operations.</p>
+                        <h3>Hipot Test Sets</h3>
+                        <p>Calibration of high potential test equipment for dielectric testing and insulation verification.</p>
                         <ul>
-                            <li>Outside micrometers</li>
-                            <li>Inside micrometers</li>
-                            <li>Depth micrometers</li>
-                            <li>Digital calipers</li>
-                            <li>Vernier calipers</li>
-                            <li>Dial calipers</li>
-                            <li>Height gauges</li>
+                            <li>AC hipot testers</li>
+                            <li>DC hipot testers</li>
+                            <li>Portable hipot test sets</li>
+                            <li>Dielectric test sets</li>
+                            <li>High voltage test equipment</li>
+                            <li>Breakdown voltage testers</li>
                         </ul>
                     </div>
 
                     <div class="equipment-card">
-                        <h3>Precision Measurement Standards</h3>
-                        <p>Calibration services for reference standards and precision measurement tools used in metrology labs.</p>
+                        <h3>Power System Test Equipment</h3>
+                        <p>Calibration of primary injection, relay, and transformer test sets for power system protection.</p>
                         <ul>
-                            <li>Gauge blocks (gage blocks)</li>
-                            <li>Feeler gauges</li>
-                            <li>Pin gauges</li>
-                            <li>Ring gauges</li>
-                            <li>Plug gauges</li>
-                            <li>Thread gauges</li>
-                            <li>Surface plates</li>
+                            <li>Primary injection test sets</li>
+                            <li>Relay test sets</li>
+                            <li>Transformer test sets</li>
+                            <li>Circuit breaker analyzers</li>
+                            <li>Protection relay testers</li>
+                            <li>CT/PT test equipment</li>
                         </ul>
                     </div>
 
                     <div class="equipment-card">
-                        <h3>Dial Indicators & Comparators</h3>
-                        <p>Calibration of precision indicators used for dimensional inspection and machine tool setup.</p>
+                        <h3>Multimeters & Electrical Meters</h3>
+                        <p>Precision calibration of multimeters and electrical meters for voltage, current, and resistance measurements.</p>
                         <ul>
-                            <li>Dial indicators</li>
-                            <li>Digital indicators</li>
-                            <li>Test indicators</li>
-                            <li>Bore gauges</li>
-                            <li>Snap gauges</li>
-                            <li>Comparator stands</li>
+                            <li>Digital multimeters (DMM)</li>
+                            <li>Benchtop multimeters</li>
+                            <li>Handheld multimeters</li>
+                            <li>Clamp meters</li>
+                            <li>Panel meters</li>
+                            <li>Analog meters</li>
+                            <li>True RMS meters</li>
                         </ul>
                     </div>
 
                     <div class="equipment-card">
-                        <h3>Specialized Mechanical Tools</h3>
-                        <p>Expert calibration of specialized mechanical measurement and testing equipment for diverse applications.</p>
+                        <h3>Oscilloscopes & Data Loggers</h3>
+                        <p>Expert calibration of oscilloscopes and data acquisition equipment for waveform analysis.</p>
                         <ul>
-                            <li>Hardness testers</li>
-                            <li>Durometers</li>
-                            <li>Thickness gauges</li>
-                            <li>Coating thickness gauges</li>
-                            <li>Tensile testers</li>
-                            <li>Material testing equipment</li>
+                            <li>Digital oscilloscopes</li>
+                            <li>Analog oscilloscopes</li>
+                            <li>Mixed signal oscilloscopes</li>
+                            <li>Data loggers</li>
+                            <li>Data acquisition systems (DAQ)</li>
+                            <li>Chart recorders</li>
+                            <li>Waveform generators</li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-card">
+                        <h3>Frequency & Time Measurement</h3>
+                        <p>Calibration of frequency counters, signal generators, and time measurement instruments.</p>
+                        <ul>
+                            <li>Frequency counters</li>
+                            <li>Function generators</li>
+                            <li>Signal generators</li>
+                            <li>Pulse generators</li>
+                            <li>Time interval counters</li>
+                            <li>RF signal generators</li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-card">
+                        <h3>LCR & Component Testers</h3>
+                        <p>Precision calibration of LCR meters and component testers for inductance, capacitance, and resistance.</p>
+                        <ul>
+                            <li>LCR meters</li>
+                            <li>Capacitance meters</li>
+                            <li>Inductance meters</li>
+                            <li>Impedance analyzers</li>
+                            <li>ESR meters</li>
+                            <li>Component testers</li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-card">
+                        <h3>Power Analyzers & Meters</h3>
+                        <p>Calibration of power quality and energy measurement equipment.</p>
+                        <ul>
+                            <li>Power analyzers</li>
+                            <li>Power quality analyzers</li>
+                            <li>Watt meters</li>
+                            <li>Energy meters</li>
+                            <li>Harmonic analyzers</li>
+                            <li>Power factor meters</li>
                         </ul>
                     </div>
                 </div>
@@ -737,43 +775,43 @@
         <section class="process-section">
             <div class="container">
                 <h2 class="section-title-center">Our Calibration Process</h2>
-                <p class="section-subtitle">Multi-point testing with NIST-traceable standards for complete accuracy assurance</p>
+                <p class="section-subtitle">Multi-point testing with NIST-traceable electrical standards for complete accuracy assurance</p>
 
                 <div class="process-grid">
                     <div class="process-card">
                         <div class="process-number">1</div>
                         <h3>Receiving & Inspection</h3>
-                        <p>Each tool is logged into our system with unique identification. Initial visual inspection documents condition and identifies any visible damage or wear.</p>
+                        <p>Each electrical device is logged into our system with unique identification. Visual inspection documents condition, model, serial number, and any visible damage or wear.</p>
                     </div>
 
                     <div class="process-card">
                         <div class="process-number">2</div>
                         <h3>As-Found Testing</h3>
-                        <p>We test your tool at multiple points across its range using our NIST-traceable torque standards. This documents the tool's accuracy before calibration.</p>
+                        <p>We test your instrument at multiple points across its full range using our NIST-traceable electrical standards. This documents the device's accuracy before calibration.</p>
                     </div>
 
                     <div class="process-card">
                         <div class="process-number">3</div>
                         <h3>Adjustment & Calibration</h3>
-                        <p>Tools are adjusted to meet manufacturer specifications and applicable standards (ISO 6789 for torque tools, ASME B89 for dimensional tools). Digital devices receive electronic calibration.</p>
+                        <p>Devices are adjusted to meet manufacturer specifications or customer requirements. Calibration is performed using precision electrical calibrators and reference standards.</p>
                     </div>
 
                     <div class="process-card">
                         <div class="process-number">4</div>
                         <h3>As-Left Testing</h3>
-                        <p>After calibration, we re-test at the same points to verify accuracy. This ensures the tool meets required specifications across its entire range.</p>
+                        <p>After calibration, we re-test at the same measurement points to verify accuracy. This ensures the device meets required specifications across its entire range.</p>
                     </div>
 
                     <div class="process-card">
                         <div class="process-number">5</div>
                         <h3>Certification & Documentation</h3>
-                        <p>Complete calibration certificates include as-found and as-left data, uncertainty calculations, traceability information, and pass/fail status.</p>
+                        <p>Complete calibration certificates include as-found and as-left data, uncertainty calculations, traceability information, test conditions, and pass/fail status.</p>
                     </div>
 
                     <div class="process-card">
                         <div class="process-number">6</div>
                         <h3>Labeling & Return</h3>
-                        <p>Tools are marked with calibration date and due date labels. Complete documentation is provided digitally and in print, and tools are securely packaged for return.</p>
+                        <p>Devices are marked with calibration date and due date labels. Complete documentation is provided digitally and in print, and instruments are securely packaged for return.</p>
                     </div>
                 </div>
             </div>
@@ -786,24 +824,25 @@
                 
                 <div class="standards-grid">
                     <div class="standard-card">
-                        <h3>ISO & ASME Standards</h3>
-                        <p>We adhere to internationally recognized standards for mechanical calibration:</p>
+                        <h3>Electrical Standards</h3>
+                        <p>We adhere to internationally recognized standards for electrical calibration:</p>
                         <ul>
-                            <li><strong>ISO 6789:</strong> Torque tools calibration</li>
-                            <li><strong>ASME B89.1:</strong> Dimensional metrology</li>
-                            <li><strong>ASTM E74:</strong> Force measurement</li>
-                            <li><strong>ISO 376:</strong> Load cell calibration</li>
-                            <li><strong>ASME B89.3:</strong> Measurement uncertainty</li>
-                            <li>Multi-point testing protocols</li>
+                            <li><strong>ANSI/NCSL Z540.3:</strong> Calibration requirements</li>
+                            <li><strong>IEC 61010:</strong> Safety requirements for electrical equipment</li>
+                            <li><strong>IEEE 4:</strong> High-voltage testing techniques</li>
+                            <li><strong>ASTM D877:</strong> Dielectric breakdown voltage</li>
+                            <li><strong>IEC 60060:</strong> High voltage test techniques</li>
+                            <li>Multi-point calibration protocols</li>
                         </ul>
                     </div>
 
                     <div class="standard-card">
                         <h3>NIST Traceability</h3>
-                        <p>Every calibration is traceable to the National Institute of Standards and Technology through an unbroken chain of comparisons:</p>
+                        <p>Every calibration is traceable to the National Institute of Standards and Technology:</p>
                         <ul>
                             <li>Primary standards calibrated at NIST</li>
-                            <li>Secondary standards verified annually</li>
+                            <li>Josephson voltage standards</li>
+                            <li>Quantum Hall resistance standards</li>
                             <li>Complete uncertainty analysis</li>
                             <li>Documented traceability chain</li>
                             <li>Comprehensive calibration certificates</li>
@@ -813,14 +852,15 @@
 
                     <div class="standard-card">
                         <h3>Industry Applications</h3>
-                        <p>Our mechanical calibration services support critical operations across multiple industries:</p>
+                        <p>Our electrical calibration services support critical operations across multiple industries:</p>
                         <ul>
-                            <li>Aerospace & Aviation</li>
-                            <li>Automotive Manufacturing</li>
-                            <li>Medical Device Manufacturing</li>
-                            <li>Tool & Die Manufacturing</li>
-                            <li>Precision Machining</li>
-                            <li>Quality Control Laboratories</li>
+                            <li>Electric Utilities & Power Generation</li>
+                            <li>Electrical Testing Laboratories</li>
+                            <li>Manufacturing & Quality Control</li>
+                            <li>Electronics Manufacturing</li>
+                            <li>Telecommunications</li>
+                            <li>Aerospace & Defense</li>
+                            <li>Automotive Testing</li>
                             <li>Research & Development</li>
                         </ul>
                     </div>
@@ -829,12 +869,12 @@
                         <h3>Calibration Intervals</h3>
                         <p>Recommended calibration frequency depends on usage, accuracy requirements, and criticality:</p>
                         <ul>
+                            <li><strong>Critical Test Equipment:</strong> Quarterly</li>
                             <li><strong>Daily Use:</strong> Every 6 months</li>
                             <li><strong>Regular Use:</strong> Annually</li>
                             <li><strong>Light Use:</strong> Every 2 years</li>
-                            <li><strong>Critical Applications:</strong> Quarterly</li>
                             <li><strong>Reference Standards:</strong> Annually</li>
-                            <li><strong>After Damage:</strong> Immediately</li>
+                            <li><strong>After Failure/Damage:</strong> Immediately</li>
                         </ul>
                     </div>
                 </div>
@@ -842,11 +882,11 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section-torque">
+        <section class="cta-section-electrical">
             <div class="container">
                 <div class="cta-content-box">
-                    <h2>Ensure Accurate Mechanical Measurements</h2>
-                    <p>Don't risk equipment damage, product defects, or quality failures with uncalibrated measurement tools. Schedule your NIST-traceable mechanical device calibration today.</p>
+                    <h2>Ensure Accurate Electrical Measurements</h2>
+                    <p>Don't risk product failures, safety hazards, or regulatory non-compliance with uncalibrated electrical test equipment. Schedule your NIST-traceable electrical calibration today.</p>
                     <div class="cta-buttons">
                         <a href="contact.html" class="cta-button-primary">Request a Quote</a>
                         <a href="tel:888-561-8771" class="cta-button-secondary">
@@ -854,7 +894,7 @@
                             <span>(888) 561-8771</span>
                         </a>
                     </div>
-                    <p class="cta-note">Fast turnaround available • On-site calibration for large tool inventories</p>
+                    <p class="cta-note">Fast turnaround available • On-site calibration for large equipment</p>
                 </div>
             </div>
         </section>

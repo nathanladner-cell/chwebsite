@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanical Device Calibration Services - Copperhead Labs</title>
+    <title>Temperature Calibration Services - Copperhead Labs</title>
     <link rel="preload" href="styles.css?v=5.0" as="style">
     <link rel="stylesheet" href="styles.css?v=5.4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,28 +11,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
     <link rel="icon" href="logos/copperhead.svg" type="image/svg+xml">
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Mechanical Device Calibration Services - Copperhead Labs">
-    <meta property="og:description" content="NIST-traceable calibration for torque devices, load cells, force gauges, micrometers, calipers, feeler gauges, and gauge blocks. ISO compliant testing.">
+    <meta property="og:title" content="Temperature Calibration Services - Copperhead Labs">
+    <meta property="og:description" content="NIST-traceable calibration for thermometers, thermocouples, thermistors, RTDs, temperature chambers, ovens, and freezers.">
     <meta property="og:image" content="logos/chlink.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="logos/chlink.png">
     <style>
-        /* Torque Calibration Page - Dark Masculine Style with Copper Accents */
-        body.torque-page {
+        /* Temperature Calibration Page - Dark Masculine Style with Copper Accents */
+        body.temperature-page {
             background-color: #0a0a0a;
             color: #e0e0e0;
         }
 
-        .torque-page main {
+        .temperature-page main {
             background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
         }
 
         /* Dark hero with overlay */
-        .torque-page .torque-hero {
+        .temperature-page .temperature-hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('testing/PXL_20250811_171429085.jpg');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('testing/PXL_20240209_202523715.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -40,7 +40,7 @@
             border-bottom: 3px solid #B87333;
         }
 
-        .torque-page .torque-hero::before {
+        .temperature-page .temperature-hero::before {
             content: '';
             position: absolute;
             inset: 0;
@@ -48,7 +48,7 @@
             pointer-events: none;
         }
 
-        .torque-page .hero-content-torque {
+        .temperature-page .hero-content-temperature {
             position: relative;
             z-index: 2;
             text-align: center;
@@ -56,7 +56,7 @@
             margin: 0 auto;
         }
 
-        .torque-page .torque-hero-badge {
+        .temperature-page .temperature-hero-badge {
             display: inline-block;
             background: rgba(184, 115, 51, 0.2);
             color: #B87333;
@@ -71,7 +71,7 @@
             margin-bottom: 2rem;
         }
 
-        .torque-page .torque-hero h1 {
+        .temperature-page .temperature-hero h1 {
             color: #ffffff;
             font-family: 'Orbitron', sans-serif;
             font-size: 3.5rem;
@@ -82,21 +82,21 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
-        .torque-page .hero-subtitle {
+        .temperature-page .hero-subtitle {
             color: rgba(255, 255, 255, 0.9);
             font-size: 1.25rem;
             line-height: 1.8;
             margin-bottom: 2.5rem;
         }
 
-        .torque-page .hero-buttons {
+        .temperature-page .hero-buttons {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .torque-page .cta-button-primary {
+        .temperature-page .cta-button-primary {
             background: #B87333;
             color: white;
             padding: 18px 45px;
@@ -112,13 +112,13 @@
             box-shadow: 0 4px 15px rgba(184, 115, 51, 0.5);
         }
 
-        .torque-page .cta-button-primary:hover {
+        .temperature-page .cta-button-primary:hover {
             background: #8B4513;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(184, 115, 51, 0.4);
         }
 
-        .torque-page .cta-button-secondary {
+        .temperature-page .cta-button-secondary {
             background: transparent;
             color: white;
             padding: 18px 45px;
@@ -133,18 +133,18 @@
             letter-spacing: 2px;
         }
 
-        .torque-page .cta-button-secondary:hover {
+        .temperature-page .cta-button-secondary:hover {
             background: white;
             color: #1a1a1a;
         }
 
         /* Intro section */
-        .torque-page .torque-intro {
+        .temperature-page .temperature-intro {
             background: #0a0a0a;
             padding: 80px 0;
         }
 
-        .torque-page .intro-content h2 {
+        .temperature-page .intro-content h2 {
             color: #ffffff;
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
@@ -155,7 +155,7 @@
             text-align: center;
         }
 
-        .torque-page .intro-text {
+        .temperature-page .intro-text {
             font-size: 1.2rem;
             color: #cccccc;
             line-height: 1.8;
@@ -166,14 +166,14 @@
             text-align: center;
         }
 
-        .torque-page .stats-grid {
+        .temperature-page .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .torque-page .stat-box {
+        .temperature-page .stat-box {
             background: #1a1a1a;
             border: 2px solid #2a2a2a;
             border-radius: 4px;
@@ -182,13 +182,13 @@
             transition: all 0.3s ease;
         }
 
-        .torque-page .stat-box:hover {
+        .temperature-page .stat-box:hover {
             border-color: #B87333;
             transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(184, 115, 51, 0.2);
         }
 
-        .torque-page .stat-value {
+        .temperature-page .stat-value {
             color: #B87333;
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
@@ -196,7 +196,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .torque-page .stat-label {
+        .temperature-page .stat-label {
             color: #ffffff;
             font-family: 'Rajdhani', sans-serif;
             font-size: 0.95rem;
@@ -206,12 +206,12 @@
         }
 
         /* Equipment Section */
-        .torque-page .equipment-section {
+        .temperature-page .equipment-section {
             background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
             padding: 80px 0;
         }
 
-        .torque-page .section-title-center {
+        .temperature-page .section-title-center {
             text-align: center;
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
@@ -222,21 +222,21 @@
             letter-spacing: 2px;
         }
 
-        .torque-page .section-subtitle {
+        .temperature-page .section-subtitle {
             color: rgba(255, 255, 255, 0.7);
             font-size: 1.1rem;
             text-align: center;
             margin-bottom: 3rem;
         }
 
-        .torque-page .equipment-grid {
+        .temperature-page .equipment-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .torque-page .equipment-card {
+        .temperature-page .equipment-card {
             background: #0a0a0a;
             border-radius: 4px;
             padding: 2.5rem;
@@ -244,13 +244,13 @@
             transition: all 0.3s ease;
         }
 
-        .torque-page .equipment-card:hover {
+        .temperature-page .equipment-card:hover {
             border-color: #B87333;
             box-shadow: 0 12px 35px rgba(184, 115, 51, 0.2);
             transform: translateY(-6px);
         }
 
-        .torque-page .equipment-card h3 {
+        .temperature-page .equipment-card h3 {
             color: #ffffff;
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.5rem;
@@ -260,20 +260,20 @@
             letter-spacing: 1.5px;
         }
 
-        .torque-page .equipment-card p {
+        .temperature-page .equipment-card p {
             color: #cccccc;
             line-height: 1.6;
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
         }
 
-        .torque-page .equipment-card ul {
+        .temperature-page .equipment-card ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .torque-page .equipment-card li {
+        .temperature-page .equipment-card li {
             color: #cccccc;
             padding: 0.5rem 0;
             padding-left: 1.75rem;
@@ -281,7 +281,7 @@
             font-size: 0.9rem;
         }
 
-        .torque-page .equipment-card li::before {
+        .temperature-page .equipment-card li::before {
             content: '▸';
             position: absolute;
             left: 0;
@@ -291,8 +291,8 @@
         }
 
         /* Process Section */
-        .torque-page .process-section {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.93) 0%, rgba(10, 10, 10, 0.95) 100%), url('testing/cdi.jpg');
+        .temperature-page .process-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.93) 0%, rgba(10, 10, 10, 0.95) 100%), url('testing/image.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -301,7 +301,7 @@
             position: relative;
         }
 
-        .torque-page .process-section::before {
+        .temperature-page .process-section::before {
             content: '';
             position: absolute;
             inset: 0;
@@ -309,7 +309,7 @@
             pointer-events: none;
         }
 
-        .torque-page .process-grid {
+        .temperature-page .process-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
@@ -318,7 +318,7 @@
             z-index: 1;
         }
 
-        .torque-page .process-card {
+        .temperature-page .process-card {
             background: rgba(0, 0, 0, 0.75);
             padding: 2rem;
             border-radius: 4px;
@@ -328,12 +328,12 @@
             backdrop-filter: blur(5px);
         }
 
-        .torque-page .process-card:hover {
+        .temperature-page .process-card:hover {
             border-color: rgba(184, 115, 51, 0.6);
             background: rgba(0, 0, 0, 0.85);
         }
 
-        .torque-page .process-number {
+        .temperature-page .process-number {
             position: absolute;
             top: -15px;
             left: 20px;
@@ -350,7 +350,7 @@
             box-shadow: 0 4px 15px rgba(184, 115, 51, 0.4);
         }
 
-        .torque-page .process-card h3 {
+        .temperature-page .process-card h3 {
             color: white;
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.4rem;
@@ -361,19 +361,19 @@
             letter-spacing: 1.5px;
         }
 
-        .torque-page .process-card p {
+        .temperature-page .process-card p {
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.7;
         }
 
         /* Standards Section */
-        .torque-page .standards-section {
+        .temperature-page .standards-section {
             background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
             padding: 80px 0;
             position: relative;
         }
 
-        .torque-page .standards-section::before {
+        .temperature-page .standards-section::before {
             content: '';
             position: absolute;
             inset: 0;
@@ -381,7 +381,7 @@
             pointer-events: none;
         }
 
-        .torque-page .standards-grid {
+        .temperature-page .standards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
@@ -390,7 +390,7 @@
             z-index: 1;
         }
 
-        .torque-page .standard-card {
+        .temperature-page .standard-card {
             background: #2a2a2a;
             padding: 2.5rem;
             border-radius: 4px;
@@ -398,13 +398,13 @@
             transition: all 0.3s ease;
         }
 
-        .torque-page .standard-card:hover {
+        .temperature-page .standard-card:hover {
             border-color: #B87333;
             transform: translateY(-4px);
             background: #333333;
         }
 
-        .torque-page .standard-card h3 {
+        .temperature-page .standard-card h3 {
             color: #B87333;
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.5rem;
@@ -414,19 +414,19 @@
             letter-spacing: 1.5px;
         }
 
-        .torque-page .standard-card p {
+        .temperature-page .standard-card p {
             color: #e0e0e0;
             line-height: 1.8;
             margin-bottom: 1rem;
         }
 
-        .torque-page .standard-card ul {
+        .temperature-page .standard-card ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .torque-page .standard-card li {
+        .temperature-page .standard-card li {
             color: #e0e0e0;
             padding: 0.5rem 0;
             padding-left: 1.75rem;
@@ -434,7 +434,7 @@
             font-size: 0.95rem;
         }
 
-        .torque-page .standard-card li::before {
+        .temperature-page .standard-card li::before {
             content: '▸';
             position: absolute;
             left: 0;
@@ -444,12 +444,12 @@
         }
 
         /* CTA Section */
-        .torque-page .cta-section-torque {
+        .temperature-page .cta-section-temperature {
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             padding: 80px 0;
         }
 
-        .torque-page .cta-content-box {
+        .temperature-page .cta-content-box {
             background: rgba(26, 26, 26, 0.8);
             padding: 4rem;
             border-radius: 4px;
@@ -458,7 +458,7 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
-        .torque-page .cta-content-box h2 {
+        .temperature-page .cta-content-box h2 {
             color: white;
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
@@ -468,21 +468,21 @@
             letter-spacing: 2px;
         }
 
-        .torque-page .cta-content-box > p {
+        .temperature-page .cta-content-box > p {
             color: #cccccc;
             font-size: 1.2rem;
             line-height: 1.8;
             margin-bottom: 2rem;
         }
 
-        .torque-page .cta-buttons {
+        .temperature-page .cta-buttons {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .torque-page .cta-note {
+        .temperature-page .cta-note {
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
             margin-top: 1.5rem;
@@ -491,86 +491,86 @@
         }
 
         @media (max-width: 1024px) {
-            .torque-page .stats-grid {
+            .temperature-page .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .torque-page .equipment-grid {
+            .temperature-page .equipment-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
         }
 
         @media (max-width: 768px) {
-            .torque-page .torque-hero {
+            .temperature-page .temperature-hero {
                 padding: 120px 0 80px;
                 background-attachment: scroll;
             }
 
-            .torque-page .process-section {
+            .temperature-page .process-section {
                 background-attachment: scroll;
             }
 
-            .torque-page .torque-hero h1 {
+            .temperature-page .temperature-hero h1 {
                 font-size: 2.5rem;
             }
 
-            .torque-page .hero-subtitle {
+            .temperature-page .hero-subtitle {
                 font-size: 1.1rem;
             }
 
-            .torque-page .hero-buttons {
+            .temperature-page .hero-buttons {
                 flex-direction: column;
                 align-items: stretch;
             }
 
-            .torque-page .section-title-center {
+            .temperature-page .section-title-center {
                 font-size: 2rem;
             }
 
-            .torque-page .stats-grid {
+            .temperature-page .stats-grid {
                 grid-template-columns: 1fr;
             }
 
-            .torque-page .equipment-grid {
+            .temperature-page .equipment-grid {
                 grid-template-columns: 1fr;
             }
 
-            .torque-page .process-grid {
+            .temperature-page .process-grid {
                 grid-template-columns: 1fr;
             }
 
-            .torque-page .cta-content-box {
+            .temperature-page .cta-content-box {
                 padding: 2rem;
             }
 
-            .torque-page .cta-content-box h2 {
+            .temperature-page .cta-content-box h2 {
                 font-size: 2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .torque-page .torque-hero {
+            .temperature-page .temperature-hero {
                 padding: 100px 0 60px;
             }
 
-            .torque-page .torque-hero h1 {
+            .temperature-page .temperature-hero h1 {
                 font-size: 2rem;
             }
 
-            .torque-page .section-title-center {
+            .temperature-page .section-title-center {
                 font-size: 1.75rem;
             }
 
-            .torque-page .cta-button-primary,
-            .torque-page .cta-button-secondary {
+            .temperature-page .cta-button-primary,
+            .temperature-page .cta-button-secondary {
                 padding: 14px 30px;
                 font-size: 1rem;
             }
         }
     </style>
 </head>
-<body class="torque-page">
+<body class="temperature-page">
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -598,12 +598,12 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="torque-hero">
+        <section class="temperature-hero">
             <div class="container">
-                <div class="hero-content-torque">
-                    <div class="torque-hero-badge">NIST-Traceable Precision Calibration</div>
-                    <h1>Mechanical Device Calibration</h1>
-                    <p class="hero-subtitle">NIST-traceable calibration for torque devices, load cells, force gauges, micrometers, calipers, feeler gauges, gauge blocks, and precision measurement equipment. Accuracy you can trust for critical applications.</p>
+                <div class="hero-content-temperature">
+                    <div class="temperature-hero-badge">NIST-Traceable Temperature Calibration</div>
+                    <h1>Temperature Calibration Services</h1>
+                    <p class="hero-subtitle">NIST-traceable calibration for thermometers, thermocouples, thermistors, RTDs, temperature chambers, ovens, and freezers. Precision temperature measurement for controlled environments.</p>
                     <div class="hero-buttons">
                         <a href="contact.html" class="cta-button-primary">Request Calibration</a>
                         <a href="tel:888-561-8771" class="cta-button-secondary">Call (888) 561-8771</a>
@@ -613,24 +613,24 @@
         </section>
 
         <!-- Intro Section -->
-        <section class="torque-intro">
+        <section class="temperature-intro">
             <div class="container">
                 <div class="intro-content">
-                    <h2>Why Mechanical Calibration Matters</h2>
-                    <p class="intro-text">Precision mechanical measurements are critical in manufacturing, quality control, maintenance, and assembly operations. From torque application to dimensional measurements and force testing, accurate calibration ensures your tools deliver consistent, reliable results. Regular calibration prevents measurement drift, ensures compliance, and maintains the integrity of your quality systems.</p>
+                    <h2>Why Temperature Calibration Matters</h2>
+                    <p class="intro-text">Temperature calibration is crucial in industries that work with controlled temperature environments. Temperature is typically calibrated by placing a thermometer in a stable reference environment, and then comparing the reading to a standard or reference thermometer. Accurate temperature measurements ensure product quality, regulatory compliance, process control, and safety across pharmaceutical, food processing, medical, and manufacturing applications. Regular NIST-traceable calibration maintains the accuracy of your temperature measurement systems.</p>
                     
                     <div class="stats-grid">
                         <div class="stat-box">
-                            <div class="stat-value">±3%</div>
-                            <div class="stat-label">Accuracy Standard</div>
+                            <div class="stat-value">±0.01°C</div>
+                            <div class="stat-label">Accuracy Available</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-value">NIST</div>
                             <div class="stat-label">Traceable Standards</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-value">ISO 6789</div>
-                            <div class="stat-label">Compliant Testing</div>
+                            <div class="stat-value">-200°C to 1200°C</div>
+                            <div class="stat-label">Range Coverage</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-value">48HR</div>
@@ -644,89 +644,90 @@
         <!-- Equipment Section -->
         <section class="equipment-section">
             <div class="container">
-                <h2 class="section-title-center">Mechanical Equipment We Calibrate</h2>
-                <p class="section-subtitle">Comprehensive calibration services for torque devices, force measurement, and precision dimensional tools</p>
+                <h2 class="section-title-center">Temperature Equipment We Calibrate</h2>
+                <p class="section-subtitle">Comprehensive calibration services for all types of temperature measurement devices and chambers</p>
                 
                 <div class="equipment-grid">
                     <div class="equipment-card">
-                        <h3>Torque Devices</h3>
-                        <p>We calibrate all types of torque measurement and application devices to ensure accurate fastener tightening and torque testing.</p>
+                        <h3>Thermometers</h3>
+                        <p>Precision calibration of all types of thermometers for industrial, laboratory, and commercial applications.</p>
                         <ul>
-                            <li>Torque wrenches (click, beam, digital, dial)</li>
-                            <li>Torque screwdrivers (all types)</li>
-                            <li>Torque multipliers</li>
-                            <li>Torque analyzers and testers</li>
-                            <li>Torque transducers and sensors</li>
-                            <li>Breakaway torque testers</li>
-                            <li>ISO 6789 compliant testing</li>
+                            <li>Digital thermometers</li>
+                            <li>Analog dial thermometers</li>
+                            <li>Infrared thermometers</li>
+                            <li>Glass thermometers (liquid-in-glass)</li>
+                            <li>Bimetal thermometers</li>
+                            <li>Pocket thermometers</li>
+                            <li>Surface temperature probes</li>
                         </ul>
                     </div>
 
                     <div class="equipment-card">
-                        <h3>Load Cells & Force Gauges</h3>
-                        <p>Precision calibration for force measurement equipment used in testing, quality control, and manufacturing applications.</p>
+                        <h3>Thermocouples & Thermistors</h3>
+                        <p>Expert calibration of thermocouples and thermistors used in process control and temperature monitoring.</p>
                         <ul>
-                            <li>Compression load cells</li>
-                            <li>Tension load cells</li>
-                            <li>Digital force gauges</li>
-                            <li>Mechanical force gauges</li>
-                            <li>Push-pull gauges</li>
-                            <li>Spring testers</li>
-                            <li>Multi-axis load cells</li>
+                            <li>Type K thermocouples</li>
+                            <li>Type J thermocouples</li>
+                            <li>Type T thermocouples</li>
+                            <li>Type E, N, R, S thermocouples</li>
+                            <li>NTC thermistors</li>
+                            <li>PTC thermistors</li>
+                            <li>Thermocouple probes and assemblies</li>
                         </ul>
                     </div>
 
                     <div class="equipment-card">
-                        <h3>Micrometers & Calipers</h3>
-                        <p>Expert calibration of precision dimensional measurement tools for quality control and machining operations.</p>
+                        <h3>RTDs & Temperature Sensors</h3>
+                        <p>Calibration of resistance temperature detectors and precision temperature sensors.</p>
                         <ul>
-                            <li>Outside micrometers</li>
-                            <li>Inside micrometers</li>
-                            <li>Depth micrometers</li>
-                            <li>Digital calipers</li>
-                            <li>Vernier calipers</li>
-                            <li>Dial calipers</li>
-                            <li>Height gauges</li>
+                            <li>Platinum RTDs (Pt100, Pt1000)</li>
+                            <li>RTD probes and assemblies</li>
+                            <li>Temperature transmitters (4-20mA)</li>
+                            <li>Digital temperature sensors</li>
+                            <li>Wireless temperature sensors</li>
+                            <li>Data-logging temperature devices</li>
                         </ul>
                     </div>
 
                     <div class="equipment-card">
-                        <h3>Precision Measurement Standards</h3>
-                        <p>Calibration services for reference standards and precision measurement tools used in metrology labs.</p>
+                        <h3>Cool Rooms & Freezers</h3>
+                        <p>On-site calibration and mapping of temperature-controlled storage environments.</p>
                         <ul>
-                            <li>Gauge blocks (gage blocks)</li>
-                            <li>Feeler gauges</li>
-                            <li>Pin gauges</li>
-                            <li>Ring gauges</li>
-                            <li>Plug gauges</li>
-                            <li>Thread gauges</li>
-                            <li>Surface plates</li>
+                            <li>Walk-in coolers</li>
+                            <li>Walk-in freezers</li>
+                            <li>Cold storage rooms</li>
+                            <li>Refrigerated warehouses</li>
+                            <li>Temperature mapping studies</li>
+                            <li>Multi-point monitoring</li>
+                            <li>Validation protocols</li>
                         </ul>
                     </div>
 
                     <div class="equipment-card">
-                        <h3>Dial Indicators & Comparators</h3>
-                        <p>Calibration of precision indicators used for dimensional inspection and machine tool setup.</p>
+                        <h3>Ovens & Furnaces</h3>
+                        <p>Calibration and temperature uniformity surveys of heating equipment.</p>
                         <ul>
-                            <li>Dial indicators</li>
-                            <li>Digital indicators</li>
-                            <li>Test indicators</li>
-                            <li>Bore gauges</li>
-                            <li>Snap gauges</li>
-                            <li>Comparator stands</li>
+                            <li>Laboratory ovens</li>
+                            <li>Industrial ovens</li>
+                            <li>Furnaces</li>
+                            <li>Kilns</li>
+                            <li>Curing ovens</li>
+                            <li>Temperature uniformity surveys</li>
+                            <li>SAT/TUS studies</li>
                         </ul>
                     </div>
 
                     <div class="equipment-card">
-                        <h3>Specialized Mechanical Tools</h3>
-                        <p>Expert calibration of specialized mechanical measurement and testing equipment for diverse applications.</p>
+                        <h3>Temperature Chambers & Baths</h3>
+                        <p>Calibration of temperature control and calibration equipment.</p>
                         <ul>
-                            <li>Hardness testers</li>
-                            <li>Durometers</li>
-                            <li>Thickness gauges</li>
-                            <li>Coating thickness gauges</li>
-                            <li>Tensile testers</li>
-                            <li>Material testing equipment</li>
+                            <li>Environmental chambers</li>
+                            <li>Stability chambers</li>
+                            <li>Incubators</li>
+                            <li>Water baths</li>
+                            <li>Oil baths</li>
+                            <li>Dry block calibrators</li>
+                            <li>Metrology wells</li>
                         </ul>
                     </div>
                 </div>
@@ -737,43 +738,43 @@
         <section class="process-section">
             <div class="container">
                 <h2 class="section-title-center">Our Calibration Process</h2>
-                <p class="section-subtitle">Multi-point testing with NIST-traceable standards for complete accuracy assurance</p>
+                <p class="section-subtitle">Multi-point testing with NIST-traceable temperature standards for complete accuracy assurance</p>
 
                 <div class="process-grid">
                     <div class="process-card">
                         <div class="process-number">1</div>
                         <h3>Receiving & Inspection</h3>
-                        <p>Each tool is logged into our system with unique identification. Initial visual inspection documents condition and identifies any visible damage or wear.</p>
+                        <p>Each temperature device is logged into our system with unique identification. Visual inspection documents condition, sensor type, and any visible damage.</p>
                     </div>
 
                     <div class="process-card">
                         <div class="process-number">2</div>
                         <h3>As-Found Testing</h3>
-                        <p>We test your tool at multiple points across its range using our NIST-traceable torque standards. This documents the tool's accuracy before calibration.</p>
+                        <p>We test your device at multiple temperature points using our NIST-traceable temperature standards in stable reference environments. This documents accuracy before calibration.</p>
                     </div>
 
                     <div class="process-card">
                         <div class="process-number">3</div>
                         <h3>Adjustment & Calibration</h3>
-                        <p>Tools are adjusted to meet manufacturer specifications and applicable standards (ISO 6789 for torque tools, ASME B89 for dimensional tools). Digital devices receive electronic calibration.</p>
+                        <p>Devices are adjusted to meet manufacturer specifications or customer requirements. Calibration is performed in temperature baths, dry blocks, or environmental chambers as appropriate.</p>
                     </div>
 
                     <div class="process-card">
                         <div class="process-number">4</div>
                         <h3>As-Left Testing</h3>
-                        <p>After calibration, we re-test at the same points to verify accuracy. This ensures the tool meets required specifications across its entire range.</p>
+                        <p>After calibration, we re-test at the same temperature points to verify accuracy. This ensures the device meets required specifications across its full range.</p>
                     </div>
 
                     <div class="process-card">
                         <div class="process-number">5</div>
                         <h3>Certification & Documentation</h3>
-                        <p>Complete calibration certificates include as-found and as-left data, uncertainty calculations, traceability information, and pass/fail status.</p>
+                        <p>Complete calibration certificates include as-found and as-left data, uncertainty calculations, traceability information, environmental conditions, and pass/fail status.</p>
                     </div>
 
                     <div class="process-card">
                         <div class="process-number">6</div>
                         <h3>Labeling & Return</h3>
-                        <p>Tools are marked with calibration date and due date labels. Complete documentation is provided digitally and in print, and tools are securely packaged for return.</p>
+                        <p>Devices are marked with calibration date and due date labels. Complete documentation is provided digitally and in print, and instruments are securely packaged for return.</p>
                     </div>
                 </div>
             </div>
@@ -786,24 +787,24 @@
                 
                 <div class="standards-grid">
                     <div class="standard-card">
-                        <h3>ISO & ASME Standards</h3>
-                        <p>We adhere to internationally recognized standards for mechanical calibration:</p>
+                        <h3>Temperature Standards</h3>
+                        <p>We adhere to internationally recognized standards for temperature calibration:</p>
                         <ul>
-                            <li><strong>ISO 6789:</strong> Torque tools calibration</li>
-                            <li><strong>ASME B89.1:</strong> Dimensional metrology</li>
-                            <li><strong>ASTM E74:</strong> Force measurement</li>
-                            <li><strong>ISO 376:</strong> Load cell calibration</li>
-                            <li><strong>ASME B89.3:</strong> Measurement uncertainty</li>
-                            <li>Multi-point testing protocols</li>
+                            <li><strong>ITS-90:</strong> International Temperature Scale</li>
+                            <li><strong>ASTM E2877:</strong> Liquid-in-glass thermometers</li>
+                            <li><strong>ASTM E2846:</strong> Temperature uniformity surveys</li>
+                            <li><strong>IEC 60584:</strong> Thermocouples</li>
+                            <li><strong>ASTM E644:</strong> Testing industrial RTDs</li>
+                            <li>Multi-point calibration protocols</li>
                         </ul>
                     </div>
 
                     <div class="standard-card">
                         <h3>NIST Traceability</h3>
-                        <p>Every calibration is traceable to the National Institute of Standards and Technology through an unbroken chain of comparisons:</p>
+                        <p>Every calibration is traceable to the National Institute of Standards and Technology:</p>
                         <ul>
                             <li>Primary standards calibrated at NIST</li>
-                            <li>Secondary standards verified annually</li>
+                            <li>Reference thermometers and PRTs</li>
                             <li>Complete uncertainty analysis</li>
                             <li>Documented traceability chain</li>
                             <li>Comprehensive calibration certificates</li>
@@ -813,15 +814,16 @@
 
                     <div class="standard-card">
                         <h3>Industry Applications</h3>
-                        <p>Our mechanical calibration services support critical operations across multiple industries:</p>
+                        <p>Our temperature calibration services support critical operations across multiple industries:</p>
                         <ul>
-                            <li>Aerospace & Aviation</li>
-                            <li>Automotive Manufacturing</li>
+                            <li>Pharmaceutical Manufacturing</li>
+                            <li>Food & Beverage Processing</li>
                             <li>Medical Device Manufacturing</li>
-                            <li>Tool & Die Manufacturing</li>
-                            <li>Precision Machining</li>
-                            <li>Quality Control Laboratories</li>
-                            <li>Research & Development</li>
+                            <li>Biotechnology & Life Sciences</li>
+                            <li>Chemical Processing</li>
+                            <li>Aerospace & Defense</li>
+                            <li>Semiconductor Fabrication</li>
+                            <li>Clinical Laboratories</li>
                         </ul>
                     </div>
 
@@ -829,12 +831,12 @@
                         <h3>Calibration Intervals</h3>
                         <p>Recommended calibration frequency depends on usage, accuracy requirements, and criticality:</p>
                         <ul>
+                            <li><strong>GMP/FDA Critical:</strong> Quarterly to Semi-annually</li>
                             <li><strong>Daily Use:</strong> Every 6 months</li>
                             <li><strong>Regular Use:</strong> Annually</li>
                             <li><strong>Light Use:</strong> Every 2 years</li>
-                            <li><strong>Critical Applications:</strong> Quarterly</li>
                             <li><strong>Reference Standards:</strong> Annually</li>
-                            <li><strong>After Damage:</strong> Immediately</li>
+                            <li><strong>After Damage/Exposure:</strong> Immediately</li>
                         </ul>
                     </div>
                 </div>
@@ -842,11 +844,11 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section-torque">
+        <section class="cta-section-temperature">
             <div class="container">
                 <div class="cta-content-box">
-                    <h2>Ensure Accurate Mechanical Measurements</h2>
-                    <p>Don't risk equipment damage, product defects, or quality failures with uncalibrated measurement tools. Schedule your NIST-traceable mechanical device calibration today.</p>
+                    <h2>Ensure Accurate Temperature Measurements</h2>
+                    <p>Don't risk product quality issues, regulatory non-compliance, or process control failures with uncalibrated temperature devices. Schedule your NIST-traceable temperature calibration today.</p>
                     <div class="cta-buttons">
                         <a href="contact.html" class="cta-button-primary">Request a Quote</a>
                         <a href="tel:888-561-8771" class="cta-button-secondary">
@@ -854,7 +856,7 @@
                             <span>(888) 561-8771</span>
                         </a>
                     </div>
-                    <p class="cta-note">Fast turnaround available • On-site calibration for large tool inventories</p>
+                    <p class="cta-note">Fast turnaround available • On-site calibration for chambers and rooms</p>
                 </div>
             </div>
         </section>

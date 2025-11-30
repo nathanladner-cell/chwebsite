@@ -18,12 +18,188 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="logos/chlink.png">
     <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css?v=5.0" as="style">
+    <link rel="preload" href="styles.css?v=5.6" as="style">
     <link rel="preload" href="header2.svg" as="image">
-    <link rel="stylesheet" href="styles.css?v=5.4">
+    <link rel="stylesheet" href="styles.css?v=5.6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
+    <style>
+        /* Why Choose Section - Badass Industrial Style */
+        .why-choose {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-choose::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(184, 115, 51, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .why-choose-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-choose-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .why-choose-header .section-subtitle {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.3rem;
+            color: #B87333;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 2px solid #2a2a2a;
+            border-radius: 2px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #B87333, transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .why-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .why-card:hover {
+            border-color: #B87333;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(184, 115, 51, 0.3);
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(184, 115, 51, 0.15) 0%, rgba(184, 115, 51, 0.05) 100%);
+            border: 2px solid rgba(184, 115, 51, 0.3);
+            border-radius: 2px;
+            transition: all 0.4s ease;
+        }
+
+        .why-card:hover .why-icon {
+            background: linear-gradient(135deg, rgba(184, 115, 51, 0.3) 0%, rgba(184, 115, 51, 0.15) 100%);
+            border-color: #B87333;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .why-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: #B87333;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .why-card h3 {
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center;
+        }
+
+        .why-card p {
+            color: #cccccc;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .why-choose-header h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .why-choose {
+                padding: 60px 0;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .why-choose-header h2 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .why-choose-header .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .why-card {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .why-choose-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .why-card h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -99,26 +275,26 @@
                             <h3>Calibration</h3>
                         </div>
                         <div class="service-buttons">
-                            <button class="service-btn" data-service="instrument">
-                                <img src="icons/instrument.png" alt="Instrument Calibration" class="btn-icon">
-                                <span class="btn-text">Process Instrumentation</span>
+                            <a href="pressure-calibration.html" class="service-btn">
+                                <img src="icons/pressure.png" alt="Pressure Calibration" class="btn-icon">
+                                <span class="btn-text">Pressure Calibration</span>
                                 <span class="btn-arrow">→</span>
-                            </button>
-                            <button class="service-btn" data-service="metering">
-                                <img src="icons/multimeter.png" alt="Metering Device Calibration" class="btn-icon">
-                                <span class="btn-text">Metering Devices</span>
+                            </a>
+                            <a href="temperature-calibration.html" class="service-btn">
+                                <img src="icons/thermo.png" alt="Temperature Calibration" class="btn-icon">
+                                <span class="btn-text">Temperature Calibration</span>
                                 <span class="btn-arrow">→</span>
-                            </button>
-                            <button class="service-btn" data-service="electronic">
-                                <img src="icons/megger.png" alt="Electrical Test Equipment Calibration" class="btn-icon">
-                                <span class="btn-text">Electrical Test Equipment</span>
+                            </a>
+                            <a href="electrical-calibration.html" class="service-btn">
+                                <img src="icons/multimeter.png" alt="Electrical Calibration" class="btn-icon">
+                                <span class="btn-text">Electrical Calibration</span>
                                 <span class="btn-arrow">→</span>
-                            </button>
-                            <button class="service-btn" data-service="gas-detection">
-                                <img src="icons/gasdetector.png" alt="Gas Detection Calibration" class="btn-icon">
-                                <span class="btn-text">Gas Detection Devices</span>
+                            </a>
+                            <a href="flow-calibration.html" class="service-btn">
+                                <img src="icons/instrument.png" alt="Flow Calibration" class="btn-icon">
+                                <span class="btn-text">Flow Calibration</span>
                                 <span class="btn-arrow">→</span>
-                            </button>
+                            </a>
                         </div>
                         <a href="calibration.html" class="see-more-btn">More Services</a>
                     </div>
@@ -148,6 +324,14 @@
                             <div class="legend-item">
                                 <div class="legend-color active-service"></div>
                                 <span>Service Area</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color travel-2025"></div>
+                                <span>2025 Travel</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color location-pin"></div>
+                                <span>Facility Locations</span>
                             </div>
                         </div>
                     </div>
@@ -179,6 +363,80 @@
                             <div class="stat-number">100%</div>
                             <div class="stat-label">Compliance Rate</div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose" class="why-choose">
+            <div class="container">
+                <div class="why-choose-header">
+                    <h2>THE COPPERHEAD ADVANTAGE</h2>
+                    <p class="section-subtitle">When safety isn't negotiable, choose the lab that powers the industry</p>
+                </div>
+                
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <h3>WE ANSWER THE PHONE</h3>
+                        <p>Others take weeks or won't even answer. We pick up, get guys on the road to your site or in the lab, and get your crews back to work. No runaround, no excuses.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>24/7 RAPID RESPONSE</h3>
+                        <p>Round-the-clock emergency service with 24-hour standard turnaround. Your crews don't stop, neither do we.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                            </svg>
+                        </div>
+                        <h3>HIGH-VOLTAGE EXPERTISE</h3>
+                        <p>Specialized testing for rubber PPE, live-line tools, dielectric equipment, and protective grounds. ASTM-certified procedures across all testing.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <img src="icons/cybertruck.svg" alt="Mobile Testing Fleet" style="width: 50px; height: 50px; filter: brightness(0) saturate(100%) invert(46%) sepia(41%) saturate(721%) hue-rotate(347deg) brightness(96%) contrast(85%);">
+                        </div>
+                        <h3>MOBILE TESTING FLEET</h3>
+                        <p>Fully-equipped mobile labs bring testing to your location. Large fleet operations and remote sites—no problem.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                <circle cx="12" cy="16" r="1" fill="currentColor"></circle>
+                            </svg>
+                        </div>
+                        <h3>THE VAULT SOFTWARE</h3>
+                        <p>Proprietary asset tracking system with cloud-based records, photographic documentation, and automated re-test alerts. Your entire compliance history secured and accessible 24/7.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>DUAL-LOCATION COVERAGE</h3>
+                        <p>Facilities in Decatur, AL and Albany, NY serving utilities nationwide. Regional accessibility, national reliability.</p>
                     </div>
                 </div>
             </div>
@@ -281,10 +539,10 @@
                     <div class="footer-section">
                         <h3>Calibration Services</h3>
                         <ul>
-                            <li><a href="calibration.html">Process Instrumentation</a></li>
-                            <li><a href="calibration.html">Metering Devices</a></li>
-                            <li><a href="calibration.html">Electrical Test Equipment</a></li>
-                            <li><a href="calibration.html">Gas Detection Devices</a></li>
+                            <li><a href="pressure-calibration.html">Pressure Calibration</a></li>
+                            <li><a href="temperature-calibration.html">Temperature Calibration</a></li>
+                            <li><a href="electrical-calibration.html">Electrical Calibration</a></li>
+                            <li><a href="flow-calibration.html">Flow Calibration</a></li>
                             <li><a href="calibration.html">More Services →</a></li>
                         </ul>
                     </div>
@@ -308,14 +566,14 @@
             <div class="container">
                 <div class="footer-bottom-content">
                     <p>&copy; 2025 Copperhead Labs. All rights reserved.</p>
-                    <p class="footer-tagline-bottom">NIST-Traceable Calibration | ISO/IEC 17025 Accredited</p>
+                    <p class="footer-tagline-bottom">NIST-Traceable Calibration | ISO/IEC 17025 Compliant</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="mapdata.js"></script>
-    <script src="usmap.js"></script>
+    <script src="mapdata.js?v=2.1"></script>
+    <script src="usmap.js?v=2.1"></script>
     <script src="script.js?v=2.0"></script>
 </body>
 </html>

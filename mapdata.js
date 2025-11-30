@@ -18,17 +18,17 @@ var simplemaps_usmap_mapdata={
     
 		//Location defaults
 		location_description: "Location description",
-    location_color: "#8B4513",
-    location_opacity: 0.8,
+    location_color: "#000000",
+    location_opacity: 1,
     location_hover_opacity: 1,
     location_url: "",
-    location_size: 25,
-    location_type: "square",
+    location_size: 30,
+    location_type: "circle",
     location_border_color: "#FFFFFF",
     location_border: 2,
     location_hover_border: 2.5,
-    all_locations_inactive: "yes",
-    all_locations_hidden: "yes",
+    all_locations_inactive: "no",
+    all_locations_hidden: "no",
     
 		//Label defaults
 		label_color: "#ffffff",
@@ -474,21 +474,26 @@ var simplemaps_usmap_mapdata={
   },
   locations: {
     "0": {
-      name: "New York",
-      lat: 40.71,
-      lng: -74,
-      description: "default",
-      color: "default",
-      url: "default",
-      type: "default",
-      size: "default"
+      name: "Albany, NY",
+      lat: 42.6526,
+      lng: -73.7562,
+      description: "Copperhead Labs - Albany, NY",
+      color: "#000000",
+      url: "",
+      type: "circle",
+      size: "30",
+      opacity: 1
     },
     "1": {
-      name: "Anchorage",
-      lat: 61.2180556,
-      lng: -149.9002778,
-      color: "default",
-      type: "circle"
+      name: "Decatur, AL",
+      lat: 34.6059,
+      lng: -86.9833,
+      description: "Copperhead Labs - Decatur, AL",
+      color: "#000000",
+      url: "",
+      type: "circle",
+      size: "30",
+      opacity: 1
     }
   },
   labels: {

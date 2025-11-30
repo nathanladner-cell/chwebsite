@@ -18,6 +18,925 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="logos/chlink.png">
+    <style>
+        /* Protective Grounds Testing Page - Dark Masculine Style with Copper Accents */
+        body.grounds-page {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+
+        .grounds-page main {
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+        }
+
+        /* Dark hero with overlay */
+        .grounds-page .grounds-hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('testing/IMG_7747.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 160px 0 120px;
+            border-bottom: 3px solid #B87333;
+        }
+
+        .grounds-page .grounds-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(184, 115, 51, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .grounds-page .hero-content-grounds {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .grounds-page .grounds-hero-badge {
+            display: inline-block;
+            background: rgba(184, 115, 51, 0.2);
+            color: #B87333;
+            padding: 8px 24px;
+            border: 2px solid #B87333;
+            border-radius: 2px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .grounds-page .grounds-hero h1 {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .grounds-page .hero-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .grounds-page .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .grounds-page .cta-button-primary {
+            background: #B87333;
+            color: white;
+            padding: 18px 45px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(184, 115, 51, 0.5);
+        }
+
+        .grounds-page .cta-button-primary:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(184, 115, 51, 0.4);
+        }
+
+        .grounds-page .cta-button-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 45px;
+            border: 2px solid white;
+            border-radius: 2px;
+            text-decoration: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grounds-page .cta-button-secondary:hover {
+            background: white;
+            color: #1a1a1a;
+        }
+
+        /* Intro section - dark background */
+        .grounds-page .grounds-intro {
+            background: #0a0a0a;
+            padding: 80px 0;
+        }
+
+        .grounds-page .intro-grid-grounds {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+            background: transparent !important;
+        }
+
+        .grounds-page .intro-image-grounds {
+            background: transparent !important;
+        }
+
+        .grounds-page .intro-image-grounds img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            filter: drop-shadow(0 8px 25px rgba(184, 115, 51, 0.3));
+            background: transparent !important;
+        }
+
+        .grounds-page .intro-content-grounds {
+            background: transparent !important;
+        }
+
+        .grounds-page .intro-content-grounds h2 {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grounds-page .lead-text {
+            font-size: 1.2rem;
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .grounds-page .intro-content-grounds > p {
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .grounds-page .intro-stats-grounds {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            background: transparent !important;
+        }
+
+        .grounds-page .stat-box-grounds {
+            background: #1a1a1a !important;
+            border: 2px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .grounds-page .stat-box-grounds:hover {
+            border-color: #B87333;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(184, 115, 51, 0.2);
+        }
+
+        .grounds-page .stat-value {
+            color: #B87333;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .grounds-page .stat-label {
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Equipment We Test Section */
+        .grounds-page .equipment-section {
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+            padding: 80px 0;
+        }
+
+        .grounds-page .section-header-center {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .grounds-page .section-header-center h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grounds-page .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+        }
+
+        .grounds-page .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .grounds-page .equipment-card {
+            background: #0a0a0a;
+            border-radius: 4px;
+            padding: 2.5rem;
+            border: 2px solid #2a2a2a;
+            transition: all 0.3s ease;
+        }
+
+        .grounds-page .equipment-card:hover {
+            border-color: #B87333;
+            box-shadow: 0 12px 35px rgba(184, 115, 51, 0.2);
+            transform: translateY(-6px);
+        }
+
+        .grounds-page .equipment-icon {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .grounds-page .equipment-icon img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 12px rgba(184, 115, 51, 0.3));
+        }
+
+        .grounds-page .equipment-card h3 {
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .grounds-page .equipment-card > p {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .grounds-page .equipment-specs {
+            background: #1a1a1a;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid #2a2a2a;
+        }
+
+        .grounds-page .spec-item {
+            color: #cccccc;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .grounds-page .spec-item strong {
+            color: #B87333;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Testing Process Section */
+        .grounds-page .process-section-grounds {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 26, 26, 0.92) 100%), url('testing/PXL_20240209_202505443.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 0;
+            color: white;
+        }
+
+        .grounds-page .section-title-center {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grounds-page .process-timeline-grounds {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .grounds-page .process-step-card-grounds {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 4px;
+            border: 2px solid rgba(184, 115, 51, 0.3);
+            position: relative;
+            min-height: 200px;
+        }
+
+        .grounds-page .process-step-card-grounds:hover {
+            border-color: rgba(184, 115, 51, 0.6);
+            background: rgba(0, 0, 0, 0.75);
+        }
+
+        .grounds-page .step-number-badge {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: #B87333;
+            color: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(184, 115, 51, 0.4);
+        }
+
+        .grounds-page .process-step-card-grounds h3 {
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            margin-top: 25px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .grounds-page .process-step-card-grounds p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        .grounds-page .included-features-grounds {
+            margin-top: 4rem;
+        }
+
+        .grounds-page .included-features-grounds h3 {
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grounds-page .features-grid-grounds {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grounds-page .feature-box {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.5rem;
+            border-radius: 4px;
+            border: 2px solid rgba(184, 115, 51, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .grounds-page .feature-box:hover {
+            border-color: rgba(184, 115, 51, 0.6);
+            background: rgba(0, 0, 0, 0.75);
+        }
+
+        .grounds-page .feature-icon-check {
+            color: #B87333;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .grounds-page .feature-box span {
+            color: rgba(255, 255, 255, 0.9);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Testing Requirements Section */
+        .grounds-page .requirements-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+            padding: 80px 0;
+            position: relative;
+            border: none !important;
+        }
+
+        .grounds-page .requirements-section * {
+            background: transparent !important;
+            border-color: #3a3a3a !important;
+        }
+
+        .grounds-page .requirements-section .container {
+            background: transparent !important;
+            border: none !important;
+        }
+
+        .grounds-page .requirements-section .requirement-card {
+            background: #2a2a2a !important;
+            border-color: #3a3a3a !important;
+        }
+
+        .grounds-page .requirements-section .requirement-card.highlight-requirement,
+        .grounds-page .requirements-section .requirement-card:hover {
+            background: #333333 !important;
+            border-color: #B87333 !important;
+        }
+
+        .grounds-page .requirements-section .specs-table {
+            background: #2a2a2a !important;
+            border-color: #3a3a3a !important;
+        }
+
+        .grounds-page .requirements-section .specs-header {
+            background: #333333 !important;
+        }
+
+        .grounds-page .requirements-section .compliance-note {
+            background: rgba(184, 115, 51, 0.15) !important;
+            border-left-color: #B87333 !important;
+        }
+
+        .grounds-page .requirements-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(184, 115, 51, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .grounds-page .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .grounds-page .requirement-card {
+            background: #2a2a2a !important;
+            padding: 2.5rem;
+            border-radius: 0px;
+            border: 2px solid #3a3a3a;
+            transition: all 0.3s ease;
+        }
+
+        .grounds-page .requirement-card:hover {
+            border-color: #B87333;
+            transform: translateY(-4px);
+            background: #333333 !important;
+        }
+
+        .grounds-page .requirement-card.highlight-requirement {
+            border-color: #B87333;
+            background: #333333 !important;
+        }
+
+        .grounds-page .requirement-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .grounds-page .requirement-card h3 {
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .grounds-page .requirement-card p {
+            color: #e0e0e0;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .grounds-page .requirement-card strong {
+            color: #B87333;
+            font-weight: 700;
+        }
+
+        .grounds-page .requirement-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+
+        .grounds-page .requirement-list li {
+            color: #e0e0e0;
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .grounds-page .requirement-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #B87333;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .grounds-page .technical-specs-section {
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .grounds-page .technical-specs-section h3 {
+            color: #ffffff !important;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grounds-page .specs-intro {
+            color: #cccccc !important;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .grounds-page .specs-table {
+            background: #2a2a2a !important;
+            border-radius: 0px;
+            overflow: hidden;
+            border: 2px solid #3a3a3a;
+        }
+
+        .grounds-page .specs-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.5fr;
+            gap: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .grounds-page .specs-row:last-child {
+            border-bottom: none;
+        }
+
+        .grounds-page .specs-header {
+            background: #333333 !important;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grounds-page .specs-header .specs-cell {
+            color: #B87333 !important;
+        }
+
+        .grounds-page .specs-cell {
+            color: #e0e0e0 !important;
+        }
+
+        .grounds-page .specs-cell strong {
+            color: #B87333 !important;
+        }
+
+        .grounds-page .compliance-note {
+            background: rgba(184, 115, 51, 0.15) !important;
+            border-left: 3px solid #B87333;
+            padding: 2rem;
+            margin-top: 3rem;
+            display: flex;
+            gap: 1.5rem;
+            border-radius: 0px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .grounds-page .note-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .grounds-page .note-content h4 {
+            color: #B87333;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .grounds-page .note-content p {
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        /* Why Choose Us Section */
+        .grounds-page .why-choose-grounds {
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.97) 100%), url('testing/PXL_20240212_184327693.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+        }
+
+        .grounds-page .why-grid-grounds {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .grounds-page .why-card {
+            background: #1a1a1a;
+            border: 2px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .grounds-page .why-card:hover {
+            border-color: #B87333;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(184, 115, 51, 0.2);
+        }
+
+        .grounds-page .why-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .grounds-page .why-card h3 {
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .grounds-page .why-card p {
+            color: #cccccc;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .grounds-page .cta-section-grounds {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.93) 0%, rgba(26, 26, 26, 0.93) 100%), url('testing/PXL_20250811_171429085.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 0;
+        }
+
+        .grounds-page .cta-content-box {
+            background: rgba(26, 26, 26, 0.8);
+            padding: 4rem;
+            border-radius: 4px;
+            text-align: center;
+            border: 2px solid #B87333;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .grounds-page .cta-content-box h2 {
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grounds-page .cta-content-box > p {
+            color: #cccccc;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .grounds-page .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .grounds-page .cta-note {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 1024px) {
+            .grounds-page .intro-grid-grounds {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .grounds-page .intro-image-grounds {
+                display: flex;
+                justify-content: center;
+            }
+
+            .grounds-page .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grounds-page .why-grid-grounds {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grounds-page .grounds-hero {
+                padding: 120px 0 80px;
+                background-attachment: scroll;
+            }
+
+            .grounds-page .grounds-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .grounds-page .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .grounds-page .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .grounds-page .hero-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .grounds-page .section-title-center {
+                font-size: 2rem;
+            }
+
+            .grounds-page .intro-content-grounds h2 {
+                font-size: 2rem;
+            }
+
+            .grounds-page .intro-stats-grounds {
+                grid-template-columns: 1fr;
+            }
+
+            .grounds-page .equipment-grid {
+                gap: 1.5rem;
+            }
+
+            .grounds-page .equipment-card {
+                padding: 1.5rem;
+            }
+
+            .grounds-page .process-timeline-grounds {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .grounds-page .process-step-card-grounds {
+                padding: 1.5rem;
+                min-height: auto;
+            }
+
+            .grounds-page .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grounds-page .why-grid-grounds {
+                grid-template-columns: 1fr;
+            }
+
+            .grounds-page .cta-content-box {
+                padding: 2rem;
+            }
+
+            .grounds-page .cta-content-box h2 {
+                font-size: 2rem;
+            }
+
+            .grounds-page .cta-content-box > p {
+                font-size: 1rem;
+            }
+
+            .grounds-page .cta-buttons {
+                flex-direction: column;
+            }
+
+            .grounds-page .cta-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .grounds-page .compliance-note {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+
+            .grounds-page .specs-row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grounds-page .grounds-hero {
+                padding: 100px 0 60px;
+            }
+
+            .grounds-page .grounds-hero h1 {
+                font-size: 2rem;
+            }
+
+            .grounds-page .grounds-hero-badge {
+                font-size: 0.75rem;
+                padding: 6px 16px;
+            }
+
+            .grounds-page .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .grounds-page .section-title-center {
+                font-size: 1.75rem;
+            }
+
+            .grounds-page .intro-content-grounds h2 {
+                font-size: 1.75rem;
+            }
+
+            .grounds-page .equipment-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .grounds-page .process-step-card-grounds h3 {
+                font-size: 1.2rem;
+            }
+
+            .grounds-page .cta-content-box h2 {
+                font-size: 1.75rem;
+            }
+
+            .grounds-page .cta-button-primary,
+            .grounds-page .cta-button-secondary {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body class="grounds-page">
     <header>
@@ -120,48 +1039,16 @@
 
                     <div class="equipment-card">
                         <div class="equipment-icon">
-                            <img src="icons/hose.png" alt="Grounding Cables">
+                            <img src="icons/mac.png" alt="MACs">
                         </div>
-                        <h3>Grounding Cables</h3>
-                        <p>Flexible copper grounding cables in various gauges and lengths used to establish equipotential bonding and provide a low-resistance path to ground.</p>
+                        <h3>MACs (Manual Application Clamps)</h3>
+                        <p>Protective grounds with integrated rubber glove jumper handles for safe manual application on energized or potentially energized conductors.</p>
                         <div class="equipment-specs">
                             <div class="spec-item">
-                                <strong>Test:</strong> Continuity & Resistance
+                                <strong>Test:</strong> Resistance & Dielectric
                             </div>
                             <div class="spec-item">
-                                <strong>Lengths:</strong> 6' to 100' available
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="equipment-card">
-                        <div class="equipment-icon">
-                            <img src="icons/digger.png" alt="Clamps & Connectors">
-                        </div>
-                        <h3>Grounding Clamps</h3>
-                        <p>C-clamps, bracket clamps, and conductor clamps used to attach grounding cables to conductors, structures, and equipment.</p>
-                        <div class="equipment-specs">
-                            <div class="spec-item">
-                                <strong>Test:</strong> Mechanical & Electrical
-                            </div>
-                            <div class="spec-item">
-                                <strong>Types:</strong> Various styles & sizes
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="equipment-card">
-                        <div class="equipment-icon">
-                            <img src="icons/trailer.png" alt="Ground Carts">
-                        </div>
-                        <h3>Portable Ground Carts</h3>
-                        <p>Mobile grounding equipment carts with integrated cable storage, making it easy to transport and deploy protective grounds on job sites.</p>
-                        <div class="equipment-specs">
-                            <div class="spec-item">
-                                <strong>Test:</strong> Complete System Test
-                            </div>
-                            <div class="spec-item">
-                                <strong>Inspection:</strong> Structural & Mechanical
+                                <strong>Applications:</strong> Hot work operations
                             </div>
                         </div>
                     </div>
@@ -322,59 +1209,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="compliance-note">
-                    <div class="note-icon">⚠️</div>
-                    <div class="note-content">
-                        <h4>Critical Safety Warning</h4>
-                        <p>Defective protective grounds can result in electrocution if accidental energization occurs during maintenance work. High-resistance connections can fail to carry fault current safely, creating a lethal hazard. Regular testing is essential—never use untested or questionable grounding equipment. OSHA violations for inadequate grounding can result in serious citations and increased liability.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Choose Us Section -->
-        <section class="why-choose-grounds">
-            <div class="container">
-                <h2 class="section-title-center">Why Choose Copperhead Labs</h2>
-                
-                <div class="why-grid-grounds">
-                    <div class="why-card">
-                        <div class="why-icon">🎯</div>
-                        <h3>Industry Expertise</h3>
-                        <p>Our technicians are trained in ASTM F2249 testing procedures with extensive experience in utility grounding practices.</p>
-                    </div>
-
-                    <div class="why-card">
-                        <div class="why-icon">🔬</div>
-                        <h3>Precision Equipment</h3>
-                        <p>Advanced four-wire Kelvin resistance measurement systems provide accurate, repeatable results down to micro-ohm levels.</p>
-                    </div>
-
-                    <div class="why-card">
-                        <div class="why-icon">⚡</div>
-                        <h3>Fast Turnaround</h3>
-                        <p>Standard 24-hour turnaround available to minimize downtime and keep your grounding equipment in service.</p>
-                    </div>
-
-                    <div class="why-card">
-                        <div class="why-icon">📊</div>
-                        <h3>Complete Records</h3>
-                        <p>Digital record keeping with test data, photos, and certificates accessible anytime for compliance audits.</p>
-                    </div>
-
-                    <div class="why-card">
-                        <div class="why-icon">📱</div>
-                        <h3>Test Reminders</h3>
-                        <p>Automatic notifications when equipment is due for re-testing to maintain continuous compliance.</p>
-                    </div>
-
-                    <div class="why-card">
-                        <div class="why-icon">🚚</div>
-                        <h3>On-Site Testing</h3>
-                        <p>Mobile testing services available for large grounding equipment inventories and fleet operations.</p>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -483,7 +1317,7 @@
             <div class="container">
                 <div class="footer-bottom-content">
                     <p>&copy; 2025 Copperhead Labs. All rights reserved.</p>
-                    <p class="footer-tagline-bottom">NIST-Traceable Calibration | ISO/IEC 17025 Accredited</p>
+                    <p class="footer-tagline-bottom">NIST-Traceable Calibration | ISO/IEC 17025 Compliant</p>
                 </div>
             </div>
         </div>

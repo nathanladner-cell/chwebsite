@@ -110,12 +110,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navbar Background Change on Scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.backdropFilter = 'blur(10px)';
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // On mobile, maintain the glass effect from CSS
+        // Remove inline styles to let CSS handle it
+        navbar.style.background = '';
+        navbar.style.backdropFilter = '';
     } else {
-        navbar.style.background = 'white';
-        navbar.style.backdropFilter = 'none';
+        // On desktop, apply scroll-based background change
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(10px)';
+        } else {
+            navbar.style.background = 'white';
+            navbar.style.backdropFilter = 'none';
+        }
     }
 });
 
