@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torque Calibration Services - Copperhead Labs</title>
+    <link rel="preload" href="styles.css?v=5.0" as="style">
+    <link rel="stylesheet" href="styles.css?v=5.4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
+    <link rel="icon" href="logos/copperhead.svg" type="image/svg+xml">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Torque Calibration Services - Copperhead Labs">
+    <meta property="og:description" content="NIST-traceable calibration for torque wrenches, torque screwdrivers, and torque measurement equipment. ISO 6789 compliant testing.">
+    <meta property="og:image" content="logos/chlink.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="logos/chlink.png">
+    <style>
+        /* Torque Calibration Page - Dark Masculine Style with Copper Accents */
+        body.torque-page {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+
+        .torque-page main {
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+        }
+
+        /* Dark hero with overlay */
+        .torque-page .torque-hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('testing/PXL_20250811_171429085.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 160px 0 120px;
+            border-bottom: 3px solid #B87333;
+        }
+
+        .torque-page .torque-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(184, 115, 51, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .torque-page .hero-content-torque {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .torque-page .torque-hero-badge {
+            display: inline-block;
+            background: rgba(184, 115, 51, 0.2);
+            color: #B87333;
+            padding: 8px 24px;
+            border: 2px solid #B87333;
+            border-radius: 2px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .torque-page .torque-hero h1 {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .torque-page .hero-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .torque-page .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .torque-page .cta-button-primary {
+            background: #B87333;
+            color: white;
+            padding: 18px 45px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(184, 115, 51, 0.5);
+        }
+
+        .torque-page .cta-button-primary:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(184, 115, 51, 0.4);
+        }
+
+        .torque-page .cta-button-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 45px;
+            border: 2px solid white;
+            border-radius: 2px;
+            text-decoration: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .torque-page .cta-button-secondary:hover {
+            background: white;
+            color: #1a1a1a;
+        }
+
+        /* Intro section */
+        .torque-page .torque-intro {
+            background: #0a0a0a;
+            padding: 80px 0;
+        }
+
+        .torque-page .intro-content h2 {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .torque-page .intro-text {
+            font-size: 1.2rem;
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .torque-page .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .torque-page .stat-box {
+            background: #1a1a1a;
+            border: 2px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .torque-page .stat-box:hover {
+            border-color: #B87333;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(184, 115, 51, 0.2);
+        }
+
+        .torque-page .stat-value {
+            color: #B87333;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .torque-page .stat-label {
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Equipment Section */
+        .torque-page .equipment-section {
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+            padding: 80px 0;
+        }
+
+        .torque-page .section-title-center {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .torque-page .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .torque-page .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .torque-page .equipment-card {
+            background: #0a0a0a;
+            border-radius: 4px;
+            padding: 2.5rem;
+            border: 2px solid #2a2a2a;
+            transition: all 0.3s ease;
+        }
+
+        .torque-page .equipment-card:hover {
+            border-color: #B87333;
+            box-shadow: 0 12px 35px rgba(184, 115, 51, 0.2);
+            transform: translateY(-6px);
+        }
+
+        .torque-page .equipment-card h3 {
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .torque-page .equipment-card p {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .torque-page .equipment-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .torque-page .equipment-card li {
+            color: #cccccc;
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .torque-page .equipment-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #B87333;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Process Section */
+        .torque-page .process-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.93) 0%, rgba(10, 10, 10, 0.95) 100%), url('testing/cdi.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 0;
+            color: white;
+            position: relative;
+        }
+
+        .torque-page .process-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(184, 115, 51, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .torque-page .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .torque-page .process-card {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 2rem;
+            border-radius: 4px;
+            border: 2px solid rgba(184, 115, 51, 0.3);
+            position: relative;
+            min-height: 200px;
+            backdrop-filter: blur(5px);
+        }
+
+        .torque-page .process-card:hover {
+            border-color: rgba(184, 115, 51, 0.6);
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .torque-page .process-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: #B87333;
+            color: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(184, 115, 51, 0.4);
+        }
+
+        .torque-page .process-card h3 {
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            margin-top: 25px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .torque-page .process-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        /* Standards Section */
+        .torque-page .standards-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .torque-page .standards-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(184, 115, 51, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .torque-page .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .torque-page .standard-card {
+            background: #2a2a2a;
+            padding: 2.5rem;
+            border-radius: 4px;
+            border: 2px solid #3a3a3a;
+            transition: all 0.3s ease;
+        }
+
+        .torque-page .standard-card:hover {
+            border-color: #B87333;
+            transform: translateY(-4px);
+            background: #333333;
+        }
+
+        .torque-page .standard-card h3 {
+            color: #B87333;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .torque-page .standard-card p {
+            color: #e0e0e0;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .torque-page .standard-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .torque-page .standard-card li {
+            color: #e0e0e0;
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .torque-page .standard-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #B87333;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .torque-page .cta-section-torque {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 80px 0;
+        }
+
+        .torque-page .cta-content-box {
+            background: rgba(26, 26, 26, 0.8);
+            padding: 4rem;
+            border-radius: 4px;
+            text-align: center;
+            border: 2px solid #B87333;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .torque-page .cta-content-box h2 {
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .torque-page .cta-content-box > p {
+            color: #cccccc;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .torque-page .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .torque-page .cta-note {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 1024px) {
+            .torque-page .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .torque-page .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .torque-page .torque-hero {
+                padding: 120px 0 80px;
+                background-attachment: scroll;
+            }
+
+            .torque-page .process-section {
+                background-attachment: scroll;
+            }
+
+            .torque-page .torque-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .torque-page .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .torque-page .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .torque-page .section-title-center {
+                font-size: 2rem;
+            }
+
+            .torque-page .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .torque-page .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .torque-page .cta-content-box {
+                padding: 2rem;
+            }
+
+            .torque-page .cta-content-box h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .torque-page .torque-hero {
+                padding: 100px 0 60px;
+            }
+
+            .torque-page .torque-hero h1 {
+                font-size: 2rem;
+            }
+
+            .torque-page .section-title-center {
+                font-size: 1.75rem;
+            }
+
+            .torque-page .cta-button-primary,
+            .torque-page .cta-button-secondary {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="torque-page">
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                    <img src="logos/header2.svg" alt="Copperhead Labs Logo" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="testing.html">Testing</a></li>
+                    <li><a href="calibration.html">Calibration</a></li>
+                    <li><a href="software.html">Software</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="torque-hero">
+            <div class="container">
+                <div class="hero-content-torque">
+                    <div class="torque-hero-badge">ISO 6789 Compliant Calibration</div>
+                    <h1>Torque Calibration Services</h1>
+                    <p class="hero-subtitle">NIST-traceable calibration for torque wrenches, torque screwdrivers, and torque measurement equipment. Precision you can trust for critical fastening applications.</p>
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="cta-button-primary">Request Calibration</a>
+                        <a href="tel:888-561-8771" class="cta-button-secondary">Call (888) 561-8771</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="torque-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <h2>Why Torque Calibration Matters</h2>
+                    <p class="intro-text">Accurate torque application is critical in manufacturing, maintenance, and assembly operations. Over-torquing can damage components and create safety hazards, while under-torquing can lead to joint failure and catastrophic equipment breakdown. Regular calibration ensures your torque tools deliver consistent, accurate results every time.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value">±3%</div>
+                            <div class="stat-label">Accuracy Standard</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">NIST</div>
+                            <div class="stat-label">Traceable Standards</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">ISO 6789</div>
+                            <div class="stat-label">Compliant Testing</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">48HR</div>
+                            <div class="stat-label">Fast Turnaround</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment Section -->
+        <section class="equipment-section">
+            <div class="container">
+                <h2 class="section-title-center">Torque Equipment We Calibrate</h2>
+                <p class="section-subtitle">Comprehensive calibration services for all types of torque measurement and application tools</p>
+                
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <h3>Torque Wrenches</h3>
+                        <p>We calibrate all types of torque wrenches to ensure accurate fastener tightening across your operations.</p>
+                        <ul>
+                            <li>Click-type torque wrenches</li>
+                            <li>Beam torque wrenches</li>
+                            <li>Digital torque wrenches</li>
+                            <li>Dial-indicating torque wrenches</li>
+                            <li>Electronic torque wrenches</li>
+                            <li>Micrometer-adjustable wrenches</li>
+                            <li>Preset torque wrenches</li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-card">
+                        <h3>Torque Screwdrivers</h3>
+                        <p>Precision calibration for torque screwdrivers used in electronics, medical devices, and precision assembly.</p>
+                        <ul>
+                            <li>Cam-over torque screwdrivers</li>
+                            <li>Adjustable torque screwdrivers</li>
+                            <li>Preset torque screwdrivers</li>
+                            <li>Digital torque screwdrivers</li>
+                            <li>Pneumatic torque screwdrivers</li>
+                            <li>Electric torque screwdrivers</li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-card">
+                        <h3>Torque Multipliers</h3>
+                        <p>Calibration services for manual and pneumatic torque multipliers used in heavy industrial applications.</p>
+                        <ul>
+                            <li>Manual torque multipliers</li>
+                            <li>Pneumatic torque multipliers</li>
+                            <li>Hydraulic torque multipliers</li>
+                            <li>Electric torque multipliers</li>
+                            <li>Reaction bar systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-card">
+                        <h3>Torque Analyzers & Testers</h3>
+                        <p>Expert calibration of torque measurement and testing equipment for quality control and tool verification.</p>
+                        <ul>
+                            <li>Torque analyzers</li>
+                            <li>Torque testers</li>
+                            <li>Torque transducers</li>
+                            <li>Torque sensors</li>
+                            <li>Rotary torque meters</li>
+                            <li>Breakaway torque testers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title-center">Our Calibration Process</h2>
+                <p class="section-subtitle">Multi-point testing with NIST-traceable standards for complete accuracy assurance</p>
+
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-number">1</div>
+                        <h3>Receiving & Inspection</h3>
+                        <p>Each tool is logged into our system with unique identification. Initial visual inspection documents condition and identifies any visible damage or wear.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-number">2</div>
+                        <h3>As-Found Testing</h3>
+                        <p>We test your tool at multiple points across its range using our NIST-traceable torque standards. This documents the tool's accuracy before calibration.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-number">3</div>
+                        <h3>Adjustment & Calibration</h3>
+                        <p>Tools are adjusted to meet manufacturer specifications or ISO 6789 standards (±3% or ±4% depending on tool type). Digital tools receive electronic calibration.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-number">4</div>
+                        <h3>As-Left Testing</h3>
+                        <p>After calibration, we re-test at the same points to verify accuracy. This ensures the tool meets required specifications across its entire range.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-number">5</div>
+                        <h3>Certification & Documentation</h3>
+                        <p>Complete calibration certificates include as-found and as-left data, uncertainty calculations, traceability information, and pass/fail status.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-number">6</div>
+                        <h3>Labeling & Return</h3>
+                        <p>Tools are marked with calibration date and due date labels. Complete documentation is provided digitally and in print, and tools are securely packaged for return.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standards Section -->
+        <section class="standards-section">
+            <div class="container">
+                <h2 class="section-title-center">Compliance & Standards</h2>
+                
+                <div class="standards-grid">
+                    <div class="standard-card">
+                        <h3>ISO 6789</h3>
+                        <p>The international standard for torque tools and their calibration. We follow ISO 6789-1 and ISO 6789-2 requirements for:</p>
+                        <ul>
+                            <li>Multi-point testing (minimum 5 points)</li>
+                            <li>Accuracy requirements (±3% or ±4%)</li>
+                            <li>Preload cycles before testing</li>
+                            <li>Environmental conditions</li>
+                            <li>Documentation requirements</li>
+                        </ul>
+                    </div>
+
+                    <div class="standard-card">
+                        <h3>NIST Traceability</h3>
+                        <p>Every calibration is traceable to the National Institute of Standards and Technology through an unbroken chain of comparisons:</p>
+                        <ul>
+                            <li>Primary standards calibrated at NIST</li>
+                            <li>Secondary standards verified annually</li>
+                            <li>Complete uncertainty analysis</li>
+                            <li>Documented traceability chain</li>
+                            <li>Calibration certificates provided</li>
+                        </ul>
+                    </div>
+
+                    <div class="standard-card">
+                        <h3>Industry Applications</h3>
+                        <p>Our torque calibration services support critical operations across multiple industries:</p>
+                        <ul>
+                            <li>Aerospace & Aviation</li>
+                            <li>Automotive Manufacturing</li>
+                            <li>Oil & Gas</li>
+                            <li>Power Generation</li>
+                            <li>Medical Device Manufacturing</li>
+                            <li>Construction & Heavy Equipment</li>
+                        </ul>
+                    </div>
+
+                    <div class="standard-card">
+                        <h3>Calibration Intervals</h3>
+                        <p>Recommended calibration frequency depends on usage and criticality:</p>
+                        <ul>
+                            <li><strong>Daily Use:</strong> Every 6 months</li>
+                            <li><strong>Regular Use:</strong> Annually</li>
+                            <li><strong>Light Use:</strong> Every 2 years</li>
+                            <li><strong>Critical Applications:</strong> Quarterly</li>
+                            <li><strong>After Drops or Impacts:</strong> Immediately</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section-torque">
+            <div class="container">
+                <div class="cta-content-box">
+                    <h2>Ensure Accurate Torque Application</h2>
+                    <p>Don't risk equipment damage, product defects, or safety hazards with uncalibrated torque tools. Schedule your NIST-traceable calibration today.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="cta-button-primary">Request a Quote</a>
+                        <a href="tel:888-561-8771" class="cta-button-secondary">
+                            <span>📞</span>
+                            <span>(888) 561-8771</span>
+                        </a>
+                    </div>
+                    <p class="cta-note">Fast turnaround available • Pickup service for large tool inventories</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section footer-brand">
+                        <img src="logos/snake.gif" alt="Copperhead Labs" class="footer-logo">
+                        <p class="footer-tagline">Precision testing and calibration for electrical safety equipment.</p>
+                        <div class="footer-24-7">
+                            <div class="emergency-badge">
+                                <svg class="emergency-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>24/7 EMERGENCY SERVICE</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <ul class="footer-contact-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <a href="tel:8885618771">(888) 561-8771</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <a href="mailto:sales@copperheadlabs.com">sales@copperheadlabs.com</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Decatur, AL | Albany, NY</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Testing Services</h3>
+                        <ul>
+                            <li><a href="dielectric.html">Dielectric Testing</a></li>
+                            <li><a href="rubber-ppe.html">Rubber PPE Testing</a></li>
+                            <li><a href="liveline.html">Live-Line Tool Testing</a></li>
+                            <li><a href="protective-grounds.html">Protective Grounds</a></li>
+                            <li><a href="testing.html">More Services →</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Calibration Services</h3>
+                        <ul>
+                            <li><a href="calibration.html">Process Instrumentation</a></li>
+                            <li><a href="calibration.html">Metering Devices</a></li>
+                            <li><a href="calibration.html">Electrical Test Equipment</a></li>
+                            <li><a href="calibration.html">Gas Detection Devices</a></li>
+                            <li><a href="torque-calibration.html">Torque Devices</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="software.html">Software</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <h3 style="margin-top: 1.5rem;">Compliance</h3>
+                        <div class="compliance-logos">
+                            <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Copperhead Labs. All rights reserved.</p>
+                    <p class="footer-tagline-bottom"><a href="https://www.nist.gov/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; transition: color 0.3s ease;">NIST</a>-Traceable Calibration | ISO/IEC 17025 Accredited</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
