@@ -3228,6 +3228,11 @@ a.expand-btn {
     min-height: 400px;
 }
 
+#map svg {
+    width: 100% !important;
+    height: auto !important;
+}
+
 /* Hide SimpleMaps branding */
 #map a[href*="simplemaps.com"],
 #map div[style*="simplemaps"] {
@@ -3618,6 +3623,15 @@ a.expand-btn {
     .map-container {
         padding: 1rem;
     }
+    
+    #map {
+        min-height: 250px;
+        max-height: 350px;
+    }
+    
+    #map svg {
+        max-height: 350px;
+    }
 
     .about {
         padding: 60px 0 !important;
@@ -3999,6 +4013,15 @@ a.expand-btn {
 
     .map-container {
         padding: 0.5rem;
+    }
+    
+    #map {
+        min-height: 200px;
+        max-height: 300px;
+    }
+    
+    #map svg {
+        max-height: 300px;
     }
 
     .about {
