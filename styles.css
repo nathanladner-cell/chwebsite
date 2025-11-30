@@ -3222,6 +3222,19 @@ a.expand-btn {
     display: block;
 }
 
+#map {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+}
+
+/* Hide SimpleMaps branding */
+#map a[href*="simplemaps.com"],
+#map div[style*="simplemaps"] {
+    display: none !important;
+    visibility: hidden !important;
+}
+
 .state {
     fill: #e0e0e0;
     stroke: var(--white);
