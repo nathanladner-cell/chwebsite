@@ -81,9 +81,9 @@ var simplemaps_usmap_mapdata={
     },
     AK: {
       name: "Alaska",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     FL: {
@@ -96,9 +96,9 @@ var simplemaps_usmap_mapdata={
     },
     NH: {
       name: "New Hampshire",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     VT: {
@@ -110,16 +110,16 @@ var simplemaps_usmap_mapdata={
     },
     ME: {
       name: "Maine",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     RI: {
       name: "Rhode Island",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     NY: {
@@ -145,16 +145,16 @@ var simplemaps_usmap_mapdata={
     },
     DE: {
       name: "Delaware",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     MD: {
       name: "Maryland",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     VA: {
@@ -201,9 +201,9 @@ var simplemaps_usmap_mapdata={
     },
     WI: {
       name: "Wisconsin",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     NC: {
@@ -215,16 +215,16 @@ var simplemaps_usmap_mapdata={
     },
     DC: {
       name: "District of Columbia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     MA: {
       name: "Massachusetts",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     TN: {
@@ -321,9 +321,9 @@ var simplemaps_usmap_mapdata={
     },
     NM: {
       name: "New Mexico",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     KS: {
@@ -349,9 +349,9 @@ var simplemaps_usmap_mapdata={
     },
     ND: {
       name: "North Dakota",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     WY: {
@@ -377,23 +377,23 @@ var simplemaps_usmap_mapdata={
     },
     UT: {
       name: "Utah",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     AZ: {
       name: "Arizona",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     NV: {
       name: "Nevada",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "2025 Travel",
+      color: "#4a4a4a",
+      hover_color: "#3a3a3a",
       url: "default"
     },
     OR: {

@@ -555,6 +555,7 @@ p {
     overflow: hidden;
     backdrop-filter: blur(8px);
     min-height: 72px;
+    text-decoration: none;
 }
 
 .btn-icon {
@@ -1093,7 +1094,7 @@ footer::before {
 }
 
 .calibration-hero {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), url('calibration/AirBrush_20230220123528.jpg');
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), url('calibration/josh.jpeg');
     background-size: cover;
     background-position: center bottom;
     background-attachment: fixed;
@@ -2103,6 +2104,113 @@ main:has(.software-hero) {
 .services-cta {
     background: var(--gray-light);
     padding: 80px 0;
+}
+
+.services-cta--testing {
+    background: 
+        linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(22, 22, 22, 0.83) 100%), 
+        url('truck_testing/PXL_20251114_180055028.RAW-01.COVER.jpg');
+    background-size: cover;
+    background-position: center 100%;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.services-cta--testing .cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(184, 115, 51, 0.22) 0%, transparent 62%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.services-cta--testing .container {
+    position: relative;
+    z-index: 2;
+}
+
+.services-cta--testing .cta-content-box {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.services-cta--testing h2 {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.services-cta--testing p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.services-cta--testing .cta-button--light {
+    background: linear-gradient(135deg, var(--copper) 0%, var(--copper-dark) 100%);
+    color: white;
+    padding: 18px 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 2px;
+    border: 2px solid var(--copper);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 8px 25px rgba(184, 115, 51, 0.4);
+}
+
+.services-cta--testing .cta-button--light:hover {
+    background: linear-gradient(135deg, var(--copper-dark) 0%, var(--copper) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(184, 115, 51, 0.6);
+    border-color: #ff7f00;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-cta--testing {
+        padding: 60px 0;
+        background-attachment: scroll;
+    }
+    
+    .services-cta--testing h2 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    
+    .services-cta--testing p {
+        font-size: 1.1rem;
+    }
+    
+    .services-cta--testing .cta-button--light {
+        padding: 15px 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-cta--testing h2 {
+        font-size: 1.75rem;
+    }
+    
+    .services-cta--testing p {
+        font-size: 1rem;
+    }
 }
 
 .service-detail-grid {
@@ -3142,8 +3250,8 @@ a.expand-btn {
 /* Turnaround Section */
 .turnaround {
     position: relative;
-    height: 80vh;
-    min-height: 600px;
+    height: 50vh;
+    min-height: 400px;
     background: url('glovetest.jpg');
     background-size: cover;
     background-position: center 80%;
@@ -3242,20 +3350,6 @@ a.expand-btn {
     margin-bottom: 2.5rem;
 }
 
-.map-container {
-    position: relative;
-    padding: 2.5rem;
-    background: var(--white);
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.map-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(184, 115, 51, 0.15);
-}
-
 .us-map {
     width: 100%;
     height: auto;
@@ -3265,12 +3359,27 @@ a.expand-btn {
 #map {
     width: 100%;
     height: auto;
-    min-height: 400px;
+    min-height: 500px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    filter: drop-shadow(0 0 40px rgba(184, 115, 51, 0.3)) 
+            drop-shadow(0 10px 60px rgba(184, 115, 51, 0.2))
+            drop-shadow(0 20px 80px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+#map:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 0 50px rgba(184, 115, 51, 0.4)) 
+            drop-shadow(0 15px 70px rgba(184, 115, 51, 0.25))
+            drop-shadow(0 25px 90px rgba(0, 0, 0, 0.15));
 }
 
 #map svg {
     width: 100% !important;
     height: auto !important;
+    display: block;
 }
 
 /* Hide SimpleMaps branding */
@@ -3306,6 +3415,7 @@ a.expand-btn {
     display: flex;
     align-items: center;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .legend-item {
@@ -3319,6 +3429,7 @@ a.expand-btn {
     height: 20px;
     border-radius: 4px;
     border: 1px solid #ddd;
+    flex-shrink: 0;
 }
 
 .legend-color.active-service {
@@ -3341,6 +3452,7 @@ a.expand-btn {
     color: var(--gray-dark);
     font-size: 1rem;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .service-area-cta {
@@ -3660,8 +3772,8 @@ a.expand-btn {
     }
 
     .turnaround {
-        min-height: 400px;
-        height: 60vh;
+        min-height: 350px;
+        height: 45vh;
         background-attachment: scroll !important;
     }
 
@@ -3712,19 +3824,38 @@ a.expand-btn {
 
     .map-legend {
         justify-content: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
     }
-
-    .map-container {
-        padding: 1rem;
+    
+    .legend-item {
+        gap: 0.5rem;
+    }
+    
+    .legend-color {
+        width: 20px;
+        height: 14px;
+    }
+    
+    .legend-color.location-pin {
+        width: 14px !important;
+        height: 14px !important;
+    }
+    
+    .legend-item span {
+        font-size: 0.8rem;
+        font-weight: 500;
     }
     
     #map {
-        min-height: 250px;
-        max-height: 350px;
+        min-height: 300px;
+        max-height: 400px;
+        filter: drop-shadow(0 0 30px rgba(184, 115, 51, 0.25)) 
+                drop-shadow(0 10px 40px rgba(0, 0, 0, 0.1));
     }
     
     #map svg {
-        max-height: 350px;
+        max-height: 400px;
     }
 
     .about {
@@ -3848,40 +3979,97 @@ a.expand-btn {
     }
 
     /* Footer */
+    .footer-main {
+        padding: 50px 0 30px !important;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr !important;
-        gap: 2.5rem !important;
+        gap: 2rem !important;
         text-align: center;
     }
 
     .footer-brand {
         padding-right: 0;
+        order: -1; /* Ensure snake stays at top */
     }
 
     .footer-logo {
         margin-left: auto;
         margin-right: auto;
+        height: 60px !important;
+    }
+
+    .footer-tagline {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
     }
 
     .emergency-badge {
         justify-content: center;
+        font-size: 0.75rem;
+        padding: 0.6rem 1rem;
     }
 
-    .footer-contact-list li {
-        justify-content: center;
+    .emergency-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .footer-section {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-section h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-section ul {
+        margin-bottom: 0;
+    }
+
+    .footer-section li {
+        margin-bottom: 0.5rem;
     }
 
     .footer-section a {
         transform: none !important;
+        font-size: 0.85rem;
+    }
+
+    .footer-contact-list li {
+        justify-content: center;
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-contact-list svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .footer-bottom {
+        padding: 1.25rem 0 !important;
     }
 
     .footer-bottom-content {
         flex-direction: column;
         text-align: center;
+        gap: 0.5rem;
+    }
+
+    .footer-bottom-content p {
+        font-size: 0.8rem;
     }
 
     .compliance-logos {
         justify-content: center;
+        margin-top: 0.75rem;
+    }
+
+    .compliance-logo-group {
+        max-width: 150px !important;
     }
 
     /* Testing page specific */
@@ -4077,8 +4265,8 @@ a.expand-btn {
     }
 
     .turnaround {
-        min-height: 350px;
-        height: 50vh;
+        min-height: 300px;
+        height: 40vh;
     }
 
     .turnaround-content {
@@ -4109,18 +4297,40 @@ a.expand-btn {
     .service-area-description {
         font-size: 0.95rem;
     }
-
-    .map-container {
-        padding: 0.5rem;
+    
+    .map-legend {
+        gap: 0.6rem;
+        margin-top: 1rem;
     }
     
+    .legend-item {
+        gap: 0.4rem;
+    }
+    
+    .legend-color {
+        width: 16px;
+        height: 12px;
+    }
+    
+    .legend-color.location-pin {
+        width: 12px !important;
+        height: 12px !important;
+    }
+    
+    .legend-item span {
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+
     #map {
-        min-height: 200px;
-        max-height: 300px;
+        min-height: 250px;
+        max-height: 350px;
+        filter: drop-shadow(0 0 20px rgba(184, 115, 51, 0.2)) 
+                drop-shadow(0 5px 30px rgba(0, 0, 0, 0.08));
     }
     
     #map svg {
-        max-height: 300px;
+        max-height: 350px;
     }
 
     .about {
@@ -4176,13 +4386,69 @@ a.expand-btn {
         font-size: 0.9rem;
     }
 
-    /* Footer */
+    /* Footer - More compact on smaller screens */
     .footer-main {
-        padding: 3rem 0 2rem !important;
+        padding: 2.5rem 0 1.5rem !important;
+    }
+
+    .footer-grid {
+        gap: 1.5rem !important;
+    }
+
+    .footer-logo {
+        height: 50px !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .footer-tagline {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .emergency-badge {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.85rem;
+        gap: 0.4rem;
+    }
+
+    .emergency-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .footer-section h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .footer-section li {
+        margin-bottom: 0.4rem;
+    }
+
+    .footer-section a {
+        font-size: 0.8rem;
+    }
+
+    .footer-contact-list li {
+        font-size: 0.8rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .footer-contact-list svg {
+        width: 12px;
+        height: 12px;
     }
 
     .footer-bottom {
-        padding: 1.5rem 0 !important;
+        padding: 1rem 0 !important;
+    }
+
+    .footer-bottom-content p {
+        font-size: 0.75rem;
+    }
+
+    .compliance-logo-group {
+        max-width: 120px !important;
     }
 
     /* Specific page sections */
@@ -4262,14 +4528,43 @@ a.expand-btn {
 .dielectric-hero {
     position: relative;
     padding: 160px 0 80px;
-    background-image:
-        linear-gradient(125deg, rgba(0, 0, 0, 0.92) 0%, rgba(3, 4, 8, 0.85) 55%, rgba(0, 0, 0, 0.8) 100%),
-        url('truck_testing/In-House Fleet Testing_ You May Want to Reconsider. - 1.png');
+    overflow: hidden;
+}
+
+.dielectric-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('truck_testing/In-House Fleet Testing_ You May Want to Reconsider. - 1.png');
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
     background-repeat: no-repeat;
-    overflow: hidden;
+    animation: heroZoom 20s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+.dielectric-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(125deg, rgba(0, 0, 0, 0.92) 0%, rgba(3, 4, 8, 0.85) 55%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 2;
+}
+
+@keyframes heroZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .hero-overlay {
@@ -8813,13 +9108,35 @@ body.grounds-page {
         padding: 1rem 1.5rem;
     }
 
-    /* Improve footer on mobile */
+    /* Improve footer on mobile - Better optimized */
     footer {
         text-align: center;
     }
 
     .footer-section {
         text-align: center;
+    }
+
+    /* Ensure footer links are touch-friendly */
+    .footer-section a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Make footer contact items more compact and touch-friendly */
+    .footer-contact-list li {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-contact-list a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
     }
 
     /* Make logos responsive but not logo-img */
@@ -8994,6 +9311,31 @@ body.grounds-page {
     .turnaround-text {
         font-size: 1.6rem;
     }
+    
+    /* Ultra-compact map legend for very small screens */
+    .map-legend {
+        gap: 0.5rem;
+        margin-top: 0.8rem;
+    }
+    
+    .legend-item {
+        gap: 0.3rem;
+    }
+    
+    .legend-color {
+        width: 14px;
+        height: 10px;
+    }
+    
+    .legend-color.location-pin {
+        width: 10px !important;
+        height: 10px !important;
+    }
+    
+    .legend-item span {
+        font-size: 0.65rem;
+        font-weight: 500;
+    }
 
     .service-area-text h2 {
         font-size: 1.8rem;
@@ -9008,7 +9350,7 @@ body.grounds-page {
     }
 
     .turnaround {
-        min-height: 300px;
+        min-height: 250px;
         height: auto;
     }
 
