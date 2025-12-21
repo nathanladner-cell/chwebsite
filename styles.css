@@ -15,17 +15,24 @@ body {
     color: #000000;
     background-color: #ffffff;
     font-weight: 400;
+    /* Prevent scroll jank from repaints */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Image Optimization Styles - Enhanced for Fast Loading */
+/* Image Optimization Styles - Enhanced for Fast Loading & Smooth Scroll */
 img {
     /* Prevent layout shift during load */
     max-width: 100%;
     height: auto;
     display: block;
     
-    /* Smooth loading transition */
-    transition: opacity 0.2s ease-out;
+    /* GPU acceleration for smooth scrolling */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    
+    /* No transition during scroll - add only when needed via JS */
+    transition: none;
 }
 
 /* Image loading states */
@@ -48,7 +55,11 @@ img[loading="eager"] {
 img[fetchpriority="high"] {
     /* Immediately visible, no transition needed */
     opacity: 1;
-    transition: none;
+}
+
+/* Smooth fade-in for images that just loaded - controlled via JS */
+img.fade-in-ready {
+    transition: opacity 0.2s ease-out;
 }
 
 /* Better rendering for scaled images */
@@ -78,15 +89,38 @@ img.tool-icon img,
 
 /* Content visibility removed - causes Chrome scroll glitches */
 
+/* GPU acceleration for smooth scrolling on key sections */
+section,
+.hero,
+.services,
+.about,
+.contact,
+.footer-main,
+.service-column,
+.service-detail-card,
+.why-card {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Contain paint for better scroll performance */
+.services-detail,
+.services,
+.about,
+.contact,
+.nist-section {
+    contain: layout style paint;
+}
+
 /* Smooth image appearance for lazy-loaded images when they enter viewport */
 @keyframes fadeInImage {
     from {
         opacity: 0;
-        transform: scale(0.98);
+        transform: translateZ(0) scale(0.98);
     }
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateZ(0) scale(1);
     }
 }
 
@@ -155,6 +189,9 @@ p {
     box-shadow: 0 2px 10px var(--shadow);
     z-index: 1000;
     transition: background-color 0.3s ease;
+    /* GPU layer for smooth scroll with fixed position */
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .nav-container {
@@ -256,6 +293,8 @@ p {
     padding: 200px 0 160px;
     position: relative;
     overflow: hidden;
+    /* Isolate hero for better scroll performance */
+    contain: layout style;
 }
 
 .hero::before {
@@ -269,15 +308,19 @@ p {
     background-size: cover;
     background-position: center bottom;
     z-index: -1;
-    animation: heroZoomIn 15s ease-out forwards;
+    /* GPU acceleration for smooth scroll parallax */
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    animation: heroZoomIn 2s ease-out forwards;
 }
 
 @keyframes heroZoomIn {
     0% {
-        transform: scale(1.2) translateY(-30px);
+        transform: translateZ(0) scale(1.1) translateY(-20px);
     }
     100% {
-        transform: scale(1) translateY(0);
+        transform: translateZ(0) scale(1) translateY(0);
     }
 }
 
@@ -467,6 +510,9 @@ p {
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    /* GPU layer isolation for smooth scroll */
+    isolation: isolate;
+    will-change: transform;
 }
 
 .service-column::before {
@@ -596,6 +642,9 @@ p {
     backdrop-filter: blur(8px);
     min-height: 72px;
     text-decoration: none;
+    /* GPU layer for smooth scroll with backdrop-filter */
+    transform: translateZ(0);
+    isolation: isolate;
 }
 
 .btn-icon {
@@ -604,6 +653,8 @@ p {
     object-fit: contain;
     mix-blend-mode: screen;
     flex-shrink: 0;
+    /* GPU acceleration for smooth scrolling */
+    transform: translateZ(0);
 }
 
 .service-btn::before {
@@ -959,6 +1010,8 @@ footer::before {
     width: auto;
     margin-bottom: 1.5rem;
     filter: drop-shadow(0 0 10px rgba(184, 115, 51, 0.3));
+    /* GPU layer for animated GIF during scroll */
+    transform: translateZ(0);
 }
 
 .footer-tagline {
@@ -1076,12 +1129,14 @@ footer::before {
     max-width: 200px;
     height: auto;
     filter: brightness(0.9) opacity(0.8);
-    transition: all 0.3s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    /* GPU acceleration for smooth scrolling */
+    transform: translateZ(0);
 }
 
 .compliance-logo-group:hover {
     filter: brightness(1.1) opacity(1);
-    transform: scale(1.02);
+    transform: translateZ(0) scale(1.02);
 }
 
 .footer-bottom {
@@ -1109,6 +1164,280 @@ footer::before {
     font-weight: 600;
     color: rgba(184, 115, 51, 0.8) !important;
     letter-spacing: 0.5px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.social-icon:hover {
+    border-color: var(--copper);
+    color: var(--copper);
+    transform: translateY(-2px);
+    background: rgba(184, 115, 51, 0.1);
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+    stroke: currentColor;
+    fill: none;
+    display: block;
+}
+
+/* Contact Page Social Icons */
+.contact-social-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(184, 115, 51, 0.2);
+}
+
+.contact-social-section h4 {
+    color: var(--copper);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.contact-social-icons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.contact-social-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    border: 2px solid #2a2a2a;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-social-icon:hover {
+    border-color: var(--copper);
+    color: var(--copper);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(184, 115, 51, 0.3);
+}
+
+.contact-social-icon svg {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    stroke: currentColor;
+    fill: none;
+    display: block;
+}
+
+/* Instagram Feed Section */
+.instagram-feed-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.instagram-feed-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(184, 115, 51, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.instagram-feed-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.instagram-feed-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.instagram-feed-header h2 svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--copper);
+}
+
+.instagram-feed-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+.instagram-feed-header a {
+    color: var(--copper);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.instagram-feed-header a:hover {
+    color: #ffffff;
+}
+
+/* Instagram Carousel */
+.instagram-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.instagram-carousel {
+    display: flex;
+    gap: 1.5rem;
+    animation: instagram-scroll 60s linear infinite;
+    width: max-content;
+}
+
+.instagram-carousel:hover {
+    animation-play-state: paused;
+}
+
+@keyframes instagram-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.instagram-post {
+    flex-shrink: 0;
+    width: 320px;
+    height: 440px;
+    background: #1a1a1a;
+    border: 2px solid #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.instagram-post:hover {
+    border-color: var(--copper);
+    box-shadow: 0 10px 30px rgba(184, 115, 51, 0.2);
+}
+
+.instagram-post iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Instagram Fallback Button */
+.instagram-fallback {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.instagram-follow-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #F77737 100%);
+    color: white;
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(131, 58, 180, 0.4);
+}
+
+.instagram-follow-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(131, 58, 180, 0.5);
+}
+
+.instagram-follow-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive Instagram Feed */
+@media (max-width: 768px) {
+    .instagram-feed-section {
+        padding: 60px 0;
+    }
+    
+    .instagram-feed-header h2 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .instagram-carousel-wrapper {
+        padding: 0 20px;
+    }
+    
+    .instagram-post {
+        width: 280px;
+    }
+    
+    .carousel-nav {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .instagram-feed-header h2 {
+        font-size: 1.25rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .instagram-post {
+        width: 260px;
+    }
 }
 
 /* Contact Page Styles */
@@ -1394,7 +1723,9 @@ main:has(.software-hero) {
     max-width: 350px;
     height: auto;
     filter: brightness(1.2) drop-shadow(0 10px 30px rgba(184, 115, 51, 0.3));
-    transition: all 0.3s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    /* GPU acceleration for smooth scrolling */
+    transform: translateZ(0);
 }
 
 .nist-logo:hover {
@@ -2410,12 +2741,15 @@ main:has(.software-hero) {
     padding: 1.5rem;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     height: 100%;
     gap: 0.5rem;
     min-height: 360px;
+    /* GPU acceleration for smooth scrolling */
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .service-detail-card--cta {
@@ -2458,6 +2792,8 @@ main:has(.software-hero) {
     height: 100%;
     object-fit: contain;
     filter: drop-shadow(0 0 10px rgba(184, 115, 51, 0.3));
+    /* GPU acceleration for smooth scrolling */
+    transform: translateZ(0);
 }
 
 .service-detail-card h2 {
@@ -3030,7 +3366,7 @@ a.expand-btn {
 }
 
 .stat-box .stat-label {
-    color: var(--gray);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 0.95rem;
     font-weight: 600;
 }
@@ -3260,11 +3596,26 @@ a.expand-btn {
     position: relative;
     height: 50vh;
     min-height: 400px;
+    overflow: hidden;
+    /* Remove transform to allow parallax - override the section transform */
+    transform: none !important;
+    backface-visibility: visible !important;
+    /* Clip the fixed background to this section */
+    clip-path: inset(0);
+}
+
+.turnaround::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: url('glovetest.jpg');
     background-size: cover;
     background-position: center 80%;
-    /* background-attachment: fixed removed for scroll performance */
-    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .turnaround-overlay {
@@ -3277,6 +3628,7 @@ a.expand-btn {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 }
 
 .turnaround-content {
@@ -3782,7 +4134,15 @@ a.expand-btn {
     .turnaround {
         min-height: 350px;
         height: 45vh;
-        background-attachment: scroll !important;
+        /* Disable parallax on mobile - use regular background */
+        clip-path: none;
+        background: url('glovetest.jpg');
+        background-size: cover;
+        background-position: center 80%;
+    }
+    
+    .turnaround::before {
+        display: none;
     }
 
     .turnaround-content {

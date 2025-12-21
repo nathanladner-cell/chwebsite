@@ -193,27 +193,10 @@ if (document.readyState === 'loading') {
     setupMobileStyleProtection();
 }
 
-// Hero Background Zoom Effect on Scroll (Homepage only)
-const heroSection = document.querySelector('.hero');
-if (heroSection) {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const heroHeight = heroSection.offsetHeight;
-        
-        // Only apply effect while hero is visible
-        if (scrolled < heroHeight) {
-            // Calculate zoom: starts at 1, increases to 1.15 as you scroll
-            const zoomFactor = 1 + (scrolled / heroHeight) * 0.15;
-            
-            // Calculate vertical movement (subtle upward shift)
-            const moveY = scrolled * 0.3;
-            
-            // Apply transform
-            heroSection.style.backgroundSize = `${zoomFactor * 100}%`;
-            heroSection.style.backgroundPosition = `center calc(100% - ${moveY}px)`;
-        }
-    });
-}
+// Hero scroll effect removed for performance
+// The hero now uses a CSS animation on load which is GPU-accelerated
+// Scroll-based parallax effects on backgrounds cause significant jank
+// and have been disabled in favor of smooth scrolling performance
 
 // Intersection Observer for Fade-in Animations
 const observerOptions = {
@@ -476,6 +459,7 @@ collapsibleToggles.forEach(toggle => {
  * - Implements native lazy loading for non-critical images
  * - Uses Intersection Observer for progressive loading
  * - Handles decode errors gracefully
+ * - Avoids transitions during scroll for smooth performance
  */
 
 // Initialize lazy loading for all images
@@ -503,16 +487,12 @@ function initImageOptimization() {
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     
-                    // Add fade-in animation
-                    img.style.opacity = '0';
-                    img.style.transition = 'opacity 0.3s ease-in';
-                    
                     // Preload the image
                     if (img.dataset.src && !img.src) {
                         img.src = img.dataset.src;
                     }
                     
-                    // Show image when loaded
+                    // Show image immediately when loaded - no transition during scroll for performance
                     if (img.complete) {
                         img.style.opacity = '1';
                     } else {
@@ -525,7 +505,7 @@ function initImageOptimization() {
                 }
             });
         }, {
-            rootMargin: '50px 0px', // Start loading 50px before entering viewport
+            rootMargin: '100px 0px', // Start loading 100px before entering viewport
             threshold: 0.01
         });
 

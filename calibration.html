@@ -20,6 +20,294 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
+    <style>
+        /* Badass Calibration Hero Section */
+        .calibration-hero-badass {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), url('calibration/josh.jpeg');
+            background-size: cover;
+            background-position: center bottom;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calibration-hero-badass::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #b1642b, transparent);
+        }
+
+        .calibration-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .calibration-hero-badass .badass-eyebrow {
+            color: #b1642b;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .calibration-hero-badass .badass-eyebrow::before,
+        .calibration-hero-badass .badass-eyebrow::after {
+            background: #b1642b;
+            box-shadow: 0 0 8px rgba(177, 100, 43, 0.5);
+        }
+
+        .calibration-hero-badass .badass-title {
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .calibration-hero-badass .badass-title span {
+            color: #b1642b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .calibration-hero-badass .badass-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Badass Light Theme Calibration Services Section */
+        .services-detail-badass {
+            background: #f5f5f5;
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badass-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #b1642b;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .badass-eyebrow::before,
+        .badass-eyebrow::after {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: #b1642b;
+        }
+
+        .badass-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: var(--gray-dark);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .badass-title span {
+            display: block;
+            color: #b1642b;
+        }
+
+        .badass-subtitle {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            color: #555;
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .badass-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badass-card {
+            background: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .badass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #b1642b;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .badass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(177, 100, 43, 0.25);
+        }
+
+        .badass-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .badass-card-inner {
+            padding: 2rem 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .badass-icon-wrap {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .badass-icon-bg {
+            display: none;
+        }
+
+        .badass-icon-wrap img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+            transition: transform 0.4s ease, filter 0.4s ease;
+            filter: drop-shadow(0 0 15px rgba(177, 100, 43, 0.4));
+        }
+
+        .badass-card:hover .badass-icon-wrap img {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 25px rgba(177, 100, 43, 0.6)) drop-shadow(0 0 40px rgba(177, 100, 43, 0.3));
+        }
+
+        .badass-card-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--gray-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .badass-card-text {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+            flex: 1;
+        }
+
+        .badass-card-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: #f5f5f5;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #b1642b;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .badass-card-link:hover {
+            background: #b1642b;
+            color: var(--white);
+        }
+
+        .badass-card-link svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .badass-card-link:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .badass-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .calibration-hero-badass {
+                padding: 120px 0 60px;
+            }
+
+            .services-detail-badass {
+                padding: 50px 0 70px;
+            }
+
+            .badass-eyebrow {
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+            }
+
+            .badass-eyebrow::before,
+            .badass-eyebrow::after {
+                width: 20px;
+            }
+
+            .badass-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .badass-card-inner {
+                padding: 1.5rem;
+            }
+
+            .badass-icon-wrap {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calibration-hero-badass {
+                padding: 110px 0 50px;
+            }
+
+            .badass-title {
+                letter-spacing: 1px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -48,150 +336,121 @@
     </header>
 
     <main>
-        <section class="contact-page-hero calibration-hero">
+        <section class="calibration-hero-badass">
             <div class="container">
-                <h1>Calibration Services</h1>
-                <p>Precision calibration with NIST-traceable standards for maximum accuracy</p>
+                <div class="calibration-hero-content">
+                    <div class="badass-eyebrow">NIST-Traceable</div>
+                    <h1 class="badass-title">Precision<br><span>Calibration Services</span></h1>
+                    <p class="badass-subtitle">Lab-grade accuracy. Unbroken chain of traceability. Measurement confidence guaranteed.</p>
+                </div>
             </div>
         </section>
 
-        <section class="services-detail">
+        <section class="services-detail-badass">
             <div class="container">
-                <h2 class="section-title">Precision Calibration Solutions</h2>
-                <div class="service-detail-grid">
-                    <div class="service-detail-card collapsible-card">
-                        <div class="service-detail-icon">
-                            <img src="icons/pressure.png" alt="Pressure Calibration" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
+                <div class="badass-grid">
+                    <div class="badass-card">
+                        <div class="badass-card-inner">
+                            <div class="badass-icon-wrap">
+                                <img src="icons/pressure.png" alt="Pressure Calibration" loading="lazy" decoding="async" width="64" height="64">
+                            </div>
+                            <h3 class="badass-card-title">Pressure Calibration</h3>
+                            <p class="badass-card-text">Expert NIST-traceable calibration of pressure measurement devices including digital and analogue gauges, sensors, transducers, and barometers.</p>
                         </div>
-                        <h2>Pressure Calibration</h2>
-                        <p class="card-preview">Expert NIST-traceable calibration of pressure measurement devices including digital and analogue gauges, sensors, transducers, and barometers.</p>
-                        <div class="card-content">
-                            <p>Our precision pressure calibration ensures your measurement equipment maintains peak accuracy across all ranges.</p>
-                            <ul class="service-features">
-                                <li>Digital pressure gauges</li>
-                                <li>Analogue pressure gauges</li>
-                                <li>Pressure sensors and transducers</li>
-                                <li>Barometers and manometers</li>
-                                <li>NIST-traceable certificates</li>
-                            </ul>
-                        </div>
-                        <a href="pressure-calibration.html" class="expand-btn" style="text-decoration: none; display: inline-block;">
-                            <span class="expand-text">Learn More</span>
-                            <span class="expand-icon">→</span>
+                        <a href="pressure-calibration.html" class="badass-card-link">
+                            <span>Learn More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
                     </div>
 
-                    <div class="service-detail-card collapsible-card">
-                        <div class="service-detail-icon">
-                            <img src="icons/thermo.png" alt="Temperature Calibration" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
+                    <div class="badass-card">
+                        <div class="badass-card-inner">
+                            <div class="badass-icon-wrap">
+                                <img src="icons/thermo.png" alt="Temperature Calibration" loading="lazy" decoding="async" width="64" height="64">
+                            </div>
+                            <h3 class="badass-card-title">Temperature Calibration</h3>
+                            <p class="badass-card-text">Expert NIST-traceable calibration of temperature measurement devices including thermometers, thermocouples, RTDs, and temperature chambers.</p>
                         </div>
-                        <h2>Temperature Calibration</h2>
-                        <p class="card-preview">Expert NIST-traceable calibration of temperature measurement devices including thermometers, thermocouples, RTDs, and temperature chambers.</p>
-                        <div class="card-content">
-                            <p>Our precision temperature calibration ensures accurate measurements in controlled temperature environments.</p>
-                            <ul class="service-features">
-                                <li>Thermometers (digital & analog)</li>
-                                <li>Thermocouples and thermistors</li>
-                                <li>Cool rooms and freezers</li>
-                                <li>Ovens and furnaces</li>
-                                <li>NIST-traceable certificates</li>
-                            </ul>
-                        </div>
-                        <a href="temperature-calibration.html" class="expand-btn" style="text-decoration: none; display: inline-block;">
-                            <span class="expand-text">Learn More</span>
-                            <span class="expand-icon">→</span>
+                        <a href="temperature-calibration.html" class="badass-card-link">
+                            <span>Learn More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
                     </div>
 
-                    <div class="service-detail-card collapsible-card">
-                        <div class="service-detail-icon">
-                            <img src="icons/instrument.png" alt="Flow Devices" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
+                    <div class="badass-card">
+                        <div class="badass-card-inner">
+                            <div class="badass-icon-wrap">
+                                <img src="icons/instrument.png" alt="Flow Calibration" loading="lazy" decoding="async" width="64" height="64">
+                            </div>
+                            <h3 class="badass-card-title">Flow Calibration</h3>
+                            <p class="badass-card-text">Expert NIST-traceable calibration of flow meters and flow measurement devices for liquid and gas applications.</p>
                         </div>
-                        <h2>Flow Calibration</h2>
-                        <p class="card-preview">Expert NIST-traceable calibration of flow meters and flow measurement devices for liquid and gas applications.</p>
-                        <div class="card-content">
-                            <p>Our precision flow calibration ensures your flow measurement equipment maintains accurate volumetric and mass flow rate readings.</p>
-                            <ul class="service-features">
-                                <li>Thermal mass flow meters</li>
-                                <li>Laminar flow meters</li>
-                                <li>Volumetric flow devices</li>
-                                <li>Mass flow controllers</li>
-                                <li>NIST-traceable certificates</li>
-                            </ul>
-                        </div>
-                        <a href="flow-calibration.html" class="expand-btn" style="text-decoration: none; display: inline-block;">
-                            <span class="expand-text">Learn More</span>
-                            <span class="expand-icon">→</span>
+                        <a href="flow-calibration.html" class="badass-card-link">
+                            <span>Learn More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
                     </div>
 
-                    <div class="service-detail-card collapsible-card">
-                        <div class="service-detail-icon">
-                            <img src="icons/multimeter.png" alt="Electrical Devices" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
+                    <div class="badass-card">
+                        <div class="badass-card-inner">
+                            <div class="badass-icon-wrap">
+                                <img src="icons/multimeter.png" alt="Electrical Calibration" loading="lazy" decoding="async" width="64" height="64">
+                            </div>
+                            <h3 class="badass-card-title">Electrical Calibration</h3>
+                            <p class="badass-card-text">Expert NIST-traceable calibration of electrical test equipment and meters for voltage, current, resistance, and other electrical parameters.</p>
                         </div>
-                        <h2>Electrical Calibration</h2>
-                        <p class="card-preview">Expert NIST-traceable calibration of electrical test equipment and meters for voltage, current, resistance, and other electrical parameters.</p>
-                        <div class="card-content">
-                            <p>Our precision electrical calibration ensures accurate measurements of voltage, current, resistance, inductance, capacitance, time, and frequency.</p>
-                            <ul class="service-features">
-                                <li>Electrical test equipment (meggers, hipots, DLROs)</li>
-                                <li>Multimeters and electrical meters</li>
-                                <li>Oscilloscopes and data loggers</li>
-                                <li>Frequency counters</li>
-                                <li>NIST-traceable certificates</li>
-                            </ul>
-                        </div>
-                        <a href="electrical-calibration.html" class="expand-btn" style="text-decoration: none; display: inline-block;">
-                            <span class="expand-text">Learn More</span>
-                            <span class="expand-icon">→</span>
+                        <a href="electrical-calibration.html" class="badass-card-link">
+                            <span>Learn More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
                     </div>
 
-                    <div class="service-detail-card collapsible-card">
-                        <div class="service-detail-icon">
-                            <img src="icons/torque.png" alt="Mechanical Devices" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
+                    <div class="badass-card">
+                        <div class="badass-card-inner">
+                            <div class="badass-icon-wrap">
+                                <img src="icons/torque.png" alt="Mechanical Calibration" loading="lazy" decoding="async" width="64" height="64">
+                            </div>
+                            <h3 class="badass-card-title">Mechanical Calibration</h3>
+                            <p class="badass-card-text">Expert calibration of torque devices, load cells, force gauges, micrometers, calipers, and precision measurement tools.</p>
                         </div>
-                        <h2>Mechanical Calibration</h2>
-                        <p class="card-preview">Expert calibration of torque devices, load cells, force gauges, micrometers, calipers, and precision measurement tools.</p>
-                        <div class="card-content">
-                            <p>Ensure accurate mechanical measurements with NIST-traceable calibration for your precision tools and devices.</p>
-                            <ul class="service-features">
-                                <li>Torque wrenches and torque devices</li>
-                                <li>Load cells and force gauges</li>
-                                <li>Micrometers and calipers</li>
-                                <li>Feeler gauges and gauge blocks</li>
-                                <li>Full documentation</li>
-                            </ul>
-                        </div>
-                        <a href="torque-calibration.html" class="expand-btn" style="text-decoration: none; display: inline-block;">
-                            <span class="expand-text">Learn More</span>
-                            <span class="expand-icon">→</span>
+                        <a href="torque-calibration.html" class="badass-card-link">
+                            <span>Learn More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
                     </div>
 
-                    <div class="service-detail-card collapsible-card">
-                        <div class="service-detail-icon">
-                            <img src="icons/gasdetector.png" alt="Gas Detection Calibration" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
+                    <div class="badass-card">
+                        <div class="badass-card-inner">
+                            <div class="badass-icon-wrap">
+                                <img src="icons/gasdetector.png" alt="Gas Detection Calibration" loading="lazy" decoding="async" width="64" height="64">
+                            </div>
+                            <h3 class="badass-card-title">Gas Detection Calibration</h3>
+                            <p class="badass-card-text">Professional calibration of gas detection equipment for workplace safety and compliance.</p>
                         </div>
-                        <h2>Gas Detection Calibration</h2>
-                        <p class="card-preview">Professional calibration of gas detection equipment for workplace safety and compliance.</p>
-                        <div class="card-content">
-                            <p>Our calibration services ensure your gas detectors provide accurate readings to protect your workers.</p>
-                            <ul class="service-features">
-                                <li>Single gas detectors</li>
-                                <li>Multi-gas monitors</li>
-                                <li>Fixed gas detection systems</li>
-                                <li>Gas sniffers and analyzers</li>
-                                <li>NIST-traceable certificates</li>
-                            </ul>
-                        </div>
-                        <a href="gas-detection-calibration.html" class="expand-btn" style="text-decoration: none; display: inline-block;">
-                            <span class="expand-text">Learn More</span>
-                            <span class="expand-icon">→</span>
+                        <a href="gas-detection-calibration.html" class="badass-card-link">
+                            <span>Learn More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -257,6 +516,27 @@
                                 </svg>
                                 <span>24/7 EMERGENCY SERVICE</span>
                             </div>
+                        </div>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/company/copperhead-labs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/copperheadlabs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/copperheadlabs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                     

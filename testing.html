@@ -20,6 +20,344 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
+    <style>
+        /* Badass Testing Hero Section */
+        .testing-hero-badass {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), url('hero.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testing-hero-badass::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #b1642b, transparent);
+        }
+
+        .testing-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testing-hero-badass .badass-eyebrow {
+            color: #b1642b;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .testing-hero-badass .badass-eyebrow::before,
+        .testing-hero-badass .badass-eyebrow::after {
+            background: #b1642b;
+            box-shadow: 0 0 8px rgba(205, 127, 50, 0.5);
+        }
+
+        .testing-hero-badass .badass-title {
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .testing-hero-badass .badass-title span {
+            color: #b1642b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .testing-hero-badass .badass-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Badass Light Theme Testing Services Section */
+        .services-detail-badass {
+            background: #f5f5f5;
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badass-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #b1642b;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .badass-eyebrow::before,
+        .badass-eyebrow::after {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: #b1642b;
+        }
+
+        .badass-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: var(--gray-dark);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .badass-title span {
+            display: block;
+            color: #b1642b;
+        }
+
+        .badass-subtitle {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            color: #555;
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .badass-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badass-card {
+            background: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .badass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #b1642b;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .badass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(205, 127, 50, 0.25);
+        }
+
+        .badass-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .badass-card-inner {
+            padding: 2rem 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .badass-icon-wrap {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .badass-icon-bg {
+            display: none;
+        }
+
+        .badass-icon-wrap img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+            transition: transform 0.4s ease, filter 0.4s ease;
+            filter: drop-shadow(0 0 15px rgba(177, 100, 43, 0.4));
+        }
+
+        .badass-card:hover .badass-icon-wrap img {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 25px rgba(177, 100, 43, 0.6)) drop-shadow(0 0 40px rgba(177, 100, 43, 0.3));
+        }
+
+        .badass-card-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--gray-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .badass-card-text {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+            flex: 1;
+        }
+
+        .badass-card-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: #f5f5f5;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #b1642b;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .badass-card-link:hover {
+            background: #b1642b;
+            color: var(--white);
+        }
+
+        .badass-card-link svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .badass-card-link:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Stats bar */
+        .badass-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 2px solid rgba(205, 127, 50, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .badass-stat {
+            text-align: center;
+        }
+
+        .badass-stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #b1642b;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .badass-stat-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 1200px) {
+            .badass-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testing-hero-badass {
+                padding: 120px 0 60px;
+            }
+
+            .services-detail-badass {
+                padding: 50px 0 70px;
+            }
+
+            .badass-eyebrow {
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+            }
+
+            .badass-eyebrow::before,
+            .badass-eyebrow::after {
+                width: 20px;
+            }
+
+            .badass-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .badass-card-inner {
+                padding: 1.5rem;
+            }
+
+            .badass-icon-wrap {
+                width: 100px;
+                height: 100px;
+            }
+
+            .badass-stats {
+                flex-wrap: wrap;
+                gap: 2rem;
+            }
+
+            .badass-stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testing-hero-badass {
+                padding: 110px 0 50px;
+            }
+
+            .badass-title {
+                letter-spacing: 1px;
+            }
+
+            .badass-stats {
+                gap: 1.5rem;
+            }
+
+            .badass-stat {
+                flex: 0 0 calc(50% - 0.75rem);
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -48,71 +386,108 @@
     </header>
 
     <main>
-        <section class="contact-page-hero">
+        <section class="testing-hero-badass">
             <div class="container">
-                <h1>Testing Services</h1>
-                <p>Comprehensive electrical safety testing solutions for your critical equipment</p>
+                <div class="testing-hero-content">
+                    <div class="badass-eyebrow">High-Voltage Certified</div>
+                    <h1 class="badass-title">Electrical Safety<br><span>Testing Solutions</span></h1>
+                    <p class="badass-subtitle">ASTM-certified procedures. Lab-quality precision. Battle-tested reliability.</p>
+                </div>
             </div>
         </section>
 
-        <section class="services-detail">
+        <section class="services-detail-badass">
             <div class="container">
-                <h2>Electrical Safety Testing Solutions</h2>
-                <div class="service-detail-grid">
-                    <div id="dielectric" class="service-detail-card service-detail-card--cta">
-                        <div class="service-detail-card-body">
-                            <div class="service-detail-icon">
-                                <img src="icons/bucket.png" alt="Dielectric Testing" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
+                <div class="badass-grid">
+                    <div id="dielectric" class="badass-card">
+                        <div class="badass-card-inner">
+                            <div class="badass-icon-wrap">
+                                <div class="badass-icon-bg"></div>
+                                <img src="icons/bucket.png" alt="Dielectric Testing" loading="lazy" decoding="async" width="64" height="64">
                             </div>
-                            <h2>Dielectric Testing & Inspections</h2>
-                            <p class="card-preview">Comprehensive dielectric testing for insulating aerial lifts including bucket trucks and digger derricks, plus ANSI boom inspections and DOT Annual inspections.</p>
+                            <h3 class="badass-card-title">Dielectric Testing & Inspections</h3>
+                            <p class="badass-card-text">Comprehensive dielectric testing for insulating aerial lifts including bucket trucks and digger derricks, plus ANSI boom inspections and DOT annual inspections.</p>
                         </div>
-                        <a href="dielectric.html" class="expand-btn">
-                            <span class="expand-text">Learn More</span>
-                            <span class="expand-icon">→</span>
+                        <a href="dielectric.html" class="badass-card-link">
+                            <span>Learn More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
                     </div>
 
-                    <div id="rubber-ppe" class="service-detail-card service-detail-card--cta">
-                        <div class="service-detail-card-body">
-                            <div class="service-detail-icon">
-                                <img src="icons/glove.png" alt="Rubber PPE Testing" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
+                    <div id="rubber-ppe" class="badass-card">
+                        <div class="badass-card-inner">
+                            <div class="badass-icon-wrap">
+                                <div class="badass-icon-bg"></div>
+                                <img src="icons/glove.png" alt="Rubber PPE Testing" loading="lazy" decoding="async" width="64" height="64">
                             </div>
-                            <h2>Rubber PPE Testing</h2>
-                            <p class="card-preview">Professional testing services for insulated rubber gloves, sleeves, blankets, and line hose.</p>
+                            <h3 class="badass-card-title">Rubber PPE Testing</h3>
+                            <p class="badass-card-text">Professional testing services for insulated rubber gloves, sleeves, blankets, and line hose. Protecting the crews who keep the power on.</p>
                         </div>
-                        <a href="rubber-ppe.html" class="expand-btn">
-                            <span class="expand-text">Learn More</span>
-                            <span class="expand-icon">→</span>
+                        <a href="rubber-ppe.html" class="badass-card-link">
+                            <span>Learn More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
                     </div>
 
-                    <div id="live-line" class="service-detail-card service-detail-card--cta">
-                        <div class="service-detail-card-body">
-                            <div class="service-detail-icon">
-                                <img src="icons/extendo.png" alt="Live-Line Tool Testing" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
+                    <div id="live-line" class="badass-card">
+                        <div class="badass-card-inner">
+                            <div class="badass-icon-wrap">
+                                <div class="badass-icon-bg"></div>
+                                <img src="icons/extendo.png" alt="Live-Line Tool Testing" loading="lazy" decoding="async" width="64" height="64">
                             </div>
-                            <h2>Live-Line Tool Testing</h2>
-                            <p class="card-preview">Expert testing of hot sticks, shotgun sticks, and other live-line tools.</p>
+                            <h3 class="badass-card-title">Live-Line Tool Testing</h3>
+                            <p class="badass-card-text">Expert testing of hot sticks, shotgun sticks, and other live-line tools. Precision verification for high-stakes work.</p>
                         </div>
-                        <a href="liveline.html" class="expand-btn">
-                            <span class="expand-text">Learn More</span>
-                            <span class="expand-icon">→</span>
+                        <a href="liveline.html" class="badass-card-link">
+                            <span>Learn More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
                     </div>
 
-                    <div id="protective-grounds" class="service-detail-card service-detail-card--cta">
-                        <div class="service-detail-card-body">
-                            <div class="service-detail-icon">
-                                <img src="icons/ground.png" alt="Protective Grounds Testing" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
+                    <div id="protective-grounds" class="badass-card">
+                        <div class="badass-card-inner">
+                            <div class="badass-icon-wrap">
+                                <div class="badass-icon-bg"></div>
+                                <img src="icons/ground.png" alt="Protective Grounds Testing" loading="lazy" decoding="async" width="64" height="64">
                             </div>
-                            <h2>Protective Grounds Testing</h2>
-                            <p class="card-preview">Comprehensive testing of temporary protective grounding equipment including ground cables, clamps, and assemblies per ASTM F2249 standards.</p>
+                            <h3 class="badass-card-title">Protective Grounds Testing</h3>
+                            <p class="badass-card-text">Comprehensive testing of temporary protective grounding equipment including ground cables, clamps, and assemblies per ASTM F2249 standards.</p>
                         </div>
-                        <a href="protective-grounds.html" class="expand-btn">
-                            <span class="expand-text">Learn More</span>
-                            <span class="expand-icon">→</span>
+                        <a href="protective-grounds.html" class="badass-card-link">
+                            <span>Learn More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
+                    </div>
+                </div>
+
+                <div class="badass-stats">
+                    <div class="badass-stat">
+                        <div class="badass-stat-number">50K+</div>
+                        <div class="badass-stat-label">Tests Completed</div>
+                    </div>
+                    <div class="badass-stat">
+                        <div class="badass-stat-number">24HR</div>
+                        <div class="badass-stat-label">Turnaround</div>
+                    </div>
+                    <div class="badass-stat">
+                        <div class="badass-stat-number">100%</div>
+                        <div class="badass-stat-label">ASTM Compliant</div>
+                    </div>
+                    <div class="badass-stat">
+                        <div class="badass-stat-number">24/7</div>
+                        <div class="badass-stat-label">Emergency Service</div>
                     </div>
                 </div>
             </div>
@@ -514,6 +889,27 @@
                                 </svg>
                                 <span>24/7 EMERGENCY SERVICE</span>
                             </div>
+                        </div>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/company/copperhead-labs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/copperheadlabs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/copperheadlabs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                     
