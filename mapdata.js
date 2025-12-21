@@ -152,9 +152,9 @@ var simplemaps_usmap_mapdata={
     },
     MD: {
       name: "Maryland",
-      description: "2025 Travel",
-      color: "#4a4a4a",
-      hover_color: "#3a3a3a",
+      description: "Service Available",
+      color: "#FF8C00",
+      hover_color: "#FF7F00",
       url: "default"
     },
     VA: {
@@ -222,9 +222,9 @@ var simplemaps_usmap_mapdata={
     },
     MA: {
       name: "Massachusetts",
-      description: "2025 Travel",
-      color: "#4a4a4a",
-      hover_color: "#3a3a3a",
+      description: "Service Available",
+      color: "#FF8C00",
+      hover_color: "#FF7F00",
       url: "default"
     },
     TN: {

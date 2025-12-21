@@ -13,11 +13,35 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="logos/chlink.png">
-    <link rel="preload" href="styles.css?v=5.0" as="style">
-    <link rel="stylesheet" href="styles.css?v=5.4">
+    <link rel="preload" href="styles.css?v=6.4" as="style">
+    <link rel="preload" href="logos/header2.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="logos/vault.svg" as="image" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=6.4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
+    <style>
+        /* Nuclear Chrome scroll fix */
+        *, *::before, *::after {
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            animation: none !important;
+            transition: none !important;
+        }
+        html {
+            scroll-behavior: auto !important;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        .navbar {
+            position: fixed;
+            background: white !important;
+        }
+        .navbar::before, .navbar::after {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -49,7 +73,7 @@
         <section class="contact-page-hero software-hero">
             <div class="container">
                 <div class="hero-title-container">
-                    <img src="logos/vault.svg" alt="The Vault Logo" class="vault-logo-hero" loading="lazy" decoding="async">
+                    <img src="logos/vault.svg" alt="The Vault Logo" class="vault-logo-hero" loading="eager" decoding="async" fetchpriority="high" width="200" height="60">
                     <h1>The Vault</h1>
                 </div>
                 <p>Asset Management & Reporting Solutions Tailored to Your Industry</p>
@@ -121,7 +145,7 @@
                                 </div>
                                 <div class="vault-feature-title">
                                     <h3>SECURE ACCESS PORTAL</h3>
-                                    <p class="vault-feature-desc">Military-grade encryption. Zero-trust architecture. Available 24/7/365.</p>
+                                    <p class="vault-feature-desc">Available 24/7/365.</p>
                                 </div>
                             </div>
                             <div class="vault-feature-details">
@@ -135,11 +159,8 @@
                                         <p>Plant managers monitor facility equipment. Maintenance teams access calibration records directly from the production floor.</p>
                                     </div>
                                 </div>
-                                <div class="vault-specs">
-                                    <div class="vault-spec">Multi-device access</div>
-                                    <div class="vault-spec">Role-based permissions</div>
-                                    <div class="vault-spec">Activity logging</div>
-                                    <div class="vault-spec">SSO integration</div>
+                                <div class="vault-feature-screenshot">
+                                    <img src="Vaultimages/sign in.png" alt="The Vault Authentication Portal" loading="lazy" decoding="async" width="800" height="500">
                                 </div>
                             </div>
                         </div>
@@ -148,6 +169,41 @@
                     <!-- Feature 2 -->
                     <div class="vault-feature-row">
                         <div class="vault-feature-number">02</div>
+                        <div class="vault-feature-content">
+                            <div class="vault-feature-header">
+                                <div class="vault-feature-icon">
+                                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="3" y1="9" x2="21" y2="9"></line>
+                                        <line x1="9" y1="21" x2="9" y2="9"></line>
+                                    </svg>
+                                </div>
+                                <div class="vault-feature-title">
+                                    <h3>DASHBOARD</h3>
+                                    <p class="vault-feature-desc">Complete visibility into your equipment status and compliance at a glance. Automatically themes to match your company's brand colors when you upload your logo.</p>
+                                </div>
+                            </div>
+                            <div class="vault-feature-details">
+                                <div class="vault-industry-split">
+                                    <div class="vault-industry-col">
+                                        <span class="vault-industry-label">ENERGY</span>
+                                        <p>Monitor PPE inventory levels, upcoming test deadlines, and equipment deployment across all crews and locations in real-time.</p>
+                                    </div>
+                                    <div class="vault-industry-col">
+                                        <span class="vault-industry-label">COMMERCIAL & INDUSTRIAL</span>
+                                        <p>Track calibration status, equipment utilization, and maintenance schedules across all facilities from a centralized command center.</p>
+                                    </div>
+                                </div>
+                                <div class="vault-feature-screenshot">
+                                    <img src="Vaultimages/Dashboard.png" alt="The Vault Dashboard Interface" loading="lazy" decoding="async" width="800" height="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="vault-feature-row">
+                        <div class="vault-feature-number">03</div>
                         <div class="vault-feature-content">
                             <div class="vault-feature-header">
                                 <div class="vault-feature-icon">
@@ -180,44 +236,23 @@
                                     <div class="vault-spec">Advanced search</div>
                                     <div class="vault-spec">Batch downloads</div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="vault-feature-row">
-                        <div class="vault-feature-number">03</div>
-                        <div class="vault-feature-content">
-                            <div class="vault-feature-header">
-                                <div class="vault-feature-icon">
-                                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M20 7h-9"></path>
-                                        <path d="M14 17H5"></path>
-                                        <circle cx="17" cy="17" r="3"></circle>
-                                        <circle cx="7" cy="7" r="3"></circle>
-                                    </svg>
-                                </div>
-                                <div class="vault-feature-title">
-                                    <h3>REAL-TIME ASSET TRACKING</h3>
-                                    <p class="vault-feature-desc">Complete visibility. Location tracking. Status monitoring.</p>
-                                </div>
-                            </div>
-                            <div class="vault-feature-details">
-                                <div class="vault-industry-split">
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">ENERGY</span>
-                                        <p>Track gloves, sleeves, blankets, hot sticks, and aerial trucks by crew, yard, or job site location with GPS integration.</p>
+                                <div class="vault-feature-screenshot">
+                                    <div class="vault-carousel-container" style="position:relative; width:100%;">
+                                        <div class="vault-carousel-slide active" style="position:relative; width:100%; opacity:1;">
+                                            <img src="Vaultimages/Asset1.png" alt="The Vault Asset Management Interface" loading="lazy" decoding="async" width="800" height="500" style="width:100%; height:auto; display:block;">
+                                        </div>
+                                        <div class="vault-carousel-slide" style="position:absolute; top:0; left:0; width:100%; opacity:0;">
+                                            <img src="Vaultimages/Asset2.png" alt="The Vault Equipment Tracking" loading="lazy" decoding="async" width="800" height="500" style="width:100%; height:auto; display:block;">
+                                        </div>
+                                        <div class="vault-carousel-slide" style="position:absolute; top:0; left:0; width:100%; opacity:0;">
+                                            <img src="Vaultimages/Asset 3.png" alt="The Vault Documentation System" loading="lazy" decoding="async" width="800" height="500" style="width:100%; height:auto; display:block;">
+                                        </div>
                                     </div>
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">COMMERCIAL & INDUSTRIAL</span>
-                                        <p>Monitor multimeters, pressure sensors, gas detectors, and torque tools across multiple facilities and departments.</p>
+                                    <div class="vault-carousel-dots" style="display:flex; justify-content:center; gap:10px; padding:15px 0;">
+                                        <button class="vault-carousel-dot active" style="width:10px; height:10px; border-radius:50%; background:rgba(255,127,0,1); border:none; cursor:pointer; padding:0;" aria-label="Go to slide 1"></button>
+                                        <button class="vault-carousel-dot" style="width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.4); border:none; cursor:pointer; padding:0;" aria-label="Go to slide 2"></button>
+                                        <button class="vault-carousel-dot" style="width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.4); border:none; cursor:pointer; padding:0;" aria-label="Go to slide 3"></button>
                                     </div>
-                                </div>
-                                <div class="vault-specs">
-                                    <div class="vault-spec">QR/Barcode scanning</div>
-                                    <div class="vault-spec">Location mapping</div>
-                                    <div class="vault-spec">Custom tagging</div>
-                                    <div class="vault-spec">Test history</div>
                                 </div>
                             </div>
                         </div>
@@ -269,33 +304,36 @@
                             <div class="vault-feature-header">
                                 <div class="vault-feature-icon">
                                     <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="9" cy="7" r="4"></circle>
-                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="12" y1="18" x2="12" y2="12"></line>
+                                        <line x1="9" y1="15" x2="15" y2="15"></line>
                                     </svg>
                                 </div>
                                 <div class="vault-feature-title">
-                                    <h3>ENTERPRISE USER MANAGEMENT</h3>
-                                    <p class="vault-feature-desc">Hierarchical permissions. Department isolation. Audit controls.</p>
+                                    <h3>SERVICE REQUESTS</h3>
+                                    <p class="vault-feature-desc">Submit requests directly. Track status in real-time. Streamlined communication.</p>
                                 </div>
                             </div>
                             <div class="vault-feature-details">
                                 <div class="vault-industry-split">
                                     <div class="vault-industry-col">
                                         <span class="vault-industry-label">ENERGY</span>
-                                        <p>Separate access for field crews, safety managers, warehouse staff, and contractors with location-specific data views.</p>
+                                        <p>Request PPE testing, schedule fleet inspections, or submit live-line tools for recertification—all from within the platform.</p>
                                     </div>
                                     <div class="vault-industry-col">
                                         <span class="vault-industry-label">COMMERCIAL & INDUSTRIAL</span>
-                                        <p>Role-based permissions for plant managers, technicians, QA teams, and vendors across multiple facilities and regions.</p>
+                                        <p>Schedule calibrations, request expedited service, or coordinate multi-site equipment pickups with a few clicks.</p>
                                     </div>
                                 </div>
                                 <div class="vault-specs">
-                                    <div class="vault-spec">Unlimited users</div>
-                                    <div class="vault-spec">Permission groups</div>
-                                    <div class="vault-spec">Activity audit</div>
-                                    <div class="vault-spec">Department hierarchy</div>
+                                    <div class="vault-spec">Online submission</div>
+                                    <div class="vault-spec">Status tracking</div>
+                                    <div class="vault-spec">Priority scheduling</div>
+                                    <div class="vault-spec">Service history</div>
+                                </div>
+                                <div class="vault-feature-screenshot">
+                                    <img src="Vaultimages/Request Service.png" alt="The Vault Service Request Interface" loading="lazy" decoding="async" width="800" height="500">
                                 </div>
                             </div>
                         </div>
@@ -333,7 +371,7 @@
                         </div>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-contact">
                         <h3>Contact</h3>
                         <ul class="footer-contact-list">
                             <li>
@@ -359,7 +397,7 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-links">
                         <h3>Testing Services</h3>
                         <ul>
                             <li><a href="dielectric.html">Dielectric Testing</a></li>
@@ -370,7 +408,7 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-links">
                         <h3>Calibration Services</h3>
                         <ul>
                             <li><a href="calibration.html">Process Instrumentation</a></li>
@@ -381,14 +419,14 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-company">
                         <h3>Company</h3>
                         <ul>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="software.html">Software</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
-                        <h3 style="margin-top: 1.5rem;">Compliance</h3>
+                        <h3 class="compliance-title">Compliance</h3>
                         <div class="compliance-logos">
                             <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group" loading="lazy" decoding="async" width="400" height="60">
                         </div>
@@ -406,7 +444,81 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2.2"></script>
+    <script>
+    // Inline carousel script
+    (function() {
+        function initCarousel() {
+            var container = document.querySelector('.vault-carousel-container');
+            if (!container) return;
+            
+            var carousel = container.parentElement;
+            var slides = container.querySelectorAll('.vault-carousel-slide');
+            var dots = carousel.querySelectorAll('.vault-carousel-dot');
+            var current = 0;
+            var timer;
+            
+            function show(n) {
+                if (n >= slides.length) n = 0;
+                if (n < 0) n = slides.length - 1;
+                
+                // Hide all slides
+                for (var i = 0; i < slides.length; i++) {
+                    slides[i].style.opacity = '0';
+                    slides[i].style.position = 'absolute';
+                    slides[i].style.top = '0';
+                    slides[i].style.left = '0';
+                    slides[i].classList.remove('active');
+                }
+                
+                // Reset all dots
+                for (var i = 0; i < dots.length; i++) {
+                    dots[i].style.background = 'rgba(255,255,255,0.4)';
+                    dots[i].style.boxShadow = 'none';
+                    dots[i].classList.remove('active');
+                }
+                
+                current = n;
+                
+                // Show current slide
+                slides[current].style.opacity = '1';
+                slides[current].style.position = 'relative';
+                slides[current].classList.add('active');
+                
+                // Highlight current dot
+                if (dots[current]) {
+                    dots[current].style.background = 'rgba(255,127,0,1)';
+                    dots[current].style.boxShadow = '0 0 10px rgba(255,127,0,0.8)';
+                    dots[current].classList.add('active');
+                }
+            }
+            
+            function next() { show(current + 1); }
+            
+            function startTimer() {
+                clearInterval(timer);
+                timer = setInterval(next, 4000);
+            }
+            
+            // Dot click handlers
+            for (var i = 0; i < dots.length; i++) {
+                (function(index) {
+                    dots[index].onclick = function(e) { e.preventDefault(); show(index); startTimer(); };
+                })(i);
+            }
+            
+            // Auto-play disabled to prevent scroll issues
+            show(0);
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCarousel);
+        } else {
+            initCarousel();
+        }
+        window.addEventListener('load', initCarousel);
+    })();
+    </script>
 </body>
 </html>
 

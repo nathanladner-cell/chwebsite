@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dielectric Testing & Inspections - Copperhead Labs</title>
-    <link rel="preload" href="styles.css?v=5.0" as="style">
-    <link rel="stylesheet" href="styles.css?v=5.4">
+    <link rel="preload" href="styles.css?v=5.5" as="style">
+    <link rel="preload" href="logos/header2.svg" as="image" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=5.5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
@@ -340,15 +341,15 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
             font-weight: 800;
-            color: #ffffff;
+            color: #ffffff !important;
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 2px 15px rgba(184, 115, 51, 0.3);
+            text-shadow: 0 2px 15px rgba(184, 115, 51, 0.5), 0 0 30px rgba(184, 115, 51, 0.3);
         }
 
         .dielectric-page .section-subtitle {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.8) !important;
             font-size: 1.1rem;
         }
 
@@ -368,6 +369,7 @@
             border: 2px solid #1a1a1a;
             transition: all 0.3s ease;
             position: relative;
+            padding: 0 !important;
         }
 
         .dielectric-page .service-card-modern::before {
@@ -396,20 +398,27 @@
 
         .dielectric-page .card-photo {
             width: 100% !important;
-            height: 300px !important;
+            height: 350px !important;
             position: relative;
             overflow: hidden;
             border-bottom: 2px solid #1a1a1a;
             background: #050505 !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         .dielectric-page .card-photo img {
             width: 100% !important;
             height: 100% !important;
             object-fit: cover !important;
-            object-position: center !important;
+            object-position: center center !important;
             display: block !important;
             transition: transform 0.5s ease !important;
+            min-height: 100% !important;
+            min-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
         }
 
         .dielectric-page .service-card-modern:hover .card-photo img {
@@ -433,9 +442,9 @@
         }
 
         .dielectric-page .service-card-modern h3 {
-            color: #ffffff;
+            color: #ffffff !important;
             font-family: 'Rajdhani', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin: 1.5rem 2rem 1rem;
             text-transform: uppercase;
             font-weight: 800;
@@ -445,10 +454,10 @@
         }
 
         .dielectric-page .service-card-modern > p {
-            color: #b0b0b0;
-            line-height: 1.6;
+            color: #c0c0c0 !important;
+            line-height: 1.7;
             margin: 0 2rem 1.5rem;
-            font-size: 0.95rem;
+            font-size: 1rem;
             position: relative;
             z-index: 2;
         }
@@ -462,9 +471,9 @@
         }
 
         .dielectric-page .service-card-modern h4 {
-            color: #B87333;
+            color: #B87333 !important;
             font-family: 'Rajdhani', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin: 1rem 2rem 0.75rem;
             font-weight: 800;
             text-transform: uppercase;
@@ -482,12 +491,12 @@
         }
 
         .dielectric-page .check-list li {
-            color: #a8a8a8;
-            padding: 0.4rem 0;
+            color: #b8b8b8 !important;
+            padding: 0.5rem 0;
             padding-left: 1.75rem;
             position: relative;
-            font-size: 0.9rem;
-            line-height: 1.6;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         .dielectric-page .check-list li::before {
@@ -997,7 +1006,7 @@
             <div class="container">
                 <div class="intro-grid">
                     <div class="intro-image">
-                        <img src="truck_testing/1000004676_a23ae8325e31b37f3277144c03721745-9_22_2025, 8_43_46 AM (1) - Edited.jpg" alt="Fleet testing yard at Copperhead Labs" loading="lazy" decoding="async">
+                        <img src="truck_testing/1000004676_a23ae8325e31b37f3277144c03721745-9_22_2025, 8_43_46 AM (1) - Edited.jpg" alt="Fleet testing yard at Copperhead Labs" loading="lazy" decoding="async" width="500" height="350">
                     </div>
                     <div class="intro-content">
                         <h2>Protecting Lineman Around High Voltage</h2>
@@ -1032,7 +1041,7 @@
                 <div class="services-grid-three">
                     <div class="service-card-modern">
                         <div class="card-photo">
-                            <img src="truck_testing/IMG_0978.jpg" alt="Insulating Aerial Lift Testing" loading="lazy" decoding="async">
+                            <img src="truck_testing/IMG_0978.jpg" alt="Insulating Aerial Lift Testing" loading="lazy" decoding="async" width="400" height="350">
                         </div>
                         <h3>Insulating Aerial Lift Testing</h3>
                         <p>Insulating aerial lifts are critical safety equipment for electrical utility workers. Our dielectric testing verifies that your equipment's insulating properties meet or exceed manufacturer specifications, ANSI A92.2 standards, and OSHA requirements.</p>
@@ -1048,7 +1057,7 @@
 
                     <div class="service-card-modern">
                         <div class="card-photo">
-                            <img src="truck_testing/PXL_20251117_162121961.RAW-01.COVER~2.jpg" alt="ANSI Boom Inspections" loading="lazy" decoding="async">
+                            <img src="truck_testing/PXL_20251117_162121961.RAW-01.COVER~2.jpg" alt="ANSI Boom Inspections" loading="lazy" decoding="async" width="400" height="350">
                         </div>
                         <h3>ANSI Boom Inspections</h3>
                         <p>ANSI/SIA A92.2 standards require annual inspections of vehicle-mounted aerial devices. Our certified technicians perform thorough inspections to ensure your equipment meets all safety requirements.</p>
@@ -1065,7 +1074,7 @@
 
                     <div class="service-card-modern">
                         <div class="card-photo">
-                            <img src="truck_testing/PXL_20251114_180055028.RAW-01.COVER.jpg" alt="DOT Annual Inspections" loading="lazy" decoding="async">
+                            <img src="truck_testing/PXL_20251114_180055028.RAW-01.COVER.jpg" alt="DOT Annual Inspections" loading="lazy" decoding="async" width="400" height="350">
                         </div>
                         <h3>DOT Annual Inspections</h3>
                         <p>Keep your utility fleet compliant with Federal Motor Carrier Safety Administration (FMCSA) regulations. Our DOT Annual inspections ensure your vehicles meet all federal safety standards.</p>
@@ -1117,7 +1126,7 @@
                 </div>
 
                 <div class="included-features">
-                    <h3>What's Included in Every Test</h3>
+                    <h3>Comprehensive Service Capabilities</h3>
                     <div class="features-grid">
                         <div class="feature-box">
                             <span class="feature-icon-check">✓</span>
@@ -1125,7 +1134,11 @@
                         </div>
                         <div class="feature-box">
                             <span class="feature-icon-check">✓</span>
-                            <span>Visual and mechanical inspections</span>
+                            <span>ANSI/SIA A92.2 compliance inspections</span>
+                        </div>
+                        <div class="feature-box">
+                            <span class="feature-icon-check">✓</span>
+                            <span>DOT Annual vehicle safety inspections</span>
                         </div>
                         <div class="feature-box">
                             <span class="feature-icon-check">✓</span>
@@ -1133,23 +1146,19 @@
                         </div>
                         <div class="feature-box">
                             <span class="feature-icon-check">✓</span>
-                            <span>ANSI/SIA A92.2 compliance verification</span>
+                            <span>Structural and mechanical assessments</span>
                         </div>
                         <div class="feature-box">
                             <span class="feature-icon-check">✓</span>
-                            <span>DOT Annual safety inspections</span>
+                            <span>Hydraulic and electrical system testing</span>
                         </div>
                         <div class="feature-box">
                             <span class="feature-icon-check">✓</span>
-                            <span>Detailed test certificates and reports</span>
+                            <span>Detailed certificates and compliance reports</span>
                         </div>
                         <div class="feature-box">
                             <span class="feature-icon-check">✓</span>
-                            <span>Equipment compliance decals and tags</span>
-                        </div>
-                        <div class="feature-box">
-                            <span class="feature-icon-check">✓</span>
-                            <span>Failure analysis and recommendations</span>
+                            <span>Official compliance decals and documentation</span>
                         </div>
                     </div>
                 </div>
@@ -1166,7 +1175,7 @@
                 <div class="compliance-grid">
                     <div class="compliance-card-modern">
                         <div class="compliance-icon-img">
-                            <img src="regulatory_logos/oshalogo.svg" alt="OSHA Logo" loading="lazy" decoding="async">
+                            <img src="regulatory_logos/oshalogo.svg" alt="OSHA Logo" loading="lazy" decoding="async" width="120" height="80">
                         </div>
                         <h3>OSHA Requirements</h3>
                         <p class="compliance-intro">OSHA 1910.269 requires dielectric testing of insulating aerial devices:</p>
@@ -1180,7 +1189,7 @@
 
                     <div class="compliance-card-modern">
                         <div class="compliance-icon-img">
-                            <img src="regulatory_logos/ansilogo.png" alt="ANSI Logo" loading="lazy" decoding="async">
+                            <img src="regulatory_logos/ansilogo.png" alt="ANSI Logo" loading="lazy" decoding="async" width="120" height="80">
                         </div>
                         <h3>ANSI Standards</h3>
                         <p class="compliance-intro">ANSI/SIA A92.2 requires annual inspections of vehicle-mounted aerial devices to verify:</p>
@@ -1194,7 +1203,7 @@
 
                     <div class="compliance-card-modern">
                         <div class="compliance-icon-img">
-                            <img src="regulatory_logos/dot-logo.png" alt="DOT Logo" loading="lazy" decoding="async">
+                            <img src="regulatory_logos/dot-logo.png" alt="DOT Logo" loading="lazy" decoding="async" width="120" height="80">
                         </div>
                         <h3>DOT Regulations</h3>
                         <p class="compliance-intro">FMCSA regulations require annual inspections for commercial vehicles to ensure:</p>
@@ -1241,7 +1250,7 @@
                         </div>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-contact">
                         <h3>Contact</h3>
                         <ul class="footer-contact-list">
                             <li>
@@ -1267,7 +1276,7 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-links">
                         <h3>Testing Services</h3>
                         <ul>
                             <li><a href="dielectric.html">Dielectric Testing</a></li>
@@ -1278,7 +1287,7 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-links">
                         <h3>Calibration Services</h3>
                         <ul>
                             <li><a href="calibration.html">Process Instrumentation</a></li>
@@ -1289,14 +1298,14 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-company">
                         <h3>Company</h3>
                         <ul>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="software.html">Software</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
-                        <h3 style="margin-top: 1.5rem;">Compliance</h3>
+                        <h3 class="compliance-title">Compliance</h3>
                         <div class="compliance-logos">
                             <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group" loading="lazy" decoding="async" width="400" height="60">
                         </div>

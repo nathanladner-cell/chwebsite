@@ -5,8 +5,6 @@ const body = document.body;
 let menuOriginalParent = null;
 let menuNextSibling = null;
 
-console.log('Hamburger:', hamburger);
-console.log('Nav Menu:', navMenu);
 
 if (hamburger && navMenu) {
     // Store original position
@@ -16,12 +14,9 @@ if (hamburger && navMenu) {
     hamburger.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Hamburger clicked!');
         
         const isActive = navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
-        
-        console.log('Menu is now:', isActive ? 'open' : 'closed');
         
         // Move menu to body when opening, back to original position when closing
         if (isActive) {
@@ -541,25 +536,11 @@ function initImageOptimization() {
     }
 }
 
-// Preload critical images for better perceived performance
+// Preload critical images - now handled via HTML preload hints in each page's <head>
+// This function is deprecated but kept for backwards compatibility
 function preloadCriticalImages() {
-    const criticalImages = [
-        'logos/header2.svg',
-        'hero.png',
-        'fleet-hero.png'
-    ];
-    
-    // Only preload if not already in document head
-    criticalImages.forEach(src => {
-        const existingPreload = document.querySelector(`link[rel="preload"][href*="${src}"]`);
-        if (!existingPreload) {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = src;
-            document.head.appendChild(link);
-        }
-    });
+    // Preloads are now defined in HTML for better performance
+    // (processed earlier in page lifecycle)
 }
 
 // Image error handling - fallback to placeholder or retry
@@ -593,3 +574,4 @@ if (document.readyState === 'loading') {
     initImageOptimization();
     preloadCriticalImages();
 }
+

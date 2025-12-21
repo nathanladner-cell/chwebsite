@@ -13,7 +13,10 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="logos/chlink.png">
-    <link rel="stylesheet" href="styles.css?v=6.4">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css?v=6.5" as="style">
+    <link rel="preload" href="logos/header2.svg" as="image" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=6.5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
@@ -59,7 +62,7 @@
                     <div id="dielectric" class="service-detail-card service-detail-card--cta">
                         <div class="service-detail-card-body">
                             <div class="service-detail-icon">
-                                <img src="icons/bucket.png" alt="Dielectric Testing" class="detail-icon-img" loading="lazy" decoding="async">
+                                <img src="icons/bucket.png" alt="Dielectric Testing" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
                             </div>
                             <h2>Dielectric Testing & Inspections</h2>
                             <p class="card-preview">Comprehensive dielectric testing for insulating aerial lifts including bucket trucks and digger derricks, plus ANSI boom inspections and DOT Annual inspections.</p>
@@ -73,7 +76,7 @@
                     <div id="rubber-ppe" class="service-detail-card service-detail-card--cta">
                         <div class="service-detail-card-body">
                             <div class="service-detail-icon">
-                                <img src="icons/glove.png" alt="Rubber PPE Testing" class="detail-icon-img" loading="lazy" decoding="async">
+                                <img src="icons/glove.png" alt="Rubber PPE Testing" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
                             </div>
                             <h2>Rubber PPE Testing</h2>
                             <p class="card-preview">Professional testing services for insulated rubber gloves, sleeves, blankets, and line hose.</p>
@@ -87,7 +90,7 @@
                     <div id="live-line" class="service-detail-card service-detail-card--cta">
                         <div class="service-detail-card-body">
                             <div class="service-detail-icon">
-                                <img src="icons/extendo.png" alt="Live-Line Tool Testing" class="detail-icon-img" loading="lazy" decoding="async">
+                                <img src="icons/extendo.png" alt="Live-Line Tool Testing" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
                             </div>
                             <h2>Live-Line Tool Testing</h2>
                             <p class="card-preview">Expert testing of hot sticks, shotgun sticks, and other live-line tools.</p>
@@ -101,7 +104,7 @@
                     <div id="protective-grounds" class="service-detail-card service-detail-card--cta">
                         <div class="service-detail-card-body">
                             <div class="service-detail-icon">
-                                <img src="icons/ground.png" alt="Protective Grounds Testing" class="detail-icon-img" loading="lazy" decoding="async">
+                                <img src="icons/ground.png" alt="Protective Grounds Testing" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
                             </div>
                             <h2>Protective Grounds Testing</h2>
                             <p class="card-preview">Comprehensive testing of temporary protective grounding equipment including ground cables, clamps, and assemblies per ASTM F2249 standards.</p>
@@ -125,7 +128,7 @@
             <div class="container">
                 <div class="emergency-response-content">
                     <div class="emergency-response-image">
-                        <img src="truck_testing/PXL_20251118_000304717.RAW-01.COVER.jpg" alt="Mobile testing crew ready for deployment" class="emergency-image" loading="lazy" decoding="async">
+                        <img src="truck_testing/PXL_20251118_000304717.RAW-01.COVER.jpg" alt="Mobile testing crew ready for deployment" class="emergency-image" loading="lazy" decoding="async" width="600" height="400">
                         <div class="emergency-badge-overlay">
                             <div class="badge-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -220,7 +223,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/glove.png" alt="Rubber PPE icon" loading="lazy" decoding="async">
+                                        <img src="icons/glove.png" alt="Rubber PPE icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Rubber Gloves & Sleeves</span>
                                 </div>
@@ -236,7 +239,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/blanket.png" alt="Insulating blanket icon" loading="lazy" decoding="async">
+                                        <img src="icons/blanket.png" alt="Insulating blanket icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Blankets</span>
                                 </div>
@@ -252,7 +255,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/hose.png" alt="Line hose icon" loading="lazy" decoding="async">
+                                        <img src="icons/hose.png" alt="Line hose icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Line Hose</span>
                                 </div>
@@ -268,7 +271,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/extendo.png" alt="Live-line tool icon" loading="lazy" decoding="async">
+                                        <img src="icons/extendo.png" alt="Live-line tool icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Live-Line Tools</span>
                                 </div>
@@ -284,7 +287,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/ground.png" alt="Grounding icon" loading="lazy" decoding="async">
+                                        <img src="icons/ground.png" alt="Grounding icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Ground Cables / MACs / Clusters</span>
                                 </div>
@@ -300,7 +303,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/digger.png" alt="Bucket truck icon" loading="lazy" decoding="async">
+                                        <img src="icons/digger.png" alt="Bucket truck icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Bucket Trucks & Digger Derricks</span>
                                 </div>
@@ -316,7 +319,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/bucket.png" alt="Bucket liner icon" loading="lazy" decoding="async">
+                                        <img src="icons/bucket.png" alt="Bucket liner icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Bucket Liners (Single & Double)</span>
                                 </div>
@@ -332,7 +335,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/trailer.png" alt="DOT inspection icon" loading="lazy" decoding="async">
+                                        <img src="icons/trailer.png" alt="DOT inspection icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">DOT Annual Inspection</span>
                                 </div>
@@ -384,7 +387,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/glove.png" alt="Rubber PPE icon" loading="lazy" decoding="async">
+                                        <img src="icons/glove.png" alt="Rubber PPE icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Rubber Gloves & Sleeves</span>
                                 </div>
@@ -395,7 +398,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/blanket.png" alt="Insulating blanket icon" loading="lazy" decoding="async">
+                                        <img src="icons/blanket.png" alt="Insulating blanket icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Blankets</span>
                                 </div>
@@ -406,7 +409,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/hose.png" alt="Line hose icon" loading="lazy" decoding="async">
+                                        <img src="icons/hose.png" alt="Line hose icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Line Hose</span>
                                 </div>
@@ -417,7 +420,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/extendo.png" alt="Live-line tool icon" loading="lazy" decoding="async">
+                                        <img src="icons/extendo.png" alt="Live-line tool icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Live-Line Tools</span>
                                 </div>
@@ -428,7 +431,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/ground.png" alt="Grounding icon" loading="lazy" decoding="async">
+                                        <img src="icons/ground.png" alt="Grounding icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Ground Cables / MACs / Clusters</span>
                                 </div>
@@ -439,7 +442,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/digger.png" alt="Bucket truck icon" loading="lazy" decoding="async">
+                                        <img src="icons/digger.png" alt="Bucket truck icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Bucket Trucks & Digger Derricks</span>
                                 </div>
@@ -450,7 +453,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/bucket.png" alt="Bucket liner icon" loading="lazy" decoding="async">
+                                        <img src="icons/bucket.png" alt="Bucket liner icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">Bucket Liners (Single & Double)</span>
                                 </div>
@@ -461,7 +464,7 @@
                             <div class="table-row">
                                 <div class="table-cell cell-service">
                                     <span class="table-service-icon">
-                                        <img src="icons/trailer.png" alt="DOT inspection icon" loading="lazy" decoding="async">
+                                        <img src="icons/trailer.png" alt="DOT inspection icon" loading="lazy" decoding="async" width="32" height="32">
                                     </span>
                                     <span class="table-service-text">DOT Annual Inspection</span>
                                 </div>
@@ -514,7 +517,7 @@
                         </div>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-contact">
                         <h3>Contact</h3>
                         <ul class="footer-contact-list">
                             <li>
@@ -540,7 +543,7 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-links">
                         <h3>Testing Services</h3>
                         <ul>
                             <li><a href="dielectric.html">Dielectric Testing</a></li>
@@ -551,7 +554,7 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-links">
                         <h3>Calibration Services</h3>
                         <ul>
                             <li><a href="calibration.html">Process Instrumentation</a></li>
@@ -562,14 +565,14 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-company">
                         <h3>Company</h3>
                         <ul>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="software.html">Software</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
-                        <h3 style="margin-top: 1.5rem;">Compliance</h3>
+                        <h3 class="compliance-title">Compliance</h3>
                         <div class="compliance-logos">
                             <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group" loading="lazy" decoding="async" width="400" height="60">
                         </div>

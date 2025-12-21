@@ -13,7 +13,10 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="logos/chlink.png">
-    <link rel="stylesheet" href="styles.css?v=6.4">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css?v=6.5" as="style">
+    <link rel="preload" href="logos/header2.svg" as="image" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=6.5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
@@ -58,7 +61,7 @@
                 <div class="service-detail-grid">
                     <div class="service-detail-card collapsible-card">
                         <div class="service-detail-icon">
-                            <img src="icons/pressure.png" alt="Pressure Calibration" class="detail-icon-img" loading="lazy" decoding="async">
+                            <img src="icons/pressure.png" alt="Pressure Calibration" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
                         </div>
                         <h2>Pressure Calibration</h2>
                         <p class="card-preview">Expert NIST-traceable calibration of pressure measurement devices including digital and analogue gauges, sensors, transducers, and barometers.</p>
@@ -80,7 +83,7 @@
 
                     <div class="service-detail-card collapsible-card">
                         <div class="service-detail-icon">
-                            <img src="icons/thermo.png" alt="Temperature Calibration" class="detail-icon-img" loading="lazy" decoding="async">
+                            <img src="icons/thermo.png" alt="Temperature Calibration" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
                         </div>
                         <h2>Temperature Calibration</h2>
                         <p class="card-preview">Expert NIST-traceable calibration of temperature measurement devices including thermometers, thermocouples, RTDs, and temperature chambers.</p>
@@ -102,7 +105,7 @@
 
                     <div class="service-detail-card collapsible-card">
                         <div class="service-detail-icon">
-                            <img src="icons/instrument.png" alt="Flow Devices" class="detail-icon-img" loading="lazy" decoding="async">
+                            <img src="icons/instrument.png" alt="Flow Devices" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
                         </div>
                         <h2>Flow Calibration</h2>
                         <p class="card-preview">Expert NIST-traceable calibration of flow meters and flow measurement devices for liquid and gas applications.</p>
@@ -124,7 +127,7 @@
 
                     <div class="service-detail-card collapsible-card">
                         <div class="service-detail-icon">
-                            <img src="icons/multimeter.png" alt="Electrical Devices" class="detail-icon-img" loading="lazy" decoding="async">
+                            <img src="icons/multimeter.png" alt="Electrical Devices" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
                         </div>
                         <h2>Electrical Calibration</h2>
                         <p class="card-preview">Expert NIST-traceable calibration of electrical test equipment and meters for voltage, current, resistance, and other electrical parameters.</p>
@@ -146,7 +149,7 @@
 
                     <div class="service-detail-card collapsible-card">
                         <div class="service-detail-icon">
-                            <img src="icons/torque.png" alt="Mechanical Devices" class="detail-icon-img" loading="lazy" decoding="async">
+                            <img src="icons/torque.png" alt="Mechanical Devices" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
                         </div>
                         <h2>Mechanical Calibration</h2>
                         <p class="card-preview">Expert calibration of torque devices, load cells, force gauges, micrometers, calipers, and precision measurement tools.</p>
@@ -168,7 +171,7 @@
 
                     <div class="service-detail-card collapsible-card">
                         <div class="service-detail-icon">
-                            <img src="icons/gasdetector.png" alt="Gas Detection Calibration" class="detail-icon-img" loading="lazy" decoding="async">
+                            <img src="icons/gasdetector.png" alt="Gas Detection Calibration" class="detail-icon-img" loading="lazy" decoding="async" width="64" height="64">
                         </div>
                         <h2>Gas Detection Calibration</h2>
                         <p class="card-preview">Professional calibration of gas detection equipment for workplace safety and compliance.</p>
@@ -196,7 +199,7 @@
             <div class="container">
                 <div class="nist-content">
                     <div class="nist-logo-container">
-                        <img src="regulatory_logos/whitenist.png" alt="NIST - National Institute of Standards and Technology" class="nist-logo" loading="lazy" decoding="async">
+                        <img src="regulatory_logos/whitenist.png" alt="NIST - National Institute of Standards and Technology" class="nist-logo" loading="lazy" decoding="async" width="300" height="100">
                     </div>
                     <div class="nist-text">
                         <h2>The Gold Standard: NIST Traceability</h2>
@@ -257,7 +260,7 @@
                         </div>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-contact">
                         <h3>Contact</h3>
                         <ul class="footer-contact-list">
                             <li>
@@ -283,7 +286,7 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-links">
                         <h3>Testing Services</h3>
                         <ul>
                             <li><a href="dielectric.html">Dielectric Testing</a></li>
@@ -294,7 +297,7 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-links">
                         <h3>Calibration Services</h3>
                         <ul>
                             <li><a href="pressure-calibration.html">Pressure Calibration</a></li>
@@ -305,14 +308,14 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
+                    <div class="footer-section footer-company">
                         <h3>Company</h3>
                         <ul>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="software.html">Software</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
-                        <h3 style="margin-top: 1.5rem;">Compliance</h3>
+                        <h3 class="compliance-title">Compliance</h3>
                         <div class="compliance-logos">
                             <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group" loading="lazy" decoding="async" width="400" height="60">
                         </div>

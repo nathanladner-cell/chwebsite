@@ -17,7 +17,7 @@ body {
     font-weight: 400;
 }
 
-/* Image Optimization Styles */
+/* Image Optimization Styles - Enhanced for Fast Loading */
 img {
     /* Prevent layout shift during load */
     max-width: 100%;
@@ -25,7 +25,7 @@ img {
     display: block;
     
     /* Smooth loading transition */
-    transition: opacity 0.3s ease-in;
+    transition: opacity 0.2s ease-out;
 }
 
 /* Image loading states */
@@ -44,6 +44,13 @@ img[loading="eager"] {
     opacity: 1;
 }
 
+/* High-priority images (above the fold) */
+img[fetchpriority="high"] {
+    /* Immediately visible, no transition needed */
+    opacity: 1;
+    transition: none;
+}
+
 /* Better rendering for scaled images */
 img {
     image-rendering: -webkit-optimize-contrast;
@@ -53,8 +60,39 @@ img {
 /* Override for photos to maintain quality */
 img[src*=".jpg"],
 img[src*=".jpeg"],
-img[src*=".png"] {
+img[src*=".png"],
+img[src*=".gif"],
+img[src*=".webp"] {
     image-rendering: auto;
+}
+
+/* Optimize icon images specifically */
+img.btn-icon,
+img.detail-icon-img,
+img.tool-icon img,
+.table-service-icon img {
+    /* Smaller icons load fast, optimize for crisp display */
+    image-rendering: -webkit-optimize-contrast;
+    background: transparent;
+}
+
+/* Content visibility removed - causes Chrome scroll glitches */
+
+/* Smooth image appearance for lazy-loaded images when they enter viewport */
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Apply to images that have loaded */
+img.loaded {
+    animation: fadeInImage 0.3s ease-out forwards;
 }
 
 /* Color Variables */
@@ -111,7 +149,9 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px var(--shadow);
     z-index: 1000;
     transition: background-color 0.3s ease;
@@ -1097,32 +1137,17 @@ footer::before {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), url('calibration/josh.jpeg');
     background-size: cover;
     background-position: center bottom;
-    background-attachment: fixed;
 }
 
 .software-hero {
     background: #000000;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     position: relative;
-    overflow: hidden;
     border-bottom: 2px solid rgba(255, 127, 0, 0.3);
 }
 
-.software-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 50% 50%, rgba(255, 127, 0, 0.4) 0%, transparent 60%),
-        radial-gradient(circle at 20% 30%, rgba(255, 127, 0, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 127, 0, 0.35) 0%, transparent 50%);
-    pointer-events: none;
-}
+/* Simplified for Chrome GPU performance */
 
 .software-hero .container {
     position: relative;
@@ -1140,17 +1165,7 @@ footer::before {
 .vault-logo-hero {
     max-width: 120px;
     height: auto;
-    filter: drop-shadow(0 0 50px rgba(255, 127, 0, 1));
-    animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        filter: drop-shadow(0 0 50px rgba(255, 127, 0, 1));
-    }
-    50% {
-        filter: drop-shadow(0 0 70px rgba(255, 127, 0, 1));
-    }
+    filter: drop-shadow(0 0 30px rgba(255, 127, 0, 0.8));
 }
 
 .software-hero h1 {
@@ -1195,21 +1210,9 @@ main:has(.software-hero) {
     padding: 100px 0 80px;
     background: #000000 !important;
     position: relative;
-    overflow: hidden;
 }
 
-.software-hero ~ .services-detail::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 10% 20%, rgba(255, 127, 0, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(255, 127, 0, 0.1) 0%, transparent 40%);
-    pointer-events: none;
-}
+/* Removed for Chrome GPU performance */
 
 .software-hero ~ .services-detail .container {
     position: relative;
@@ -1241,23 +1244,11 @@ main:has(.software-hero) {
 
 .vault-capabilities-dark {
     padding: 100px 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%);
+    background: #1a1a1a;
     position: relative;
-    overflow: hidden;
 }
 
-.vault-capabilities-dark::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(255, 127, 0, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 127, 0, 0.12) 0%, transparent 50%);
-    pointer-events: none;
-}
+/* Removed for Chrome GPU performance */
 
 .vault-capabilities-dark .container {
     position: relative;
@@ -1276,20 +1267,9 @@ main:has(.software-hero) {
     padding: 100px 0;
     background: #000000;
     position: relative;
-    overflow: hidden;
 }
 
-.vault-cta-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 50% 50%, rgba(255, 127, 0, 0.15) 0%, transparent 60%);
-    pointer-events: none;
-}
+/* Removed for Chrome GPU performance */
 
 .vault-cta-section .container {
     position: relative;
@@ -1793,13 +1773,7 @@ main:has(.software-hero) {
     padding: 40px;
     border-radius: 12px;
     position: relative;
-    transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.vault-feature-row:hover {
-    box-shadow: 0 8px 30px rgba(255, 127, 0, 0.2);
-    transform: translateY(-3px);
 }
 
 .vault-feature-number {
@@ -1910,12 +1884,46 @@ main:has(.software-hero) {
     font-size: 0.85rem;
     font-weight: 600;
     color: white;
+}
+
+.vault-feature-screenshot {
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 127, 0, 0.2);
+}
+
+.vault-feature-screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Carousel styles - minimal, uses vault-feature-screenshot for container */
+.vault-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.vault-carousel-slide {
+    transition: opacity 0.5s ease;
+}
+
+.vault-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.vault-carousel-dot {
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.vault-spec:hover {
-    background: rgba(255, 127, 0, 0.15);
-    transform: translateX(3px);
+.vault-carousel-dot:hover {
+    transform: scale(1.2);
 }
 
 .cta-section {
@@ -2112,7 +2120,7 @@ main:has(.software-hero) {
         url('truck_testing/PXL_20251114_180055028.RAW-01.COVER.jpg');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     position: relative;
     overflow: hidden;
     padding: 100px 0;
@@ -2606,7 +2614,7 @@ a.expand-btn {
         url('hero.png');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     overflow: hidden;
 }
 
@@ -3255,7 +3263,7 @@ a.expand-btn {
     background: url('glovetest.jpg');
     background-size: cover;
     background-position: center 80%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     overflow: hidden;
 }
 
@@ -3484,9 +3492,9 @@ a.expand-btn {
         right: 12px;
         width: calc(100% - 24px);
         background: linear-gradient(135deg, 
-            rgba(255, 255, 255, 0.65) 0%, 
-            rgba(255, 255, 255, 0.75) 50%, 
-            rgba(255, 255, 255, 0.65) 100%) !important;
+            rgba(255, 255, 255, 0.92) 0%, 
+            rgba(255, 255, 255, 0.97) 50%, 
+            rgba(255, 255, 255, 0.92) 100%) !important;
         backdrop-filter: blur(20px) saturate(180%) !important;
         -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
         border-radius: 12px;
@@ -3501,7 +3509,7 @@ a.expand-btn {
         -webkit-transform: translate3d(0, 0, 0);
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
-        contain: layout style paint;
+        /* contain removed - causes Chrome issues */
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
@@ -3523,9 +3531,9 @@ a.expand-btn {
     /* Make navbar stand out when menu is open - Enhanced glass */
     body.menu-open .navbar {
         background: linear-gradient(135deg, 
-            rgba(255, 255, 255, 0.82) 0%, 
-            rgba(255, 255, 255, 0.92) 50%, 
-            rgba(255, 255, 255, 0.82) 100%) !important;
+            rgba(255, 255, 255, 0.95) 0%, 
+            rgba(255, 255, 255, 0.98) 50%, 
+            rgba(255, 255, 255, 0.95) 100%) !important;
         backdrop-filter: blur(24px) saturate(200%) !important;
         -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
         box-shadow: 
@@ -3978,98 +3986,208 @@ a.expand-btn {
         grid-template-columns: 1fr;
     }
 
-    /* Footer */
+    /* ===== ENHANCED MOBILE FOOTER ===== */
     .footer-main {
-        padding: 50px 0 30px !important;
+        padding: 40px 0 24px !important;
     }
 
     .footer-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
         text-align: center;
     }
 
+    /* Brand section - hero area */
     .footer-brand {
-        padding-right: 0;
-        order: -1; /* Ensure snake stays at top */
+        padding: 0 0 1.5rem 0;
+        order: -1;
+        border-bottom: 1px solid rgba(184, 115, 51, 0.15);
+        margin-bottom: 1.5rem;
     }
 
     .footer-logo {
-        margin-left: auto;
-        margin-right: auto;
-        height: 60px !important;
+        margin: 0 auto 1rem;
+        height: 55px !important;
+        filter: drop-shadow(0 0 15px rgba(184, 115, 51, 0.4));
     }
 
     .footer-tagline {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
+        font-size: 0.85rem;
+        margin-bottom: 1.25rem;
+        opacity: 0.85;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.5;
+    }
+
+    .footer-24-7 {
+        margin-top: 0;
     }
 
     .emergency-badge {
         justify-content: center;
-        font-size: 0.75rem;
-        padding: 0.6rem 1rem;
+        font-size: 0.7rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        gap: 0.5rem;
+        box-shadow: 0 4px 20px rgba(184, 115, 51, 0.35);
     }
 
     .emergency-icon {
-        width: 16px;
-        height: 16px;
-    }
-
-    .footer-section {
-        margin-bottom: 0.5rem;
-    }
-
-    .footer-section h3 {
-        font-size: 0.9rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .footer-section ul {
-        margin-bottom: 0;
-    }
-
-    .footer-section li {
-        margin-bottom: 0.5rem;
-    }
-
-    .footer-section a {
-        transform: none !important;
-        font-size: 0.85rem;
-    }
-
-    .footer-contact-list li {
-        justify-content: center;
-        font-size: 0.85rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .footer-contact-list svg {
         width: 14px;
         height: 14px;
     }
 
+    /* Contact section - prominent card style */
+    .footer-contact {
+        background: linear-gradient(135deg, rgba(184, 115, 51, 0.08) 0%, rgba(184, 115, 51, 0.03) 100%);
+        border: 1px solid rgba(184, 115, 51, 0.2);
+        border-radius: 12px;
+        padding: 1.25rem !important;
+        margin-bottom: 1.25rem;
+    }
+
+    .footer-contact h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(184, 115, 51, 0.5);
+    }
+
+    .footer-contact-list li {
+        justify-content: center;
+        font-size: 0.9rem;
+        margin-bottom: 0.9rem;
+        gap: 0.6rem;
+    }
+
+    .footer-contact-list li:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer-contact-list svg {
+        width: 16px;
+        height: 16px;
+        filter: drop-shadow(0 0 4px rgba(184, 115, 51, 0.4));
+    }
+
+    .footer-contact-list a {
+        font-weight: 500;
+        font-size: 0.95rem;
+        padding: 0.25rem 0;
+    }
+
+    /* Service link sections - compact pill grid */
+    .footer-links {
+        margin-bottom: 0;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-links h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+        letter-spacing: 1.5px;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4rem 0.8rem;
+        margin-bottom: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 0;
+    }
+
+    .footer-links a {
+        font-size: 0.8rem;
+        padding: 0.2rem 0;
+        transition: color 0.2s ease;
+        display: inline-block;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:active {
+        color: var(--copper);
+        transform: none;
+    }
+
+    /* Company section with compliance */
+    .footer-company {
+        padding: 1rem 0 0 0 !important;
+        border-bottom: none;
+    }
+
+    .footer-company h3:first-of-type {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-company ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4rem 0.8rem;
+        margin-bottom: 0;
+    }
+
+    .footer-company li {
+        margin-bottom: 0;
+    }
+
+    .footer-company a {
+        font-size: 0.8rem;
+        padding: 0.2rem 0;
+        transition: color 0.2s ease;
+        display: inline-block;
+    }
+
+    .footer-company a:hover,
+    .footer-company a:active {
+        color: var(--copper);
+        transform: none;
+    }
+
+    .compliance-title {
+        margin-top: 1.25rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    .compliance-logos {
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
+    .compliance-logo-group {
+        max-width: 200px !important;
+        opacity: 0.85;
+    }
+
+    /* Footer bottom bar */
     .footer-bottom {
-        padding: 1.25rem 0 !important;
+        padding: 1rem 0 !important;
+        margin-top: 0.5rem;
     }
 
     .footer-bottom-content {
         flex-direction: column;
         text-align: center;
-        gap: 0.5rem;
+        gap: 0.35rem;
     }
 
     .footer-bottom-content p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        opacity: 0.6;
     }
 
-    .compliance-logos {
-        justify-content: center;
-        margin-top: 0.75rem;
-    }
-
-    .compliance-logo-group {
-        max-width: 150px !important;
+    .footer-tagline-bottom {
+        font-size: 0.65rem !important;
+        letter-spacing: 0.3px;
     }
 
     /* Testing page specific */
@@ -4386,69 +4504,120 @@ a.expand-btn {
         font-size: 0.9rem;
     }
 
-    /* Footer - More compact on smaller screens */
+    /* ===== FOOTER - Ultra compact for 480px ===== */
     .footer-main {
-        padding: 2.5rem 0 1.5rem !important;
+        padding: 2rem 0 1.25rem !important;
     }
 
-    .footer-grid {
-        gap: 1.5rem !important;
+    .footer-brand {
+        padding-bottom: 1.25rem;
+        margin-bottom: 1.25rem;
     }
 
     .footer-logo {
-        height: 50px !important;
-        margin-bottom: 1rem !important;
+        height: 48px !important;
+        margin-bottom: 0.85rem !important;
     }
 
     .footer-tagline {
-        font-size: 0.85rem;
-        line-height: 1.5;
+        font-size: 0.8rem;
+        line-height: 1.45;
+        max-width: 260px;
     }
 
     .emergency-badge {
-        font-size: 0.7rem;
-        padding: 0.5rem 0.85rem;
+        font-size: 0.65rem;
+        padding: 0.5rem 1rem;
         gap: 0.4rem;
     }
 
     .emergency-icon {
-        width: 14px;
-        height: 14px;
-    }
-
-    .footer-section h3 {
-        font-size: 0.85rem;
-        margin-bottom: 0.6rem;
-    }
-
-    .footer-section li {
-        margin-bottom: 0.4rem;
-    }
-
-    .footer-section a {
-        font-size: 0.8rem;
-    }
-
-    .footer-contact-list li {
-        font-size: 0.8rem;
-        margin-bottom: 0.6rem;
-    }
-
-    .footer-contact-list svg {
         width: 12px;
         height: 12px;
     }
 
-    .footer-bottom {
-        padding: 1rem 0 !important;
+    /* Contact card smaller */
+    .footer-contact {
+        padding: 1rem !important;
+        margin-bottom: 1rem;
     }
 
-    .footer-bottom-content p {
+    .footer-contact h3 {
+        font-size: 1rem;
+    }
+
+    .footer-contact-list li {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-contact-list a {
+        font-size: 0.9rem;
+    }
+
+    .footer-contact-list svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Link sections tighter */
+    .footer-links {
+        padding: 0.85rem 0;
+    }
+
+    .footer-links h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .footer-links ul {
+        gap: 0.35rem 0.6rem;
+    }
+
+    .footer-links a {
         font-size: 0.75rem;
+        padding: 0.15rem 0;
+    }
+
+    /* Company section */
+    .footer-company {
+        padding: 0.85rem 0 0 0 !important;
+    }
+
+    .footer-company h3:first-of-type {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .footer-company ul {
+        gap: 0.35rem 0.6rem;
+    }
+
+    .footer-company a {
+        font-size: 0.75rem;
+        padding: 0.15rem 0;
+    }
+
+    .compliance-title {
+        margin-top: 1rem !important;
+        font-size: 0.85rem !important;
     }
 
     .compliance-logo-group {
-        max-width: 120px !important;
+        max-width: 180px !important;
+    }
+
+    /* Bottom bar */
+    .footer-bottom {
+        padding: 0.85rem 0 !important;
+    }
+
+    .footer-bottom-content p {
+        font-size: 0.65rem;
+    }
+
+    .footer-tagline-bottom {
+        font-size: 0.6rem !important;
     }
 
     /* Specific page sections */
@@ -6611,7 +6780,7 @@ body.dielectric-page .cta-section-dielectric {
         url('truck_testing/20250504_121424.jpg');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     position: relative;
 }
 
@@ -6739,7 +6908,7 @@ body.rubber-ppe-page {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.85) 0%, rgba(45, 45, 45, 0.75) 50%, rgba(26, 26, 26, 0.85) 100%), url('testing/PXL_20240209_202505443.jpg');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     padding: 140px 0 80px;
     position: relative;
     overflow: hidden;
@@ -7017,7 +7186,7 @@ body.rubber-ppe-page {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), url('testing/image.png');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     padding: 80px 0;
     color: white;
     position: relative;
@@ -7189,7 +7358,7 @@ body.rubber-ppe-page {
     background: linear-gradient(135deg, rgba(45, 45, 45, 0.88) 0%, rgba(26, 26, 26, 0.92) 100%), url('testing/IMG_1414.jpg');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     padding: 80px 0;
     position: relative;
     overflow: hidden;
@@ -7373,7 +7542,7 @@ body.liveline-page {
         url('hero.png');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     overflow: hidden;
 }
 
@@ -7671,7 +7840,7 @@ body.liveline-page {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), url('hero.png');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     color: white;
     position: relative;
 }
@@ -7962,7 +8131,7 @@ body.liveline-page {
         url('hero.png');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     position: relative;
     overflow: hidden;
 }
@@ -8099,7 +8268,7 @@ body.grounds-page {
         url('hero.png');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     overflow: hidden;
 }
 
@@ -8336,7 +8505,7 @@ body.grounds-page {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), url('hero.png');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     color: white;
     position: relative;
 }
@@ -8525,7 +8694,7 @@ body.grounds-page {
         url('hero.png');
     background-size: cover;
     background-position: center 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed removed for scroll performance */
     position: relative;
     overflow: hidden;
 }
@@ -9117,17 +9286,9 @@ body.grounds-page {
         text-align: center;
     }
 
-    /* Ensure footer links are touch-friendly */
-    .footer-section a {
-        min-height: 44px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Make footer contact items more compact and touch-friendly */
+    /* Touch-friendly contact items */
     .footer-contact-list li {
-        min-height: 44px;
+        min-height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -9136,7 +9297,14 @@ body.grounds-page {
     .footer-contact-list a {
         display: inline-flex;
         align-items: center;
-        min-height: 44px;
+        min-height: 40px;
+        padding: 0.4rem 0.6rem;
+        border-radius: 6px;
+        transition: background 0.2s ease;
+    }
+
+    .footer-contact-list a:active {
+        background: rgba(184, 115, 51, 0.15);
     }
 
     /* Make logos responsive but not logo-img */
