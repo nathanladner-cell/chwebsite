@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flow Calibration Services - Copperhead Labs</title>
-    <link rel="preload" href="styles.css?v=5.0" as="style">
+    <title>Flow Calibration</title>
+    <link rel="preload" href="styles.css?v=8.6" as="style">
     <link rel="preload" href="logos/header2.svg" as="image">
-    <link rel="stylesheet" href="styles.css?v=5.4">
+    <link rel="stylesheet" href="styles.css?v=8.6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
@@ -33,7 +33,7 @@
         /* Dark hero with overlay */
         .flow-page .flow-hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('testing/image.png');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('testing/image_opt.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -293,7 +293,7 @@
 
         /* Process Section */
         .flow-page .process-section {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.93) 0%, rgba(10, 10, 10, 0.95) 100%), url('testing/cal.jpg');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.93) 0%, rgba(10, 10, 10, 0.95) 100%), url('testing/cal_opt.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -572,6 +572,13 @@
     </style>
 </head>
 <body class="flow-page">
+    <!-- Page Loader - Shows until images are loaded -->
+    <div class="page-loader" id="pageLoader">
+        <img src="logos/copperhead.svg" alt="Loading..." class="loader-logo">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading</div>
+    </div>
+    
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -582,13 +589,99 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html#home">Home</a></li>
-                    <li><a href="testing.html">Testing</a></li>
-                    <li><a href="calibration.html">Calibration</a></li>
+                    <li class="has-dropdown">
+                        <a href="testing.html">Testing</a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-header">Testing Services</div>
+                            <a href="dielectric.html">
+                                <span class="dropdown-icon"><img src="icons/hq/bucket.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Dielectric Testing</span>
+                                    <span class="dropdown-subtitle">Bucket trucks & aerial lifts</span>
+                                </span>
+                            </a>
+                            <a href="rubber-ppe.html">
+                                <span class="dropdown-icon"><img src="icons/hq/glove.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Rubber PPE Testing</span>
+                                    <span class="dropdown-subtitle">Gloves, sleeves & blankets</span>
+                                </span>
+                            </a>
+                            <a href="liveline.html">
+                                <span class="dropdown-icon"><img src="icons/hq/extendo.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Live-Line Tool Testing</span>
+                                    <span class="dropdown-subtitle">Hot sticks & shotgun sticks</span>
+                                </span>
+                            </a>
+                            <a href="protective-grounds.html">
+                                <span class="dropdown-icon"><img src="icons/hq/ground.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Protective Grounds</span>
+                                    <span class="dropdown-subtitle">Cables, clamps & assemblies</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-footer">
+                                <a href="testing.html">View All Testing Services →</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="calibration.html">Calibration</a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-header">Calibration Services</div>
+                            <a href="pressure-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/pressure.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Pressure Calibration</span>
+                                    <span class="dropdown-subtitle">Gauges & transducers</span>
+                                </span>
+                            </a>
+                            <a href="temperature-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/thermo.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Temperature Calibration</span>
+                                    <span class="dropdown-subtitle">Thermometers & RTDs</span>
+                                </span>
+                            </a>
+                            <a href="electrical-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/multimeter.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Electrical Calibration</span>
+                                    <span class="dropdown-subtitle">Meters & test equipment</span>
+                                </span>
+                            </a>
+                            <a href="flow-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/instrument.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Flow Calibration</span>
+                                    <span class="dropdown-subtitle">Flow meters & devices</span>
+                                </span>
+                            </a>
+                            <a href="torque-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/torque.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Mechanical Calibration</span>
+                                    <span class="dropdown-subtitle">Torque & force devices</span>
+                                </span>
+                            </a>
+                            <a href="gas-detection-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/gasdetector.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Gas Detection</span>
+                                    <span class="dropdown-subtitle">Gas monitors & detectors</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-footer">
+                                <a href="calibration.html">View All Calibration Services →</a>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="software.html">Software</a></li>
-                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>

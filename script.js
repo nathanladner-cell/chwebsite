@@ -1,3 +1,13 @@
+// ===================================
+// PAGE LOADER - Instant show
+// ===================================
+(function() {
+    // Immediately show page and remove loader
+    document.body.classList.add('page-loaded');
+    var loader = document.getElementById('pageLoader');
+    if (loader) loader.style.display = 'none';
+})();
+
 // Mobile Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -5,11 +15,54 @@ const body = document.body;
 let menuOriginalParent = null;
 let menuNextSibling = null;
 
+// Check if we're on mobile
+function isMobileWidth() {
+    return window.innerWidth <= 768;
+}
+
+// Setup mobile dropdown toggles
+function setupMobileDropdowns() {
+    const dropdownItems = document.querySelectorAll('.nav-menu > li.has-dropdown');
+    
+    dropdownItems.forEach(item => {
+        const mainLink = item.querySelector(':scope > a');
+        
+        if (!mainLink) return;
+        
+        // On mobile, clicking the main link toggles the dropdown instead of navigating
+        mainLink.addEventListener('click', (e) => {
+            if (isMobileWidth() && navMenu.classList.contains('active')) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Close other open dropdowns
+                dropdownItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('dropdown-open')) {
+                        otherItem.classList.remove('dropdown-open');
+                    }
+                });
+                
+                // Toggle current dropdown
+                item.classList.toggle('dropdown-open');
+            }
+        });
+    });
+}
+
+// Close all mobile dropdowns
+function closeAllMobileDropdowns() {
+    document.querySelectorAll('.nav-menu > li.has-dropdown.dropdown-open').forEach(item => {
+        item.classList.remove('dropdown-open');
+    });
+}
 
 if (hamburger && navMenu) {
     // Store original position
     menuOriginalParent = navMenu.parentElement;
     menuNextSibling = navMenu.nextElementSibling;
+    
+    // Setup mobile dropdowns
+    setupMobileDropdowns();
     
     hamburger.addEventListener('click', (e) => {
         e.preventDefault();
@@ -24,6 +77,8 @@ if (hamburger && navMenu) {
             body.appendChild(navMenu);
             body.style.overflow = 'hidden';
         } else {
+            // Close all dropdowns when closing menu
+            closeAllMobileDropdowns();
             // Move menu back to original position
             if (menuNextSibling) {
                 menuOriginalParent.insertBefore(navMenu, menuNextSibling);
@@ -41,6 +96,7 @@ if (hamburger && navMenu) {
             !hamburger.contains(e.target)) {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
+            closeAllMobileDropdowns();
             // Move menu back to original position
             if (menuNextSibling) {
                 menuOriginalParent.insertBefore(navMenu, menuNextSibling);
@@ -51,12 +107,12 @@ if (hamburger && navMenu) {
         }
     });
 
-    // Close menu when clicking a link
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
+    // Close menu when clicking a nav-dropdown link (but not the main category link)
+    navMenu.querySelectorAll('.nav-dropdown a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
+            closeAllMobileDropdowns();
             // Move menu back to original position
             if (menuNextSibling) {
                 menuOriginalParent.insertBefore(navMenu, menuNextSibling);
@@ -478,6 +534,11 @@ function initImageOptimization() {
         if (!img.hasAttribute('decoding')) {
             img.setAttribute('decoding', 'async');
         }
+        
+        // Add fetchpriority="low" to below-the-fold images
+        if (!img.hasAttribute('fetchpriority') && !isInViewport(img)) {
+            img.setAttribute('fetchpriority', 'low');
+        }
     });
 
     // Use Intersection Observer for additional optimization
@@ -505,7 +566,7 @@ function initImageOptimization() {
                 }
             });
         }, {
-            rootMargin: '100px 0px', // Start loading 100px before entering viewport
+            rootMargin: '200px 0px', // Start loading 200px before entering viewport
             threshold: 0.01
         });
 
@@ -514,6 +575,16 @@ function initImageOptimization() {
             imageObserver.observe(img);
         });
     }
+}
+
+// Check if element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+    );
 }
 
 // Preload critical images - now handled via HTML preload hints in each page's <head>

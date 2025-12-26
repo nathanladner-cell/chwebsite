@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Insulated Rubber PPE Testing & Calibration Services</title>
+    <title>Copperhead | Testing & Calibration</title>
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="logos/copperhead.svg">
     <!-- Open Graph / Social Media Meta Tags -->
@@ -18,12 +18,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="logos/chlink.png">
     <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css?v=6.3" as="style">
+    <link rel="preload" href="styles.css?v=8.6" as="style">
     <link rel="preload" href="logos/header2.svg" as="image" type="image/svg+xml">
-    <link rel="preload" href="hero.png" as="image" type="image/png">
+    <link rel="preload" href="hero.jpg" as="image" type="image/jpeg">
     <link rel="preload" href="icons/bucket.png" as="image" type="image/png">
     <link rel="preload" href="icons/glove.png" as="image" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=6.3">
+    <link rel="stylesheet" href="styles.css?v=8.6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
@@ -208,6 +208,13 @@
     </style>
 </head>
 <body>
+    <!-- Page Loader - Shows until images are loaded -->
+    <div class="page-loader" id="pageLoader">
+        <img src="logos/copperhead.svg" alt="Loading..." class="loader-logo">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading</div>
+    </div>
+    
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -218,17 +225,103 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="testing.html">Testing</a></li>
-                    <li><a href="calibration.html">Calibration</a></li>
+                    <li class="has-dropdown">
+                        <a href="testing.html">Testing</a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-header">Testing Services</div>
+                            <a href="dielectric.html">
+                                <span class="dropdown-icon"><img src="icons/hq/bucket.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Dielectric Testing</span>
+                                    <span class="dropdown-subtitle">Bucket trucks & aerial lifts</span>
+                                </span>
+                            </a>
+                            <a href="rubber-ppe.html">
+                                <span class="dropdown-icon"><img src="icons/hq/glove.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Rubber PPE Testing</span>
+                                    <span class="dropdown-subtitle">Gloves, sleeves & blankets</span>
+                                </span>
+                            </a>
+                            <a href="liveline.html">
+                                <span class="dropdown-icon"><img src="icons/hq/extendo.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Live-Line Tool Testing</span>
+                                    <span class="dropdown-subtitle">Hot sticks & shotgun sticks</span>
+                                </span>
+                            </a>
+                            <a href="protective-grounds.html">
+                                <span class="dropdown-icon"><img src="icons/hq/ground.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Protective Grounds</span>
+                                    <span class="dropdown-subtitle">Cables, clamps & assemblies</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-footer">
+                                <a href="testing.html">View All Testing Services →</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="calibration.html">Calibration</a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-header">Calibration Services</div>
+                            <a href="pressure-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/pressure.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Pressure Calibration</span>
+                                    <span class="dropdown-subtitle">Gauges & transducers</span>
+                                </span>
+                            </a>
+                            <a href="temperature-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/thermo.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Temperature Calibration</span>
+                                    <span class="dropdown-subtitle">Thermometers & RTDs</span>
+                                </span>
+                            </a>
+                            <a href="electrical-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/multimeter.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Electrical Calibration</span>
+                                    <span class="dropdown-subtitle">Meters & test equipment</span>
+                                </span>
+                            </a>
+                            <a href="flow-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/instrument.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Flow Calibration</span>
+                                    <span class="dropdown-subtitle">Flow meters & devices</span>
+                                </span>
+                            </a>
+                            <a href="torque-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/torque.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Mechanical Calibration</span>
+                                    <span class="dropdown-subtitle">Torque & force devices</span>
+                                </span>
+                            </a>
+                            <a href="gas-detection-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/gasdetector.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Gas Detection</span>
+                                    <span class="dropdown-subtitle">Gas monitors & detectors</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-footer">
+                                <a href="calibration.html">View All Calibration Services →</a>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="software.html">Software</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
@@ -254,22 +347,22 @@
                         </div>
                         <div class="service-buttons">
                             <a href="dielectric.html" class="service-btn" data-service="dielectric">
-                                <img src="icons/bucket.png" alt="Dielectric Testing" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
+                                <img src="icons/hq/bucket.png" alt="Dielectric Testing" class="btn-icon" loading="eager" decoding="async" width="96" height="96">
                                 <span class="btn-text">Dielectric Testing & Inspections</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="rubber-ppe.html" class="service-btn" data-service="rubber-ppe">
-                                <img src="icons/glove.png" alt="Rubber PPE Testing" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
+                                <img src="icons/hq/glove.png" alt="Rubber PPE Testing" class="btn-icon" loading="eager" decoding="async" width="96" height="96">
                                 <span class="btn-text">Rubber PPE Testing</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="liveline.html" class="service-btn" data-service="live-line">
-                                <img src="icons/extendo.png" alt="Live-Line Tool Testing" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
+                                <img src="icons/hq/extendo.png" alt="Live-Line Tool Testing" class="btn-icon" loading="eager" decoding="async" width="96" height="96">
                                 <span class="btn-text">Live-Line Tool Testing</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="protective-grounds.html" class="service-btn" data-service="protective-grounds">
-                                <img src="icons/ground.png" alt="Protective Grounds Testing" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
+                                <img src="icons/hq/ground.png" alt="Protective Grounds Testing" class="btn-icon" loading="eager" decoding="async" width="96" height="96">
                                 <span class="btn-text">Protective Grounds Testing</span>
                                 <span class="btn-arrow">→</span>
                             </a>
@@ -282,22 +375,22 @@
                         </div>
                         <div class="service-buttons">
                             <a href="pressure-calibration.html" class="service-btn">
-                                <img src="icons/pressure.png" alt="Pressure Calibration" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
+                                <img src="icons/hq/pressure.png" alt="Pressure Calibration" class="btn-icon" loading="eager" decoding="async" width="96" height="96">
                                 <span class="btn-text">Pressure Calibration</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="temperature-calibration.html" class="service-btn">
-                                <img src="icons/thermo.png" alt="Temperature Calibration" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
+                                <img src="icons/hq/thermo.png" alt="Temperature Calibration" class="btn-icon" loading="eager" decoding="async" width="96" height="96">
                                 <span class="btn-text">Temperature Calibration</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="electrical-calibration.html" class="service-btn">
-                                <img src="icons/multimeter.png" alt="Electrical Calibration" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
+                                <img src="icons/hq/multimeter.png" alt="Electrical Calibration" class="btn-icon" loading="eager" decoding="async" width="96" height="96">
                                 <span class="btn-text">Electrical Calibration</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                             <a href="flow-calibration.html" class="service-btn">
-                                <img src="icons/instrument.png" alt="Flow Calibration" class="btn-icon" loading="lazy" decoding="async" width="48" height="48">
+                                <img src="icons/hq/instrument.png" alt="Flow Calibration" class="btn-icon" loading="eager" decoding="async" width="96" height="96">
                                 <span class="btn-text">Flow Calibration</span>
                                 <span class="btn-arrow">→</span>
                             </a>

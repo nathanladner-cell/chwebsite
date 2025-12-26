@@ -152,9 +152,9 @@ var simplemaps_usmap_mapdata={
     },
     MD: {
       name: "Maryland",
-      description: "Service Available",
-      color: "#FF8C00",
-      hover_color: "#FF7F00",
+      description: "default",
+      color: "default",
+      hover_color: "default",
       url: "default"
     },
     VA: {
@@ -222,9 +222,9 @@ var simplemaps_usmap_mapdata={
     },
     MA: {
       name: "Massachusetts",
-      description: "Service Available",
-      color: "#FF8C00",
-      hover_color: "#FF7F00",
+      description: "default",
+      color: "default",
+      hover_color: "default",
       url: "default"
     },
     TN: {

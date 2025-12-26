@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dielectric Testing & Inspections - Copperhead Labs</title>
-    <link rel="preload" href="styles.css?v=5.5" as="style">
+    <title>Dielectric Testing & Inspections</title>
+    <link rel="preload" href="styles.css?v=8.6" as="style">
     <link rel="preload" href="logos/header2.svg" as="image" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=5.5">
+    <link rel="stylesheet" href="styles.css?v=8.6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
@@ -55,7 +55,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background-image: url('truck_testing/In-House Fleet Testing_ You May Want to Reconsider. - 1.png');
+            background-image: url('truck_testing/In-House Fleet Testing_ You May Want to Reconsider. - 1_opt.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -524,7 +524,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background-image: url('truck_testing/PXL_20251117_162121961.RAW-01.COVER~2.jpg');
+            background-image: url('truck_testing/PXL_20251117_162121961.RAW-01.COVER~2_opt.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -859,6 +859,7 @@
 
             .dielectric-page .dielectric-hero::before {
                 background-attachment: scroll;
+                background-image: url('images/mobile/truck_testing/fleet_hero_mobile.jpg');
             }
 
             .dielectric-page .dielectric-hero h1 {
@@ -893,6 +894,11 @@
 
             .dielectric-page .process-timeline {
                 grid-template-columns: 1fr;
+            }
+
+            .dielectric-page .process-section::before {
+                background-image: url('images/mobile/truck_testing/truck_bg_mobile.jpg');
+                background-attachment: scroll;
             }
 
             .dielectric-page .cta-content-box {
@@ -964,6 +970,13 @@
     </style>
 </head>
 <body class="dielectric-page">
+    <!-- Page Loader - Shows until images are loaded -->
+    <div class="page-loader" id="pageLoader">
+        <img src="logos/copperhead.svg" alt="Loading..." class="loader-logo">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading</div>
+    </div>
+    
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -974,13 +987,99 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html#home">Home</a></li>
-                    <li><a href="testing.html">Testing</a></li>
-                    <li><a href="calibration.html">Calibration</a></li>
+                    <li class="has-dropdown">
+                        <a href="testing.html">Testing</a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-header">Testing Services</div>
+                            <a href="dielectric.html">
+                                <span class="dropdown-icon"><img src="icons/hq/bucket.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Dielectric Testing</span>
+                                    <span class="dropdown-subtitle">Bucket trucks & aerial lifts</span>
+                                </span>
+                            </a>
+                            <a href="rubber-ppe.html">
+                                <span class="dropdown-icon"><img src="icons/hq/glove.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Rubber PPE Testing</span>
+                                    <span class="dropdown-subtitle">Gloves, sleeves & blankets</span>
+                                </span>
+                            </a>
+                            <a href="liveline.html">
+                                <span class="dropdown-icon"><img src="icons/hq/extendo.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Live-Line Tool Testing</span>
+                                    <span class="dropdown-subtitle">Hot sticks & shotgun sticks</span>
+                                </span>
+                            </a>
+                            <a href="protective-grounds.html">
+                                <span class="dropdown-icon"><img src="icons/hq/ground.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Protective Grounds</span>
+                                    <span class="dropdown-subtitle">Cables, clamps & assemblies</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-footer">
+                                <a href="testing.html">View All Testing Services →</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="calibration.html">Calibration</a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-header">Calibration Services</div>
+                            <a href="pressure-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/pressure.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Pressure Calibration</span>
+                                    <span class="dropdown-subtitle">Gauges & transducers</span>
+                                </span>
+                            </a>
+                            <a href="temperature-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/thermo.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Temperature Calibration</span>
+                                    <span class="dropdown-subtitle">Thermometers & RTDs</span>
+                                </span>
+                            </a>
+                            <a href="electrical-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/multimeter.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Electrical Calibration</span>
+                                    <span class="dropdown-subtitle">Meters & test equipment</span>
+                                </span>
+                            </a>
+                            <a href="flow-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/instrument.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Flow Calibration</span>
+                                    <span class="dropdown-subtitle">Flow meters & devices</span>
+                                </span>
+                            </a>
+                            <a href="torque-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/torque.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Mechanical Calibration</span>
+                                    <span class="dropdown-subtitle">Torque & force devices</span>
+                                </span>
+                            </a>
+                            <a href="gas-detection-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/gasdetector.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Gas Detection</span>
+                                    <span class="dropdown-subtitle">Gas monitors & detectors</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-footer">
+                                <a href="calibration.html">View All Calibration Services →</a>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="software.html">Software</a></li>
-                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -1009,7 +1108,7 @@
             <div class="container">
                 <div class="intro-grid">
                     <div class="intro-image">
-                        <img src="truck_testing/1000004676_a23ae8325e31b37f3277144c03721745-9_22_2025, 8_43_46 AM (1) - Edited.jpg" alt="Fleet testing yard at Copperhead Labs" loading="lazy" decoding="async" width="500" height="350">
+                        <img src="truck_testing/1000004676_a23ae8325e31b37f3277144c03721745-9_22_2025, 8_43_46 AM (1) - Edited_opt.jpg" alt="Fleet testing yard at Copperhead Labs" loading="lazy" decoding="async" width="500" height="350">
                     </div>
                     <div class="intro-content">
                         <h2>Protecting Lineman Around High Voltage</h2>
@@ -1044,7 +1143,7 @@
                 <div class="services-grid-three">
                     <div class="service-card-modern">
                         <div class="card-photo">
-                            <img src="truck_testing/IMG_0978.jpg" alt="Insulating Aerial Lift Testing" loading="lazy" decoding="async" width="400" height="350">
+                            <img src="truck_testing/IMG_0978_opt.jpg" alt="Insulating Aerial Lift Testing" loading="lazy" decoding="async" width="400" height="350">
                         </div>
                         <h3>Insulating Aerial Lift Testing</h3>
                         <p>Insulating aerial lifts are critical safety equipment for electrical utility workers. Our dielectric testing verifies that your equipment's insulating properties meet or exceed manufacturer specifications, ANSI A92.2 standards, and OSHA requirements.</p>
@@ -1060,7 +1159,7 @@
 
                     <div class="service-card-modern">
                         <div class="card-photo">
-                            <img src="truck_testing/PXL_20251117_162121961.RAW-01.COVER~2.jpg" alt="ANSI Boom Inspections" loading="lazy" decoding="async" width="400" height="350">
+                            <img src="truck_testing/PXL_20251117_162121961.RAW-01.COVER~2_opt.jpg" alt="ANSI Boom Inspections" loading="lazy" decoding="async" width="400" height="350">
                         </div>
                         <h3>ANSI Boom Inspections</h3>
                         <p>ANSI/SIA A92.2 standards require annual inspections of vehicle-mounted aerial devices. Our certified technicians perform thorough inspections to ensure your equipment meets all safety requirements.</p>
@@ -1077,7 +1176,7 @@
 
                     <div class="service-card-modern">
                         <div class="card-photo">
-                            <img src="truck_testing/PXL_20251114_180055028.RAW-01.COVER.jpg" alt="DOT Annual Inspections" loading="lazy" decoding="async" width="400" height="350">
+                            <img src="truck_testing/PXL_20251114_180055028.RAW-01.COVER_opt.jpg" alt="DOT Annual Inspections" loading="lazy" decoding="async" width="400" height="350">
                         </div>
                         <h3>DOT Annual Inspections</h3>
                         <p>Keep your utility fleet compliant with Federal Motor Carrier Safety Administration (FMCSA) regulations. Our DOT Annual inspections ensure your vehicles meet all federal safety standards.</p>

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanical Device Calibration Services - Copperhead Labs</title>
-    <link rel="preload" href="styles.css?v=5.0" as="style">
+    <title>Mechanical Calibration</title>
+    <link rel="preload" href="styles.css?v=8.6" as="style">
     <link rel="preload" href="logos/header2.svg" as="image">
-    <link rel="stylesheet" href="styles.css?v=5.4">
+    <link rel="stylesheet" href="styles.css?v=8.6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
@@ -33,7 +33,7 @@
         /* Dark hero with overlay */
         .torque-page .torque-hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('testing/PXL_20250811_171429085.jpg');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('testing/PXL_20250811_171429085_opt.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -293,7 +293,7 @@
 
         /* Process Section */
         .torque-page .process-section {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.93) 0%, rgba(10, 10, 10, 0.95) 100%), url('testing/cdi.jpg');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.93) 0%, rgba(10, 10, 10, 0.95) 100%), url('testing/cdi_opt.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -572,6 +572,13 @@
     </style>
 </head>
 <body class="torque-page">
+    <!-- Page Loader - Shows until images are loaded -->
+    <div class="page-loader" id="pageLoader">
+        <img src="logos/copperhead.svg" alt="Loading..." class="loader-logo">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading</div>
+    </div>
+    
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -588,7 +595,7 @@
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>

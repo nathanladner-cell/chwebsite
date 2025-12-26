@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calibration Services - Copperhead Labs</title>
+    <title>Calibration Services</title>
     <link rel="icon" type="image/svg+xml" href="logos/copperhead.svg">
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Calibration Services - Copperhead Labs">
@@ -14,9 +14,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="logos/chlink.png">
     <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css?v=6.5" as="style">
+    <link rel="preload" href="styles.css?v=8.6" as="style">
     <link rel="preload" href="logos/header2.svg" as="image" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=6.5">
+    <link rel="stylesheet" href="styles.css?v=8.6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
@@ -24,7 +24,7 @@
         /* Badass Calibration Hero Section */
         .calibration-hero-badass {
             padding: 160px 0 100px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), url('calibration/josh.jpeg');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), url('calibration/josh_opt.jpg');
             background-size: cover;
             background-position: center bottom;
             position: relative;
@@ -177,8 +177,8 @@
         }
 
         .badass-icon-wrap {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             margin: 0 auto 1.5rem;
             position: relative;
         }
@@ -190,12 +190,13 @@
         .badass-icon-wrap img {
             position: relative;
             z-index: 1;
-            width: 100%;
-            height: 100%;
+            width: 100px;
+            height: 100px;
             object-fit: contain;
-            padding: 8px;
             transition: transform 0.4s ease, filter 0.4s ease;
-            filter: drop-shadow(0 0 15px rgba(177, 100, 43, 0.4));
+            filter: drop-shadow(0 0 15px rgba(177, 100, 43, 0.4)) contrast(1.05) brightness(1.02);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
         }
 
         .badass-card:hover .badass-icon-wrap img {
@@ -310,6 +311,13 @@
     </style>
 </head>
 <body>
+    <!-- Page Loader - Shows until images are loaded -->
+    <div class="page-loader" id="pageLoader">
+        <img src="logos/copperhead.svg" alt="Loading..." class="loader-logo">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading</div>
+    </div>
+    
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -320,13 +328,99 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html#home">Home</a></li>
-                    <li><a href="testing.html">Testing</a></li>
-                    <li><a href="calibration.html">Calibration</a></li>
+                    <li class="has-dropdown">
+                        <a href="testing.html">Testing</a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-header">Testing Services</div>
+                            <a href="dielectric.html">
+                                <span class="dropdown-icon"><img src="icons/bucket.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Dielectric Testing</span>
+                                    <span class="dropdown-subtitle">Bucket trucks & aerial lifts</span>
+                                </span>
+                            </a>
+                            <a href="rubber-ppe.html">
+                                <span class="dropdown-icon"><img src="icons/glove.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Rubber PPE Testing</span>
+                                    <span class="dropdown-subtitle">Gloves, sleeves & blankets</span>
+                                </span>
+                            </a>
+                            <a href="liveline.html">
+                                <span class="dropdown-icon"><img src="icons/extendo.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Live-Line Tool Testing</span>
+                                    <span class="dropdown-subtitle">Hot sticks & shotgun sticks</span>
+                                </span>
+                            </a>
+                            <a href="protective-grounds.html">
+                                <span class="dropdown-icon"><img src="icons/ground.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Protective Grounds</span>
+                                    <span class="dropdown-subtitle">Cables, clamps & assemblies</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-footer">
+                                <a href="testing.html">View All Testing Services →</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="calibration.html">Calibration</a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-header">Calibration Services</div>
+                            <a href="pressure-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/pressure.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Pressure Calibration</span>
+                                    <span class="dropdown-subtitle">Gauges & transducers</span>
+                                </span>
+                            </a>
+                            <a href="temperature-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/thermo.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Temperature Calibration</span>
+                                    <span class="dropdown-subtitle">Thermometers & RTDs</span>
+                                </span>
+                            </a>
+                            <a href="electrical-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/multimeter.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Electrical Calibration</span>
+                                    <span class="dropdown-subtitle">Meters & test equipment</span>
+                                </span>
+                            </a>
+                            <a href="flow-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/instrument.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Flow Calibration</span>
+                                    <span class="dropdown-subtitle">Flow meters & devices</span>
+                                </span>
+                            </a>
+                            <a href="torque-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/torque.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Mechanical Calibration</span>
+                                    <span class="dropdown-subtitle">Torque & force devices</span>
+                                </span>
+                            </a>
+                            <a href="gas-detection-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/gasdetector.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Gas Detection</span>
+                                    <span class="dropdown-subtitle">Gas monitors & detectors</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-footer">
+                                <a href="calibration.html">View All Calibration Services →</a>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="software.html">Software</a></li>
-                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -352,7 +446,7 @@
                     <div class="badass-card">
                         <div class="badass-card-inner">
                             <div class="badass-icon-wrap">
-                                <img src="icons/pressure.png" alt="Pressure Calibration" loading="lazy" decoding="async" width="64" height="64">
+                                <img src="icons/hq/pressure.png" alt="Pressure Calibration" loading="eager" decoding="async" width="192" height="192">
                             </div>
                             <h3 class="badass-card-title">Pressure Calibration</h3>
                             <p class="badass-card-text">Expert NIST-traceable calibration of pressure measurement devices including digital and analogue gauges, sensors, transducers, and barometers.</p>
@@ -369,7 +463,7 @@
                     <div class="badass-card">
                         <div class="badass-card-inner">
                             <div class="badass-icon-wrap">
-                                <img src="icons/thermo.png" alt="Temperature Calibration" loading="lazy" decoding="async" width="64" height="64">
+                                <img src="icons/hq/thermo.png" alt="Temperature Calibration" loading="eager" decoding="async" width="192" height="192">
                             </div>
                             <h3 class="badass-card-title">Temperature Calibration</h3>
                             <p class="badass-card-text">Expert NIST-traceable calibration of temperature measurement devices including thermometers, thermocouples, RTDs, and temperature chambers.</p>
@@ -386,7 +480,7 @@
                     <div class="badass-card">
                         <div class="badass-card-inner">
                             <div class="badass-icon-wrap">
-                                <img src="icons/instrument.png" alt="Flow Calibration" loading="lazy" decoding="async" width="64" height="64">
+                                <img src="icons/hq/instrument.png" alt="Flow Calibration" loading="eager" decoding="async" width="192" height="192">
                             </div>
                             <h3 class="badass-card-title">Flow Calibration</h3>
                             <p class="badass-card-text">Expert NIST-traceable calibration of flow meters and flow measurement devices for liquid and gas applications.</p>
@@ -403,7 +497,7 @@
                     <div class="badass-card">
                         <div class="badass-card-inner">
                             <div class="badass-icon-wrap">
-                                <img src="icons/multimeter.png" alt="Electrical Calibration" loading="lazy" decoding="async" width="64" height="64">
+                                <img src="icons/hq/multimeter.png" alt="Electrical Calibration" loading="eager" decoding="async" width="192" height="192">
                             </div>
                             <h3 class="badass-card-title">Electrical Calibration</h3>
                             <p class="badass-card-text">Expert NIST-traceable calibration of electrical test equipment and meters for voltage, current, resistance, and other electrical parameters.</p>
@@ -420,7 +514,7 @@
                     <div class="badass-card">
                         <div class="badass-card-inner">
                             <div class="badass-icon-wrap">
-                                <img src="icons/torque.png" alt="Mechanical Calibration" loading="lazy" decoding="async" width="64" height="64">
+                                <img src="icons/hq/torque.png" alt="Mechanical Calibration" loading="eager" decoding="async" width="192" height="192">
                             </div>
                             <h3 class="badass-card-title">Mechanical Calibration</h3>
                             <p class="badass-card-text">Expert calibration of torque devices, load cells, force gauges, micrometers, calipers, and precision measurement tools.</p>
@@ -437,7 +531,7 @@
                     <div class="badass-card">
                         <div class="badass-card-inner">
                             <div class="badass-icon-wrap">
-                                <img src="icons/gasdetector.png" alt="Gas Detection Calibration" loading="lazy" decoding="async" width="64" height="64">
+                                <img src="icons/hq/gasdetector.png" alt="Gas Detection Calibration" loading="eager" decoding="async" width="192" height="192">
                             </div>
                             <h3 class="badass-card-title">Gas Detection Calibration</h3>
                             <p class="badass-card-text">Professional calibration of gas detection equipment for workplace safety and compliance.</p>
