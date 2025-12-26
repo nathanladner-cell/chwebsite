@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Updates - Copperhead Labs</title>
     <link rel="icon" type="image/svg+xml" href="logos/copperhead.svg">
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="About Us - Copperhead Labs">
-    <meta property="og:description" content="Leader in the PPE Testing & Calibration Industry. Specializing in testing and calibration services for the energy, utility, commercial and industrial industries.">
+    <meta property="og:title" content="Updates & News - Copperhead Labs">
+    <meta property="og:description" content="Stay up to date with the latest news, announcements, and press releases from Copperhead Labs.">
     <meta property="og:image" content="logos/chlink.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:type" content="website">
@@ -19,9 +18,294 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
+    <style>
+        .updates-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .updates-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(184, 115, 51, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(184, 115, 51, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .updates-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .updates-hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .updates-hero h1 span {
+            background: linear-gradient(135deg, var(--copper) 0%, #d4956a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .updates-hero p {
+            font-size: 1.2rem;
+            color: #aaa;
+            max-width: 600px;
+        }
+
+        .updates-section {
+            padding: 4rem 0;
+            background: #f8f8f8;
+            min-height: 50vh;
+        }
+
+        .updates-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .update-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--copper);
+        }
+
+        .update-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .update-card-header {
+            padding: 1.5rem 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .update-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .update-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .update-tag.announcement {
+            background: linear-gradient(135deg, rgba(184, 115, 51, 0.15) 0%, rgba(184, 115, 51, 0.1) 100%);
+            color: var(--copper);
+        }
+
+        .update-tag.press {
+            background: linear-gradient(135deg, rgba(51, 102, 184, 0.15) 0%, rgba(51, 102, 184, 0.1) 100%);
+            color: #3366b8;
+        }
+
+        .update-tag.news {
+            background: linear-gradient(135deg, rgba(51, 184, 102, 0.15) 0%, rgba(51, 184, 102, 0.1) 100%);
+            color: #2d9d5c;
+        }
+
+        .update-tag.update {
+            background: linear-gradient(135deg, rgba(156, 39, 176, 0.15) 0%, rgba(156, 39, 176, 0.1) 100%);
+            color: #9c27b0;
+        }
+
+        .update-date {
+            font-size: 0.9rem;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .update-card-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+        }
+
+        .update-card h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .update-content {
+            color: #444;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .update-content p {
+            margin-bottom: 1rem;
+        }
+
+        .update-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .update-media {
+            margin-top: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .update-media img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .update-media video {
+            width: 100%;
+            max-height: 500px;
+            display: block;
+            background: #000;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: #fff;
+            border-radius: 12px;
+            border: 2px dashed #ddd;
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            stroke: #ccc;
+            margin-bottom: 1.5rem;
+        }
+
+        .empty-state h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.75rem;
+            color: #555;
+            margin-bottom: 0.75rem;
+        }
+
+        .empty-state p {
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .loading-state {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(184, 115, 51, 0.2);
+            border-top-color: var(--copper);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-state p {
+            color: #888;
+            font-size: 1rem;
+        }
+
+        .error-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #fff;
+            border-radius: 12px;
+            border: 2px solid rgba(220, 53, 69, 0.3);
+        }
+
+        .error-state svg {
+            width: 60px;
+            height: 60px;
+            stroke: #dc3545;
+            margin-bottom: 1rem;
+        }
+
+        .error-state h3 {
+            color: #dc3545;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-state p {
+            color: #666;
+        }
+
+        .admin-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #333 0%, #111 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.3;
+            z-index: 100;
+        }
+
+        .admin-link:hover {
+            opacity: 1;
+            color: var(--copper);
+            transform: scale(1.1);
+        }
+
+        .admin-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .update-card-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Page Loader - Shows until images are loaded -->
     <div class="page-loader" id="pageLoader">
         <img src="logos/copperhead.svg" alt="Loading..." class="loader-logo">
         <div class="loader-spinner"></div>
@@ -151,212 +435,38 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="about-page-hero">
-            <div class="hero-overlay"></div>
+        <section class="updates-hero">
             <div class="container">
-                <h1>About Copperhead Labs</h1>
-                <p class="hero-subtitle">Your trusted partner in electrical safety testing and calibration</p>
+                <h1>News & <span>Updates</span></h1>
+                <p>Stay informed with the latest announcements, company news, and press releases from Copperhead Labs.</p>
             </div>
         </section>
 
-        <section class="team-section">
+        <section class="updates-section">
             <div class="container">
-                <h2>Our Team</h2>
-                <p class="team-intro">Meet the dedicated professionals behind Copperhead Labs</p>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="team-member-photo">
-                            <div class="photo-placeholder">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="team-member-info">
-                            <h3>Nathan Ladner</h3>
-                            <p class="team-role">Founder & Co-Owner</p>
-                            <p class="team-bio-preview">Nathan Ladner began his career as a NETA electrical testing technician, testing, commissioning, and maintaining medium- and high-voltage systems nationwide. He then advanced into precision calibration and dielectric testing...</p>
-                            <button class="read-more-btn" data-member="nathan">Read Full Bio</button>
-                            <div class="team-bio-full" id="bio-nathan">
-                                <p>Nathan Ladner began his career as a NETA electrical testing technician, testing, commissioning, and maintaining medium- and high-voltage systems nationwide. He then advanced into precision calibration and dielectric testing, serving as a calibration technician and acquiring extensive hands-on technical experience in torque tools, pressure and vacuum gauges, dimensional instruments, multimeters, and dielectric testing of rubber insulating gloves, sleeves, blankets, and live-line tools.</p>
-                                <p>For four consecutive years he served as Director of Calibration Services for one of the Southeast's fastest-growing laboratories, doubling revenue or more each year while leading every aspect of the business—technical, sales, financial, and operational.</p>
-                                <p>For the last two years he served as Director for a leading PPE manufacturer, where he designed and developed next-generation products and pioneered industry-first plasma surface modification and coating technologies that dramatically extend the service life of rubber insulating goods without compromising electrical performance or worker safety.</p>
-                                <p>Today, as Co-Owner & Founder of Copperhead Labs, Nathan combines field-proven technical expertise, rare design-level understanding of rubber PPE performance and longevity, proven leadership, and a demonstrated ability to rapidly scale technical businesses.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="team-member">
-                        <div class="team-member-photo">
-                            <div class="photo-placeholder">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="team-member-info">
-                            <h3>Kirk Crupi</h3>
-                            <p class="team-role">Founder & Co-Owner</p>
-                            <p class="team-bio-preview">Kirk Crupi rose from part-time technician to owner by mastering every facet of calibration labs and rubber PPE operations.</p>
-                            <button class="read-more-btn" data-member="kirk">Read Full Bio</button>
-                            <div class="team-bio-full" id="bio-kirk">
-                                <p>Kirk Crupi started in the calibration industry part-time while still in high school, quickly moved to full-time technician, and chose a hands-on career in the field over college. He progressed steadily through part-time technician, full-time technician, lead technician, operations lead, operations manager, and ultimately to owner, mastering every level of laboratory and field operations along the way. In his early years as a technician alone he personally tested and inspected more than 1,100 insulated bucket trucks and over 8,000 sets of rubber insulating gloves and sleeves.</p>
-                                <p>As Operations Manager for one of the Southeast's fastest-growing calibration laboratories, Kirk strengthened client relationships, elevated service standards, and drove consistent growth. At the same time he served as Operations Manager for a leading electrical PPE manufacturer, a demanding dual-responsibility role he held for nine months. This rare overlap gave him comprehensive insight into both the testing and calibration side and the manufacturing and design side of rubber insulating goods, from raw-material selection and production to real-world performance and end-user requirements.</p>
-                                <p>Known throughout the industry for forging strong, lasting partnerships and running highly efficient operations, Kirk lives by the motto "If a customer asks if we can do it, never say no." Even as co-owner he continues to mentor newer technicians and stays hands-on in the lab and in the field every week.</p>
-                                <p>Today, as Co-Owner and Founder of Copperhead Labs, Kirk brings battle-tested technical expertise earned at every rung of the ladder, a unique dual perspective on PPE manufacturing and testing, proven leadership from technician to owner, and an unrelenting client-first mindset that turns every request into a delivered solution.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="team-member">
-                        <div class="team-member-photo">
-                            <div class="photo-placeholder">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="team-member-info">
-                            <h3>Name</h3>
-                            <p class="team-role">Administrator</p>
-                            <p class="team-bio-preview">Brief description about their background, expertise, and role at Copperhead Labs...</p>
-                            <button class="read-more-btn" data-member="admin">Read Full Bio</button>
-                            <div class="team-bio-full" id="bio-admin">
-                                <p>Brief description about their background, expertise, and role at Copperhead Labs.</p>
-                            </div>
-                        </div>
+                <div class="updates-feed" id="updatesFeed">
+                    <div class="loading-state">
+                        <div class="loading-spinner"></div>
+                        <p>Loading updates...</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Bio Modal -->
-        <div class="bio-modal" id="bioModal">
-            <div class="bio-modal-overlay"></div>
-            <div class="bio-modal-content">
-                <button class="bio-modal-close">&times;</button>
-                <div class="bio-modal-header">
-                    <h2 id="modalName"></h2>
-                    <p class="modal-role" id="modalRole"></p>
-                </div>
-                <div class="bio-modal-body" id="modalBio"></div>
-            </div>
-        </div>
-
-        <section class="about-story">
-            <div class="container">
-                <div class="about-story-wrapper">
-                    <div class="about-story-text">
-                        <h2>Leader in the PPE Testing and Calibration Industry</h2>
-                        <p>With years of experience in the electrical testing industry, Copperhead Labs provides comprehensive services to ensure the safety and reliability of electrical equipment and personal protective gear.</p>
-                        <p>Our state-of-the-art testing facilities and certified technicians deliver accurate, compliant results that you can trust for your most critical applications. We understand that your equipment isn't just tools—it's the safety of your workforce and the reliability of your operations.</p>
-                        <p>From insulated rubber PPE testing to precision calibration services, we are committed to maintaining the highest standards in everything we do.</p>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat-box">
-                            <div class="stat-number">50000+</div>
-                            <div class="stat-label">Tests Completed</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-number">200+</div>
-                            <div class="stat-label">Customers</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="core-values">
-            <div class="container">
-                <h2>Our Core Values</h2>
-                <p class="values-intro">The principles that guide everything we do</p>
-                <div class="values-grid">
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Consistency</h3>
-                        <p>Delivering reliable, repeatable results with every test and calibration. You can count on us for the same high-quality service every time.</p>
-                    </div>
-
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Reliability</h3>
-                        <p>Our commitment to accuracy and precision means you can trust our testing and calibration results to keep your operations safe and compliant.</p>
-                    </div>
-
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                            </svg>
-                        </div>
-                        <h3>Tenacity</h3>
-                        <p>We tackle every challenge with determination and perseverance, ensuring that no job is too complex or demanding for our team.</p>
-                    </div>
-
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Responsiveness</h3>
-                        <p>Available 24/7/365, we respond quickly to your testing and calibration needs because we understand the urgency of keeping your equipment operational.</p>
-                    </div>
-
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                            </svg>
-                        </div>
-                        <h3>Adaptability</h3>
-                        <p>We flex to meet your unique requirements, offering custom solutions and flexible scheduling to fit your operational needs.</p>
-                    </div>
-
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="3"></circle>
-                                <path d="M12 1v6m0 6v6m-6-6H0m6 0h6m-6 0H0"></path>
-                                <path d="M19.07 4.93l-2.12 2.12M9.17 14.83l-2.12 2.12m0-9.9l2.12 2.12m9.9 9.9l-2.12-2.12"></path>
-                            </svg>
-                        </div>
-                        <h3>Innovation</h3>
-                        <p>We continuously adopt new technologies and methodologies to provide cutting-edge testing and calibration services that exceed industry standards.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section-about">
-            <div class="container">
-                <h2>Ready to Work With Us?</h2>
-                <p>Let's discuss how we can help ensure your equipment is safe, accurate, and compliant</p>
-                <a href="contact.html" class="cta-button">Contact Us Today</a>
             </div>
         </section>
     </main>
+
+    <!-- Hidden admin link -->
+    <a href="updates-admin.html" class="admin-link" title="Admin">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+    </a>
 
     <footer>
         <div class="footer-main">
@@ -472,6 +582,127 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script>
+        // Updates Portal - Public View
+        const UpdatesPortal = {
+            async init() {
+                await this.loadUpdates();
+            },
+
+            async loadUpdates() {
+                const feed = document.getElementById('updatesFeed');
+                
+                try {
+                    const { data: updates, error } = await supabase
+                        .from('updates')
+                        .select('*')
+                        .eq('published', true)
+                        .order('date', { ascending: false });
+
+                    if (error) throw error;
+
+                    this.renderUpdates(updates || []);
+                } catch (error) {
+                    console.error('Error loading updates:', error);
+                    feed.innerHTML = `
+                        <div class="error-state">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            <h3>Unable to Load Updates</h3>
+                            <p>Please try again later.</p>
+                        </div>
+                    `;
+                }
+            },
+
+            renderUpdates(updates) {
+                const feed = document.getElementById('updatesFeed');
+
+                if (updates.length === 0) {
+                    feed.innerHTML = `
+                        <div class="empty-state">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <h3>No Updates Yet</h3>
+                            <p>Check back soon for the latest news and announcements from Copperhead Labs.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                feed.innerHTML = updates.map(update => `
+                    <article class="update-card">
+                        <div class="update-card-header">
+                            <div class="update-meta">
+                                <span class="update-tag ${update.category}">${this.getCategoryLabel(update.category)}</span>
+                            </div>
+                            <span class="update-date">${this.formatDate(update.date)}</span>
+                        </div>
+                        <div class="update-card-body">
+                            <h2>${this.escapeHtml(update.title)}</h2>
+                            <div class="update-content">
+                                ${this.formatContent(update.content)}
+                            </div>
+                            ${update.media_url ? `
+                                <div class="update-media">
+                                    ${update.media_type === 'video' 
+                                        ? `<video src="${update.media_url}" controls preload="metadata"></video>`
+                                        : `<img src="${update.media_url}" alt="${this.escapeHtml(update.title)}" loading="lazy">`}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </article>
+                `).join('');
+            },
+
+            getCategoryLabel(category) {
+                const labels = {
+                    'announcement': 'Announcement',
+                    'press': 'Press Release',
+                    'news': 'Company News',
+                    'update': 'Service Update'
+                };
+                return labels[category] || 'Update';
+            },
+
+            formatDate(dateString) {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+            },
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            },
+
+            formatContent(content) {
+                const paragraphs = content.split('\n\n').filter(p => p.trim());
+                if (paragraphs.length > 1) {
+                    return paragraphs.map(p => `<p>${this.escapeHtml(p.trim())}</p>`).join('');
+                }
+                return `<p>${this.escapeHtml(content)}</p>`;
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            UpdatesPortal.init();
+        });
+    </script>
 </body>
 </html>
-

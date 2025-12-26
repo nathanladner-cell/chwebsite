@@ -471,6 +471,18 @@ p {
     display: none;
 }
 
+/* Small dropdown variant for About menu */
+.nav-dropdown-small {
+    min-width: 220px;
+    padding: 0.5rem;
+}
+
+.nav-dropdown-small .dropdown-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--copper);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
