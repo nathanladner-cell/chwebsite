@@ -273,28 +273,181 @@ document.querySelectorAll('.service-card, .about-content, .contact-content').for
     observer.observe(el);
 });
 
-// Contact Form Handling
-const contactForm = document.querySelector('.contact-form form');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
-
-        // Basic validation
-        if (!data.name || !data.email) {
-            alert('Please fill in all required fields.');
-            return;
+// Contact Form Handling - Submits to Supabase and sends email notification
+async function handleContactFormSubmit(form, sourcePage) {
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    // Basic validation
+    if (!data.name || !data.email || !data.message) {
+        showFormMessage(form, 'Please fill in all required fields.', 'error');
+        return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+        showFormMessage(form, 'Please enter a valid email address.', 'error');
+        return;
+    }
+    
+    // Get submit button and show loading state
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    // Prepare submission data
+    const submission = {
+        name: data.name.trim(),
+        email: data.email.trim().toLowerCase(),
+        phone: data.phone ? data.phone.trim() : null,
+        service: data.service || null,
+        message: data.message.trim(),
+        source_page: sourcePage
+    };
+    
+    let supabaseSuccess = false;
+    let emailSuccess = false;
+    
+    try {
+        // 1. Submit to Supabase (if available)
+        if (typeof window.supabaseClient !== 'undefined') {
+            const { error } = await window.supabaseClient
+                .from('contact_submissions')
+                .insert([submission]);
+            
+            if (error) {
+                console.error('Supabase error:', error);
+            } else {
+                supabaseSuccess = true;
+            }
         }
+        
+        // 2. Send email notification via Web3Forms
+        emailSuccess = await sendEmailNotification(submission);
+        
+        // Success if either method worked
+        if (supabaseSuccess || emailSuccess) {
+            showFormMessage(form, 'Thank you for your message! We\'ll get back to you soon.', 'success');
+            form.reset();
+        } else {
+            throw new Error('Both submission methods failed');
+        }
+        
+    } catch (error) {
+        console.error('Form submission error:', error);
+        showFormMessage(form, 'Sorry, there was an error sending your message. Please try calling us or emailing directly at sales@copperheadlabs.com', 'error');
+    } finally {
+        // Restore button state
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
+}
 
-        // Simulate form submission (in a real application, this would send to a server)
-        alert('Thank you for your message! We will get back to you soon.');
+// Send email notification via Web3Forms
+async function sendEmailNotification(submission) {
+    // Web3Forms access key - get yours free at https://web3forms.com
+    const WEB3FORMS_KEY = window.WEB3FORMS_KEY || 'YOUR_ACCESS_KEY_HERE';
+    
+    // Skip if no valid key configured
+    if (WEB3FORMS_KEY === 'YOUR_ACCESS_KEY_HERE') {
+        console.log('Web3Forms not configured - skipping email notification');
+        return false;
+    }
+    
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                access_key: WEB3FORMS_KEY,
+                subject: `New Contact: ${submission.name} - ${submission.service || 'General Inquiry'}`,
+                from_name: 'Copperhead Labs Website',
+                to: 'sales@copperheadlabs.com',
+                // Form data
+                Name: submission.name,
+                Email: submission.email,
+                Phone: submission.phone || 'Not provided',
+                'Service Interest': submission.service || 'Not specified',
+                Message: submission.message,
+                'Source Page': submission.source_page,
+                'Submitted At': new Date().toLocaleString(),
+                // Reply-to for easy response
+                replyto: submission.email,
+            }),
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            console.log('Email notification sent successfully');
+            return true;
+        } else {
+            console.error('Web3Forms error:', result);
+            return false;
+        }
+    } catch (error) {
+        console.error('Email notification error:', error);
+        return false;
+    }
+}
 
-        // Reset form
-        contactForm.reset();
+// Show form message (success or error)
+function showFormMessage(form, message, type) {
+    // Remove any existing message
+    const existingMsg = form.querySelector('.form-message');
+    if (existingMsg) {
+        existingMsg.remove();
+    }
+    
+    // Create message element
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `form-message form-message-${type}`;
+    msgDiv.textContent = message;
+    msgDiv.style.cssText = `
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 8px;
+        font-weight: 500;
+        ${type === 'success' 
+            ? 'background: rgba(34, 197, 94, 0.1); color: #16a34a; border: 1px solid rgba(34, 197, 94, 0.3);' 
+            : 'background: rgba(239, 68, 68, 0.1); color: #dc2626; border: 1px solid rgba(239, 68, 68, 0.3);'}
+    `;
+    
+    // Insert before submit button
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+        submitBtn.parentNode.insertBefore(msgDiv, submitBtn);
+    } else {
+        form.appendChild(msgDiv);
+    }
+    
+    // Auto-remove message after 10 seconds for success, 15 for error
+    setTimeout(() => {
+        if (msgDiv.parentNode) {
+            msgDiv.remove();
+        }
+    }, type === 'success' ? 10000 : 15000);
+}
+
+// Initialize contact forms
+const indexContactForm = document.querySelector('.contact-form form');
+const pageContactForm = document.querySelector('.contact-page-form');
+
+if (indexContactForm) {
+    indexContactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleContactFormSubmit(indexContactForm, 'homepage');
+    });
+}
+
+if (pageContactForm) {
+    pageContactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleContactFormSubmit(pageContactForm, 'contact-page');
     });
 }
 
