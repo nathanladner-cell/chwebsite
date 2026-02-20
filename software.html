@@ -157,11 +157,24 @@
             margin: 0 auto;
             text-align: center;
         }
+        .vp-hero-logo-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
         .vp-hero-logo {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 24px;
+            width: 44px;
+            height: 44px;
             filter: drop-shadow(0 0 20px rgba(177,100,43,0.4));
+        }
+        .vp-hero-logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #ffffff;
         }
         .vp-eyebrow {
             display: inline-flex;
@@ -1098,7 +1111,10 @@
             <div class="vp-container">
                 <div class="vp-hero-center">
                     <div class="vp-fade">
-                        <img src="logos/vault.svg" alt="The Vault" class="vp-hero-logo">
+                        <div class="vp-hero-logo-wrap">
+                            <img src="logos/vault.svg" alt="The Vault" class="vp-hero-logo">
+                            <span class="vp-hero-logo-text">Vault</span>
+                        </div>
                     </div>
                     <div class="vp-fade" style="transition-delay:50ms">
                         <div class="vp-eyebrow">
