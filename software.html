@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Vault</title>
     <link rel="icon" type="image/svg+xml" href="logos/copperhead.svg">
-    <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="The Vault - Asset Management Software">
     <meta property="og:description" content="Smart asset management software for tracking and managing your electrical safety equipment testing and calibration.">
     <meta property="og:image" content="logos/chlink.png">
@@ -15,42 +14,948 @@
     <meta name="twitter:image" content="logos/chlink.png">
     <link rel="preload" href="styles.css?v=8.6" as="style">
     <link rel="preload" href="logos/header2.svg" as="image" type="image/svg+xml">
-    <link rel="preload" href="logos/vault.svg" as="image" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css?v=8.6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Nuclear Chrome scroll fix */
-        *, *::before, *::after {
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-            animation: none !important;
-            transition: none !important;
+        /* ─── Vault Page Dark Theme Overrides ─── */
+        body.vault-page {
+            background-color: #0a0a0a;
+            color: #ffffff;
         }
-        html {
-            scroll-behavior: auto !important;
+        body.vault-page main {
+            background-color: #0a0a0a;
         }
-        body {
-            overflow-x: hidden;
+
+        /* Dark navbar override for vault page */
+        body.vault-page .navbar {
+            background: rgba(10, 10, 10, 0.95) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .navbar {
-            position: fixed;
-            background: white !important;
+        body.vault-page .navbar .nav-menu a {
+            color: rgba(255,255,255,0.85) !important;
         }
-        .navbar::before, .navbar::after {
-            display: none !important;
+        body.vault-page .navbar .nav-menu a:hover {
+            color: #b1642b !important;
+        }
+        body.vault-page .navbar .nav-logo .logo-img {
+            filter: brightness(0) invert(1);
+        }
+        body.vault-page .hamburger span {
+            background-color: #ffffff;
+        }
+        body.vault-page .nav-dropdown {
+            background: #111111;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        body.vault-page .nav-dropdown a {
+            color: rgba(255,255,255,0.7) !important;
+        }
+        body.vault-page .nav-dropdown a:hover {
+            background: rgba(177,100,43,0.15) !important;
+            color: #d4845c !important;
+        }
+        body.vault-page .dropdown-header {
+            color: rgba(255,255,255,0.5) !important;
+            border-bottom-color: rgba(255,255,255,0.1) !important;
+        }
+        body.vault-page .dropdown-footer a {
+            color: #b1642b !important;
+        }
+        body.vault-page .dropdown-subtitle {
+            color: rgba(255,255,255,0.4) !important;
+        }
+
+        /* Dark footer override */
+        body.vault-page footer {
+            background: #0a0a0a;
+        }
+        body.vault-page .footer-main {
+            background: #0a0a0a;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        body.vault-page .footer-main,
+        body.vault-page .footer-main h3,
+        body.vault-page .footer-main p,
+        body.vault-page .footer-main a,
+        body.vault-page .footer-main span,
+        body.vault-page .footer-main li {
+            color: rgba(255,255,255,0.6);
+        }
+        body.vault-page .footer-main h3 {
+            color: rgba(255,255,255,0.85);
+        }
+        body.vault-page .footer-main a:hover {
+            color: #b1642b;
+        }
+        body.vault-page .footer-bottom {
+            background: #050505;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        body.vault-page .footer-bottom p {
+            color: rgba(255,255,255,0.35);
+        }
+        body.vault-page .social-icon {
+            border-color: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.5);
+        }
+        body.vault-page .social-icon:hover {
+            border-color: #b1642b;
+            color: #b1642b;
+        }
+        body.vault-page .emergency-badge {
+            border-color: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.5);
+        }
+        body.vault-page .compliance-logos img {
+            filter: brightness(0) invert(1) opacity(0.4);
+        }
+
+        /* ─── Vault Page Variables ─── */
+        :root {
+            --vp-copper: #b1642b;
+            --vp-copper-light: #d4845c;
+            --vp-bg-1: #0a0a0a;
+            --vp-bg-2: #0d0d0d;
+            --vp-bg-3: #111111;
+            --vp-border: rgba(255,255,255,0.1);
+            --vp-border-subtle: rgba(255,255,255,0.05);
+        }
+
+        /* ─── Hero ─── */
+        .vp-hero {
+            position: relative;
+            padding: 128px 0 80px;
+            overflow: hidden;
+            background: var(--vp-bg-1);
+        }
+        .vp-hero-grid {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.04;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .vp-hero-glow {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(177,100,43,0.08) 0%, transparent 70%);
+        }
+        .vp-hero .vp-container {
+            position: relative;
+            z-index: 1;
+        }
+        .vp-hero-center {
+            max-width: 768px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .vp-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border: 1px solid rgba(177,100,43,0.4);
+            color: var(--vp-copper-light);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+        .vp-eyebrow svg { width: 14px; height: 14px; }
+        .vp-hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.75rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+        .vp-hero h1 .vp-accent { color: var(--vp-copper); }
+        .vp-hero-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: #9ca3af;
+            max-width: 640px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .vp-hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+        .vp-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: var(--vp-copper);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: filter 0.2s;
+        }
+        .vp-btn-primary:hover { filter: brightness(1.15); }
+        .vp-btn-primary svg { width: 18px; height: 18px; }
+        .vp-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: transparent;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .vp-btn-secondary:hover { border-color: rgba(255,255,255,0.5); }
+        .vp-hero-screenshot {
+            margin-top: 64px;
+            max-width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        .vp-hero-screenshot .vp-glow-border {
+            position: absolute;
+            inset: -1px;
+            z-index: 0;
+            background: linear-gradient(135deg, rgba(177,100,43,0.25), transparent 50%, rgba(177,100,43,0.12));
+        }
+        .vp-hero-screenshot .vp-img-wrap {
+            position: relative;
+            z-index: 1;
+            border: 1px solid var(--vp-border);
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        .vp-hero-screenshot img { width: 100%; display: block; }
+
+        /* ─── Stats Bar ─── */
+        .vp-stats {
+            border-top: 1px solid var(--vp-border);
+            border-bottom: 1px solid var(--vp-border);
+            background: var(--vp-bg-3);
+            padding: 56px 0;
+        }
+        .vp-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+        .vp-stat { text-align: center; }
+        .vp-stat-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 900;
+            color: var(--vp-copper);
+        }
+        .vp-stat-label {
+            margin-top: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: #6b7280;
+            letter-spacing: 0.25em;
+        }
+
+        /* ─── Shared Section Styles ─── */
+        .vp-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .vp-section {
+            padding: 96px 0;
+            border-top: 1px solid var(--vp-border-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+        .vp-section.vp-bg-dark { background: var(--vp-bg-1); }
+        .vp-section.vp-bg-medium { background: var(--vp-bg-2); }
+        .vp-section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .vp-section-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.6rem, 3vw, 2.25rem);
+            font-weight: 900;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+        .vp-section-header p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: #6b7280;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .vp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border: 1px solid rgba(177,100,43,0.3);
+            color: var(--vp-copper-light);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .vp-badge svg { width: 12px; height: 12px; }
+        .vp-chevron-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .vp-chevron-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .vp-chevron-list li svg {
+            width: 16px;
+            height: 16px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            color: var(--vp-copper);
+        }
+        .vp-chevron-list li span {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #d1d5db;
+            line-height: 1.5;
+        }
+
+        /* Fade-in animation */
+        .vp-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .vp-fade.vp-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── Industry Section ─── */
+        .vp-industry-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 56px;
+        }
+        .vp-industry-tab {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: var(--vp-bg-3);
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .vp-industry-tab svg { width: 16px; height: 16px; }
+        .vp-industry-tab:hover {
+            border-color: rgba(255,255,255,0.2);
+            color: #d1d5db;
+        }
+        .vp-industry-tab.active {
+            border-color: transparent;
+        }
+        .vp-industry-tab.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+        }
+        .vp-industry-content {
+            display: none;
+        }
+        .vp-industry-content.active {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: stretch;
+            animation: vpFadeSlide 0.5s ease-out;
+        }
+        @keyframes vpFadeSlide {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .vp-industry-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .vp-industry-text h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.3rem, 2.5vw, 1.875rem);
+            font-weight: 900;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #ffffff;
+        }
+        .vp-industry-text > p {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: #9ca3af;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .vp-industry-graphic {
+            position: relative;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid;
+            background: var(--vp-bg-3);
+            overflow: hidden;
+        }
+        .vp-industry-graphic-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .vp-industry-graphic-inner svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 16px;
+        }
+        .vp-industry-graphic-sub {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+        .vp-industry-bg-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* ─── Two Column Feature ─── */
+        .vp-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .vp-two-col h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.6rem, 3vw, 2.25rem);
+            font-weight: 900;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            color: #ffffff;
+        }
+        .vp-two-col > div > p {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: #9ca3af;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .vp-img-frame {
+            position: relative;
+        }
+        .vp-img-frame .vp-glow-border {
+            position: absolute;
+            inset: -1px;
+            z-index: 0;
+        }
+        .vp-img-frame .vp-img-wrap {
+            position: relative;
+            z-index: 1;
+            border: 1px solid var(--vp-border);
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+        }
+        .vp-img-frame img { width: 100%; display: block; }
+
+        /* ─── Cards Grid ─── */
+        .vp-cards-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        .vp-card {
+            border: 1px solid var(--vp-border);
+            background: var(--vp-bg-3);
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .vp-card:hover { border-color: rgba(255,255,255,0.2); }
+        .vp-card-body { padding: 32px 32px 20px; }
+        .vp-card-body .vp-badge-colored {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border: 1px solid;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .vp-card-body .vp-badge-colored svg { width: 12px; height: 12px; }
+        .vp-card-body h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .vp-card-body p {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        .vp-card-img {
+            border-top: 1px solid var(--vp-border-subtle);
+        }
+        .vp-card-img img { width: 100%; display: block; }
+
+        /* ─── Steps ─── */
+        .vp-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .vp-step { text-align: center; }
+        .vp-step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border: 2px solid var(--vp-copper);
+            color: var(--vp-copper);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .vp-step h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        .vp-step p {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ─── Features Grid ─── */
+        .vp-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .vp-feature-card {
+            position: relative;
+            border: 1px solid var(--vp-border);
+            background: var(--vp-bg-3);
+            padding: 28px;
+            transition: border-color 0.3s;
+        }
+        .vp-feature-card:hover { border-color: rgba(177,100,43,0.5); }
+        .vp-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--vp-copper);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s;
+        }
+        .vp-feature-card:hover::before { transform: scaleX(1); }
+        .vp-feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(177,100,43,0.35);
+            color: var(--vp-copper);
+            margin-bottom: 20px;
+        }
+        .vp-feature-icon svg { width: 20px; height: 20px; }
+        .vp-feature-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        .vp-feature-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ─── Pricing ─── */
+        .vp-pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .vp-price-card {
+            position: relative;
+            border: 1px solid var(--vp-border);
+            background: var(--vp-bg-3);
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+        }
+        .vp-price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--vp-copper);
+        }
+        .vp-price-card.vp-pro { border-color: rgba(177,100,43,0.3); }
+        .vp-price-card.vp-pro::before {
+            background: linear-gradient(90deg, var(--vp-copper), var(--vp-copper-light));
+        }
+        .vp-price-tier-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        .vp-price-tier {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border: 1px solid rgba(177,100,43,0.3);
+            color: var(--vp-copper-light);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+        .vp-price-most {
+            padding: 4px 12px;
+            background: rgba(177,100,43,0.15);
+            color: var(--vp-copper);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        .vp-price-amount { margin-bottom: 4px; }
+        .vp-price-amount .vp-dollars {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: var(--vp-copper);
+        }
+        .vp-price-amount .vp-cents {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #6b7280;
+        }
+        .vp-price-period {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 24px;
+        }
+        .vp-price-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .vp-price-card .vp-chevron-list { margin-top: auto; }
+
+        /* ─── Branding Section ─── */
+        .vp-brand-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+        .vp-brand-card {
+            position: relative;
+            border: 1px solid var(--vp-border);
+            background: var(--vp-bg-3);
+            padding: 24px;
+            transition: border-color 0.3s;
+        }
+        .vp-brand-card:hover { border-color: rgba(177,100,43,0.5); }
+        .vp-brand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--vp-copper);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s;
+        }
+        .vp-brand-card:hover::before { transform: scaleX(1); }
+        .vp-brand-card .vp-feature-icon { margin-bottom: 16px; }
+        .vp-brand-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .vp-brand-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        .vp-color-showcase {
+            border: 1px solid var(--vp-border);
+            background: var(--vp-bg-3);
+            padding: 40px 48px;
+            margin-bottom: 80px;
+        }
+        .vp-color-showcase-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .vp-color-showcase h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+        .vp-color-showcase > div p {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #9ca3af;
+            line-height: 1.7;
+        }
+        .vp-color-showcase > div p + p { margin-top: 16px; color: #6b7280; }
+        .vp-swatches-wrap { text-align: center; }
+        .vp-swatches {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .vp-swatch-item { text-align: center; }
+        .vp-swatch {
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(255,255,255,0.15);
+            margin-bottom: 6px;
+        }
+        .vp-swatch-label {
+            font-family: monospace;
+            font-size: 10px;
+            color: #4b5563;
+        }
+        .vp-swatches-caption {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #4b5563;
+        }
+        .vp-darkmode-label {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .vp-darkmode-label svg { width: 14px; height: 14px; color: var(--vp-copper); }
+        .vp-darkmode-label span {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #d1d5db;
+        }
+
+        /* ─── CTA ─── */
+        .vp-cta-box {
+            position: relative;
+            overflow: hidden;
+            padding: 64px 48px;
+            text-align: center;
+            border: 1px solid rgba(177,100,43,0.2);
+            background: linear-gradient(135deg, #1a1210, #0a0a0a, #10120f);
+        }
+        .vp-cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--vp-copper), transparent);
+        }
+        .vp-cta-box::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(177,100,43,0.25), transparent);
+        }
+        .vp-cta-box h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.6rem, 3vw, 2.25rem);
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+        }
+        .vp-cta-box p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: #9ca3af;
+            max-width: 560px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        .vp-cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 1024px) {
+            .vp-two-col,
+            .vp-industry-content.active {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .vp-brand-grid { grid-template-columns: repeat(2, 1fr); }
+            .vp-color-showcase-inner { grid-template-columns: 1fr; }
+            .vp-features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .vp-hero { padding: 100px 0 60px; }
+            .vp-section { padding: 64px 0; }
+            .vp-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .vp-pricing-grid { grid-template-columns: 1fr; }
+            .vp-cards-2 { grid-template-columns: 1fr; }
+            .vp-steps { grid-template-columns: 1fr; gap: 40px; }
+            .vp-brand-grid { grid-template-columns: 1fr; }
+            .vp-color-showcase { padding: 24px; }
+            .vp-hero-ctas { flex-direction: column; }
+            .vp-cta-buttons { flex-direction: column; }
+            .vp-cta-box { padding: 40px 24px; }
+        }
+        @media (max-width: 640px) {
+            .vp-features-grid { grid-template-columns: 1fr; }
+            .vp-industry-tabs { flex-direction: column; align-items: stretch; }
+            .vp-swatches { flex-wrap: wrap; }
         }
     </style>
 </head>
-<body>
-    <!-- Page Loader - Shows until images are loaded -->
+<body class="vault-page">
     <div class="page-loader" id="pageLoader">
         <img src="logos/copperhead.svg" alt="Loading..." class="loader-logo">
         <div class="loader-spinner"></div>
         <div class="loader-text">Loading</div>
     </div>
-    
+
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -174,277 +1079,191 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="contact-page-hero software-hero">
-            <div class="container">
-                <div class="hero-title-container">
-                    <img src="logos/vault.svg" alt="The Vault Logo" class="vault-logo-hero" loading="eager" decoding="async" fetchpriority="high" width="200" height="60">
-                    <h1>The Vault</h1>
-                </div>
-                <p>Asset Management & Reporting Solutions Tailored to Your Industry</p>
-            </div>
-        </section>
-
-        <section class="services-detail">
-            <div class="container">
-                <div class="software-intro">
-                    <h2>One Platform, Two Specialized Solutions</h2>
-                    <p>The Vault provides secure, 24/7 access to track your equipment, view test reports, and stay ahead of compliance deadlines. Our platform adapts to your industry's specific needs with tailored workflows and reporting.</p>
-                </div>
-
-                <div class="software-solutions">
-                    <div class="solution-card energy-solution">
-                        <div class="solution-header">
-                            <div class="solution-icon">
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                                </svg>
-                            </div>
-                            <h3>Energy Solutions</h3>
-                            <p class="solution-subtitle">Utilities, Storm Response & Line Construction Contractors</p>
-                        </div>
-                        <div class="solution-description">
-                            <p>Purpose-built for the electrical utility industry with specialized tracking for PPE, dielectric testing, live-line tools, and fleet equipment. Perfect for managing distributed teams, emergency response equipment, and regulatory compliance.</p>
+        <!-- ─── Hero ─── -->
+        <section class="vp-hero">
+            <div class="vp-hero-grid"></div>
+            <div class="vp-hero-glow"></div>
+            <div class="vp-container">
+                <div class="vp-hero-center">
+                    <div class="vp-fade">
+                        <div class="vp-eyebrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            SECURE &middot; REAL-TIME &middot; ALWAYS ON
                         </div>
                     </div>
-
-                    <div class="solution-card industrial-solution">
-                        <div class="solution-header">
-                            <div class="solution-icon">
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                                    <line x1="12" y1="11" x2="12" y2="11.01"></line>
-                                    <line x1="12" y1="17" x2="12" y2="17.01"></line>
-                                </svg>
-                            </div>
-                            <h3>Commercial & Industrial Solutions</h3>
-                            <p class="solution-subtitle">Manufacturing, Production Plants & Data Centers</p>
+                    <div class="vp-fade" style="transition-delay:100ms">
+                        <h1>Your Equipment. <span class="vp-accent">Your Data.</span> Your Portal.</h1>
+                    </div>
+                    <div class="vp-fade" style="transition-delay:200ms">
+                        <p class="vp-hero-sub">The Vault Customer Portal gives you 24/7 access to calibration reports, asset tracking, compliance monitoring, and service requests &mdash; all from one dashboard branded to your company.</p>
+                    </div>
+                    <div class="vp-fade" style="transition-delay:300ms">
+                        <div class="vp-hero-ctas">
+                            <a href="contact.html" class="vp-btn-primary">
+                                Access Your Portal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                            <a href="#features" class="vp-btn-secondary">See Features</a>
                         </div>
-                        <div class="solution-description">
-                            <p>Optimized for facilities management with tracking for process instrumentation, electrical test equipment, gas detection, and safety devices. Streamline calibration schedules, reduce downtime, and maintain continuous compliance across your operations.</p>
+                    </div>
+                </div>
+                <div class="vp-fade" style="transition-delay:400ms">
+                    <div class="vp-hero-screenshot">
+                        <div class="vp-glow-border"></div>
+                        <div class="vp-img-wrap">
+                            <img src="vault-ad/dashboard.png" alt="Vault Customer Portal Dashboard" width="1024" height="640" loading="eager">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="vault-capabilities-dark">
-            <div class="container">
-                <div class="core-features-section">
-                    <h2>Core Capabilities</h2>
-                    <p class="features-subtitle">Enterprise-Grade Asset Management Built for Mission-Critical Operations</p>
+        <!-- ─── Stats Bar ─── -->
+        <section class="vp-stats">
+            <div class="vp-container">
+                <div class="vp-stats-grid">
+                    <div class="vp-stat vp-fade"><div class="vp-stat-value">100%</div><div class="vp-stat-label">UPTIME SLA</div></div>
+                    <div class="vp-stat vp-fade" style="transition-delay:80ms"><div class="vp-stat-value">24/7</div><div class="vp-stat-label">PORTAL ACCESS</div></div>
+                    <div class="vp-stat vp-fade" style="transition-delay:160ms"><div class="vp-stat-value">&lt;2s</div><div class="vp-stat-label">PAGE LOAD</div></div>
+                    <div class="vp-stat vp-fade" style="transition-delay:240ms"><div class="vp-stat-value">AES-256</div><div class="vp-stat-label">ENCRYPTION</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Built for Your Industry ─── -->
+        <section class="vp-section vp-bg-dark" id="industry">
+            <div class="vp-container">
+                <div class="vp-section-header vp-fade">
+                    <h2>Built for Your Industry</h2>
+                    <p>Whether you're deploying crews in a hurricane or managing a facility's annual testing schedule, The Vault keeps your equipment compliance locked in.</p>
                 </div>
 
-                <div class="vault-features-layout">
-                    <!-- Features content here -->
-                    <div class="vault-feature-row">
-                        <div class="vault-feature-number">01</div>
-                        <div class="vault-feature-content">
-                            <div class="vault-feature-header">
-                                <div class="vault-feature-icon">
-                                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                                    </svg>
-                                </div>
-                                <div class="vault-feature-title">
-                                    <h3>SECURE ACCESS PORTAL</h3>
-                                    <p class="vault-feature-desc">Available 24/7/365.</p>
-                                </div>
-                            </div>
-                            <div class="vault-feature-details">
-                                <div class="vault-industry-split">
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">ENERGY</span>
-                                        <p>Field crews access equipment records from job sites. Storm response teams track available PPE inventory in real-time.</p>
-                                    </div>
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">COMMERCIAL & INDUSTRIAL</span>
-                                        <p>Plant managers monitor facility equipment. Maintenance teams access calibration records directly from the production floor.</p>
-                                    </div>
-                                </div>
-                                <div class="vault-feature-screenshot">
-                                    <img src="Vaultimages/sign in_opt.jpg" alt="The Vault Authentication Portal" loading="lazy" decoding="async" width="800" height="500">
-                                </div>
-                            </div>
+                <div class="vp-industry-tabs">
+                    <button class="vp-industry-tab active" data-tab="storm" style="background:rgba(234,179,8,0.12);border-color:rgba(234,179,8,0.4);color:#facc15;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"/><polyline points="13 11 9 17 15 17 11 23"/></svg>
+                        Storm Response
+                    </button>
+                    <button class="vp-industry-tab" data-tab="utility">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4Z"/><circle cx="16.5" cy="7.5" r=".5"/></svg>
+                        Utilities &amp; Contractors
+                    </button>
+                    <button class="vp-industry-tab" data-tab="industrial">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+                        Commercial &amp; Industrial
+                    </button>
+                </div>
+
+                <!-- Storm Response -->
+                <div class="vp-industry-content active" data-content="storm">
+                    <div class="vp-industry-text">
+                        <div class="vp-badge" style="border-color:rgba(234,179,8,0.3);color:#facc15;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;"><polyline points="13 11 9 17 15 17 11 23"/></svg>
+                            Storm Response
+                        </div>
+                        <h3>When the Storm Hits, Your Gear Better Be Ready.</h3>
+                        <p>Storm calls don't wait for paperwork. The Vault gives storm response coordinators instant proof that every truck, hotstick, and pair of gloves rolling out is tested, certified, and OSHA-compliant &mdash; before wheels turn.</p>
+                        <ul class="vp-chevron-list">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#eab308"><polyline points="9 18 15 12 9 6"/></svg><span>Verify fleet-wide compliance in seconds before deployment</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#eab308"><polyline points="9 18 15 12 9 6"/></svg><span>Pull calibration certs on-site for any asset from any device</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#eab308"><polyline points="9 18 15 12 9 6"/></svg><span>Overdue tracking prevents non-compliant equipment from shipping</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#eab308"><polyline points="9 18 15 12 9 6"/></svg><span>Print PDF proof-of-test for mutual aid documentation</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#eab308"><polyline points="9 18 15 12 9 6"/></svg><span>Real-time dashboard shows exactly what's ready and what's not</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#eab308"><polyline points="9 18 15 12 9 6"/></svg><span>Track rubber goods expiration across your entire storm fleet</span></li>
+                        </ul>
+                    </div>
+                    <div class="vp-industry-graphic" style="border-color:rgba(234,179,8,0.15);">
+                        <svg viewBox="0 0 400 300" class="vp-industry-bg-svg" style="opacity:0.06"><path d="M200 0 L170 120 L220 120 L160 300" stroke="#eab308" stroke-width="3" fill="none"/><path d="M280 20 L250 140 L300 140 L240 300" stroke="#eab308" stroke-width="2" fill="none"/><path d="M120 30 L90 150 L140 150 L80 290" stroke="#eab308" stroke-width="2" fill="none"/></svg>
+                        <div class="vp-industry-graphic-inner">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="1.5"><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"/><polyline points="13 11 9 17 15 17 11 23"/></svg>
+                            <div class="vp-industry-graphic-sub" style="color:rgba(234,179,8,0.5)">DEPLOY WITH CONFIDENCE</div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Feature 2 -->
-                    <div class="vault-feature-row">
-                        <div class="vault-feature-number">02</div>
-                        <div class="vault-feature-content">
-                            <div class="vault-feature-header">
-                                <div class="vault-feature-icon">
-                                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                        <line x1="3" y1="9" x2="21" y2="9"></line>
-                                        <line x1="9" y1="21" x2="9" y2="9"></line>
-                                    </svg>
-                                </div>
-                                <div class="vault-feature-title">
-                                    <h3>DASHBOARD</h3>
-                                    <p class="vault-feature-desc">Complete visibility into your equipment status and compliance at a glance. Automatically themes to match your company's brand colors when you upload your logo.</p>
-                                </div>
-                            </div>
-                            <div class="vault-feature-details">
-                                <div class="vault-industry-split">
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">ENERGY</span>
-                                        <p>Monitor PPE inventory levels, upcoming test deadlines, and equipment deployment across all crews and locations in real-time.</p>
-                                    </div>
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">COMMERCIAL & INDUSTRIAL</span>
-                                        <p>Track calibration status, equipment utilization, and maintenance schedules across all facilities from a centralized command center.</p>
-                                    </div>
-                                </div>
-                                <div class="vault-feature-screenshot">
-                                    <img src="Vaultimages/Dashboard_opt.jpg" alt="The Vault Dashboard Interface" loading="lazy" decoding="async" width="800" height="500">
-                                </div>
-                            </div>
+                <!-- Utilities & Contractors -->
+                <div class="vp-industry-content" data-content="utility">
+                    <div class="vp-industry-text">
+                        <div class="vp-badge" style="border-color:rgba(59,130,246,0.3);color:#60a5fa;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;"><path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4Z"/></svg>
+                            Utilities &amp; Contractors
+                        </div>
+                        <h3>Keep Your Crews Compliant Across Every Job Site.</h3>
+                        <p>From bucket trucks to rubber gloves, utility contractors manage hundreds of assets across multiple crews and locations. The Vault centralizes every calibration record so nothing slips through the cracks &mdash; and OSHA auditors get what they need instantly.</p>
+                        <ul class="vp-chevron-list">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#3b82f6"><polyline points="9 18 15 12 9 6"/></svg><span>OSHA 1910.137 rubber goods compliance tracking built in</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#3b82f6"><polyline points="9 18 15 12 9 6"/></svg><span>ANSI/SIA A92.2 bucket truck &amp; digger derrick test records</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#3b82f6"><polyline points="9 18 15 12 9 6"/></svg><span>Track hotstick, sleeve, blanket, and line hose test intervals</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#3b82f6"><polyline points="9 18 15 12 9 6"/></svg><span>Assign assets across crews and job sites with full traceability</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#3b82f6"><polyline points="9 18 15 12 9 6"/></svg><span>One-click PDF certificates for on-site inspectors</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#3b82f6"><polyline points="9 18 15 12 9 6"/></svg><span>Automated due-date alerts prevent lapsed certifications</span></li>
+                        </ul>
+                    </div>
+                    <div class="vp-industry-graphic" style="border-color:rgba(59,130,246,0.15);">
+                        <svg viewBox="0 0 400 300" class="vp-industry-bg-svg" style="opacity:0.06"><rect x="80" y="60" width="6" height="240" fill="#3b82f6"/><rect x="200" y="40" width="6" height="260" fill="#3b82f6"/><rect x="320" y="60" width="6" height="240" fill="#3b82f6"/><rect x="50" y="60" width="66" height="4" fill="#3b82f6"/><rect x="170" y="40" width="66" height="4" fill="#3b82f6"/><rect x="290" y="60" width="66" height="4" fill="#3b82f6"/><path d="M56 62 Q140 90 176 42" stroke="#3b82f6" stroke-width="1.5" fill="none"/><path d="M176 42 Q260 70 296 62" stroke="#3b82f6" stroke-width="1.5" fill="none"/></svg>
+                        <div class="vp-industry-graphic-inner">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5"><path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4Z"/><circle cx="16.5" cy="7.5" r=".5"/></svg>
+                            <div class="vp-industry-graphic-sub" style="color:rgba(59,130,246,0.5)">COMPLIANCE AT SCALE</div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Feature 3 -->
-                    <div class="vault-feature-row">
-                        <div class="vault-feature-number">03</div>
-                        <div class="vault-feature-content">
-                            <div class="vault-feature-header">
-                                <div class="vault-feature-icon">
-                                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                        <polyline points="14 2 14 8 20 8"></polyline>
-                                        <line x1="12" y1="18" x2="12" y2="12"></line>
-                                        <line x1="9" y1="15" x2="15" y2="15"></line>
-                                    </svg>
-                                </div>
-                                <div class="vault-feature-title">
-                                    <h3>DIGITAL DOCUMENTATION</h3>
-                                    <p class="vault-feature-desc">Instant report generation. Complete audit trail. Cloud-based archive.</p>
-                                </div>
-                            </div>
-                            <div class="vault-feature-details">
-                                <div class="vault-industry-split">
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">ENERGY</span>
-                                        <p>PPE test records, dielectric testing certificates, live-line tool reports, and fleet inspection documentation available instantly.</p>
-                                    </div>
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">COMMERCIAL & INDUSTRIAL</span>
-                                        <p>Calibration certificates, gas detector test results, process instrument reports, and equipment certifications at your fingertips.</p>
-                                    </div>
-                                </div>
-                                <div class="vault-specs">
-                                    <div class="vault-spec">PDF export</div>
-                                    <div class="vault-spec">Historical archive</div>
-                                    <div class="vault-spec">Advanced search</div>
-                                    <div class="vault-spec">Batch downloads</div>
-                                </div>
-                                <div class="vault-feature-screenshot">
-                                    <div class="vault-carousel-container" style="position:relative; width:100%;">
-                                        <div class="vault-carousel-slide active" style="position:relative; width:100%; opacity:1;">
-                                            <img src="Vaultimages/Asset1_opt.jpg" alt="The Vault Asset Management Interface" loading="lazy" decoding="async" width="800" height="500" style="width:100%; height:auto; display:block;">
-                                        </div>
-                                        <div class="vault-carousel-slide" style="position:absolute; top:0; left:0; width:100%; opacity:0;">
-                                            <img src="Vaultimages/Asset2_opt.jpg" alt="The Vault Equipment Tracking" loading="lazy" decoding="async" width="800" height="500" style="width:100%; height:auto; display:block;">
-                                        </div>
-                                        <div class="vault-carousel-slide" style="position:absolute; top:0; left:0; width:100%; opacity:0;">
-                                            <img src="Vaultimages/Asset 3_opt.jpg" alt="The Vault Documentation System" loading="lazy" decoding="async" width="800" height="500" style="width:100%; height:auto; display:block;">
-                                        </div>
-                                    </div>
-                                    <div class="vault-carousel-dots" style="display:flex; justify-content:center; gap:10px; padding:15px 0;">
-                                        <button class="vault-carousel-dot active" style="width:10px; height:10px; border-radius:50%; background:rgba(255,127,0,1); border:none; cursor:pointer; padding:0;" aria-label="Go to slide 1"></button>
-                                        <button class="vault-carousel-dot" style="width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.4); border:none; cursor:pointer; padding:0;" aria-label="Go to slide 2"></button>
-                                        <button class="vault-carousel-dot" style="width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.4); border:none; cursor:pointer; padding:0;" aria-label="Go to slide 3"></button>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- Commercial & Industrial -->
+                <div class="vp-industry-content" data-content="industrial">
+                    <div class="vp-industry-text">
+                        <div class="vp-badge" style="border-color:rgba(20,184,166,0.3);color:#2dd4bf;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+                            Commercial &amp; Industrial
+                        </div>
+                        <h3>Stay Audit-Ready, 365 Days a Year.</h3>
+                        <p>Manufacturing plants, data centers, and commercial facilities rely on tested electrical equipment to keep operations running safely. The Vault gives facility managers a single source of truth for every calibration record, test result, and compliance certificate.</p>
+                        <ul class="vp-chevron-list">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#14b8a6"><polyline points="9 18 15 12 9 6"/></svg><span>Centralized compliance dashboard for all facility equipment</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#14b8a6"><polyline points="9 18 15 12 9 6"/></svg><span>Track meters, test instruments, and PPE in one place</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#14b8a6"><polyline points="9 18 15 12 9 6"/></svg><span>Preventive maintenance schedules with automated reminders</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#14b8a6"><polyline points="9 18 15 12 9 6"/></svg><span>Instant audit documentation &mdash; no digging through file cabinets</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#14b8a6"><polyline points="9 18 15 12 9 6"/></svg><span>Historical test data for equipment lifecycle analysis</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#14b8a6"><polyline points="9 18 15 12 9 6"/></svg><span>Multi-location support for enterprise facility portfolios</span></li>
+                        </ul>
+                    </div>
+                    <div class="vp-industry-graphic" style="border-color:rgba(20,184,166,0.15);">
+                        <svg viewBox="0 0 400 300" class="vp-industry-bg-svg" style="opacity:0.06"><rect x="60" y="120" width="80" height="180" fill="#14b8a6"/><rect x="160" y="80" width="60" height="220" fill="#14b8a6"/><rect x="240" y="140" width="100" height="160" fill="#14b8a6"/><rect x="175" y="40" width="14" height="40" fill="#14b8a6"/></svg>
+                        <div class="vp-industry-graphic-inner">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="1.5"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+                            <div class="vp-industry-graphic-sub" style="color:rgba(20,184,166,0.5)">ALWAYS AUDIT-READY</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Feature 4 -->
-                    <div class="vault-feature-row">
-                        <div class="vault-feature-number">04</div>
-                        <div class="vault-feature-content">
-                            <div class="vault-feature-header">
-                                <div class="vault-feature-icon">
-                                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                                    </svg>
-                                </div>
-                                <div class="vault-feature-title">
-                                    <h3>AUTOMATED COMPLIANCE TRACKING</h3>
-                                    <p class="vault-feature-desc">Proactive alerts. Deadline management. Zero missed renewals.</p>
-                                </div>
-                            </div>
-                            <div class="vault-feature-details">
-                                <div class="vault-industry-split">
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">ENERGY</span>
-                                        <p>OSHA-required PPE testing cycles, fleet dielectric testing schedules, and live-line tool inspection intervals tracked automatically.</p>
-                                    </div>
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">COMMERCIAL & INDUSTRIAL</span>
-                                        <p>ISO/ANSI calibration intervals, preventive maintenance schedules, and regulatory compliance deadlines managed seamlessly.</p>
-                                    </div>
-                                </div>
-                                <div class="vault-specs">
-                                    <div class="vault-spec">Email alerts</div>
-                                    <div class="vault-spec">SMS notifications</div>
-                                    <div class="vault-spec">Custom schedules</div>
-                                    <div class="vault-spec">Compliance dashboard</div>
-                                </div>
-                            </div>
+        <!-- ─── Asset Tracking Showcase ─── -->
+        <section class="vp-section vp-bg-medium">
+            <div class="vp-container">
+                <div class="vp-two-col">
+                    <div class="vp-fade">
+                        <div class="vp-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            FULL VISIBILITY
                         </div>
+                        <h2>Complete Asset<br>Inventory</h2>
+                        <p>Every piece of equipment &mdash; trucks, rubber goods, live-line tools, protective grounds, and meters &mdash; organized by category with real-time PASS/FAIL status, test dates, and upcoming due dates.</p>
+                        <ul class="vp-chevron-list">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Filter and search across all categories</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Overdue items highlighted for immediate action</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Print calibration certificates instantly</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Track compliance across your entire fleet</span></li>
+                        </ul>
                     </div>
-
-                    <!-- Feature 5 -->
-                    <div class="vault-feature-row">
-                        <div class="vault-feature-number">05</div>
-                        <div class="vault-feature-content">
-                            <div class="vault-feature-header">
-                                <div class="vault-feature-icon">
-                                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                        <polyline points="14 2 14 8 20 8"></polyline>
-                                        <line x1="12" y1="18" x2="12" y2="12"></line>
-                                        <line x1="9" y1="15" x2="15" y2="15"></line>
-                                    </svg>
-                                </div>
-                                <div class="vault-feature-title">
-                                    <h3>SERVICE REQUESTS</h3>
-                                    <p class="vault-feature-desc">Submit requests directly. Track status in real-time. Streamlined communication.</p>
-                                </div>
-                            </div>
-                            <div class="vault-feature-details">
-                                <div class="vault-industry-split">
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">ENERGY</span>
-                                        <p>Request PPE testing, schedule fleet inspections, or submit live-line tools for recertification—all from within the platform.</p>
-                                    </div>
-                                    <div class="vault-industry-col">
-                                        <span class="vault-industry-label">COMMERCIAL & INDUSTRIAL</span>
-                                        <p>Schedule calibrations, request expedited service, or coordinate multi-site equipment pickups with a few clicks.</p>
-                                    </div>
-                                </div>
-                                <div class="vault-specs">
-                                    <div class="vault-spec">Online submission</div>
-                                    <div class="vault-spec">Status tracking</div>
-                                    <div class="vault-spec">Priority scheduling</div>
-                                    <div class="vault-spec">Service history</div>
-                                </div>
-                                <div class="vault-feature-screenshot">
-                                    <img src="Vaultimages/Request Service_opt.jpg" alt="The Vault Service Request Interface" loading="lazy" decoding="async" width="800" height="500">
-                                </div>
+                    <div class="vp-fade" style="transition-delay:200ms">
+                        <div class="vp-img-frame">
+                            <div class="vp-glow-border" style="background:linear-gradient(180deg, rgba(177,100,43,0.2), transparent 50%)"></div>
+                            <div class="vp-img-wrap">
+                                <img src="vault-ad/assets.png" alt="Complete Asset Inventory" width="800" height="500" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -452,12 +1271,306 @@
             </div>
         </section>
 
-        <section class="vault-cta-section">
-            <div class="container">
-                <div class="cta-section">
-                    <h2>Ready to Get Started with The Vault?</h2>
-                    <p>Contact us to set up your account and start managing your assets more efficiently</p>
-                    <a href="contact.html" class="cta-button">Request Access</a>
+        <!-- ─── Service Requests + Referrals ─── -->
+        <section class="vp-section vp-bg-dark">
+            <div class="vp-container">
+                <div class="vp-section-header vp-fade">
+                    <h2>Request Service. Earn Rewards.</h2>
+                    <p>Submit calibration requests in seconds and grow your network through our built-in referral program.</p>
+                </div>
+                <div class="vp-cards-2">
+                    <div class="vp-card vp-fade">
+                        <div class="vp-card-body">
+                            <div class="vp-badge-colored" style="border-color:rgba(139,92,246,0.3);color:#a78bfa;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                ON-DEMAND
+                            </div>
+                            <h3>Service Requests</h3>
+                            <p>Create calibration and testing requests with priority levels, preferred scheduling, and special requirements &mdash; tracked in real time.</p>
+                        </div>
+                        <div class="vp-card-img">
+                            <img src="vault-ad/service-requests.png" alt="Service Requests" width="600" height="400" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="vp-card vp-fade" style="transition-delay:150ms">
+                        <div class="vp-card-body">
+                            <div class="vp-badge-colored" style="border-color:rgba(245,158,11,0.3);color:#fbbf24;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                REWARDS
+                            </div>
+                            <h3>Referral Program</h3>
+                            <p>Share your unique referral code with industry peers. When they sign up, you both benefit &mdash; it's that simple.</p>
+                        </div>
+                        <div class="vp-card-img">
+                            <img src="vault-ad/referrals.png" alt="Referral Program" width="600" height="400" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── How It Works ─── -->
+        <section class="vp-section vp-bg-medium">
+            <div class="vp-container">
+                <div class="vp-section-header vp-fade">
+                    <h2>Up and Running in Minutes</h2>
+                    <p>No software to install. No complicated setup. Just log in.</p>
+                </div>
+                <div class="vp-steps">
+                    <div class="vp-step vp-fade">
+                        <div class="vp-step-num">01</div>
+                        <h3>WE CREATE YOUR ACCOUNT</h3>
+                        <p>After your first job, we set up your branded portal with your company logo and colors.</p>
+                    </div>
+                    <div class="vp-step vp-fade" style="transition-delay:120ms">
+                        <div class="vp-step-num">02</div>
+                        <h3>YOU LOG IN</h3>
+                        <p>Receive credentials via email. Sign in from any device &mdash; desktop, tablet, or mobile.</p>
+                    </div>
+                    <div class="vp-step vp-fade" style="transition-delay:240ms">
+                        <div class="vp-step-num">03</div>
+                        <h3>ACCESS EVERYTHING</h3>
+                        <p>View reports, track assets, submit requests, and download certificates &mdash; all in one place.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Features Grid ─── -->
+        <section class="vp-section vp-bg-dark" id="features">
+            <div class="vp-container">
+                <div class="vp-section-header vp-fade">
+                    <h2>Everything You Need</h2>
+                    <p>Built for utility and industrial customers who need fast, reliable access to their equipment data.</p>
+                </div>
+                <div class="vp-features-grid">
+                    <div class="vp-feature-card vp-fade">
+                        <div class="vp-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        </div>
+                        <h3>REAL-TIME DASHBOARD</h3>
+                        <p>Total assets, overdue items, active projects, and compliance rate &mdash; instant visibility in one glance.</p>
+                    </div>
+                    <div class="vp-feature-card vp-fade" style="transition-delay:70ms">
+                        <div class="vp-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        </div>
+                        <h3>EQUIPMENT REPORTS</h3>
+                        <p>Trucks, Rubber, Live-Line Tools, Protective Grounds, Meters &mdash; organized with PASS/FAIL status and due dates.</p>
+                    </div>
+                    <div class="vp-feature-card vp-fade" style="transition-delay:140ms">
+                        <div class="vp-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h3>DUE-DATE TRACKING</h3>
+                        <p>Automated alerts for every calibration window. Overdue assets flagged in red so your team acts immediately.</p>
+                    </div>
+                    <div class="vp-feature-card vp-fade" style="transition-delay:210ms">
+                        <div class="vp-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </div>
+                        <h3>ONE-CLICK PDF EXPORT</h3>
+                        <p>Print or download individual calibration certificates directly from the portal. Audit-ready in seconds.</p>
+                    </div>
+                    <div class="vp-feature-card vp-fade" style="transition-delay:280ms">
+                        <div class="vp-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </div>
+                        <h3>SERVICE REQUESTS</h3>
+                        <p>Submit calibration requests on-demand with priority levels, preferred dates, and special requirements.</p>
+                    </div>
+                    <div class="vp-feature-card vp-fade" style="transition-delay:350ms">
+                        <div class="vp-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3>REFERRAL PROGRAM</h3>
+                        <p>Share your unique referral code. When peers sign up, you both earn rewards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Pricing ─── -->
+        <section class="vp-section vp-bg-medium">
+            <div class="vp-container">
+                <div class="vp-section-header vp-fade">
+                    <h2>Simple Pricing</h2>
+                    <p>No hidden fees. No per-user charges. Just straightforward monthly access based on your asset count.</p>
+                </div>
+                <div class="vp-pricing-grid">
+                    <div class="vp-price-card vp-fade">
+                        <div class="vp-price-tier-row">
+                            <div class="vp-price-tier">STANDARD</div>
+                        </div>
+                        <div class="vp-price-amount"><span class="vp-dollars">$199</span><span class="vp-cents">.50</span></div>
+                        <div class="vp-price-period">/ month</div>
+                        <p class="vp-price-desc">Full portal access for companies with up to 100 assets.</p>
+                        <ul class="vp-chevron-list">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Up to 100 assets</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Custom branding &amp; logo</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Dark / light mode</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Service requests</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>PDF report exports</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Referral program</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Unlimited users</span></li>
+                        </ul>
+                    </div>
+                    <div class="vp-price-card vp-pro vp-fade" style="transition-delay:150ms">
+                        <div class="vp-price-tier-row">
+                            <div class="vp-price-tier">PRO</div>
+                            <div class="vp-price-most">100+ ASSETS</div>
+                        </div>
+                        <div class="vp-price-amount"><span class="vp-dollars">$299</span><span class="vp-cents">.50</span></div>
+                        <div class="vp-price-period">/ month</div>
+                        <p class="vp-price-desc">Everything in Standard for companies with over 100 assets.</p>
+                        <ul class="vp-chevron-list">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Unlimited assets</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Everything in Standard</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Priority support</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Dedicated account manager</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Custom Branding ─── -->
+        <section class="vp-section vp-bg-dark">
+            <div class="vp-container">
+                <div class="vp-section-header vp-fade">
+                    <div class="vp-badge" style="margin:0 auto 24px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M19 21l1-7-6-2-3.5 3.5"/><path d="M2 19l3.5-3.5L9 19"/><path d="M7 21l-5-5"/></svg>
+                        WHITE-LABEL PORTAL
+                    </div>
+                    <h2>Your Brand. Front and Center.</h2>
+                    <p>Every customer portal is automatically branded to your company. Your team sees your identity &mdash; not ours.</p>
+                </div>
+
+                <div class="vp-brand-grid vp-fade">
+                    <div class="vp-brand-card">
+                        <div class="vp-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        </div>
+                        <h3>COMPANY LOGO</h3>
+                        <p>Your logo displayed prominently in the portal banner and on every exported PDF report.</p>
+                    </div>
+                    <div class="vp-brand-card">
+                        <div class="vp-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M19 21l1-7-6-2-3.5 3.5"/><path d="M2 19l3.5-3.5L9 19"/><path d="M7 21l-5-5"/></svg>
+                        </div>
+                        <h3>ACCENT COLORS</h3>
+                        <p>Custom accent color extracted from your logo or manually set &mdash; applied across buttons, links, and highlights.</p>
+                    </div>
+                    <div class="vp-brand-card">
+                        <div class="vp-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                        </div>
+                        <h3>DARK / LIGHT MODE</h3>
+                        <p>Users toggle between dark and light themes. Preference is saved and persists across sessions.</p>
+                    </div>
+                    <div class="vp-brand-card">
+                        <div class="vp-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>BRANDED REPORTS</h3>
+                        <p>Exported calibration certificates carry your branding &mdash; professional, audit-ready documents with your name on them.</p>
+                    </div>
+                </div>
+
+                <div class="vp-color-showcase vp-fade">
+                    <div class="vp-color-showcase-inner">
+                        <div>
+                            <h3>Automatic Color Extraction</h3>
+                            <p>Upload your company logo and The Vault automatically extracts your dominant brand color. This accent is applied to buttons, active navigation states, status indicators, and the portal banner &mdash; creating a cohesive look that matches your brand identity.</p>
+                            <p>Prefer a specific shade? Admins can manually override the accent color at any time through the branding settings panel. Change it once &mdash; it updates everywhere instantly.</p>
+                        </div>
+                        <div class="vp-swatches-wrap">
+                            <div class="vp-swatches">
+                                <div class="vp-swatch-item"><div class="vp-swatch" style="background:#2563eb"></div><span class="vp-swatch-label">#2563eb</span></div>
+                                <div class="vp-swatch-item"><div class="vp-swatch" style="background:#b1642b"></div><span class="vp-swatch-label">#b1642b</span></div>
+                                <div class="vp-swatch-item"><div class="vp-swatch" style="background:#dc2626"></div><span class="vp-swatch-label">#dc2626</span></div>
+                                <div class="vp-swatch-item"><div class="vp-swatch" style="background:#16a34a"></div><span class="vp-swatch-label">#16a34a</span></div>
+                                <div class="vp-swatch-item"><div class="vp-swatch" style="background:#7c3aed"></div><span class="vp-swatch-label">#7c3aed</span></div>
+                                <div class="vp-swatch-item"><div class="vp-swatch" style="background:#0891b2"></div><span class="vp-swatch-label">#0891b2</span></div>
+                            </div>
+                            <p class="vp-swatches-caption">Example accent colors across different customers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vp-two-col">
+                    <div class="vp-fade">
+                        <h2 style="font-size:clamp(1.3rem,2.5vw,1.5rem)">Dark Mode. Built In.</h2>
+                        <p>Every portal ships with full dark and light mode support. Your team can toggle between themes with one click &mdash; their preference is saved automatically and persists across sessions and devices.</p>
+                        <ul class="vp-chevron-list">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>One-click toggle in the sidebar</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Preference saved to local storage</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Full UI adapts &mdash; tables, cards, navigation, banners</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Reduced eye strain for night-shift operators</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Accent colors adapt to both themes seamlessly</span></li>
+                        </ul>
+                    </div>
+                    <div class="vp-fade" style="transition-delay:200ms">
+                        <div class="vp-img-frame" style="position:relative">
+                            <div class="vp-glow-border" style="background:linear-gradient(180deg, rgba(177,100,43,0.12), transparent 50%)"></div>
+                            <div class="vp-img-wrap">
+                                <img src="vault-ad/dashboard.png" alt="Dark Mode Dashboard" width="800" height="500" loading="lazy">
+                            </div>
+                            <div class="vp-darkmode-label">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                                <span>Dark Mode Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Security ─── -->
+        <section class="vp-section vp-bg-dark" style="border-top:1px solid rgba(255,255,255,0.05)">
+            <div class="vp-container">
+                <div class="vp-two-col">
+                    <div class="vp-fade">
+                        <div class="vp-img-frame">
+                            <div class="vp-glow-border" style="background:linear-gradient(225deg, rgba(177,100,43,0.15), transparent 50%)"></div>
+                            <div class="vp-img-wrap">
+                                <img src="vault-ad/login.png" alt="Secure Customer Login" width="800" height="500" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vp-fade" style="transition-delay:200ms">
+                        <div class="vp-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            ENTERPRISE SECURITY
+                        </div>
+                        <h2>Locked Down.<br>Always.</h2>
+                        <p>Every portal is protected with enterprise-grade authentication and AES-256 encryption. Access is controlled at the account level &mdash; admins can approve, lock, or revoke portal access instantly.</p>
+                        <ul class="vp-chevron-list">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Email/password authentication with session persistence</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Portal approval and lock controls for administrators</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Multi-user support with role-based access per company</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>Automatic token refresh for uninterrupted sessions</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg><span>AES-256 encryption on all data in transit and at rest</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CTA ─── -->
+        <section class="vp-section" style="background:var(--vp-bg-1)">
+            <div class="vp-container">
+                <div class="vp-fade">
+                    <div class="vp-cta-box">
+                        <h2>Ready to See Your Data?</h2>
+                        <p>If you're already a customer, sign in now. If not &mdash; let's talk about how The Vault can transform the way you manage equipment compliance.</p>
+                        <div class="vp-cta-buttons">
+                            <a href="contact.html" class="vp-btn-primary">
+                                Sign In to Your Portal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                            <a href="mailto:sales@copperheadlabs.com" class="vp-btn-secondary">Contact Sales</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -501,7 +1614,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="footer-section footer-contact">
                         <h3>Contact</h3>
                         <ul class="footer-contact-list">
@@ -527,7 +1640,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="footer-section footer-links">
                         <h3>Testing Services</h3>
                         <ul>
@@ -538,7 +1651,7 @@
                             <li><a href="testing.html">More Services →</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="footer-section footer-links">
                         <h3>Calibration Services</h3>
                         <ul>
@@ -549,7 +1662,7 @@
                             <li><a href="calibration.html">More Services →</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="footer-section footer-company">
                         <h3>Company</h3>
                         <ul>
@@ -578,79 +1691,70 @@
 
     <script src="script.js?v=2.2"></script>
     <script>
-    // Inline carousel script
     (function() {
-        function initCarousel() {
-            var container = document.querySelector('.vault-carousel-container');
-            if (!container) return;
-            
-            var carousel = container.parentElement;
-            var slides = container.querySelectorAll('.vault-carousel-slide');
-            var dots = carousel.querySelectorAll('.vault-carousel-dot');
-            var current = 0;
-            var timer;
-            
-            function show(n) {
-                if (n >= slides.length) n = 0;
-                if (n < 0) n = slides.length - 1;
-                
-                // Hide all slides
-                for (var i = 0; i < slides.length; i++) {
-                    slides[i].style.opacity = '0';
-                    slides[i].style.position = 'absolute';
-                    slides[i].style.top = '0';
-                    slides[i].style.left = '0';
-                    slides[i].classList.remove('active');
-                }
-                
-                // Reset all dots
-                for (var i = 0; i < dots.length; i++) {
-                    dots[i].style.background = 'rgba(255,255,255,0.4)';
-                    dots[i].style.boxShadow = 'none';
-                    dots[i].classList.remove('active');
-                }
-                
-                current = n;
-                
-                // Show current slide
-                slides[current].style.opacity = '1';
-                slides[current].style.position = 'relative';
-                slides[current].classList.add('active');
-                
-                // Highlight current dot
-                if (dots[current]) {
-                    dots[current].style.background = 'rgba(255,127,0,1)';
-                    dots[current].style.boxShadow = '0 0 10px rgba(255,127,0,0.8)';
-                    dots[current].classList.add('active');
-                }
-            }
-            
-            function next() { show(current + 1); }
-            
-            function startTimer() {
-                clearInterval(timer);
-                timer = setInterval(next, 4000);
-            }
-            
-            // Dot click handlers
-            for (var i = 0; i < dots.length; i++) {
-                (function(index) {
-                    dots[index].onclick = function(e) { e.preventDefault(); show(index); startTimer(); };
-                })(i);
-            }
-            
-            // Auto-play disabled to prevent scroll issues
-            show(0);
-        }
-        
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initCarousel);
+        /* ─── Scroll fade-in via IntersectionObserver ─── */
+        var fadeEls = document.querySelectorAll('.vp-fade');
+        if ('IntersectionObserver' in window) {
+            var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('vp-visible');
+                        obs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            fadeEls.forEach(function(el) { obs.observe(el); });
         } else {
-            initCarousel();
+            fadeEls.forEach(function(el) { el.classList.add('vp-visible'); });
         }
-        window.addEventListener('load', initCarousel);
+
+        /* ─── Industry tab switching ─── */
+        var INDUSTRY_COLORS = {
+            storm:      { bg: 'rgba(234,179,8,0.12)',  border: 'rgba(234,179,8,0.4)',  text: '#facc15' },
+            utility:    { bg: 'rgba(59,130,246,0.12)',  border: 'rgba(59,130,246,0.4)', text: '#60a5fa' },
+            industrial: { bg: 'rgba(20,184,166,0.12)',  border: 'rgba(20,184,166,0.4)', text: '#2dd4bf' }
+        };
+
+        var tabs = document.querySelectorAll('.vp-industry-tab');
+        var contents = document.querySelectorAll('.vp-industry-content');
+
+        tabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                var key = this.getAttribute('data-tab');
+                var colors = INDUSTRY_COLORS[key];
+
+                tabs.forEach(function(t) {
+                    t.classList.remove('active');
+                    t.style.background = '';
+                    t.style.borderColor = '';
+                    t.style.color = '';
+                });
+
+                this.classList.add('active');
+                this.style.background = colors.bg;
+                this.style.borderColor = colors.border;
+                this.style.color = colors.text;
+
+                contents.forEach(function(c) { c.classList.remove('active'); });
+                var target = document.querySelector('[data-content="' + key + '"]');
+                if (target) target.classList.add('active');
+            });
+        });
+
+        /* ─── Smooth scroll for anchor links ─── */
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var id = this.getAttribute('href');
+                if (id.length > 1) {
+                    var el = document.querySelector(id);
+                    if (el) {
+                        e.preventDefault();
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
     })();
     </script>
 </body>
 </html>
-
