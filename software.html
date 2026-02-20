@@ -949,22 +949,69 @@
             .vp-features-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
-            .vp-hero { padding: 100px 0 60px; }
-            .vp-section { padding: 64px 0; }
-            .vp-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .vp-container { padding: 0 16px; }
+            .vp-hero { padding: 96px 0 48px; }
+            .vp-hero h1 { font-size: 1.8rem; }
+            .vp-hero-sub { font-size: 0.95rem; margin-bottom: 28px; }
+            .vp-hero-screenshot { margin-top: 40px; }
+            .vp-hero-logo { width: 36px; height: 36px; }
+            .vp-hero-logo-text { font-size: 1.1rem; }
+            .vp-hero-logo-wrap { margin-bottom: 16px; }
+            .vp-eyebrow { font-size: 9px; padding: 5px 12px; margin-bottom: 20px; }
+            .vp-hero-ctas { flex-direction: column; width: 100%; }
+            .vp-btn-primary, .vp-btn-secondary { width: 100%; justify-content: center; padding: 14px 20px; font-size: 12px; }
+            .vp-section { padding: 56px 0; }
+            .vp-section-header { margin-bottom: 36px; }
+            .vp-section-header h2 { font-size: 1.4rem; }
+            .vp-section-header p { font-size: 0.9rem; }
+            .vp-stats { padding: 36px 0; }
+            .vp-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .vp-stat-value { font-size: 1.5rem; }
+            .vp-stat-label { font-size: 9px; letter-spacing: 0.15em; }
+            .vp-industry-tabs { gap: 8px; margin-bottom: 32px; }
+            .vp-industry-tab { padding: 10px 16px; font-size: 10px; }
+            .vp-industry-text h3 { font-size: 1.15rem; }
+            .vp-industry-text > p { font-size: 14px; }
+            .vp-industry-graphic { min-height: 200px; }
+            .vp-two-col h2 { font-size: 1.4rem; }
+            .vp-two-col > div > p { font-size: 14px; }
             .vp-pricing-grid { grid-template-columns: 1fr; }
+            .vp-price-card { padding: 28px 24px; }
+            .vp-price-amount .vp-dollars { font-size: 2.4rem; }
+            .vp-price-amount .vp-cents { font-size: 1.1rem; }
             .vp-cards-2 { grid-template-columns: 1fr; }
-            .vp-steps { grid-template-columns: 1fr; gap: 40px; }
-            .vp-brand-grid { grid-template-columns: 1fr; }
-            .vp-color-showcase { padding: 24px; }
-            .vp-hero-ctas { flex-direction: column; }
-            .vp-cta-buttons { flex-direction: column; }
-            .vp-cta-box { padding: 40px 24px; }
+            .vp-card-body { padding: 24px 20px 16px; }
+            .vp-card-body h3 { font-size: 1rem; }
+            .vp-steps { grid-template-columns: 1fr; gap: 32px; }
+            .vp-step-num { width: 48px; height: 48px; font-size: 0.95rem; }
+            .vp-brand-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .vp-brand-card { padding: 20px; }
+            .vp-color-showcase { padding: 24px 16px; }
+            .vp-color-showcase h3 { font-size: 1rem; }
+            .vp-cta-box { padding: 36px 20px; }
+            .vp-cta-box h2 { font-size: 1.3rem; }
+            .vp-cta-box p { font-size: 0.9rem; }
+            .vp-cta-buttons { flex-direction: column; width: 100%; }
+            .vp-cta-buttons .vp-btn-primary,
+            .vp-cta-buttons .vp-btn-secondary { width: 100%; justify-content: center; }
+            .vp-badge { font-size: 9px; padding: 3px 10px; }
+            .vp-chevron-list li span { font-size: 13px; }
         }
         @media (max-width: 640px) {
             .vp-features-grid { grid-template-columns: 1fr; }
             .vp-industry-tabs { flex-direction: column; align-items: stretch; }
+            .vp-industry-tab { justify-content: center; }
             .vp-swatches { flex-wrap: wrap; }
+            .vp-swatch { width: 40px; height: 40px; }
+            .vp-brand-grid { grid-template-columns: 1fr; }
+            .vp-feature-card { padding: 22px; }
+        }
+        @media (max-width: 400px) {
+            .vp-hero h1 { font-size: 1.5rem; }
+            .vp-section-header h2 { font-size: 1.2rem; }
+            .vp-hero { padding: 88px 0 40px; }
+            .vp-stats-grid { gap: 16px; }
+            .vp-stat-value { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -1123,10 +1170,10 @@
                         </div>
                     </div>
                     <div class="vp-fade" style="transition-delay:150ms">
-                        <h1>Your Equipment. <span class="vp-accent">Your Data.</span> Your Portal.</h1>
+                        <h1>Stop Digging Through <span class="vp-accent">Spreadsheets.</span></h1>
                     </div>
                     <div class="vp-fade" style="transition-delay:250ms">
-                        <p class="vp-hero-sub">The Vault Customer Portal gives you 24/7 access to calibration reports, asset tracking, compliance monitoring, and service requests &mdash; all from one dashboard branded to your company.</p>
+                        <p class="vp-hero-sub">No more scattered spreadsheets, buried email attachments, paper reports in filing cabinets, or certificates saved to someone's desktop. The Vault puts every calibration report, test result, and compliance record in one secure portal &mdash; accessible from any device, 24/7.</p>
                     </div>
                     <div class="vp-fade" style="transition-delay:350ms">
                         <div class="vp-hero-ctas">
