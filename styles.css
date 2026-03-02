@@ -4042,6 +4042,10 @@ a.expand-btn {
     background: var(--copper);
 }
 
+.legend-color.traveled {
+    background: #b1642b;
+}
+
 .legend-color.location-pin {
     background: #000000 !important;
     border-radius: 50% !important;

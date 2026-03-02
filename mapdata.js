@@ -96,30 +96,30 @@ var simplemaps_usmap_mapdata={
     },
     NH: {
       name: "New Hampshire",
-      description: "2025 Travel",
-      color: "#4a4a4a",
-      hover_color: "#3a3a3a",
+      description: "Traveled",
+      color: "#b1642b",
+      hover_color: "#8e5022",
       url: "default"
     },
     VT: {
       name: "Vermont",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "Traveled",
+      color: "#b1642b",
+      hover_color: "#8e5022",
       url: "default"
     },
     ME: {
       name: "Maine",
-      description: "2025 Travel",
-      color: "#4a4a4a",
-      hover_color: "#3a3a3a",
+      description: "Traveled",
+      color: "#b1642b",
+      hover_color: "#8e5022",
       url: "default"
     },
     RI: {
       name: "Rhode Island",
-      description: "2025 Travel",
-      color: "#4a4a4a",
-      hover_color: "#3a3a3a",
+      description: "Traveled",
+      color: "#b1642b",
+      hover_color: "#8e5022",
       url: "default"
     },
     NY: {
@@ -194,9 +194,9 @@ var simplemaps_usmap_mapdata={
     },
     CT: {
       name: "Connecticut",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "Traveled",
+      color: "#b1642b",
+      hover_color: "#8e5022",
       url: "default"
     },
     WI: {
@@ -222,9 +222,9 @@ var simplemaps_usmap_mapdata={
     },
     MA: {
       name: "Massachusetts",
-      description: "default",
-      color: "default",
-      hover_color: "default",
+      description: "Traveled",
+      color: "#b1642b",
+      hover_color: "#8e5022",
       url: "default"
     },
     TN: {
