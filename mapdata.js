@@ -145,9 +145,9 @@ var simplemaps_usmap_mapdata={
     },
     DE: {
       name: "Delaware",
-      description: "2025 Travel",
-      color: "#4a4a4a",
-      hover_color: "#3a3a3a",
+      description: "Traveled",
+      color: "#b1642b",
+      hover_color: "#8e5022",
       url: "default"
     },
     MD: {
@@ -215,9 +215,9 @@ var simplemaps_usmap_mapdata={
     },
     DC: {
       name: "District of Columbia",
-      description: "2025 Travel",
-      color: "#4a4a4a",
-      hover_color: "#3a3a3a",
+      description: "Traveled",
+      color: "#b1642b",
+      hover_color: "#8e5022",
       url: "default"
     },
     MA: {
