@@ -205,6 +205,195 @@
                 font-size: 1.1rem;
             }
         }
+
+        /* Customer Logo Carousel */
+        .logo-carousel {
+            background: linear-gradient(180deg, #e8e8e8 0%, #f2f2f2 50%, #e8e8e8 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(184, 115, 51, 0.25);
+            border-bottom: 1px solid rgba(184, 115, 51, 0.25);
+        }
+
+        .logo-carousel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(184, 115, 51, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(184, 115, 51, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .logo-carousel-edge-left,
+        .logo-carousel-edge-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 200px;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .logo-carousel-edge-left {
+            left: 0;
+            background: linear-gradient(to right, #e8e8e8 0%, transparent 100%);
+        }
+
+        .logo-carousel-edge-right {
+            right: 0;
+            background: linear-gradient(to left, #e8e8e8 0%, transparent 100%);
+        }
+
+        .logo-carousel-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-carousel-header h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 0.8rem;
+        }
+
+        .logo-carousel-header .carousel-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #B87333, transparent);
+            margin: 0 auto 1rem;
+        }
+
+        .logo-carousel-header p {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(0, 0, 0, 0.5);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .logo-track-wrapper {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-track {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+            width: max-content;
+            animation: scrollLogos 45s linear infinite;
+            will-change: transform;
+        }
+
+        .logo-track img {
+            height: 95px;
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+            opacity: 0.9;
+            flex-shrink: 0;
+        }
+
+        @keyframes scrollLogos {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-carousel {
+                padding: 45px 0;
+            }
+
+            .logo-carousel-edge-left,
+            .logo-carousel-edge-right {
+                width: 60px;
+            }
+
+            .logo-carousel-header {
+                margin-bottom: 1.8rem;
+            }
+
+            .logo-carousel-header h3 {
+                font-size: 1rem;
+                letter-spacing: 2px;
+                margin-bottom: 0.5rem;
+            }
+
+            .logo-carousel-header .carousel-divider {
+                width: 50px;
+                margin: 0 auto 0.6rem;
+            }
+
+            .logo-carousel-header p {
+                font-size: 0.85rem;
+                padding: 0 1rem;
+            }
+
+            .logo-track {
+                gap: 3rem;
+                animation-duration: 35s;
+            }
+
+            .logo-track img {
+                height: 60px;
+                max-width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-carousel {
+                padding: 32px 0;
+            }
+
+            .logo-carousel-edge-left,
+            .logo-carousel-edge-right {
+                width: 35px;
+            }
+
+            .logo-carousel-header {
+                margin-bottom: 1.4rem;
+            }
+
+            .logo-carousel-header h3 {
+                font-size: 0.8rem;
+                letter-spacing: 1.5px;
+                margin-bottom: 0.4rem;
+            }
+
+            .logo-carousel-header .carousel-divider {
+                width: 40px;
+                margin: 0 auto 0.5rem;
+            }
+
+            .logo-carousel-header p {
+                font-size: 0.75rem;
+                padding: 0 1.5rem;
+                letter-spacing: 0.5px;
+            }
+
+            .logo-track {
+                gap: 2rem;
+                animation-duration: 25s;
+            }
+
+            .logo-track img {
+                height: 42px;
+                max-width: 100px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -350,6 +539,53 @@
                     <h2>Testing & Calibration</h2>
                     <p>Expert testing and calibration services for the energy, utility, commercial and industrial industries. We specialize in insulated rubber PPE testing, dielectric testing for aerial lifts and bucket trucks, live-line tool testing, and precision calibration of electrical test equipment, process instrumentation, metering devices, gas detectors, and torque devices.</p>
                     <a href="#services" class="cta-button">Explore Our Services</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="logo-carousel">
+            <div class="logo-carousel-edge-left"></div>
+            <div class="logo-carousel-edge-right"></div>
+            <div class="logo-carousel-header">
+                <h3>Trusted By Industry Leaders</h3>
+                <div class="carousel-divider"></div>
+                <p>Powering safety for utilities, contractors & industrial operations nationwide</p>
+            </div>
+            <div class="logo-track-wrapper">
+                <div class="logo-track">
+                    <img src="customer logos/9.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/3.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/14.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/6.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/11.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/1.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/16.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/5.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/12.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/8.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/2.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/15.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/4.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/10.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/7.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/13.png" alt="Customer" loading="lazy" decoding="async">
+                    <!-- Duplicate set for seamless loop -->
+                    <img src="customer logos/9.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/3.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/14.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/6.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/11.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/1.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/16.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/5.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/12.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/8.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/2.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/15.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/4.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/10.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/7.png" alt="Customer" loading="lazy" decoding="async">
+                    <img src="customer logos/13.png" alt="Customer" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
