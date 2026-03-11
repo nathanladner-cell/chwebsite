@@ -3284,17 +3284,7 @@ a.expand-btn {
 }
 
 .team-member-photo {
-    width: 100px;
-    min-width: 100px;
-    height: 100px;
-    aspect-ratio: 1;
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 3px solid var(--copper);
-    position: relative;
-    overflow: hidden;
+    display: none;
 }
 
 .team-member-photo::before {
