@@ -3603,6 +3603,140 @@ a.expand-btn {
     font-weight: 600;
 }
 
+/* Mission Section */
+.mission-section {
+    padding: 100px 0;
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 15% 30%, rgba(184, 115, 51, 0.10) 0%, transparent 55%),
+        radial-gradient(circle at 85% 75%, rgba(184, 115, 51, 0.08) 0%, transparent 55%);
+    pointer-events: none;
+}
+
+.mission-section > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.mission-wrapper {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.mission-statement {
+    border-left: 3px solid var(--copper);
+    padding: 1rem 0 1rem 2.5rem;
+}
+
+.mission-label {
+    display: inline-block;
+    color: var(--copper);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+}
+
+.mission-headline {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 2.6rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.mission-detail {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    padding: 2.5rem;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    border: 1px solid rgba(184, 115, 51, 0.3);
+    position: relative;
+}
+
+.mission-detail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(184, 115, 51, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.mission-question {
+    color: var(--copper);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.05rem;
+    margin: 0 0 1.25rem 0;
+    position: relative;
+}
+
+.mission-answer {
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin: 0;
+    position: relative;
+}
+
+@media (max-width: 900px) {
+    .mission-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .mission-headline {
+        font-size: 2.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .mission-section {
+        padding: 70px 0;
+    }
+
+    .mission-statement {
+        padding: 0.5rem 0 0.5rem 1.5rem;
+    }
+
+    .mission-headline {
+        font-size: 1.7rem;
+        letter-spacing: 0.5px;
+    }
+
+    .mission-detail {
+        padding: 2rem 1.5rem;
+    }
+
+    .mission-answer {
+        font-size: 1rem;
+    }
+}
+
 /* Core Values Section */
 .core-values {
     padding: 100px 0;
