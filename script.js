@@ -479,6 +479,7 @@ document.querySelectorAll('.service-btn').forEach(button => {
             'rubber-ppe': 'Rubber PPE Testing',
             'live-line': 'Live-Line Tool Testing',
             'protective-grounds': 'Protective Grounds Testing',
+            'equipment-repairs': 'Equipment Repairs',
             'instrument': 'Instrument Calibration',
             'metering': 'Metering Device Calibration',
             'electronic': 'Electronic Test Equipment Calibration',

@@ -22,11 +22,12 @@ var simplemaps_usmap_mapdata={
     location_opacity: 1,
     location_hover_opacity: 1,
     location_url: "",
-    location_size: 30,
-    location_type: "circle",
+    location_size: 48,
+    location_type: "image",
+    location_image_url: "logos/copperhead-pin-black.png",
     location_border_color: "#FFFFFF",
-    location_border: 2,
-    location_hover_border: 2.5,
+    location_border: 0,
+    location_hover_border: 0,
     all_locations_inactive: "no",
     all_locations_hidden: "no",
     
@@ -194,7 +195,7 @@ var simplemaps_usmap_mapdata={
     },
     CT: {
       name: "Connecticut",
-      description: "Traveled",
+      description: "Copperhead Labs - Windsor Locks, CT",
       color: "#b1642b",
       hover_color: "#8e5022",
       url: "default"
@@ -478,10 +479,9 @@ var simplemaps_usmap_mapdata={
       lat: 42.6526,
       lng: -73.7562,
       description: "Copperhead Labs - Albany, NY",
-      color: "#000000",
-      url: "",
-      type: "circle",
-      size: "30",
+      type: "image",
+      image_url: "logos/copperhead-pin-black.png",
+      size: "48",
       opacity: 1
     },
     "1": {
@@ -489,10 +489,19 @@ var simplemaps_usmap_mapdata={
       lat: 34.6059,
       lng: -86.9833,
       description: "Copperhead Labs - Decatur, AL",
-      color: "#000000",
-      url: "",
-      type: "circle",
-      size: "30",
+      type: "image",
+      image_url: "logos/copperhead-pin-black.png",
+      size: "48",
+      opacity: 1
+    },
+    "2": {
+      name: "Windsor Locks, CT",
+      lat: 41.9293,
+      lng: -72.6273,
+      description: "Copperhead Labs - Windsor Locks, CT",
+      type: "image",
+      image_url: "logos/copperhead-pin-black.png",
+      size: "48",
       opacity: 1
     }
   },

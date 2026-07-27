@@ -4602,6 +4602,7 @@ a.expand-btn {
         max-height: 0;
         overflow: hidden;
         transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        text-align: left;
     }
 
     /* Disable hover dropdown on mobile - only show on tap/click */
@@ -4638,11 +4639,12 @@ a.expand-btn {
         text-shadow: 0 0 8px rgba(184, 115, 51, 0.4);
     }
 
-    .nav-dropdown a {
-        display: flex;
+    .nav-menu .nav-dropdown a {
+        display: flex !important;
         align-items: center;
+        justify-content: flex-start;
         gap: 0.6rem;
-        padding: 0.6rem 0.75rem;
+        padding: 0.6rem 0.75rem !important;
         font-family: 'Rajdhani', sans-serif;
         font-size: 0.8rem;
         font-weight: 500;
@@ -4652,6 +4654,7 @@ a.expand-btn {
         margin-bottom: 0.25rem;
         border: 1px solid transparent;
         transition: all 0.2s ease;
+        text-align: left;
     }
 
     .nav-dropdown a:last-of-type {
@@ -4670,6 +4673,7 @@ a.expand-btn {
         width: 28px;
         height: 28px;
         min-width: 28px;
+        flex-shrink: 0;
         background: linear-gradient(135deg, rgba(184, 115, 51, 0.2) 0%, rgba(184, 115, 51, 0.1) 100%);
         border-radius: 4px;
         border: 1px solid rgba(184, 115, 51, 0.2);
@@ -4681,16 +4685,26 @@ a.expand-btn {
         filter: brightness(0) invert(1) opacity(0.8);
     }
 
+    .dropdown-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        min-width: 0;
+    }
+
     .dropdown-title {
         font-family: 'Rajdhani', sans-serif;
         font-size: 0.8rem;
         font-weight: 600;
         color: rgba(255, 255, 255, 0.9);
+        text-align: left;
     }
 
     .dropdown-subtitle {
         font-size: 0.65rem;
         color: rgba(255, 255, 255, 0.5);
+        text-align: left;
     }
 
     .dropdown-footer {
@@ -10291,8 +10305,9 @@ body.grounds-page {
         overflow: hidden;
     }
 
-    /* Better spacing for touch on nav items */
-    .nav-menu li a {
+    /* Better spacing for touch on top-level nav items only
+       (do not target .nav-dropdown links — those need display:flex) */
+    .nav-menu > li > a {
         display: block;
         padding: 1rem 1.5rem;
     }

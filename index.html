@@ -18,12 +18,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="logos/chlink.png">
     <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css?v=8.7" as="style">
+    <link rel="preload" href="styles.css?v=8.8" as="style">
     <link rel="preload" href="logos/header2.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="hero.jpg" as="image" type="image/jpeg">
     <link rel="preload" href="icons/bucket.png" as="image" type="image/png">
     <link rel="preload" href="icons/glove.png" as="image" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=8.7">
+    <link rel="stylesheet" href="styles.css?v=8.8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
@@ -228,22 +228,7 @@
 
         .logo-carousel-edge-left,
         .logo-carousel-edge-right {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 200px;
-            z-index: 3;
-            pointer-events: none;
-        }
-
-        .logo-carousel-edge-left {
-            left: 0;
-            background: linear-gradient(to right, #e8e8e8 0%, transparent 100%);
-        }
-
-        .logo-carousel-edge-right {
-            right: 0;
-            background: linear-gradient(to left, #e8e8e8 0%, transparent 100%);
+            display: none;
         }
 
         .logo-carousel-header {
@@ -283,32 +268,50 @@
             width: 100%;
             position: relative;
             z-index: 1;
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
         }
 
         .logo-track {
             display: flex;
-            align-items: center;
-            gap: 5rem;
             width: max-content;
-            animation: scrollLogos 45s linear infinite;
-            will-change: transform;
+            animation: scrollLogos 50s linear infinite;
         }
 
-        .logo-track img {
-            height: 95px;
-            width: auto;
-            max-width: 220px;
-            object-fit: contain;
-            opacity: 0.9;
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+
+        .logo-track-set {
+            display: flex;
+            align-items: center;
+            gap: 4.5rem;
+            padding-right: 4.5rem;
             flex-shrink: 0;
         }
 
+        .logo-track-set img {
+            height: 72px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+            opacity: 0.85;
+            flex-shrink: 0;
+            display: block;
+        }
+
         @keyframes scrollLogos {
-            0% {
-                transform: translate3d(0, 0, 0);
+            from {
+                transform: translateX(0);
             }
-            100% {
-                transform: translate3d(-50%, 0, 0);
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .logo-track {
+                animation: none;
             }
         }
 
@@ -319,7 +322,7 @@
 
             .logo-carousel-edge-left,
             .logo-carousel-edge-right {
-                width: 60px;
+                display: none;
             }
 
             .logo-carousel-header {
@@ -342,24 +345,23 @@
             }
 
             .logo-track {
-                gap: 3rem;
-                animation-duration: 35s;
+                animation-duration: 40s;
             }
 
-            .logo-track img {
-                height: 70px;
-                max-width: 170px;
+            .logo-track-set {
+                gap: 3rem;
+                padding-right: 3rem;
+            }
+
+            .logo-track-set img {
+                height: 56px;
+                max-width: 140px;
             }
         }
 
         @media (max-width: 480px) {
             .logo-carousel {
                 padding: 32px 0;
-            }
-
-            .logo-carousel-edge-left,
-            .logo-carousel-edge-right {
-                width: 35px;
             }
 
             .logo-carousel-header {
@@ -378,13 +380,17 @@
             }
 
             .logo-track {
-                gap: 2rem;
-                animation-duration: 25s;
+                animation-duration: 32s;
             }
 
-            .logo-track img {
-                height: 55px;
-                max-width: 130px;
+            .logo-track-set {
+                gap: 2.25rem;
+                padding-right: 2.25rem;
+            }
+
+            .logo-track-set img {
+                height: 44px;
+                max-width: 110px;
             }
         }
     </style>
@@ -437,6 +443,13 @@
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Protective Grounds</span>
                                     <span class="dropdown-subtitle">Cables, clamps & assemblies</span>
+                                </span>
+                            </a>
+                            <a href="equipment-repairs.html">
+                                <span class="dropdown-icon"><img src="icons/hq/cutter.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Equipment Repairs</span>
+                                    <span class="dropdown-subtitle">Repair, refinish & paint</span>
                                 </span>
                             </a>
                             <div class="dropdown-footer">
@@ -546,39 +559,42 @@
             </div>
             <div class="logo-track-wrapper">
                 <div class="logo-track">
-                    <img src="customer logos/9.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/3.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/14.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/6.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/11.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/1.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/16.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/5.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/12.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/8.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/2.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/15.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/4.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/10.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/7.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/13.png" alt="Customer" loading="lazy" decoding="async">
-                    <!-- Duplicate set for seamless loop -->
-                    <img src="customer logos/9.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/3.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/14.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/6.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/11.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/1.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/16.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/5.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/12.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/8.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/2.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/15.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/4.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/10.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/7.png" alt="Customer" loading="lazy" decoding="async">
-                    <img src="customer logos/13.png" alt="Customer" loading="lazy" decoding="async">
+                    <div class="logo-track-set">
+                        <img src="customer%20logos/9.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/3.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/14.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/6.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/11.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/1.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/16.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/5.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/12.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/8.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/2.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/15.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/4.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/10.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/7.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/13.png" alt="" width="180" height="72" decoding="async">
+                    </div>
+                    <div class="logo-track-set" aria-hidden="true">
+                        <img src="customer%20logos/9.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/3.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/14.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/6.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/11.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/1.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/16.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/5.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/12.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/8.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/2.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/15.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/4.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/10.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/7.png" alt="" width="180" height="72" decoding="async">
+                        <img src="customer%20logos/13.png" alt="" width="180" height="72" decoding="async">
+                    </div>
                 </div>
             </div>
         </section>
@@ -610,6 +626,11 @@
                             <a href="protective-grounds.html" class="service-btn" data-service="protective-grounds">
                                 <img src="icons/hq/ground.png" alt="Protective Grounds Testing" class="btn-icon" loading="eager" decoding="async" width="96" height="96">
                                 <span class="btn-text">Protective Grounds Testing</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                            <a href="equipment-repairs.html" class="service-btn" data-service="equipment-repairs">
+                                <img src="icons/hq/cutter.png" alt="Equipment Repairs" class="btn-icon" loading="eager" decoding="async" width="96" height="96">
+                                <span class="btn-text">Equipment Repairs</span>
                                 <span class="btn-arrow">→</span>
                             </a>
                         </div>
@@ -683,15 +704,15 @@
                     <div class="about-text">
                         <h2>Leader in the PPE Testing & Calibration Industry</h2>
                         <p>Copperhead Labs specializes in providing critical testing and calibration services to the energy, utility, commercial and industrial industries. From insulated rubber PPE and live-line tools to dielectric testing for aerial equipment, we ensure your workforce has the protection they need to work safely around high voltage.</p>
-                        <p>Our NIST-traceable calibration services cover electrical test equipment, process instrumentation, metering devices, gas detectors, and torque devices. With facilities in Decatur, AL and Albany, NY, we're available 24/7/365 to keep your operations running safely and efficiently.</p>
+                        <p>Our NIST-traceable calibration services cover electrical test equipment, process instrumentation, metering devices, gas detectors, and torque devices. With facilities in Decatur, AL, Albany, NY, and Windsor Locks, CT, we're available 24/7/365 to keep your operations running safely and efficiently.</p>
                     </div>
                     <div class="about-stats">
                         <div class="stat">
-                            <div class="stat-number">50000+</div>
+                            <div class="stat-number">100,000+</div>
                             <div class="stat-label">Tests Completed</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">200+</div>
+                            <div class="stat-number">300+</div>
                             <div class="stat-label">Customers</div>
                         </div>
                     </div>
@@ -766,8 +787,8 @@
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
                         </div>
-                        <h3>DUAL-LOCATION COVERAGE</h3>
-                        <p>Facilities in Decatur, AL and Albany, NY serving utilities nationwide. Regional accessibility, national reliability.</p>
+                        <h3>MULTI-LOCATION COVERAGE</h3>
+                        <p>Facilities in Decatur, AL, Albany, NY, and Windsor Locks, CT serving utilities nationwide. Regional accessibility, national reliability.</p>
                     </div>
                 </div>
             </div>
@@ -785,9 +806,10 @@
                                 <p><strong>Phone:</strong></p>
                                 <p>Main: <a href="tel:2563872993">(256) 387-2993</a></p>
                                 <p>Albany, NY: <a href="tel:5189418088">(518) 941-8088</a></p>
+                                <p>Windsor Locks, CT: <a href="tel:8607521920">(860) 752-1920</a></p>
                                 <p>Emergency: <a href="tel:8885618771">(888) 561-8771</a></p>
                                 <p style="margin-top: 10px;"><strong>Email:</strong> sales@copperheadlabs.com</p>
-                                <p style="margin-top: 10px;"><strong>Locations:</strong> Decatur, AL | Albany, NY</p>
+                                <p style="margin-top: 10px;"><strong>Locations:</strong> Decatur, AL | Albany, NY | Windsor Locks, CT</p>
                                 <p style="margin-top: 10px;"><strong>Hours:</strong> Available 24/7 365</p>
                             </div>
                         </div>
@@ -874,7 +896,7 @@
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                     <circle cx="12" cy="10" r="3"></circle>
                                 </svg>
-                                <span>Decatur, AL | Albany, NY</span>
+                                <span>Decatur, AL | Albany, NY | Windsor Locks, CT</span>
                             </li>
                         </ul>
                     </div>
@@ -886,6 +908,7 @@
                             <li><a href="rubber-ppe.html">Rubber PPE Testing</a></li>
                             <li><a href="liveline.html">Live-Line Tool Testing</a></li>
                             <li><a href="protective-grounds.html">Protective Grounds</a></li>
+                            <li><a href="equipment-repairs.html">Equipment Repairs</a></li>
                             <li><a href="testing.html">More Services →</a></li>
                         </ul>
                     </div>
@@ -927,8 +950,8 @@
         </div>
     </footer>
 
-    <script src="mapdata.js?v=2.2"></script>
-    <script src="usmap.js?v=2.2"></script>
+    <script src="mapdata.js?v=2.6"></script>
+    <script src="usmap.js?v=2.6"></script>
     <!-- Supabase for form submissions -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
