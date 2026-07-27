@@ -13,7 +13,7 @@
     <link rel="icon" href="logos/copperhead.svg" type="image/svg+xml">
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Equipment Repairs - Copperhead Labs">
-    <meta property="og:description" content="Professional live-line tool repair, refinishing, and painting for telescoping sticks, shotgun sticks, switching sticks, hot arms, handles, and more.">
+    <meta property="og:description" content="Equipment repair services including live-line tool refinishing and painting, plus rubber insulating blanket patching, then retested to ASTM standards.">
     <meta property="og:image" content="logos/chlink.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:type" content="website">
@@ -33,10 +33,7 @@
         /* Dark hero with overlay */
         .repairs-page .repairs-hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%), url('live-line tools/Hot_Arm_Refurb_opt.jpg');
-            background-size: cover;
-            background-position: center 30%;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
             padding: 160px 0 120px;
             border-bottom: 3px solid #B87333;
         }
@@ -651,6 +648,65 @@
             font-size: 0.95rem;
         }
 
+        .repairs-page .services-overview {
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+            padding: 80px 0 40px;
+        }
+
+        .repairs-page .services-overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .repairs-page .service-overview-card {
+            background: #0a0a0a;
+            border: 2px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .repairs-page .service-overview-card:hover {
+            border-color: #B87333;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(184, 115, 51, 0.2);
+        }
+
+        .repairs-page .service-overview-card img {
+            display: block;
+            width: 96px;
+            height: 96px;
+            object-fit: contain;
+            margin: 0 auto 1.25rem;
+            filter: drop-shadow(0 4px 12px rgba(184, 115, 51, 0.3));
+        }
+
+        .repairs-page .service-overview-card h3 {
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.85rem;
+        }
+
+        .repairs-page .service-overview-card p {
+            color: #cccccc;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .repairs-page .services-overview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Rubber Blanket Patching */
         .repairs-page .blanket-patch-section {
             background: #0a0a0a;
@@ -979,7 +1035,7 @@
                                 <span class="dropdown-icon"><img src="icons/hq/cutter.png" alt=""></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Equipment Repairs</span>
-                                    <span class="dropdown-subtitle">Repair, refinish &amp; paint</span>
+                                    <span class="dropdown-subtitle">Live-line tools &amp; rubber PPE</span>
                                 </span>
                             </a>
                             <div class="dropdown-footer">
@@ -1075,7 +1131,7 @@
             <div class="container">
                 <div class="hero-content-repairs">
                     <h1>Equipment Repairs</h1>
-                    <p class="hero-subtitle">Professional live-line tool repair, refinishing, and painting to restore insulating surfaces and return damaged sticks to service-ready condition.</p>
+                    <p class="hero-subtitle">Repair and restore electrical safety equipment, from live-line tool refinishing and painting to rubber insulating blanket patching, then retest to ASTM standards.</p>
                     <div class="hero-buttons">
                         <a href="contact.html" class="cta-button-primary">Request a Quote</a>
                         <a href="tel:256-387-2993" class="cta-button-secondary">Call (256) 387-2993</a>
@@ -1089,27 +1145,49 @@
             <div class="container">
                 <div class="intro-grid-repairs">
                     <div class="intro-image-repairs">
-                        <img src="live-line tools/Hot_Arm_Refurb_opt.jpg" alt="Technician refinishing a live-line tool" loading="lazy" decoding="async" width="400" height="500">
+                        <img src="live-line tools/Hot_Arm_Refurb_opt.jpg" alt="Technician refinishing electrical safety equipment" loading="lazy" decoding="async" width="400" height="500">
                     </div>
                     <div class="intro-content-repairs">
-                        <h2>Live-Line Tool Repair &amp; Refinishing</h2>
-                        <p class="lead-text">Years of field use leave live-line tools scratched, weathered, and worn. We refinish, paint, and repair insulating surfaces so your sticks look and perform like they should — then they can be retested and returned to your crews.</p>
-                        <p>From surface refinishing and paint to mechanical repairs on handles and assemblies, Copperhead Labs restores telescoping sticks, shotgun sticks, switching sticks, hot arms, and more so you can extend tool life without sacrificing safety.</p>
+                        <h2>Repair. Restore. Return to Service.</h2>
+                        <p class="lead-text">Field wear doesn't always mean replacement. Copperhead Labs repairs and restores electrical safety equipment so your crews stay equipped without unnecessary scrap costs.</p>
+                        <p>We refinish and paint live-line tools, patch rubber insulating blankets, and dielectric test restored equipment to ASTM standards before it goes back on the job.</p>
                         
                         <div class="intro-stats-repairs">
                             <div class="stat-box-repairs">
-                                <div class="stat-value">Repair</div>
-                                <div class="stat-label">Mechanical Fixes</div>
+                                <div class="stat-value">Live-Line</div>
+                                <div class="stat-label">Refinish &amp; Paint</div>
                             </div>
                             <div class="stat-box-repairs">
-                                <div class="stat-value">Refinish</div>
-                                <div class="stat-label">Paint &amp; Restore</div>
+                                <div class="stat-value">Rubber</div>
+                                <div class="stat-label">Blanket Patching</div>
                             </div>
                             <div class="stat-box-repairs">
-                                <div class="stat-value">Retest</div>
-                                <div class="stat-label">Ready for Service</div>
+                                <div class="stat-value">ASTM</div>
+                                <div class="stat-label">Retest Ready</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="services-overview">
+            <div class="container">
+                <div class="section-header-center">
+                    <h2>What We Repair</h2>
+                    <p class="section-subtitle">Two core restoration services under one roof</p>
+                </div>
+                <div class="services-overview-grid">
+                    <div class="service-overview-card">
+                        <img src="icons/hq/extendo.png" alt="Live-line tools" loading="lazy" decoding="async" width="96" height="96">
+                        <h3>Live-Line Tool Refinishing</h3>
+                        <p>Refinish, paint, and repair telescoping sticks, shotgun sticks, switching sticks, hot arms, handles, and assemblies.</p>
+                    </div>
+                    <div class="service-overview-card">
+                        <img src="icons/hq/blanket.png" alt="Rubber blankets" loading="lazy" decoding="async" width="96" height="96">
+                        <h3>Rubber Blanket Patching</h3>
+                        <p>Patch punctures, cuts, and worn spots on rubber insulating blankets so they can be retested and returned to service.</p>
                     </div>
                 </div>
             </div>
@@ -1119,8 +1197,8 @@
         <section class="tools-section">
             <div class="container">
                 <div class="section-header-center">
-                    <h2>Tools We Repair &amp; Refinish</h2>
-                    <p class="section-subtitle">Restore, paint, and repair common wear on live-line equipment</p>
+                    <h2>Live-Line Tools We Refinish</h2>
+                    <p class="section-subtitle">FRP sticks and related equipment restored with refinish, paint, and repair</p>
                 </div>
                 
                 <div class="tools-grid">
@@ -1162,11 +1240,11 @@
             </div>
         </section>
 
-        <!-- Repair Process Section -->
+        <!-- Refinishing Process Section -->
         <section class="process-section-repairs">
             <div class="container">
                 <div class="section-header-center">
-                    <h2>Our Refinishing Process</h2>
+                    <h2>Live-Line Refinishing Process</h2>
                     <p class="section-subtitle">Inspect → Clean → Patch → Sand → Paint → Seal → Dielectric Test to ASTM standards</p>
                 </div>
 
@@ -1232,58 +1310,13 @@
             </div>
         </section>
 
-        <!-- What We Fix Section -->
-        <section class="requirements-section">
-            <div class="container">
-                <h2 class="section-title-center">When Tools Need Repair or Refinishing</h2>
-                
-                <div class="requirements-grid">
-                    <div class="requirement-card">
-                        <div class="requirement-icon">🔧</div>
-                        <h3>Surface Wear</h3>
-                        <p><strong>Scratches, weathering, and dulled finishes</strong> reduce appearance and can affect insulating performance over time.</p>
-                        <ul class="requirement-list">
-                            <li>Weathered or chalky FRP</li>
-                            <li>Scratches and scuffs</li>
-                            <li>Faded or worn coatings</li>
-                            <li>Surface contamination buildup</li>
-                        </ul>
-                    </div>
-
-                    <div class="requirement-card">
-                        <div class="requirement-icon">⚙️</div>
-                        <h3>Mechanical Issues</h3>
-                        <p><strong>Handles, heads, and moving parts</strong> take a beating in the field and often need repair to stay reliable.</p>
-                        <ul class="requirement-list">
-                            <li>Sticky telescoping sections</li>
-                            <li>Damaged heads or latches</li>
-                            <li>Worn or loose handles</li>
-                            <li>Hardware and fitting repairs</li>
-                        </ul>
-                    </div>
-
-                    <div class="requirement-card highlight-requirement">
-                        <div class="requirement-icon">✓</div>
-                        <h3>After Repair</h3>
-                        <p><strong>Retest before returning to service</strong> so restored tools meet your safety program requirements.</p>
-                        <ul class="requirement-list">
-                            <li>Visual inspection completed</li>
-                            <li>Dielectric testing available</li>
-                            <li>Labels and records updated</li>
-                            <li>Ready for crew use</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- CTA Section -->
         <section class="cta-section-repairs">
             <div class="cta-overlay"></div>
             <div class="container">
                 <div class="cta-content-box">
                     <h2>Restore Your Equipment</h2>
-                    <p>Don't scrap tools or blankets that can be restored. Contact Copperhead Labs for live-line tool refinishing, repairs, and rubber blanket patching.</p>
+                    <p>Don't scrap equipment that can be restored. Contact Copperhead Labs for live-line tool refinishing and rubber blanket patching, with ASTM retesting available in-house.</p>
                     <div class="cta-buttons">
                         <a href="contact.html" class="cta-button-primary">Request a Quote</a>
                         <a href="tel:256-387-2993" class="cta-button-secondary">
@@ -1291,7 +1324,7 @@
                             <span>(256) 387-2993</span>
                         </a>
                     </div>
-                    <p class="cta-note">Repair • Refinish • Paint • Retest • Serving utilities nationwide</p>
+                    <p class="cta-note">Live-Line Refinishing • Blanket Patching • ASTM Retest</p>
                 </div>
             </div>
         </section>
