@@ -6,7 +6,7 @@
     <title>Careers - Copperhead Labs</title>
     <link rel="icon" type="image/svg+xml" href="logos/copperhead.svg">
     <meta property="og:title" content="Careers - Copperhead Labs">
-    <meta property="og:description" content="Open positions at Copperhead Labs. Apply online with a resume for testing, calibration, and lab roles.">
+    <meta property="og:description" content="Apply to Copperhead Labs. Send a resume for testing, calibration, and lab roles.">
     <meta property="og:image" content="logos/chlink.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:type" content="website">
@@ -79,6 +79,36 @@
             padding: 4rem 0 5rem;
             background: #f8f8f8;
             min-height: 50vh;
+        }
+
+        .application-panel {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--copper);
+            padding: 1.75rem 1.5rem 1.5rem;
+            max-width: 760px;
+        }
+
+        .application-panel h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #111;
+            line-height: 1.2;
+            margin-bottom: 0.4rem;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .application-lead {
+            color: #555;
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+
+        [hidden] {
+            display: none !important;
         }
 
         .jobs-feed {
@@ -475,8 +505,12 @@
             overflow: hidden;
         }
 
+        body {
+            position: relative;
+        }
+
         .admin-link {
-            position: fixed;
+            position: absolute;
             bottom: 20px;
             right: 20px;
             width: 50px;
@@ -521,6 +555,10 @@
         }
 
         @media (max-width: 640px) {
+            .application-panel {
+                padding-bottom: 4.5rem;
+            }
+
             .apply-form .form-row {
                 grid-template-columns: 1fr;
             }
@@ -689,27 +727,83 @@
         <section class="careers-hero">
             <div class="container">
                 <h1>Join <span>Copperhead</span></h1>
-                <p>Open roles on the team that tests and calibrates the equipment utility and industrial crews rely on. Apply to a posting below, or send a general application if none of them fit.</p>
+                <p id="careersIntro">Send a resume and a short note. We'll keep it on file and reach out when there's a fit.</p>
                 <p class="careers-locations">Decatur, AL · Albany, NY · Windsor Locks, CT</p>
             </div>
         </section>
 
         <section class="careers-section">
             <div class="container">
-                <div class="jobs-feed" id="jobsFeed">
-                    <div class="loading-state">
-                        <div class="loading-spinner"></div>
-                        <p>Loading open positions...</p>
+                <div id="jobListings" hidden>
+                    <div class="jobs-feed" id="jobsFeed">
+                        <div class="loading-state">
+                            <div class="loading-spinner"></div>
+                            <p>Loading open positions...</p>
+                        </div>
                     </div>
+
+                    <aside class="general-card">
+                        <h2>General application</h2>
+                        <p>Don't see a role that fits? Send your resume anyway. We'll keep it on file and reach out when there's a match.</p>
+                        <div class="job-actions">
+                            <button type="button" class="apply-button" id="generalApplyBtn">Submit a general application</button>
+                        </div>
+                    </aside>
                 </div>
 
-                <aside class="general-card">
+                <div class="application-panel" id="inlineApplication">
                     <h2>General application</h2>
-                    <p>Don't see a role that fits? Send your resume anyway. We'll keep it on file and reach out when there's a match.</p>
-                    <div class="job-actions">
-                        <button type="button" class="apply-button" id="generalApplyBtn">Submit a general application</button>
+                    <p class="application-lead">Name, email, phone, an optional note, and your resume. That's all we need.</p>
+                    <div id="applicationBody">
+                        <div class="apply-success" id="applySuccess" hidden>
+                            <h3>Application received</h3>
+                            <p id="applySuccessText">Thank you. We have your application and resume, and a member of the Copperhead team will be in touch if there's a fit.</p>
+                            <button type="button" class="modal-primary" id="closeSuccess">Close</button>
+                        </div>
+
+                        <form class="apply-form" id="applyForm" novalidate>
+                            <input type="hidden" id="applyJobId" value="">
+                            <div class="form-alert error" id="formAlert" hidden></div>
+
+                            <div class="hp-field" aria-hidden="true">
+                                <label for="companyWebsite">Company website</label>
+                                <input type="text" id="companyWebsite" name="company_website" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="applicantName">Full name</label>
+                                    <input type="text" id="applicantName" name="name" autocomplete="name" maxlength="120" required>
+                                </div>
+                                <div class="field">
+                                    <label for="applicantEmail">Email</label>
+                                    <input type="email" id="applicantEmail" name="email" autocomplete="email" maxlength="254" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="applicantPhone">Phone</label>
+                                <input type="tel" id="applicantPhone" name="phone" autocomplete="tel" maxlength="40" required>
+                            </div>
+                            <div class="field">
+                                <label for="applicantMessage">Cover note <span style="font-weight:500;color:#777;">(optional)</span></label>
+                                <textarea id="applicantMessage" name="message" maxlength="5000" placeholder="A short note about why you're applying."></textarea>
+                            </div>
+                            <div class="field">
+                                <label for="resumeInput">Resume</label>
+                                <div class="file-drop" id="fileDrop">
+                                    <strong>Upload a PDF, DOC, or DOCX</strong>
+                                    <span>Maximum 10 MB. Resumes are stored privately and are only available to Copperhead staff.</span>
+                                    <div class="file-name" id="fileName" hidden></div>
+                                    <input type="file" id="resumeInput" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="modal-secondary" id="cancelApply" hidden>Cancel</button>
+                                <button type="submit" class="modal-primary" id="submitApplication">Submit application</button>
+                            </div>
+                        </form>
                     </div>
-                </aside>
+                </div>
             </div>
         </section>
     </main>
@@ -724,54 +818,7 @@
                 </div>
                 <button type="button" class="modal-close" id="closeApply" aria-label="Close application form">&times;</button>
             </div>
-
-            <div class="apply-success" id="applySuccess" hidden>
-                <h3>Application received</h3>
-                <p id="applySuccessText">Thank you. We have your application and resume, and a member of the Copperhead team will be in touch if there's a fit.</p>
-                <button type="button" class="modal-primary" id="closeSuccess">Close</button>
-            </div>
-
-            <form class="apply-form" id="applyForm" novalidate>
-                <input type="hidden" id="applyJobId" value="">
-                <div class="form-alert error" id="formAlert" hidden></div>
-
-                <div class="hp-field" aria-hidden="true">
-                    <label for="companyWebsite">Company website</label>
-                    <input type="text" id="companyWebsite" name="company_website" tabindex="-1" autocomplete="off">
-                </div>
-
-                <div class="form-row">
-                    <div class="field">
-                        <label for="applicantName">Full name</label>
-                        <input type="text" id="applicantName" name="name" autocomplete="name" maxlength="120" required>
-                    </div>
-                    <div class="field">
-                        <label for="applicantEmail">Email</label>
-                        <input type="email" id="applicantEmail" name="email" autocomplete="email" maxlength="254" required>
-                    </div>
-                </div>
-                <div class="field">
-                    <label for="applicantPhone">Phone</label>
-                    <input type="tel" id="applicantPhone" name="phone" autocomplete="tel" maxlength="40" required>
-                </div>
-                <div class="field">
-                    <label for="applicantMessage">Cover note <span style="font-weight:500;color:#777;">(optional)</span></label>
-                    <textarea id="applicantMessage" name="message" maxlength="5000" placeholder="A short note about why you're applying."></textarea>
-                </div>
-                <div class="field">
-                    <label for="resumeInput">Resume</label>
-                    <div class="file-drop" id="fileDrop">
-                        <strong>Upload a PDF, DOC, or DOCX</strong>
-                        <span>Maximum 10 MB. Resumes are stored privately and are only available to Copperhead staff.</span>
-                        <div class="file-name" id="fileName" hidden></div>
-                        <input type="file" id="resumeInput" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
-                    </div>
-                </div>
-                <div class="form-actions">
-                    <button type="button" class="modal-secondary" id="cancelApply">Cancel</button>
-                    <button type="submit" class="modal-primary" id="submitApplication">Submit application</button>
-                </div>
-            </form>
+            <div id="modalApplicationSlot"></div>
         </div>
     </div>
 
@@ -901,6 +948,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
     <script>
+        // Set to true to show open positions, per-job Apply buttons, and the
+        // "no openings" empty state. Leave false to show only the general application.
+        const SHOW_JOB_LISTINGS = false;
+
+        const LISTINGS_INTRO = 'Open roles on the team that tests and calibrates the equipment utility and industrial crews rely on. Apply to a posting below, or send a general application if none of them fit.';
+
         const CareersPage = {
             jobs: [],
             activeJob: null,
@@ -917,8 +970,19 @@
 
             async init() {
                 this.bindEvents();
-                await this.loadJobs();
-                this.openFromQuery();
+                if (SHOW_JOB_LISTINGS) {
+                    document.getElementById('careersIntro').textContent = LISTINGS_INTRO;
+                    document.getElementById('jobListings').hidden = false;
+                    document.getElementById('inlineApplication').hidden = true;
+                    document.getElementById('cancelApply').hidden = false;
+                    document.getElementById('modalApplicationSlot').appendChild(document.getElementById('applicationBody'));
+                    await this.loadJobs();
+                    this.openFromQuery();
+                    return;
+                }
+
+                this.activeJob = null;
+                this.formOpenedAt = Date.now();
             },
 
             bindEvents() {
@@ -1051,6 +1115,23 @@
             },
 
             closeApply() {
+                if (!SHOW_JOB_LISTINGS) {
+                    this.activeJob = null;
+                    this.formOpenedAt = Date.now();
+                    this.resumeFile = null;
+                    document.getElementById('applyForm').reset();
+                    document.getElementById('applyJobId').value = '';
+                    document.getElementById('fileName').hidden = true;
+                    document.getElementById('fileName').textContent = '';
+                    this.hideAlert();
+                    document.getElementById('applyForm').hidden = false;
+                    document.getElementById('applySuccess').hidden = true;
+                    document.getElementById('submitApplication').disabled = false;
+                    document.getElementById('submitApplication').textContent = 'Submit application';
+                    document.getElementById('applicantName').focus();
+                    return;
+                }
+
                 document.getElementById('applyModal').hidden = true;
                 document.body.classList.remove('apply-open');
                 if (this.lastFocus && typeof this.lastFocus.focus === 'function') this.lastFocus.focus();
@@ -1185,12 +1266,16 @@
             },
 
             showSuccess() {
-                const title = this.activeJob ? this.activeJob.title : 'your general application';
-                document.getElementById('applySuccessText').textContent =
-                    `Thank you. We have your application for ${title} and a member of the Copperhead team will be in touch if there's a fit.`;
+                document.getElementById('applySuccessText').textContent = this.activeJob
+                    ? `Thank you. We have your application for ${this.activeJob.title} and a member of the Copperhead team will be in touch if there's a fit.`
+                    : 'Thank you. We have your application and a member of the Copperhead team will be in touch if there\'s a fit.';
                 document.getElementById('applyForm').hidden = true;
                 document.getElementById('applySuccess').hidden = false;
+                document.getElementById('closeSuccess').textContent = SHOW_JOB_LISTINGS ? 'Close' : 'Submit another';
                 document.getElementById('closeSuccess').focus();
+                if (!SHOW_JOB_LISTINGS) {
+                    document.getElementById('inlineApplication').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             },
 
             async notifyStaff(application) {
