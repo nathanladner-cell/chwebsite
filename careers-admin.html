@@ -129,6 +129,8 @@
             text-decoration: none;
             color: inherit;
             font-family: inherit;
+            min-height: 44px;
+            line-height: 1.2;
         }
 
         .btn-primary {
@@ -189,7 +191,12 @@
             color: var(--copper);
         }
 
-        .user-email { color: #888; font-size: 0.82rem; }
+        .user-email {
+            color: #888;
+            font-size: 0.82rem;
+            overflow-wrap: anywhere;
+            max-width: 100%;
+        }
 
         .admin-content {
             padding: 1.5rem;
@@ -205,6 +212,7 @@
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 999px;
             padding: 0.55rem 0.95rem;
+            min-height: 44px;
             cursor: pointer;
             font-family: inherit;
             font-weight: 600;
@@ -317,8 +325,8 @@
 
         .item-actions .btn { padding: 0.45rem 0.7rem; font-size: 0.8rem; }
 
-        .meta-line { color: #888; font-size: 0.88rem; margin: 0.2rem 0; }
-        .meta-line a { color: #e0b088; }
+        .meta-line { color: #888; font-size: 0.88rem; margin: 0.2rem 0; overflow-wrap: anywhere; }
+        .meta-line a { color: #e0b088; overflow-wrap: anywhere; }
 
         .message-block {
             margin-top: 0.6rem;
@@ -410,7 +418,64 @@
             .form-row, .toolbar { grid-template-columns: 1fr; }
             .admin-content { padding: 1rem; }
             .item-top { flex-direction: column; }
-            .admin-header { align-items: flex-start; }
+
+            .admin-header {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0.85rem 1rem;
+                gap: 0.75rem;
+            }
+
+            .admin-header-left,
+            .admin-header-right {
+                width: 100%;
+            }
+
+            .admin-header h1 {
+                font-size: 0.95rem;
+                white-space: nowrap;
+            }
+
+            .admin-header-right {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .admin-header-right .btn {
+                width: 100%;
+            }
+
+            .admin-section-header {
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .item-actions {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+
+            .item-actions .btn {
+                width: 100%;
+            }
+
+            .item-actions .btn:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
+            }
+
+            .login-box {
+                padding: 2rem 1.15rem;
+            }
+
+            .modal-footer {
+                flex-wrap: wrap;
+            }
+
+            .modal-footer .btn {
+                flex: 1 1 120px;
+            }
         }
     </style>
 </head>

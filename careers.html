@@ -88,6 +88,7 @@
             border-left: 4px solid var(--copper);
             padding: 1.75rem 1.5rem 1.5rem;
             max-width: 760px;
+            scroll-margin-top: 96px;
         }
 
         .application-panel h2 {
@@ -206,6 +207,7 @@
             text-transform: uppercase;
             border-radius: 4px;
             transition: background 0.2s ease, transform 0.2s ease;
+            min-height: 48px;
         }
 
         .apply-button,
@@ -394,8 +396,10 @@
             border: 2px solid #e4e4e4;
             border-radius: 8px;
             font: inherit;
+            font-size: 16px;
             color: #111;
             background: #fff;
+            min-height: 48px;
         }
 
         .apply-form textarea {
@@ -412,10 +416,15 @@
         .file-drop {
             border: 2px dashed #d7d7d7;
             border-radius: 10px;
-            padding: 1rem;
+            padding: 1.1rem 1rem;
+            min-height: 96px;
             text-align: center;
             background: #fafafa;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .file-drop.dragover {
@@ -450,6 +459,8 @@
             padding: 0.75rem 0.9rem;
             margin-bottom: 0.9rem;
             font-size: 0.92rem;
+            scroll-margin-top: 110px;
+            scroll-margin-bottom: 24px;
         }
 
         .form-alert[hidden] {
@@ -556,7 +567,13 @@
 
         @media (max-width: 640px) {
             .application-panel {
-                padding-bottom: 4.5rem;
+                padding: 1.25rem 1rem 1.35rem;
+            }
+
+            .careers-locations {
+                letter-spacing: 0.04em;
+                font-size: 0.82rem;
+                line-height: 1.5;
             }
 
             .apply-form .form-row {
@@ -570,7 +587,8 @@
 
             .apply-button,
             .modal-primary,
-            .modal-secondary {
+            .modal-secondary,
+            .apply-success .modal-primary {
                 width: 100%;
             }
 
@@ -1274,7 +1292,7 @@
                 document.getElementById('closeSuccess').textContent = SHOW_JOB_LISTINGS ? 'Close' : 'Submit another';
                 document.getElementById('closeSuccess').focus();
                 if (!SHOW_JOB_LISTINGS) {
-                    document.getElementById('inlineApplication').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('inlineApplication').scrollIntoView({ block: 'start' });
                 }
             },
 
@@ -1356,6 +1374,7 @@
                 const alert = document.getElementById('formAlert');
                 alert.textContent = message;
                 alert.hidden = false;
+                alert.scrollIntoView({ block: 'center' });
             },
 
             hideAlert() {
