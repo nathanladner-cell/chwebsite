@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Copperhead Labs</title>
+    <link rel="icon" type="image/svg+xml" href="logos/copperhead.svg">
+    <meta property="og:title" content="Careers - Copperhead Labs">
+    <meta property="og:description" content="Open positions at Copperhead Labs. Apply online with a resume for testing, calibration, and lab roles.">
+    <meta property="og:image" content="logos/chlink.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="logos/chlink.png">
+    <link rel="preload" href="styles.css?v=8.9" as="style">
+    <link rel="preload" href="logos/header2.svg" as="image" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=8.9">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=block" rel="stylesheet">
+    <style>
+        .careers-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .careers-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(184, 115, 51, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(184, 115, 51, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .careers-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .careers-hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .careers-hero h1 span {
+            background: linear-gradient(135deg, var(--copper) 0%, #d4956a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .careers-hero p {
+            font-size: 1.15rem;
+            color: #aaa;
+            max-width: 680px;
+            line-height: 1.7;
+        }
+
+        .careers-locations {
+            margin-top: 1.25rem;
+            color: #d4956a;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        .careers-section {
+            padding: 4rem 0 5rem;
+            background: #f8f8f8;
+            min-height: 50vh;
+        }
+
+        .jobs-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .job-card,
+        .general-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--copper);
+            padding: 1.5rem 1.5rem 1.35rem;
+        }
+
+        .job-card h2,
+        .general-card h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #111;
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
+        }
+
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .job-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(184, 115, 51, 0.12);
+            color: #8a4e1d;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .job-pill.neutral {
+            background: #f1f1f1;
+            color: #555;
+        }
+
+        .job-copy {
+            color: #444;
+            line-height: 1.75;
+            font-size: 1rem;
+        }
+
+        .job-copy h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #222;
+            margin: 1.15rem 0 0.45rem;
+        }
+
+        .job-copy p {
+            margin: 0 0 0.75rem;
+        }
+
+        .job-copy ul {
+            margin: 0 0 0.75rem 1.15rem;
+        }
+
+        .job-copy li {
+            margin: 0.2rem 0;
+        }
+
+        .job-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1.1rem;
+        }
+
+        .apply-button,
+        .modal-primary,
+        .modal-secondary {
+            border: none;
+            cursor: pointer;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .apply-button,
+        .modal-primary {
+            background: var(--copper);
+            color: #fff;
+            padding: 0.85rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        .apply-button:hover,
+        .modal-primary:hover {
+            background: var(--copper-dark);
+        }
+
+        .apply-button:disabled,
+        .modal-primary:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        .general-card {
+            margin-top: 1.5rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+            color: #eee;
+            border-left-color: var(--copper);
+        }
+
+        .general-card h2,
+        .general-card p {
+            color: #eee;
+        }
+
+        .general-card p {
+            color: #bbb;
+            max-width: 640px;
+            line-height: 1.7;
+        }
+
+        .general-card .job-actions {
+            justify-content: flex-start;
+        }
+
+        .empty-state,
+        .loading-state,
+        .error-state {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            background: #fff;
+            border-radius: 12px;
+        }
+
+        .empty-state {
+            border: 2px dashed #ddd;
+        }
+
+        .error-state {
+            border: 2px solid rgba(220, 53, 69, 0.3);
+        }
+
+        .empty-state h3,
+        .error-state h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-state p,
+        .error-state p,
+        .loading-state p {
+            color: #777;
+        }
+
+        .error-state h3 {
+            color: #dc3545;
+        }
+
+        .loading-spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid rgba(184, 115, 51, 0.2);
+            border-top-color: var(--copper);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .apply-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.62);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .apply-modal[hidden] {
+            display: none !important;
+        }
+
+        .apply-dialog {
+            background: #fff;
+            width: min(640px, 100%);
+            max-height: min(92vh, 900px);
+            overflow: auto;
+            border-radius: 16px 16px 0 0;
+            padding: 1.35rem 1.25rem 1.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .apply-dialog-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .apply-dialog h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.7rem;
+            line-height: 1.2;
+            margin: 0;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .apply-kicker {
+            color: var(--copper);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .apply-subtitle {
+            color: #666;
+            margin-top: 0.35rem;
+            font-size: 0.95rem;
+        }
+
+        .modal-close {
+            border: none;
+            background: #f3f3f3;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            line-height: 1;
+            cursor: pointer;
+            color: #333;
+            flex-shrink: 0;
+        }
+
+        .apply-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.9rem;
+        }
+
+        .apply-form label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+            color: #222;
+        }
+
+        .apply-form .field {
+            margin-bottom: 0.9rem;
+        }
+
+        .apply-form input[type="text"],
+        .apply-form input[type="email"],
+        .apply-form input[type="tel"],
+        .apply-form textarea {
+            width: 100%;
+            padding: 0.85rem 0.9rem;
+            border: 2px solid #e4e4e4;
+            border-radius: 8px;
+            font: inherit;
+            color: #111;
+            background: #fff;
+        }
+
+        .apply-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .apply-form input:focus,
+        .apply-form textarea:focus {
+            outline: none;
+            border-color: var(--copper);
+        }
+
+        .file-drop {
+            border: 2px dashed #d7d7d7;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            background: #fafafa;
+            cursor: pointer;
+        }
+
+        .file-drop.dragover {
+            border-color: var(--copper);
+            background: rgba(184, 115, 51, 0.06);
+        }
+
+        .file-drop strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .file-drop span,
+        .field-hint {
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        .file-drop input {
+            display: none;
+        }
+
+        .file-name {
+            margin-top: 0.55rem;
+            font-weight: 600;
+            color: #333;
+            word-break: break-word;
+        }
+
+        .form-alert {
+            border-radius: 8px;
+            padding: 0.75rem 0.9rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.92rem;
+        }
+
+        .form-alert[hidden] {
+            display: none !important;
+        }
+
+        .form-alert.error {
+            background: #fff1f1;
+            color: #9d1c2b;
+            border: 1px solid #f0c2c6;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.6rem;
+            margin-top: 0.4rem;
+        }
+
+        .modal-secondary {
+            background: #eee;
+            color: #333;
+            padding: 0.85rem 1.1rem;
+        }
+
+        .apply-success {
+            text-align: center;
+            padding: 1.5rem 0.5rem 0.5rem;
+        }
+
+        .apply-success[hidden],
+        .apply-form[hidden] {
+            display: none !important;
+        }
+
+        .apply-success h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .apply-success p {
+            color: #555;
+            margin-bottom: 1.25rem;
+        }
+
+        .hp-field {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .admin-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #333 0%, #111 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.3;
+            z-index: 100;
+        }
+
+        .admin-link:hover {
+            opacity: 1;
+            color: var(--copper);
+            transform: scale(1.1);
+        }
+
+        .admin-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        body.apply-open {
+            overflow: hidden;
+        }
+
+        @media (min-width: 720px) {
+            .apply-modal {
+                align-items: center;
+                padding: 1.5rem;
+            }
+
+            .apply-dialog {
+                border-radius: 16px;
+                padding: 1.6rem 1.6rem 1.4rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .apply-form .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .job-actions,
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .apply-button,
+            .modal-primary,
+            .modal-secondary {
+                width: 100%;
+            }
+
+            .careers-hero {
+                padding: 7rem 0 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-loader" id="pageLoader">
+        <img src="logos/copperhead.svg" alt="Loading..." class="loader-logo">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading</div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="logos/header2.svg" alt="Copperhead Labs Logo" class="logo-img" loading="eager" decoding="async" width="200" height="40" fetchpriority="high">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="testing.html">Testing</a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-header">Testing Services</div>
+                            <a href="dielectric.html">
+                                <span class="dropdown-icon"><img src="icons/hq/bucket.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Dielectric Testing</span>
+                                    <span class="dropdown-subtitle">Bucket trucks & aerial lifts</span>
+                                </span>
+                            </a>
+                            <a href="rubber-ppe.html">
+                                <span class="dropdown-icon"><img src="icons/hq/glove.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Rubber PPE Testing</span>
+                                    <span class="dropdown-subtitle">Gloves, sleeves & blankets</span>
+                                </span>
+                            </a>
+                            <a href="liveline.html">
+                                <span class="dropdown-icon"><img src="icons/hq/extendo.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Live-Line Tool Testing</span>
+                                    <span class="dropdown-subtitle">Hot sticks & shotgun sticks</span>
+                                </span>
+                            </a>
+                            <a href="protective-grounds.html">
+                                <span class="dropdown-icon"><img src="icons/hq/ground.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Protective Grounds</span>
+                                    <span class="dropdown-subtitle">Cables, clamps & assemblies</span>
+                                </span>
+                            </a>
+                            <a href="equipment-repairs.html">
+                                <span class="dropdown-icon"><img src="icons/hq/cutter.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Equipment Repairs</span>
+                                    <span class="dropdown-subtitle">Live-line tools & rubber PPE</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-footer">
+                                <a href="testing.html">View All Testing Services →</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="calibration.html">Calibration</a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-header">Calibration Services</div>
+                            <a href="pressure-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/pressure.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Pressure Calibration</span>
+                                    <span class="dropdown-subtitle">Gauges & transducers</span>
+                                </span>
+                            </a>
+                            <a href="temperature-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/thermo.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Temperature Calibration</span>
+                                    <span class="dropdown-subtitle">Thermometers & RTDs</span>
+                                </span>
+                            </a>
+                            <a href="electrical-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/multimeter.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Electrical Calibration</span>
+                                    <span class="dropdown-subtitle">Meters & test equipment</span>
+                                </span>
+                            </a>
+                            <a href="flow-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/instrument.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Flow Calibration</span>
+                                    <span class="dropdown-subtitle">Flow meters & devices</span>
+                                </span>
+                            </a>
+                            <a href="torque-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/torque.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Mechanical Calibration</span>
+                                    <span class="dropdown-subtitle">Torque & force devices</span>
+                                </span>
+                            </a>
+                            <a href="gas-detection-calibration.html">
+                                <span class="dropdown-icon"><img src="icons/hq/gasdetector.png" alt=""></span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Gas Detection</span>
+                                    <span class="dropdown-subtitle">Gas monitors & detectors</span>
+                                </span>
+                            </a>
+                            <div class="dropdown-footer">
+                                <a href="calibration.html">View All Calibration Services →</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="software.html">Software</a></li>
+                    <li class="has-dropdown">
+                        <a href="about.html">About</a>
+                        <div class="nav-dropdown nav-dropdown-small">
+                            <a href="updates.html">
+                                <span class="dropdown-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg>
+                                </span>
+                                <span class="dropdown-text">
+                                    <span class="dropdown-title">Updates</span>
+                                    <span class="dropdown-subtitle">News & announcements</span>
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="careers-hero">
+            <div class="container">
+                <h1>Join <span>Copperhead</span></h1>
+                <p>Open roles on the team that tests and calibrates the equipment utility and industrial crews rely on. Apply to a posting below, or send a general application if none of them fit.</p>
+                <p class="careers-locations">Decatur, AL · Albany, NY · Windsor Locks, CT</p>
+            </div>
+        </section>
+
+        <section class="careers-section">
+            <div class="container">
+                <div class="jobs-feed" id="jobsFeed">
+                    <div class="loading-state">
+                        <div class="loading-spinner"></div>
+                        <p>Loading open positions...</p>
+                    </div>
+                </div>
+
+                <aside class="general-card">
+                    <h2>General application</h2>
+                    <p>Don't see a role that fits? Send your resume anyway. We'll keep it on file and reach out when there's a match.</p>
+                    <div class="job-actions">
+                        <button type="button" class="apply-button" id="generalApplyBtn">Submit a general application</button>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <div class="apply-modal" id="applyModal" hidden>
+        <div class="apply-dialog" role="dialog" aria-modal="true" aria-labelledby="applyTitle">
+            <div class="apply-dialog-head">
+                <div>
+                    <div class="apply-kicker">Apply</div>
+                    <h2 id="applyTitle">Application</h2>
+                    <p class="apply-subtitle" id="applySubtitle"></p>
+                </div>
+                <button type="button" class="modal-close" id="closeApply" aria-label="Close application form">&times;</button>
+            </div>
+
+            <div class="apply-success" id="applySuccess" hidden>
+                <h3>Application received</h3>
+                <p id="applySuccessText">Thank you. We have your application and resume, and a member of the Copperhead team will be in touch if there's a fit.</p>
+                <button type="button" class="modal-primary" id="closeSuccess">Close</button>
+            </div>
+
+            <form class="apply-form" id="applyForm" novalidate>
+                <input type="hidden" id="applyJobId" value="">
+                <div class="form-alert error" id="formAlert" hidden></div>
+
+                <div class="hp-field" aria-hidden="true">
+                    <label for="companyWebsite">Company website</label>
+                    <input type="text" id="companyWebsite" name="company_website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="form-row">
+                    <div class="field">
+                        <label for="applicantName">Full name</label>
+                        <input type="text" id="applicantName" name="name" autocomplete="name" maxlength="120" required>
+                    </div>
+                    <div class="field">
+                        <label for="applicantEmail">Email</label>
+                        <input type="email" id="applicantEmail" name="email" autocomplete="email" maxlength="254" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="applicantPhone">Phone</label>
+                    <input type="tel" id="applicantPhone" name="phone" autocomplete="tel" maxlength="40" required>
+                </div>
+                <div class="field">
+                    <label for="applicantMessage">Cover note <span style="font-weight:500;color:#777;">(optional)</span></label>
+                    <textarea id="applicantMessage" name="message" maxlength="5000" placeholder="A short note about why you're applying."></textarea>
+                </div>
+                <div class="field">
+                    <label for="resumeInput">Resume</label>
+                    <div class="file-drop" id="fileDrop">
+                        <strong>Upload a PDF, DOC, or DOCX</strong>
+                        <span>Maximum 10 MB. Resumes are stored privately and are only available to Copperhead staff.</span>
+                        <div class="file-name" id="fileName" hidden></div>
+                        <input type="file" id="resumeInput" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="modal-secondary" id="cancelApply">Cancel</button>
+                    <button type="submit" class="modal-primary" id="submitApplication">Submit application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <a href="careers-admin.html" class="admin-link" title="Careers admin">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+    </a>
+
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section footer-brand">
+                        <img src="logos/snake.gif" alt="Copperhead Labs" class="footer-logo" loading="lazy" decoding="async" width="120" height="120">
+                        <p class="footer-tagline">Precision testing and calibration for industrial safety equipment and tools.</p>
+                        <div class="footer-24-7">
+                            <div class="emergency-badge">
+                                <svg class="emergency-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>24/7 EMERGENCY SERVICE</span>
+                            </div>
+                        </div>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/company/copperhead-labs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/copperheadlabs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/copperheadlabs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section footer-contact">
+                        <h3>Contact</h3>
+                        <ul class="footer-contact-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <a href="tel:2563872993">(256) 387-2993</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <a href="mailto:sales@copperheadlabs.com">sales@copperheadlabs.com</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Decatur, AL | Albany, NY | Windsor Locks, CT</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section footer-links">
+                        <h3>Testing Services</h3>
+                        <ul>
+                            <li><a href="dielectric.html">Dielectric Testing</a></li>
+                            <li><a href="rubber-ppe.html">Rubber PPE Testing</a></li>
+                            <li><a href="liveline.html">Live-Line Tool Testing</a></li>
+                            <li><a href="protective-grounds.html">Protective Grounds</a></li>
+                            <li><a href="equipment-repairs.html">Equipment Repairs</a></li>
+                            <li><a href="testing.html">More Services →</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section footer-links">
+                        <h3>Calibration Services</h3>
+                        <ul>
+                            <li><a href="calibration.html">Process Instrumentation</a></li>
+                            <li><a href="calibration.html">Metering Devices</a></li>
+                            <li><a href="calibration.html">Electrical Test Equipment</a></li>
+                            <li><a href="calibration.html">Gas Detection Devices</a></li>
+                            <li><a href="calibration.html">More Services →</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section footer-company">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="updates.html">Updates</a></li>
+                            <li><a href="software.html">Software</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <h3 class="compliance-title">Compliance</h3>
+                        <div class="compliance-logos">
+                            <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group" loading="lazy" decoding="async" width="400" height="60">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Copperhead Labs. All rights reserved.</p>
+                    <p class="footer-tagline-bottom">NIST-Traceable Calibration | ISO/IEC 17025 Compliant</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script>
+        const CareersPage = {
+            jobs: [],
+            activeJob: null,
+            formOpenedAt: 0,
+            resumeFile: null,
+            lastFocus: null,
+            maxBytes: 10 * 1024 * 1024,
+            minFillMs: 2500,
+            mimeByExt: {
+                pdf: 'application/pdf',
+                doc: 'application/msword',
+                docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+            },
+
+            async init() {
+                this.bindEvents();
+                await this.loadJobs();
+                this.openFromQuery();
+            },
+
+            bindEvents() {
+                document.getElementById('jobsFeed').addEventListener('click', (event) => {
+                    const button = event.target.closest('[data-apply]');
+                    if (!button) return;
+                    const job = this.jobs.find((item) => item.id === button.getAttribute('data-apply'));
+                    if (job) this.openApply(job);
+                });
+
+                document.getElementById('generalApplyBtn').addEventListener('click', () => this.openApply(null));
+                document.getElementById('closeApply').addEventListener('click', () => this.closeApply());
+                document.getElementById('cancelApply').addEventListener('click', () => this.closeApply());
+                document.getElementById('closeSuccess').addEventListener('click', () => this.closeApply());
+                document.getElementById('applyModal').addEventListener('click', (event) => {
+                    if (event.target.id === 'applyModal') this.closeApply();
+                });
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape' && !document.getElementById('applyModal').hidden) {
+                        this.closeApply();
+                    }
+                });
+                document.getElementById('applyForm').addEventListener('submit', (event) => this.handleSubmit(event));
+
+                const drop = document.getElementById('fileDrop');
+                const input = document.getElementById('resumeInput');
+                drop.addEventListener('click', () => input.click());
+                input.addEventListener('change', () => this.setResume(input.files[0]));
+                ['dragover', 'dragenter'].forEach((name) => {
+                    drop.addEventListener(name, (event) => {
+                        event.preventDefault();
+                        drop.classList.add('dragover');
+                    });
+                });
+                drop.addEventListener('dragleave', () => drop.classList.remove('dragover'));
+                drop.addEventListener('drop', (event) => {
+                    event.preventDefault();
+                    drop.classList.remove('dragover');
+                    this.setResume(event.dataTransfer.files[0]);
+                });
+            },
+
+            async loadJobs() {
+                const feed = document.getElementById('jobsFeed');
+                try {
+                    const { data, error } = await supabase
+                        .from('job_postings')
+                        .select('id, title, location, employment_type, pay_min, pay_max, pay_period, description, requirements, created_at')
+                        .eq('status', 'published')
+                        .order('created_at', { ascending: false });
+
+                    if (error) throw error;
+                    this.jobs = data || [];
+                    this.renderJobs();
+                } catch (error) {
+                    console.error('Error loading jobs:', error);
+                    feed.innerHTML = `
+                        <div class="error-state">
+                            <h3>Unable to load open positions</h3>
+                            <p>Please try again later, or email <a href="mailto:sales@copperheadlabs.com">sales@copperheadlabs.com</a>.</p>
+                        </div>
+                    `;
+                }
+            },
+
+            renderJobs() {
+                const feed = document.getElementById('jobsFeed');
+                if (!this.jobs.length) {
+                    feed.innerHTML = `
+                        <div class="empty-state">
+                            <h3>No open positions right now</h3>
+                            <p>Check back soon, or send a general application and we'll keep your resume on file.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                feed.innerHTML = this.jobs.map((job) => `
+                    <article class="job-card">
+                        <h2>${this.escapeHtml(job.title)}</h2>
+                        <div class="job-meta">
+                            <span class="job-pill">${this.escapeHtml(job.location)}</span>
+                            <span class="job-pill">${this.escapeHtml(this.employmentLabel(job.employment_type))}</span>
+                            ${this.formatPay(job) ? `<span class="job-pill">${this.escapeHtml(this.formatPay(job))}</span>` : ''}
+                            <span class="job-pill neutral">Posted ${this.escapeHtml(this.formatDate(job.created_at))}</span>
+                        </div>
+                        <div class="job-copy">
+                            ${this.formatRichText(job.description)}
+                            ${job.requirements ? `<h3>Requirements</h3>${this.formatRichText(job.requirements)}` : ''}
+                        </div>
+                        <div class="job-actions">
+                            <button type="button" class="apply-button" data-apply="${this.escapeHtml(job.id)}">Apply</button>
+                        </div>
+                    </article>
+                `).join('');
+            },
+
+            openFromQuery() {
+                const params = new URLSearchParams(window.location.search);
+                const jobId = params.get('job');
+                if (jobId) {
+                    const job = this.jobs.find((item) => item.id === jobId);
+                    if (job) this.openApply(job);
+                    return;
+                }
+                if (window.location.hash === '#general') this.openApply(null);
+            },
+
+            openApply(job) {
+                this.activeJob = job;
+                this.formOpenedAt = Date.now();
+                this.resumeFile = null;
+                this.lastFocus = document.activeElement;
+                document.getElementById('applyForm').reset();
+                document.getElementById('applyJobId').value = job ? job.id : '';
+                document.getElementById('applyTitle').textContent = job ? job.title : 'General application';
+                document.getElementById('applySubtitle').textContent = job
+                    ? `${this.employmentLabel(job.employment_type)} · ${job.location}`
+                    : 'We will keep your information on file for future openings.';
+                document.getElementById('fileName').hidden = true;
+                document.getElementById('fileName').textContent = '';
+                this.hideAlert();
+                document.getElementById('applyForm').hidden = false;
+                document.getElementById('applySuccess').hidden = true;
+                document.getElementById('submitApplication').disabled = false;
+                document.getElementById('submitApplication').textContent = 'Submit application';
+                document.getElementById('applyModal').hidden = false;
+                document.body.classList.add('apply-open');
+                document.getElementById('applicantName').focus();
+            },
+
+            closeApply() {
+                document.getElementById('applyModal').hidden = true;
+                document.body.classList.remove('apply-open');
+                if (this.lastFocus && typeof this.lastFocus.focus === 'function') this.lastFocus.focus();
+            },
+
+            setResume(file) {
+                if (!file) return;
+                const problem = this.validateResume(file);
+                if (problem) {
+                    this.showAlert(problem);
+                    document.getElementById('resumeInput').value = '';
+                    this.resumeFile = null;
+                    document.getElementById('fileName').hidden = true;
+                    return;
+                }
+                this.resumeFile = file;
+                const label = document.getElementById('fileName');
+                label.hidden = false;
+                label.textContent = `${file.name} (${this.formatBytes(file.size)})`;
+                this.hideAlert();
+            },
+
+            validateResume(file) {
+                const ext = (file.name.split('.').pop() || '').toLowerCase();
+                if (!this.mimeByExt[ext]) return 'Upload a PDF, DOC, or DOCX resume.';
+                if (!file.size) return 'That file is empty. Choose a different resume.';
+                if (file.size > this.maxBytes) return 'That resume is larger than 10 MB. Please upload a smaller file.';
+                return '';
+            },
+
+            async handleSubmit(event) {
+                event.preventDefault();
+                if (document.getElementById('submitApplication').disabled) return;
+
+                const honeypot = document.getElementById('companyWebsite').value;
+                if (honeypot && honeypot.trim()) {
+                    this.showSuccess();
+                    return;
+                }
+
+                if (Date.now() - this.formOpenedAt < this.minFillMs) {
+                    this.showAlert('Please take a moment to review your application before submitting.');
+                    return;
+                }
+
+                const name = document.getElementById('applicantName').value.trim();
+                const email = document.getElementById('applicantEmail').value.trim().toLowerCase();
+                const phone = document.getElementById('applicantPhone').value.trim();
+                const message = document.getElementById('applicantMessage').value.trim();
+                const jobId = document.getElementById('applyJobId').value || null;
+
+                if (name.length < 2) {
+                    this.showAlert('Enter your full name.');
+                    return;
+                }
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    this.showAlert('Enter a valid email address.');
+                    return;
+                }
+                if (phone.length < 7) {
+                    this.showAlert('Enter a phone number.');
+                    return;
+                }
+
+                const file = this.resumeFile || document.getElementById('resumeInput').files[0];
+                const fileProblem = file ? this.validateResume(file) : 'Upload your resume as a PDF, DOC, or DOCX.';
+                if (fileProblem) {
+                    this.showAlert(fileProblem);
+                    return;
+                }
+
+                const cooldown = this.clientCooldown(email, jobId || 'general');
+                if (cooldown) {
+                    this.showAlert(cooldown);
+                    return;
+                }
+
+                const button = document.getElementById('submitApplication');
+                button.disabled = true;
+                button.textContent = 'Submitting...';
+                this.hideAlert();
+
+                const ext = file.name.split('.').pop().toLowerCase();
+                const resumePath = `applications/${crypto.randomUUID()}.${ext}`;
+                let uploaded = false;
+
+                try {
+                    const { error: uploadError } = await supabase.storage
+                        .from('resumes')
+                        .upload(resumePath, file, {
+                            contentType: this.mimeByExt[ext],
+                            upsert: false,
+                            cacheControl: '3600'
+                        });
+                    if (uploadError) throw uploadError;
+                    uploaded = true;
+
+                    const { error: insertError } = await supabase
+                        .from('job_applications')
+                        .insert({
+                            job_id: jobId,
+                            applicant_name: name,
+                            email,
+                            phone,
+                            message: message || null,
+                            resume_path: resumePath,
+                            resume_filename: this.safeFilename(file.name),
+                            company_website: '',
+                            job_title_snapshot: this.activeJob ? this.activeJob.title : 'General application'
+                        }, { returning: 'minimal' });
+
+                    if (insertError) throw insertError;
+
+                    this.rememberSubmit(email, jobId || 'general');
+                    this.notifyStaff({
+                        applicant_name: name,
+                        email,
+                        phone,
+                        message,
+                        job_title: this.activeJob ? this.activeJob.title : 'General application'
+                    });
+                    this.showSuccess();
+                } catch (error) {
+                    console.error('Application error:', error);
+                    if (uploaded) {
+                        console.error('Resume uploaded but the application row was not saved:', resumePath);
+                    }
+                    this.showAlert(this.friendlyError(error));
+                    button.disabled = false;
+                    button.textContent = 'Submit application';
+                }
+            },
+
+            showSuccess() {
+                const title = this.activeJob ? this.activeJob.title : 'your general application';
+                document.getElementById('applySuccessText').textContent =
+                    `Thank you. We have your application for ${title} and a member of the Copperhead team will be in touch if there's a fit.`;
+                document.getElementById('applyForm').hidden = true;
+                document.getElementById('applySuccess').hidden = false;
+                document.getElementById('closeSuccess').focus();
+            },
+
+            async notifyStaff(application) {
+                const key = window.WEB3FORMS_KEY;
+                if (!key || key === 'YOUR_ACCESS_KEY_HERE') return;
+                try {
+                    await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            access_key: key,
+                            subject: `New application: ${application.applicant_name} — ${application.job_title}`,
+                            from_name: 'Copperhead Labs Careers',
+                            to: 'sales@copperheadlabs.com',
+                            replyto: application.email,
+                            Name: application.applicant_name,
+                            Email: application.email,
+                            Phone: application.phone,
+                            Position: application.job_title,
+                            Message: application.message || 'No cover note',
+                            Note: 'The resume is private. Download it from careers-admin.html.'
+                        })
+                    });
+                } catch (error) {
+                    console.error('Application email notification failed:', error);
+                }
+            },
+
+            clientCooldown(email, jobKey) {
+                const now = Date.now();
+                const recent = this.recentSubmits().filter((item) => now - item.ts < 60 * 60 * 1000);
+                if (recent.length >= 3) {
+                    return 'You recently submitted a few applications from this browser. Please wait a while before sending another, or email sales@copperheadlabs.com.';
+                }
+                const duplicate = recent.find((item) => item.email === email && item.jobKey === jobKey && now - item.ts < 2 * 60 * 1000);
+                if (duplicate) {
+                    return 'That application was just submitted. Please wait a couple of minutes before trying again.';
+                }
+                return '';
+            },
+
+            recentSubmits() {
+                try {
+                    const parsed = JSON.parse(localStorage.getItem('ch-careers-submits') || '[]');
+                    return Array.isArray(parsed) ? parsed : [];
+                } catch (error) {
+                    return [];
+                }
+            },
+
+            rememberSubmit(email, jobKey) {
+                const now = Date.now();
+                const recent = this.recentSubmits().filter((item) => now - item.ts < 60 * 60 * 1000);
+                recent.push({ email, jobKey, ts: now });
+                try {
+                    localStorage.setItem('ch-careers-submits', JSON.stringify(recent));
+                } catch (error) {
+                    // Storage can be blocked. The server-side cap still applies.
+                }
+            },
+
+            friendlyError(error) {
+                const blob = `${error.message || ''} ${error.details || ''} ${error.hint || ''}`;
+                if (/too many applications/i.test(blob)) {
+                    return 'You have submitted several applications recently. Please wait a bit and try again, or email sales@copperheadlabs.com.';
+                }
+                if (/not open for applications/i.test(blob)) {
+                    return 'This position is no longer accepting applications. You can still send a general application.';
+                }
+                if (/job_applications_email_check/i.test(blob)) return 'Enter a valid email address.';
+                if (/job_applications_phone_check/i.test(blob)) return 'Enter a phone number we can reach you at.';
+                if (/mime|invalid mime|file type|content type/i.test(blob)) return 'Upload a PDF, DOC, or DOCX resume.';
+                if (/size|too large|payload/i.test(blob)) return 'That resume is larger than 10 MB. Please upload a smaller file.';
+                return 'We could not submit your application. Please try again, or email sales@copperheadlabs.com.';
+            },
+
+            showAlert(message) {
+                const alert = document.getElementById('formAlert');
+                alert.textContent = message;
+                alert.hidden = false;
+            },
+
+            hideAlert() {
+                const alert = document.getElementById('formAlert');
+                alert.hidden = true;
+                alert.textContent = '';
+            },
+
+            employmentLabel(type) {
+                const labels = {
+                    'full-time': 'Full-time',
+                    'part-time': 'Part-time',
+                    contract: 'Contract',
+                    temporary: 'Temporary',
+                    internship: 'Internship'
+                };
+                return labels[type] || type || '';
+            },
+
+            formatPay(job) {
+                if (job.pay_min == null && job.pay_max == null) return '';
+                const period = job.pay_period === 'hour' ? 'hour' : 'year';
+                const money = (amount) => {
+                    const value = Number(amount);
+                    const digits = period === 'hour' && Math.round(value * 100) % 100 !== 0 ? 2 : 0;
+                    return value.toLocaleString('en-US', {
+                        style: 'currency',
+                        currency: 'USD',
+                        minimumFractionDigits: digits,
+                        maximumFractionDigits: digits
+                    });
+                };
+                if (job.pay_min != null && job.pay_max != null && Number(job.pay_min) !== Number(job.pay_max)) {
+                    return `${money(job.pay_min)} – ${money(job.pay_max)} / ${period}`;
+                }
+                if (job.pay_min != null && job.pay_max == null) return `From ${money(job.pay_min)} / ${period}`;
+                if (job.pay_min == null && job.pay_max != null) return `Up to ${money(job.pay_max)} / ${period}`;
+                return `${money(job.pay_min)} / ${period}`;
+            },
+
+            formatDate(value) {
+                const date = new Date(value);
+                if (Number.isNaN(date.getTime())) return '';
+                return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            },
+
+            formatBytes(bytes) {
+                if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`;
+                return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+            },
+
+            safeFilename(name) {
+                const base = String(name || 'resume').replace(/\\/g, '/').split('/').pop();
+                return base.replace(/[^\w.\- ()]/g, '_').slice(0, 180) || 'resume';
+            },
+
+            escapeHtml(value) {
+                return String(value ?? '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            },
+
+            formatRichText(text) {
+                const blocks = String(text || '').replace(/\r\n/g, '\n').split(/\n{2,}/).filter((block) => block.trim());
+                return blocks.map((block) => {
+                    const lines = block.split('\n').map((line) => line.trim()).filter(Boolean);
+                    const bullet = /^[-*•]\s+(.+)$/;
+                    if (lines.length && lines.every((line) => bullet.test(line))) {
+                        return `<ul>${lines.map((line) => `<li>${this.escapeHtml(line.match(bullet)[1])}</li>`).join('')}</ul>`;
+                    }
+                    return `<p>${this.escapeHtml(block).replace(/\n/g, '<br>')}</p>`;
+                }).join('');
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            CareersPage.init();
+        });
+    </script>
+</body>
+</html>

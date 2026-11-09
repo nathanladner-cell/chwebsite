@@ -273,6 +273,45 @@ p {
     color: var(--copper);
 }
 
+/* Extra Careers link: keep the bar on one line between phone and desktop widths. */
+@media (max-width: 1280px) and (min-width: 769px) {
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+
+    .logo-img {
+        height: 42px;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-menu > li > a {
+        font-size: 0.92rem;
+        letter-spacing: 0.2px;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo-img {
+        height: 38px;
+    }
+
+    .nav-menu {
+        gap: 0.65rem;
+    }
+
+    .nav-menu > li > a {
+        font-size: 0.82rem;
+        letter-spacing: 0;
+    }
+}
+
 /* Dropdown Navigation */
 .nav-menu > li {
     position: relative;
@@ -4525,6 +4564,7 @@ a.expand-btn {
     .nav-menu.active li:nth-child(4) { animation-delay: 0.25s; }
     .nav-menu.active li:nth-child(5) { animation-delay: 0.3s; }
     .nav-menu.active li:nth-child(6) { animation-delay: 0.35s; }
+    .nav-menu.active li:nth-child(7) { animation-delay: 0.4s; }
     
     @keyframes itemFadeIn {
         from {
