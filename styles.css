@@ -565,7 +565,8 @@ p {
     left: -10%;
     width: 120%;
     height: 120%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url('hero.jpg');
+    background-image: url('images/heroes/home.jpg');
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), image-set(url('images/heroes/home.webp') type('image/webp'), url('images/heroes/home.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center bottom;
     z-index: -1;
@@ -1388,18 +1389,23 @@ footer::before {
 }
 
 .compliance-logo-group {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    filter: brightness(0.9) opacity(0.8);
-    transition: filter 0.3s ease, transform 0.3s ease;
-    /* GPU acceleration for smooth scrolling */
-    transform: translateZ(0);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem 0.75rem;
+    width: auto;
+    max-width: 320px;
+    filter: none;
 }
-
-.compliance-logo-group:hover {
-    filter: brightness(1.1) opacity(1);
-    transform: translateZ(0) scale(1.02);
+.compliance-logo-group img {
+    height: 32px;
+    width: auto;
+    max-width: 108px;
+    object-fit: contain;
+    opacity: 0.95;
+}
+.compliance-logo-group:hover img {
+    opacity: 1;
 }
 
 .footer-bottom {
@@ -1706,7 +1712,8 @@ footer::before {
 /* Contact Page Styles */
 .contact-page-hero {
     padding: 160px 0 80px;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), url('hero.jpg');
+    background-image: url('images/heroes/home.jpg');
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), image-set(url('images/heroes/home.webp') type('image/webp'), url('images/heroes/home.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -1726,7 +1733,8 @@ footer::before {
 }
 
 .calibration-hero {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), url('calibration/josh.jpeg');
+    background-image: url('images/heroes/electrical-bench.jpg');
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), image-set(url('images/heroes/electrical-bench.webp') type('image/webp'), url('images/heroes/electrical-bench.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center bottom;
 }
@@ -2709,9 +2717,10 @@ main:has(.software-hero) {
 }
 
 .services-cta--testing {
+    background-image: url('images/heroes/testing-truck.jpg');
     background: 
         linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(22, 22, 22, 0.83) 100%), 
-        url('truck_testing/PXL_20251114_180055028.RAW-01.COVER.jpg');
+        image-set(url('images/heroes/testing-truck.webp') type('image/webp'), url('images/heroes/testing-truck.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -3208,9 +3217,10 @@ a.expand-btn {
 .about-page-hero {
     position: relative;
     padding: 200px 0 120px;
+    background-image: url('images/heroes/about-bucket.jpg');
     background: 
         linear-gradient(135deg, rgba(0, 0, 0, 0.88) 0%, rgba(10, 10, 10, 0.82) 100%), 
-        url('hero.jpg');
+        image-set(url('images/heroes/about-bucket.webp') type('image/webp'), url('images/heroes/about-bucket.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -3298,8 +3308,8 @@ a.expand-btn {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -3323,7 +3333,36 @@ a.expand-btn {
 }
 
 .team-member-photo {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    padding: 1rem 0 1rem 1rem;
+}
+.team-photo-img,
+.initials-avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #B87333;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    flex-shrink: 0;
+}
+.initials-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 30% 28%, #4a3424 0%, #161616 72%);
+    color: #e4b88a;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0.06em;
+}
+@media (max-width: 768px) {
+    .team-member-photo { padding: 0.85rem 0 0 0.85rem; }
+    .team-photo-img, .initials-avatar { width: 72px; height: 72px; font-size: 1.15rem; }
 }
 
 .team-member-photo::before {
@@ -3343,10 +3382,14 @@ a.expand-btn {
 }
 
 .team-photo-img {
-    width: 100%;
-    height: 100%;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
+    border: 2px solid #B87333;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    flex-shrink: 0;
 }
 
 .team-member-info {
@@ -4016,7 +4059,8 @@ a.expand-btn {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('glovetest_opt.jpg');
+    background-image: url('images/heroes/glove-test.jpg');
+    background: image-set(url('images/heroes/glove-test.webp') type('image/webp'), url('images/heroes/glove-test.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 80%;
     z-index: -1;
@@ -4850,7 +4894,8 @@ a.expand-btn {
         height: 45vh;
         /* Disable parallax on mobile - use regular background */
         clip-path: none;
-        background: url('glovetest_opt.jpg');
+        background-image: url('images/heroes/glove-test.jpg');
+        background: image-set(url('images/heroes/glove-test.webp') type('image/webp'), url('images/heroes/glove-test.jpg') type('image/jpeg'));
         background-size: cover;
         background-position: center 80%;
     }
@@ -5238,8 +5283,7 @@ a.expand-btn {
     }
 
     .compliance-logo-group {
-        max-width: 200px !important;
-        opacity: 0.85;
+        max-width: 100% !important;
     }
 
     /* Footer bottom bar */
@@ -5678,7 +5722,7 @@ a.expand-btn {
     }
 
     .compliance-logo-group {
-        max-width: 180px !important;
+        max-width: 100% !important;
     }
 
     /* Bottom bar */
@@ -5781,7 +5825,8 @@ a.expand-btn {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('truck_testing/In-House Fleet Testing_ You May Want to Reconsider. - 1.png');
+    background-image: url('images/heroes/dielectric-fleet.jpg');
+    background-image: image-set(url('images/heroes/dielectric-fleet.webp') type('image/webp'), url('images/heroes/dielectric-fleet.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
@@ -7583,7 +7628,7 @@ a.expand-btn {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('hero.jpg') center/cover;
+    background: none;
     opacity: 0.05;
 }
 
@@ -7849,9 +7894,10 @@ body.dielectric-page .compliance-list li {
 
 /* CTA Section - Bold with Imagery */
 body.dielectric-page .cta-section-dielectric {
+    background-image: url('images/heroes/dielectric-boom.jpg');
     background: 
         linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(22, 22, 22, 0.83) 100%), 
-        url('truck_testing/20250504_121424.jpg');
+        image-set(url('images/heroes/dielectric-boom.webp') type('image/webp'), url('images/heroes/dielectric-boom.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -7979,7 +8025,8 @@ body.rubber-ppe-page {
 
 /* PPE Hero Section - Centered Content */
 .ppe-hero {
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.85) 0%, rgba(45, 45, 45, 0.75) 50%, rgba(26, 26, 26, 0.85) 100%), url('testing/PXL_20240209_202505443.jpg');
+    background-image: url('images/heroes/glove-bath.jpg');
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.85) 0%, rgba(45, 45, 45, 0.75) 50%, rgba(26, 26, 26, 0.85) 100%), image-set(url('images/heroes/glove-bath.webp') type('image/webp'), url('images/heroes/glove-bath.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -8257,7 +8304,8 @@ body.rubber-ppe-page {
 
 /* PPE Testing Process Section */
 .ppe-testing-process {
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), url('testing/image.png');
+    background-image: url('images/heroes/blanket-warehouse.jpg');
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), image-set(url('images/heroes/blanket-warehouse.webp') type('image/webp'), url('images/heroes/blanket-warehouse.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -8429,7 +8477,8 @@ body.rubber-ppe-page {
 
 /* PPE CTA Section */
 .ppe-cta-section {
-    background: linear-gradient(135deg, rgba(45, 45, 45, 0.88) 0%, rgba(26, 26, 26, 0.92) 100%), url('testing/IMG_1414.jpg');
+    background-image: url('images/heroes/boot-bath.jpg');
+    background: linear-gradient(135deg, rgba(45, 45, 45, 0.88) 0%, rgba(26, 26, 26, 0.92) 100%), image-set(url('images/heroes/boot-bath.webp') type('image/webp'), url('images/heroes/boot-bath.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -8611,9 +8660,10 @@ body.liveline-page {
 .liveline-hero {
     position: relative;
     padding: 200px 0 160px;
+    background-image: url('images/heroes/liveline-yard.jpg');
     background-image:
         linear-gradient(125deg, rgba(0, 0, 0, 0.90) 0%, rgba(10, 12, 15, 0.82) 55%, rgba(0, 0, 0, 0.85) 100%),
-        url('hero.jpg');
+        image-set(url('images/heroes/liveline-yard.webp') type('image/webp'), url('images/heroes/liveline-yard.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -8911,7 +8961,8 @@ body.liveline-page {
 /* Process Section - Liveline */
 .process-section-liveline {
     padding: 100px 0;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), url('hero.jpg');
+    background-image: url('images/heroes/liveline-sticks.jpg');
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), image-set(url('images/heroes/liveline-sticks.webp') type('image/webp'), url('images/heroes/liveline-sticks.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -9200,9 +9251,10 @@ body.liveline-page {
 /* CTA Section - Liveline */
 .cta-section-liveline {
     padding: 100px 0;
+    background-image: url('images/heroes/liveline-tools.jpg');
     background: 
         linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(22, 22, 22, 0.83) 100%), 
-        url('hero.jpg');
+        image-set(url('images/heroes/liveline-tools.webp') type('image/webp'), url('images/heroes/liveline-tools.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -9337,9 +9389,10 @@ body.grounds-page {
 .grounds-hero {
     position: relative;
     padding: 200px 0 160px;
+    background-image: url('images/heroes/grounds-cables.jpg');
     background-image:
         linear-gradient(125deg, rgba(0, 0, 0, 0.90) 0%, rgba(10, 12, 15, 0.82) 55%, rgba(0, 0, 0, 0.85) 100%),
-        url('hero.jpg');
+        image-set(url('images/heroes/grounds-cables.webp') type('image/webp'), url('images/heroes/grounds-cables.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -9576,7 +9629,8 @@ body.grounds-page {
 /* Process Section - Grounds */
 .process-section-grounds {
     padding: 100px 0;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), url('hero.jpg');
+    background-image: url('images/heroes/glove-inspection.jpg');
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.92) 100%), image-set(url('images/heroes/glove-inspection.webp') type('image/webp'), url('images/heroes/glove-inspection.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -9763,9 +9817,10 @@ body.grounds-page {
 /* CTA Section - Grounds */
 .cta-section-grounds {
     padding: 100px 0;
+    background-image: url('images/heroes/glove-bath.jpg');
     background: 
         linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(22, 22, 22, 0.83) 100%), 
-        url('hero.jpg');
+        image-set(url('images/heroes/glove-bath.webp') type('image/webp'), url('images/heroes/glove-bath.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 100%;
     /* background-attachment: fixed removed for scroll performance */
@@ -10389,10 +10444,13 @@ body.grounds-page {
         width: auto !important;
     }
 
-    .compliance-logo-group,
-    .compliance-logos img {
-        max-width: 80px;
-        height: auto;
+    .compliance-logo-group {
+        max-width: 100%;
+    }
+    .compliance-logo-group img {
+        height: 26px;
+        width: auto;
+        max-width: 92px;
     }
 
     /* Optimize hero images for mobile */
@@ -10617,9 +10675,11 @@ body.grounds-page {
 /* Mobile image optimization */
 @media (max-width: 768px) {
     /* Use smaller hero images on mobile */
-    .hero {
-        background-image: url('images/mobile/hero_mobile.jpg') !important;
-        background-size: cover;
+    .hero::before {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.55) 100%), url('images/heroes/home-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.55) 100%), image-set(url('images/heroes/home-800.webp') type('image/webp'), url('images/heroes/home-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center bottom !important;
     }
     
     /* Reduce icon sizes on mobile for faster loading */
@@ -10662,3 +10722,127 @@ body.grounds-page {
     }
 }
 
+
+/* Mobile hero variants */
+@media (max-width: 768px) {
+    .contact-page-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/home-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/home-800.webp') type('image/webp'), url('images/heroes/home-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .about-page-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/about-bucket-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/about-bucket-800.webp') type('image/webp'), url('images/heroes/about-bucket-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .testing-hero-badass {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/field-testing-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/field-testing-800.webp') type('image/webp'), url('images/heroes/field-testing-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .careers-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/truck-yard-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/truck-yard-800.webp') type('image/webp'), url('images/heroes/truck-yard-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .repairs-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/hot-arm-repair-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/hot-arm-repair-800.webp') type('image/webp'), url('images/heroes/hot-arm-repair-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .vp-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/software-boom-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/software-boom-800.webp') type('image/webp'), url('images/heroes/software-boom-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .ppe-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/glove-bath-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/glove-bath-800.webp') type('image/webp'), url('images/heroes/glove-bath-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .gas-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.9) 100%), url('images/heroes/cal-bench-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.9) 100%), image-set(url('images/heroes/cal-bench-800.webp') type('image/webp'), url('images/heroes/cal-bench-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .temperature-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.9) 100%), url('images/heroes/cal-bench-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.9) 100%), image-set(url('images/heroes/cal-bench-800.webp') type('image/webp'), url('images/heroes/cal-bench-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .flow-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.9) 100%), url('images/heroes/cal-bench-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.9) 100%), image-set(url('images/heroes/cal-bench-800.webp') type('image/webp'), url('images/heroes/cal-bench-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .pressure-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.9) 100%), url('images/heroes/cal-bench-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.9) 100%), image-set(url('images/heroes/cal-bench-800.webp') type('image/webp'), url('images/heroes/cal-bench-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .electrical-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/electrical-bench-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/electrical-bench-800.webp') type('image/webp'), url('images/heroes/electrical-bench-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .torque-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/torque-station-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/torque-station-800.webp') type('image/webp'), url('images/heroes/torque-station-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .dielectric-hero::before {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/dielectric-fleet-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/dielectric-fleet-800.webp') type('image/webp'), url('images/heroes/dielectric-fleet-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .liveline-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/liveline-yard-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/liveline-yard-800.webp') type('image/webp'), url('images/heroes/liveline-yard-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .grounds-hero {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/grounds-cables-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/grounds-cables-800.webp') type('image/webp'), url('images/heroes/grounds-cables-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .calibration-hero-badass {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/electrical-bench-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/electrical-bench-800.webp') type('image/webp'), url('images/heroes/electrical-bench-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .services-cta--testing {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/testing-truck-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/testing-truck-800.webp') type('image/webp'), url('images/heroes/testing-truck-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .ppe-testing-process {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/blanket-warehouse-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/blanket-warehouse-800.webp') type('image/webp'), url('images/heroes/blanket-warehouse-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .ppe-cta-section {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), url('images/heroes/boot-bath-800.jpg') !important;
+        background-image: linear-gradient(135deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.7) 100%), image-set(url('images/heroes/boot-bath-800.webp') type('image/webp'), url('images/heroes/boot-bath-800.jpg') type('image/jpeg')) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+}

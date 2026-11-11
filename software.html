@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Vault</title>
-    <link rel="icon" type="image/svg+xml" href="logos/copperhead.svg">
+    <link rel="icon" href="favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <meta property="og:title" content="The Vault - Asset Management Software">
     <meta property="og:description" content="Smart asset management software for tracking and managing your electrical safety equipment testing and calibration.">
-    <meta property="og:image" content="logos/chlink.png">
-    <meta property="og:image:type" content="image/png">
+    <meta property="og:image" content="https://nathanladner-cell.github.io/chwebsite/images/og-card.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Copperhead Labs testing and calibration">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="logos/chlink.png">
-    <link rel="preload" href="styles.css?v=8.9" as="style">
-    <link rel="preload" href="logos/header2.svg" as="image" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=8.9">
+    <meta name="twitter:image" content="https://nathanladner-cell.github.io/chwebsite/images/og-card.jpg">
+    <link rel="preload" href="styles.css?v=9.0" as="style">
+    <link rel="preload" href="logos/header.svg" as="image" type="image/svg+xml">
+    <link rel="preload" as="image" href="images/heroes/software-boom.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high">
+    <link rel="preload" as="image" href="images/heroes/software-boom-800.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="stylesheet" href="styles.css?v=9.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -91,7 +99,10 @@
             position: relative;
             padding: 128px 0 80px;
             overflow: hidden;
-            background: var(--vp-bg-1);
+            background-image: linear-gradient(180deg, rgba(8,8,8,.86) 0%, rgba(8,8,8,.9) 100%), url('images/heroes/software-boom.jpg');
+            background-image: linear-gradient(180deg, rgba(8,8,8,.86) 0%, rgba(8,8,8,.9) 100%), image-set(url('images/heroes/software-boom.webp') type('image/webp'), url('images/heroes/software-boom.jpg') type('image/jpeg'));
+            background-size: cover;
+            background-position: center 40%;
         }
         .vp-hero-grid {
             position: absolute;
@@ -1055,11 +1066,39 @@
             .vp-stats-grid { gap: 16px; }
             .vp-stat-value { font-size: 1.3rem; }
         }
+    
+        .vp-img-wrap, .vp-card-img, .vp-hero-screenshot .vp-img-wrap {
+            background: #f6f3ee;
+            border: 1px solid #e3dbd1;
+            border-radius: 14px;
+            box-shadow: 0 22px 48px rgba(0,0,0,.45);
+            padding: 12px 12px 14px;
+            overflow: hidden;
+        }
+        .vp-img-wrap::before, .vp-card-img::before {
+            content: '';
+            display: block;
+            height: 28px;
+            margin: -12px -12px 12px;
+            background:
+                radial-gradient(circle at 18px 14px, #d5cbbf 4.5px, transparent 5px),
+                radial-gradient(circle at 34px 14px, #d5cbbf 4.5px, transparent 5px),
+                radial-gradient(circle at 50px 14px, #d5cbbf 4.5px, transparent 5px),
+                linear-gradient(#efe8e0, #e6ded4);
+        }
+        .vp-img-wrap img, .vp-card-img img, .vp-hero-screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #fff;
+            border-radius: 6px;
+        }
+
     </style>
 </head>
 <body class="vault-page">
     <div class="page-loader" id="pageLoader">
-        <img src="logos/copperhead.svg" alt="Loading..." class="loader-logo">
+        <img src="logos/mark.webp" alt="Loading..." class="loader-logo" width="72" height="72">
         <div class="loader-spinner"></div>
         <div class="loader-text">Loading</div>
     </div>
@@ -1069,7 +1108,7 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <a href="index.html">
-                    <img src="logos/header2.svg" alt="Copperhead Labs Logo" class="logo-img" loading="eager" decoding="async" width="200" height="40" fetchpriority="high">
+                    <img src="logos/header.svg" alt="Copperhead Labs Logo" class="logo-img" loading="eager" decoding="async" width="200" height="40">
                     </a>
                 </div>
                 <ul class="nav-menu">
@@ -1079,35 +1118,35 @@
                         <div class="nav-dropdown">
                             <div class="dropdown-header">Testing Services</div>
                             <a href="dielectric.html">
-                                <span class="dropdown-icon"><img src="icons/hq/bucket.png" alt=""></span>
+                                <span class="dropdown-icon"><img src="icons/hq/bucket.png" alt="" aria-hidden="true" width="20" height="20"></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Dielectric Testing</span>
                                     <span class="dropdown-subtitle">Bucket trucks & aerial lifts</span>
                                 </span>
                             </a>
                             <a href="rubber-ppe.html">
-                                <span class="dropdown-icon"><img src="icons/hq/glove.png" alt=""></span>
+                                <span class="dropdown-icon"><img src="icons/hq/glove.png" alt="" aria-hidden="true" width="20" height="20"></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Rubber PPE Testing</span>
                                     <span class="dropdown-subtitle">Gloves, sleeves & blankets</span>
                                 </span>
                             </a>
                             <a href="liveline.html">
-                                <span class="dropdown-icon"><img src="icons/hq/extendo.png" alt=""></span>
+                                <span class="dropdown-icon"><img src="icons/hq/extendo.png" alt="" aria-hidden="true" width="20" height="20"></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Live-Line Tool Testing</span>
                                     <span class="dropdown-subtitle">Hot sticks & shotgun sticks</span>
                                 </span>
                             </a>
                             <a href="protective-grounds.html">
-                                <span class="dropdown-icon"><img src="icons/hq/ground.png" alt=""></span>
+                                <span class="dropdown-icon"><img src="icons/hq/ground.png" alt="" aria-hidden="true" width="20" height="20"></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Protective Grounds</span>
                                     <span class="dropdown-subtitle">Cables, clamps & assemblies</span>
                                 </span>
                             </a>
                             <a href="equipment-repairs.html">
-                                <span class="dropdown-icon"><img src="icons/hq/cutter.png" alt=""></span>
+                                <span class="dropdown-icon"><img src="icons/hq/cutter.png" alt="" aria-hidden="true" width="20" height="20"></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Equipment Repairs</span>
                                     <span class="dropdown-subtitle">Live-line tools & rubber PPE</span>
@@ -1123,42 +1162,42 @@
                         <div class="nav-dropdown">
                             <div class="dropdown-header">Calibration Services</div>
                             <a href="pressure-calibration.html">
-                                <span class="dropdown-icon"><img src="icons/hq/pressure.png" alt=""></span>
+                                <span class="dropdown-icon"><img src="icons/hq/pressure.png" alt="" aria-hidden="true" width="20" height="20"></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Pressure Calibration</span>
                                     <span class="dropdown-subtitle">Gauges & transducers</span>
                                 </span>
                             </a>
                             <a href="temperature-calibration.html">
-                                <span class="dropdown-icon"><img src="icons/hq/thermo.png" alt=""></span>
+                                <span class="dropdown-icon"><img src="icons/hq/thermo.png" alt="" aria-hidden="true" width="20" height="20"></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Temperature Calibration</span>
                                     <span class="dropdown-subtitle">Thermometers & RTDs</span>
                                 </span>
                             </a>
                             <a href="electrical-calibration.html">
-                                <span class="dropdown-icon"><img src="icons/hq/multimeter.png" alt=""></span>
+                                <span class="dropdown-icon"><img src="icons/hq/multimeter.png" alt="" aria-hidden="true" width="20" height="20"></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Electrical Calibration</span>
                                     <span class="dropdown-subtitle">Meters & test equipment</span>
                                 </span>
                             </a>
                             <a href="flow-calibration.html">
-                                <span class="dropdown-icon"><img src="icons/hq/instrument.png" alt=""></span>
+                                <span class="dropdown-icon"><img src="icons/hq/instrument.png" alt="" aria-hidden="true" width="20" height="20"></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Flow Calibration</span>
                                     <span class="dropdown-subtitle">Flow meters & devices</span>
                                 </span>
                             </a>
                             <a href="torque-calibration.html">
-                                <span class="dropdown-icon"><img src="icons/hq/torque.png" alt=""></span>
+                                <span class="dropdown-icon"><img src="icons/hq/torque.png" alt="" aria-hidden="true" width="20" height="20"></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Mechanical Calibration</span>
                                     <span class="dropdown-subtitle">Torque & force devices</span>
                                 </span>
                             </a>
                             <a href="gas-detection-calibration.html">
-                                <span class="dropdown-icon"><img src="icons/hq/gasdetector.png" alt=""></span>
+                                <span class="dropdown-icon"><img src="icons/hq/gasdetector.png" alt="" aria-hidden="true" width="20" height="20"></span>
                                 <span class="dropdown-text">
                                     <span class="dropdown-title">Gas Detection</span>
                                     <span class="dropdown-subtitle">Gas monitors & detectors</span>
@@ -1209,7 +1248,7 @@
                 <div class="vp-hero-center">
                     <div class="vp-fade">
                         <div class="vp-hero-logo-wrap">
-                            <img src="logos/vault.svg" alt="The Vault" class="vp-hero-logo">
+                            <img src="logos/vault.webp" alt="The Vault" class="vp-hero-logo" width="44" height="44" decoding="async">
                             <span class="vp-hero-logo-text">Vault</span>
                         </div>
                     </div>
@@ -1238,7 +1277,7 @@
                     <div class="vp-hero-screenshot">
                         <div class="vp-glow-border"></div>
                         <div class="vp-img-wrap">
-                            <img src="vault-ad/dashboard.png" alt="Vault Customer Portal Dashboard" width="1024" height="640" loading="eager">
+                            <img src="images/vault/dashboard.webp" alt="The Vault dashboard" width="1024" height="640" loading="eager">
                         </div>
                     </div>
                 </div>
@@ -1385,7 +1424,7 @@
                         <div class="vp-img-frame">
                             <div class="vp-glow-border" style="background:linear-gradient(180deg, rgba(177,100,43,0.2), transparent 50%)"></div>
                             <div class="vp-img-wrap">
-                                <img src="vault-ad/assets.png" alt="Complete Asset Inventory" width="800" height="500" loading="lazy">
+                                <img src="images/vault/assets-list.webp" alt="Complete Asset Inventory" width="800" height="500" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -1411,7 +1450,7 @@
                             <p>Create calibration and testing requests with priority levels, preferred scheduling, and special requirements &mdash; tracked in real time.</p>
                         </div>
                         <div class="vp-card-img">
-                            <img src="vault-ad/service-requests.png" alt="Service Requests" width="600" height="400" loading="lazy">
+                            <img src="images/vault/jobs-list.webp" alt="Project list in The Vault" width="600" height="400" loading="lazy">
                         </div>
                     </div>
                     <div class="vp-card vp-fade" style="transition-delay:150ms">
@@ -1424,7 +1463,7 @@
                             <p>Share your unique referral code with industry peers. When they sign up, you both benefit &mdash; it's that simple.</p>
                         </div>
                         <div class="vp-card-img">
-                            <img src="vault-ad/referrals.png" alt="Referral Program" width="600" height="400" loading="lazy">
+                            <img src="images/vault/referrals.webp" alt="Referral Program" width="600" height="400" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -1636,11 +1675,12 @@
                         <div class="vp-img-frame" style="position:relative">
                             <div class="vp-glow-border" style="background:linear-gradient(180deg, rgba(177,100,43,0.12), transparent 50%)"></div>
                             <div class="vp-img-wrap">
-                                <img src="vault-ad/dashboard.png" alt="Dark Mode Dashboard" width="800" height="500" loading="lazy">
+                                <img src="images/vault/job-detail.webp" alt="Job detail in The Vault" width="1400" height="782" loading="lazy" decoding="async">
                             </div>
-                            <div class="vp-darkmode-label">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                                <span>Dark Mode Active</span>
+                        </div>
+                        <div class="vp-img-frame" style="position:relative;margin-top:1.25rem">
+                            <div class="vp-img-wrap">
+                                <img src="images/vault/calibration-report.webp" alt="Calibration report in The Vault" width="1400" height="782" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -1656,7 +1696,7 @@
                         <div class="vp-img-frame">
                             <div class="vp-glow-border" style="background:linear-gradient(225deg, rgba(177,100,43,0.15), transparent 50%)"></div>
                             <div class="vp-img-wrap">
-                                <img src="vault-ad/login.png" alt="Secure Customer Login" width="800" height="500" loading="lazy">
+                                <img src="images/vault/login.webp" alt="Secure Customer Login" width="800" height="500" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -1720,7 +1760,7 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-section footer-brand">
-                        <img src="logos/snake.gif" alt="Copperhead Labs" class="footer-logo" loading="lazy" decoding="async" width="120" height="120">
+                        <img src="logos/snake.webp" alt="Copperhead Labs" class="footer-logo" loading="lazy" decoding="async" width="219" height="70">
                         <p class="footer-tagline">Precision testing and calibration for industrial safety equipment and tools.</p>
                         <div class="footer-24-7">
                             <div class="emergency-badge">
@@ -1814,7 +1854,15 @@
                         </ul>
                         <h3 class="compliance-title">Compliance</h3>
                         <div class="compliance-logos">
-                            <img src="regulatory_logos/group.svg" alt="Regulatory Compliance Logos" class="compliance-logo-group" loading="lazy" decoding="async" width="400" height="60">
+                            <div class="compliance-logo-group" role="group" aria-label="OSHA, ANSI, NFPA, ASTM, IEEE, NIST, and DOT">
+                            <img src="regulatory_logos/light/osha.webp" alt="OSHA" width="333" height="96" loading="lazy" decoding="async">
+                            <img src="regulatory_logos/light/ansi.webp" alt="ANSI" width="151" height="90" loading="lazy" decoding="async">
+                            <img src="regulatory_logos/light/nfpa.webp" alt="NFPA" width="89" height="110" loading="lazy" decoding="async">
+                            <img src="regulatory_logos/light/astm.webp" alt="ASTM" width="120" height="110" loading="lazy" decoding="async">
+                            <img src="regulatory_logos/light/ieee.webp" alt="IEEE" width="263" height="80" loading="lazy" decoding="async">
+                            <img src="regulatory_logos/light/nist.webp" alt="NIST" width="273" height="72" loading="lazy" decoding="async">
+                            <img src="regulatory_logos/light/dot.webp" alt="DOT" width="96" height="96" loading="lazy" decoding="async">
+                            </div>
                         </div>
                     </div>
                 </div>
