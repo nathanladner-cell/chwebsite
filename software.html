@@ -1006,6 +1006,8 @@
             .vp-hero h1 { font-size: 1.8rem; }
             .vp-hero-sub { font-size: 0.95rem; margin-bottom: 28px; }
             .vp-hero-screenshot { margin-top: 40px; }
+            .vp-login-pair { flex-direction: column; align-items: center; }
+            .vp-phone { width: 200px; flex-basis: auto; }
             .vp-hero-logo { width: 36px; height: 36px; }
             .vp-hero-logo-text { font-size: 1.1rem; }
             .vp-hero-logo-wrap { margin-bottom: 16px; }
@@ -1092,6 +1094,28 @@
             display: block;
             background: #fff;
             border-radius: 6px;
+        }
+        .vp-login-pair {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+        .vp-login-pair .vp-img-frame { flex: 1; min-width: 0; }
+        .vp-phone {
+            flex: 0 0 168px;
+            width: 168px;
+            background: #161616;
+            border: 1px solid #3a3a3a;
+            border-radius: 28px;
+            padding: 10px 8px 12px;
+            box-shadow: 0 22px 48px rgba(0,0,0,.45);
+        }
+        .vp-phone img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 18px;
+            background: #fff;
         }
 
     </style>
@@ -1277,7 +1301,7 @@
                     <div class="vp-hero-screenshot">
                         <div class="vp-glow-border"></div>
                         <div class="vp-img-wrap">
-                            <img src="images/vault/dashboard.webp" alt="The Vault dashboard" width="1024" height="640" loading="eager">
+                            <img src="images/vault/dashboard.webp" alt="Example Company dashboard in The Vault customer portal" width="1920" height="1072" fetchpriority="high" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -1424,7 +1448,7 @@
                         <div class="vp-img-frame">
                             <div class="vp-glow-border" style="background:linear-gradient(180deg, rgba(177,100,43,0.2), transparent 50%)"></div>
                             <div class="vp-img-wrap">
-                                <img src="images/vault/assets-list.webp" alt="Complete Asset Inventory" width="800" height="500" loading="lazy">
+                                <img src="images/vault/assets.webp" alt="All equipment in the customer portal" width="1920" height="1072" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -1450,7 +1474,7 @@
                             <p>Create calibration and testing requests with priority levels, preferred scheduling, and special requirements &mdash; tracked in real time.</p>
                         </div>
                         <div class="vp-card-img">
-                            <img src="images/vault/jobs-list.webp" alt="Project list in The Vault" width="600" height="400" loading="lazy">
+                            <img src="images/vault/projects.webp" alt="Customer projects in The Vault" width="1920" height="1072" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="vp-card vp-fade" style="transition-delay:150ms">
@@ -1463,7 +1487,7 @@
                             <p>Share your unique referral code with industry peers. When they sign up, you both benefit &mdash; it's that simple.</p>
                         </div>
                         <div class="vp-card-img">
-                            <img src="images/vault/referrals.webp" alt="Referral Program" width="600" height="400" loading="lazy">
+                            <img src="images/vault/referrals.webp" alt="Referral program in the customer portal" width="1920" height="1072" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -1675,12 +1699,12 @@
                         <div class="vp-img-frame" style="position:relative">
                             <div class="vp-glow-border" style="background:linear-gradient(180deg, rgba(177,100,43,0.12), transparent 50%)"></div>
                             <div class="vp-img-wrap">
-                                <img src="images/vault/job-detail.webp" alt="Job detail in The Vault" width="1400" height="782" loading="lazy" decoding="async">
+                                <img src="images/vault/reports.webp" alt="Line hose calibration report in the customer portal" width="1920" height="1072" loading="lazy" decoding="async">
                             </div>
                         </div>
                         <div class="vp-img-frame" style="position:relative;margin-top:1.25rem">
                             <div class="vp-img-wrap">
-                                <img src="images/vault/calibration-report.webp" alt="Calibration report in The Vault" width="1400" height="782" loading="lazy" decoding="async">
+                                <img src="images/vault/analytics.webp" alt="Equipment analytics in the customer portal" width="1920" height="1072" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -1693,10 +1717,15 @@
             <div class="vp-container">
                 <div class="vp-two-col">
                     <div class="vp-fade">
-                        <div class="vp-img-frame">
-                            <div class="vp-glow-border" style="background:linear-gradient(225deg, rgba(177,100,43,0.15), transparent 50%)"></div>
-                            <div class="vp-img-wrap">
-                                <img src="images/vault/login.webp" alt="Secure Customer Login" width="800" height="500" loading="lazy">
+                        <div class="vp-login-pair">
+                            <div class="vp-img-frame">
+                                <div class="vp-glow-border" style="background:linear-gradient(225deg, rgba(177,100,43,0.15), transparent 50%)"></div>
+                                <div class="vp-img-wrap">
+                                    <img src="images/vault/login.webp" alt="Customer portal login" width="1920" height="1072" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div class="vp-phone">
+                                <img src="images/vault/login-mobile.webp" alt="Customer portal login on a phone" width="780" height="1688" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
