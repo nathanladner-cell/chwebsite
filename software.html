@@ -1005,8 +1005,8 @@
             .vp-hero { padding: 96px 0 48px; }
             .vp-hero h1 { font-size: 1.8rem; }
             .vp-hero-sub { font-size: 0.95rem; margin-bottom: 28px; }
-            .vp-hero-screenshot { margin-top: 40px; }
-            .vp-login-pair { flex-direction: column; align-items: center; }
+            .vp-hero .vp-shot-pair { margin-top: 40px; }
+            .vp-shot-pair, .vp-login-pair { flex-direction: column; align-items: center; }
             .vp-phone { width: 200px; flex-basis: auto; }
             .vp-hero-logo { width: 36px; height: 36px; }
             .vp-hero-logo-text { font-size: 1.1rem; }
@@ -1095,12 +1095,16 @@
             background: #fff;
             border-radius: 6px;
         }
-        .vp-login-pair {
+        .vp-shot-pair, .vp-login-pair {
             display: flex;
             align-items: center;
             gap: 1.25rem;
         }
+        .vp-shot-pair .vp-img-frame,
+        .vp-shot-pair .vp-hero-screenshot,
         .vp-login-pair .vp-img-frame { flex: 1; min-width: 0; }
+        .vp-hero .vp-shot-pair { margin-top: 64px; }
+        .vp-shot-pair .vp-hero-screenshot { margin-top: 0; max-width: none; }
         .vp-phone {
             flex: 0 0 168px;
             width: 168px;
@@ -1298,10 +1302,15 @@
                     </div>
                 </div>
                 <div class="vp-fade" style="transition-delay:450ms">
-                    <div class="vp-hero-screenshot">
-                        <div class="vp-glow-border"></div>
-                        <div class="vp-img-wrap">
-                            <img src="images/vault/dashboard.webp" alt="Example Company dashboard in The Vault customer portal" width="1920" height="1072" fetchpriority="high" decoding="async">
+                    <div class="vp-shot-pair">
+                        <div class="vp-hero-screenshot">
+                            <div class="vp-glow-border"></div>
+                            <div class="vp-img-wrap">
+                                <img src="images/vault/dashboard.webp" alt="Example Company dashboard in The Vault customer portal" width="1920" height="1072" fetchpriority="high" decoding="async">
+                            </div>
+                        </div>
+                        <div class="vp-phone">
+                            <img src="images/vault/dashboard-mobile.webp" alt="Customer portal dashboard on a phone" width="780" height="1688" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -1445,10 +1454,15 @@
                         </ul>
                     </div>
                     <div class="vp-fade" style="transition-delay:200ms">
-                        <div class="vp-img-frame">
-                            <div class="vp-glow-border" style="background:linear-gradient(180deg, rgba(177,100,43,0.2), transparent 50%)"></div>
-                            <div class="vp-img-wrap">
-                                <img src="images/vault/assets.webp" alt="All equipment in the customer portal" width="1920" height="1072" loading="lazy" decoding="async">
+                        <div class="vp-shot-pair">
+                            <div class="vp-img-frame">
+                                <div class="vp-glow-border" style="background:linear-gradient(180deg, rgba(177,100,43,0.2), transparent 50%)"></div>
+                                <div class="vp-img-wrap">
+                                    <img src="images/vault/assets.webp" alt="All equipment in the customer portal" width="1920" height="1072" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div class="vp-phone">
+                                <img src="images/vault/assets-mobile.webp" alt="All equipment in the customer portal on a phone" width="780" height="1688" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -1717,7 +1731,7 @@
             <div class="vp-container">
                 <div class="vp-two-col">
                     <div class="vp-fade">
-                        <div class="vp-login-pair">
+                        <div class="vp-shot-pair vp-login-pair">
                             <div class="vp-img-frame">
                                 <div class="vp-glow-border" style="background:linear-gradient(225deg, rgba(177,100,43,0.15), transparent 50%)"></div>
                                 <div class="vp-img-wrap">
